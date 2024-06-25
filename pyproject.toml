@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "python-para-todos"
+version = "0.1.0"
+description = ""
+authors = ["Henrique Branco <henrique.ajnbranco@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jupyter-book = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+build = { cmd = "jb build --all book", help = "runs all unit tests" }
