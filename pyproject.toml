@@ -13,10 +13,12 @@ jupyter-book = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 taskipy = "^1.13.0"
+ghp-import = "^2.1.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-build = { cmd = "jb build --all book", help = "runs all unit tests" }
+build = { cmd = "jb build --all book", help = "build the book locally" }
+deploy = { cmd = "task build && ghp-import -n -p -f ./book/_build/html", help = "deploy book to GitHub Pages" }
