@@ -1,8 +1,10 @@
 # ![python](https://cdn3.emoji.gg/emojis/1887_python.png) Python para todos
 
+<div style="text-align: justify">
+
 ## Sobre mim
 
-Olá, sou Henrique Branco, e este é meu [perfil do LinkedIn](https://www.linkedin.com/in/henriqueajnb/). É um prazer imenso ter você comigo aqui nesta jornada de aprendizado em linguagem Python. Eu adoro me conectar com as pessoas. Caso você comece a ler esse livro, me mande um oi no LinkedIn!
+Olá, sou Henrique Branco, e este é meu <a href="https://www.linkedin.com/in/henriqueajnb/" target="_blank">perfil do LinkedIn</a>. É um prazer imenso ter você comigo aqui nesta jornada de aprendizado em linguagem Python. Eu adoro me conectar com as pessoas. Caso você comece a ler esse livro, me mande um oi no LinkedIn!
 
 Desde 2018, mergulhei de cabeça no mundo de Python e, desde então, tive a alegria de ensinar centenas de alunos, tanto em aulas particulares quanto em grupo. Um dos momentos mais marcantes da minha carreira de ensino foi liderar um bootcamp de Python pela How Bootcamps em parceria com a Stone, onde 200 alunos participaram ao vivo durante 6 meses!
 
@@ -22,3 +24,5 @@ Quero que você se sinta apoiado e confiante durante todo o processo de aprendiz
 
 ```{tableofcontents}
 ```
+
+<div style="text-align: justify">
