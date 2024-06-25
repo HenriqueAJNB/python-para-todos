@@ -37,4 +37,4 @@ Caso você não marque a opção "Add python.exe to PATH" você terá erros no f
 - Clique em *Install now*.
 - Aguarde a instalação ser concluída (pode demorar alguns minutos).
 
-<img src="img/python-add-to-path.png" width="500" alt="python-setup"/>
+<img src="./img/python-add-to-path.png" width="500" alt="python-setup"/>
