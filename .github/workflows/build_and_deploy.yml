@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Setup GitHub Actions
         uses: actions/checkout@v3
