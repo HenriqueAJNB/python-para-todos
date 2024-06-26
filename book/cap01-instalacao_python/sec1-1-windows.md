@@ -19,17 +19,20 @@ Saber detalhes sobre a versão é importante, e haverá uma seção específica 
 ## Passo 2: executar o instalador
 
 - Localize o arquivo baixado (normalmente na pasta "Downloads") e clique duas vezes para abrir.
-- Marque a opção **Add python.exe to PATH**.
+- Marque a opção **Add python.exe to PATH** conforme item (1) da {ref}`imagem abaixo <python-setup>`.
 
 `````{admonition} Atenção
 :class: danger
 Caso você não marque a opção **Add python.exe to PATH** você terá erros no futuro!
 `````
 
-- Clique em *Install now*.
+- Clique em *Install now* conforme item (2) da {ref}`imagem abaixo <python-setup>`
 - Aguarde a instalação ser concluída (pode demorar alguns minutos).
 
-<img src="../img/python-add-to-path.png" width="500" alt="python-setup"/>
+```{image} ../img/python-add-to-path.png
+:width: 500
+:name: python-setup
+```
 
 ## Passo 3: verificando a instalação
 
