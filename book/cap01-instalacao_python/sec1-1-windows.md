@@ -1,5 +1,6 @@
 <div style="text-align: justify">
 
+(windows)=
 # Windows
 
 Direto e reto, siga todas as instruções sem pular etapas!

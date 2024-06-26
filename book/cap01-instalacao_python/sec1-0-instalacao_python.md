@@ -6,7 +6,7 @@ A instalação do Python por si só já tem vários detalhes, vou direto ao pont
 
 Qual sistema operacional você está usando?
 
-- Windows
+- [Windows](windows)
 - Linux
 
 </div>
