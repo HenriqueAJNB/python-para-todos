@@ -10,10 +10,10 @@ Direto e reto, siga todas as instruções sem pular etapas!
 - Navegue até <a href="https://www.python.org/downloads/" target="_blank">página oficial de download do Python</a>
 - Baixe o instalador clicando no botão de download do Python.
 
-```{admonition} Nota
+```{admonition} Recomendação de leitura
 :class: note
 O site geralmente oferece a versão mais recente, como *Python 3.x.x*.
-Saber detalhes sobre a versão é importante, e haverá uma seção específica para este tema mais à frente.
+Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu recomendo!) consulte a seção [qual versão do Python devo instalar](python-version)
 ```
 
 ## Passo 2: executar o instalador
@@ -21,10 +21,10 @@ Saber detalhes sobre a versão é importante, e haverá uma seção específica 
 - Localize o arquivo baixado (normalmente na pasta "Downloads") e clique duas vezes para abrir.
 - Marque a opção **Add python.exe to PATH** conforme item (1) da {ref}`imagem abaixo <python-setup>`.
 
-`````{admonition} Atenção
+```{admonition} Atenção
 :class: danger
 Caso você não marque a opção **Add python.exe to PATH** você terá erros no futuro!
-`````
+```
 
 - Clique em *Install now* conforme item (2) da {ref}`imagem abaixo <python-setup>`
 - Aguarde a instalação ser concluída (pode demorar alguns minutos).
