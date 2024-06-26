@@ -2,6 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: README.md
 chapters:
-- file: instalacao-python.md
+- file: cap01-instalacao_python/sec1-0-instalacao_python.md
+  sections:
+  - file: cap01-instalacao_python/sec1-1-windows.md

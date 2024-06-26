@@ -1,0 +1,28 @@
+# ![python](https://cdn3.emoji.gg/emojis/1887_python.png) Python para todos
+
+<div style="text-align: justify">
+
+## Sobre mim
+
+Olá, sou Henrique Branco, e este é meu <a href="https://www.linkedin.com/in/henriqueajnb/" target="_blank">perfil do LinkedIn</a>. É um prazer imenso ter você comigo aqui nesta jornada de aprendizado em linguagem Python. Eu adoro me conectar com as pessoas. Caso você comece a ler esse livro, me mande um oi no LinkedIn!
+
+Desde 2018, mergulhei de cabeça no mundo de Python e, desde então, tive a alegria de ensinar centenas de alunos, tanto em aulas particulares quanto em grupo. Um dos momentos mais marcantes da minha carreira de ensino foi liderar um bootcamp de Python pela How Bootcamps em parceria com a Stone, onde 200 alunos participaram ao vivo durante 6 meses!
+
+Além de ensinar em português, também lancei cursos na plataforma Coursera em inglês, abordando temas como Python com IA generativa, git e VSCode, ampliando o alcance do meu trabalho e ajudando ainda mais pessoas a desenvolverem suas habilidades.
+
+Na minha trajetória profissional, atuei como Engenheiro de Machine Learning em empresas renomadas como Bosch, Cellere IT e Grupo Boticário. Essas experiências me permitiram aplicar e aprofundar meus conhecimentos em projetos reais, desafiadores e inovadores.
+
+E dedici compartilhar conhecimento e conteúdo através deste livro.
+
+## Objetivos
+
+O objetivo deste livro é guiá-lo em sua jornada de aprendizado em Python, partindo do absoluto zero. Se você nunca programou antes ou está dando seus primeiros passos no mundo da programação, este livro foi feito especialmente para você.
+
+Quero que você se sinta apoiado e confiante durante todo o processo de aprendizado. Por isso, ofereço uma linguagem informal e um contato próximo comigo, autor deste material, como um diferencial. Estarei disponível para esclarecer dúvidas, fornecer feedback e ajudá-lo a superar qualquer desafio que possa surgir. Minha intenção é criar uma experiência de aprendizado suave, onde você não apenas aprende Python, mas também seja ouvido com suas dúvidas.
+
+## Conteúdo do livro
+
+```{tableofcontents}
+```
+
+</div>
