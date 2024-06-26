@@ -7,3 +7,4 @@ chapters:
 - file: cap01-instalacao_python/sec1-0-instalacao_python.md
   sections:
   - file: cap01-instalacao_python/sec1-1-windows.md
+  - file: cap01-instalacao_python/versoes-python.md

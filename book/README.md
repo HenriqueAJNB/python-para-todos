@@ -2,6 +2,15 @@
 
 <div style="text-align: justify">
 
+```{admonition} Nota
+:class: note
+As imagens apresentadas ao longo do livro são capturas de tela estáticas e podem estar desatualizadas.
+
+Para obter informações precisas e atualizadas, consulte sempre a referência ao site ou fonte oficial indicada em cada imagem.
+
+A referência deve ser considerada como a fonte confiável de verdade, e não a própria imagem.
+```
+
 ## Sobre mim
 
 Olá, sou Henrique Branco, e este é meu <a href="https://www.linkedin.com/in/henriqueajnb/" target="_blank">perfil do LinkedIn</a>. É um prazer imenso ter você comigo aqui nesta jornada de aprendizado em linguagem Python. Eu adoro me conectar com as pessoas. Caso você comece a ler esse livro, me mande um oi no LinkedIn!
