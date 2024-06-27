@@ -4,7 +4,10 @@
 format: jb-book
 root: README.md
 chapters:
-- file: cap01-instalacao_python/sec1-0-instalacao_python.md
+- file: cap01-instalacao-python/sec1-0-introducao.md
   sections:
-  - file: cap01-instalacao_python/sec1-1-windows.md
-  - file: cap01-instalacao_python/versoes-python.md
+  - file: cap01-instalacao-python/sec1-1-windows.md
+  - file: cap01-instalacao-python/versoes-python.md
+- file: cap02-ambientes-desenvolvimento/sec02-0-introducao.md
+  sections:
+  - file: cap02-ambientes-desenvolvimento/sec02-1-ides.md

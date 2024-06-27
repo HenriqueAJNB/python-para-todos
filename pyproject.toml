@@ -9,6 +9,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.12"
 jupyter-book = "^1.0.0"
+sphinx-design = "^0.6.0"
 
 
 [tool.poetry.group.dev.dependencies]
