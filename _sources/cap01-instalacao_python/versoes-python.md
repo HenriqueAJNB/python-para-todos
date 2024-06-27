@@ -32,7 +32,7 @@ Reparem que há explícito *Note that Python 3.9+ cannot be used on Windows 7 or
 
 As versões da linguagem Python segue um padrão chamado <a href="https://semver.org/" target="_blank">versionamento semântico</a>.
 
-É uma forma de dar números às versões de um software ou linguagem de programação de maneira organizada e significativa. Ele usa três números separados por pontos, no formato X.Y.Z (exemplo: *Python 3.11.9*) onde:
+É uma forma de dar números às versões de um software ou linguagem de programação de maneira organizada e significativa. Ele usa três números separados por pontos, no formato X.Y.Z (exemplo: *Python 3.11.9*). Os nomes técnicos destes números são X (major), Y (minor) e Z (patch) onde:
 
 - **X (versão principal):** É incrementado quando há mudanças grandes e incompatíveis com versões anteriores. Por exemplo, no Python, isso aconteceu quando passou da versão 2 para a versão 3. Esta mudança para Python 3 introduziu várias incompatibilidades com o Python 2.
 
@@ -45,7 +45,7 @@ Se vir alguém explicando algo usando Python 2, fuja para as montanhas! 🏃‍�
 
 - **Y (versão secundária):** É incrementado quando são adicionadas novas funcionalidades, mas de maneira que ainda é compatível com versões anteriores. Por exemplo, quando Python 3.6 introduziu novas funcionalidades, mas ainda era compatível com Python 3.5.
 - **Z (versão de correção):** É incrementado para corrigir pequenos problemas ou bugs. Essas correções não afetam as funcionalidades existentes nem adicionam novas funcionalidades significativas. Por exemplo, a atualização de Python 3.6.1 para 3.6.2 trouxe correções de bugs sem adicionar novas funcionalidades significativas.
-  
+
 Para você compreender melhor, supondo que o Python esteja na versão 3.6.2:
 
 - Se for feita uma pequena correção de bug, a versão vai para 3.6.3.
