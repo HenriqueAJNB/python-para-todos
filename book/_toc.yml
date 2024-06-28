@@ -11,3 +11,4 @@ chapters:
 - file: cap02-ambientes-desenvolvimento/sec02-0-introducao.md
   sections:
   - file: cap02-ambientes-desenvolvimento/sec02-1-ides.md
+  - file: cap02-ambientes-desenvolvimento/sec02-2-instalacao-vscode-windows.md
