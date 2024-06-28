@@ -1,6 +1,8 @@
-# ![python](https://cdn3.emoji.gg/emojis/1887_python.png) Python para todos
+# <img src="img/python-logo.svg" width="64"/> Python para todos
 
 <div style="text-align: justify">
+
+Quer aprender Python do zero? Este livro é para você!
 
 ```{admonition} Nota
 :class: note
