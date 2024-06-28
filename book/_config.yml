@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Python para todos
-author: Henrique Branco
+author: Henrique Branco powered by Jupyter Book
 logo: img/logo.png
 
 # Force re-execution of notebooks on each build.
