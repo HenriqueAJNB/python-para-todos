@@ -21,4 +21,6 @@ Instalar a IDE VSCode no Windows é bem simples!
 3. Execute o arquivo baixado
 4. Prossiga com todas as opções padrões pré-definidas até o fim da instalação e pronto!
 
+Na próxima seção, vamos configurar o VSCode e já começar a colocar a mão na massa!
+
 </div>
