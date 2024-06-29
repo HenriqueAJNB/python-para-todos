@@ -1,4 +1,4 @@
-# Configuração VSCode
+# Preparando o VSCode
 
 <div style="text-align: justify">
 
@@ -35,6 +35,48 @@ Tal notícia **não é é verdadeira**! O que é fato/verdade: o próprio VSCode
 
 Existem inúmeras outras extensões no VSCode para se trabalhar com Python e até com outras linguagens (SQL também), mas todas as outras são de suporte e auxiliares para o desenvolvimento. Vou preparar um capítulo ou seção a parte só sobre extensões extras e customizações no VSCode.
 
-Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳
+## Abrindo pasta no VSCode
+
+Sugiro que você crie uma pasta em branco no seu computador para organizar seus estudos. Ela pode ser criada em qualquer outra pasta, desde que você consiga encontrá-la de maneira fácil depois. O nome da pasta também fica à seu critério.
+
+O VSCode consegue trabalhar com manipulação de arquivos e de pastas, caso você esteja trabalhando em algum projeto mais complexo que tenha várias pastas e arquivos.
+
+Neste livro vamos trabalhar dentro desta pasta vazia que você criou. O primeiro passo é abrir esta a pasta no VSCode.
+
+- Clique no botão "Explorer" no menu vertical lateral à esquerda no VSCode (ou opcionalmente selecione "File" no menu superior)
+- Clique em "Open Folder"
+- Selecione a pasta vazia que você criou (no caso do gif abaixo, eu optei por nomear minha pasta `scripts`)
+
+```{image} ../gifs/cap02-sec03-02-open-folder-vscode.gif
+```
+
+## Criando o primeiro arquivo Python
+
+Com a pasta aberta no VSCode, podemos criar nosso primeiro arquivo Python. 
+
+```{admonition} Se liga nos conceitos
+:class: note
+
+**Script:** são arquivos com comandos de qualquer linguagem de programação. 
+
+Os scripts Python tem a extensão `.py`. 
+
+Pense ser um arquivo de texto comum com comandos Python só que ao invés de ter a extensão `.txt` ele tem a extensão `.py`.
+```
+
+Para criar o script: 
+
+- Clique com o botão direito do mouse na área da pasta aberta e selecione "New file".
+- Dê um nome para seu script. No meu caso, eu o nomeei `meu_primeiro_script.py`. **Não se esqueça de adicionar a extensão `.py` ao final para que o próprio VSCode reconheça seu arquivo como um script Python**
+
+```{admonition} Atenção
+:class: danger
+Não se esqueça de adicionar a extensão `.py` ao final para que o próprio VSCode reconheça seu arquivo como um script Python.
+```
+
+Reparem que ao criar o script no próprio VSCode, ele é criado automaticamente na pasta. O Explorer do VSCode tem exatamente essa finalidade: trabalhar com pastas e arquivos sem sair do VSCode.
+
+```{image} ../gifs/cap02-sec03-03-create-file-vscode.gif
+```
 
 </div>
