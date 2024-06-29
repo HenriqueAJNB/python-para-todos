@@ -22,7 +22,7 @@ Para instalar a extensão Python, siga os passos abaixo (demonstrados visualment
 - Procure por Python
 - Clique no botão azul **Install**
 
-```{image} ../gifs/cap02/sec03/install-python-ext-vscode.gif
+```{image} ../gifs/cap02-sec03-01-install-python-ext-vscode.gif
 :name: install-python-ext-vscode
 ```
 
