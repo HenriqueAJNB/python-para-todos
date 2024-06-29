@@ -22,7 +22,7 @@ Para instalar a extensão Python, siga os passos abaixo (demonstrados visualment
 - Procure por Python
 - Clique no botão azul **Install**
 
-```{image} ../gifs/install-python-ext-vscode.gif
+```{image} ../gifs/cap02/sec03/install-python-ext-vscode.gif
 :name: install-python-ext-vscode
 ```
 
@@ -33,7 +33,8 @@ Já ouvi espalharem a notícia de que "*o Python havia sido comprado pela Micros
 Tal notícia **não é é verdadeira**! O que é fato/verdade: o próprio VSCode e a extensão Python (não o Python em si) foram desenvolvidos pela Microsoft. Python continua sendo open-source e gratuito.
 ```
 
-Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳
+Existem inúmeras outras extensões no VSCode para se trabalhar com Python e até com outras linguagens (SQL também), mas todas as outras são de suporte e auxiliares para o desenvolvimento. Vou preparar um capítulo ou seção a parte só sobre extensões extras e customizações no VSCode.
 
+Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳
 
 </div>

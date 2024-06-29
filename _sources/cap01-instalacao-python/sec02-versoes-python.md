@@ -20,7 +20,7 @@ Conforme os desenvolvedores e mantenedores do Python avançam, cada versão nova
 
 Ao passar o mouse aba *Downloads* (na aba, e não o botão amarelo pra fazer o download!) da <a href="https://www.python.org/downloads/" target="_blank">página oficial de download do Python</a> você verá a seguinte imagem, caso esteja usando Windows:
 
-```{figure} ../img/python-os-compat.png
+```{figure} ../img/cap01/sec02/python-os-compat.png
 :name: python-os-compat
 
 fonte: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>
