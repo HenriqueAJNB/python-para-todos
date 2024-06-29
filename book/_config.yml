@@ -3,7 +3,7 @@
 
 title: Python para todos
 author: Henrique Branco powered by Jupyter Book
-logo: img/logo.png
+logo: img/config/logo/book.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,7 +30,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  favicon: "img/python-logo.svg"  
+  favicon: img/config/logo/python.svg
   
 parse:
   myst_enable_extensions:
