@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Configuração VSCode &#8212; Python para todos</title>
+    <title>Preparando o VSCode &#8212; Python para todos</title>
   
   
   
@@ -61,6 +61,7 @@
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Primeiro programa em Python" href="../cap03-primeiros-passos-com-python/sec00-introducao.html" />
     <link rel="prev" title="Instalação VSCode" href="sec02-instalacao-vscode-windows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,9 +189,10 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-introducao.html">Ambientes para desenvolvimento Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sec01-ides.html">IDEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sec02-instalacao-vscode-windows.html">Instalação VSCode</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Configuração VSCode</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preparando o VSCode</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cap03-primeiros-passos-com-python/sec00-introducao.html">Primeiro programa em Python</a></li>
 </ul>
 
     </div>
@@ -376,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Configuração VSCode</h1>
+    <h1>Preparando o VSCode</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,6 +389,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensao-python-no-vscode">Extensão Python no VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrindo-pasta-no-vscode">Abrindo pasta no VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-o-primeiro-arquivo-python">Criando o primeiro arquivo Python</a></li>
 </ul>
             </nav>
         </div>
@@ -398,8 +402,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="configuracao-vscode">
-<h1>Configuração VSCode<a class="headerlink" href="#configuracao-vscode" title="Link to this heading">#</a></h1>
+  <section id="preparando-o-vscode">
+<h1>Preparando o VSCode<a class="headerlink" href="#preparando-o-vscode" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
 <p>Agora que estamos com o VSCode instalado, vamos configurá-lo com o mínimo necessário para iniciar nosso desenvolvimento em Python!</p>
 <section id="extensao-python-no-vscode">
@@ -418,14 +422,46 @@ document.write(`
 <li><p>Procure por Python</p></li>
 <li><p>Clique no botão azul <strong>Install</strong></p></li>
 </ul>
-<img alt="../_images/install-python-ext-vscode.gif" id="install-python-ext-vscode" src="../_images/install-python-ext-vscode.gif" />
+<img alt="../_images/cap02-sec03-01-install-python-ext-vscode.gif" id="install-python-ext-vscode" src="../_images/cap02-sec03-01-install-python-ext-vscode.gif" />
 <div class="tip admonition">
 <p class="admonition-title">Curiosidade</p>
 <p>Já ouvi espalharem a notícia de que “<em>o Python havia sido comprado pela Microsoft</em>”. A notícia mostrava o print da tela da extensão do Python seguida do nome Microsoft (microsoft.com) ao lado do logo do Python.</p>
 <p>Tal notícia <strong>não é é verdadeira</strong>! O que é fato/verdade: o próprio VSCode e a extensão Python (não o Python em si) foram desenvolvidos pela Microsoft. Python continua sendo open-source e gratuito.</p>
 </div>
 <p>Existem inúmeras outras extensões no VSCode para se trabalhar com Python e até com outras linguagens (SQL também), mas todas as outras são de suporte e auxiliares para o desenvolvimento. Vou preparar um capítulo ou seção a parte só sobre extensões extras e customizações no VSCode.</p>
-<p>Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳</p>
+</section>
+<section id="abrindo-pasta-no-vscode">
+<h2>Abrindo pasta no VSCode<a class="headerlink" href="#abrindo-pasta-no-vscode" title="Link to this heading">#</a></h2>
+<p>Sugiro que você crie uma pasta em branco no seu computador para organizar seus estudos. Ela pode ser criada em qualquer outra pasta, desde que você consiga encontrá-la de maneira fácil depois. O nome da pasta também fica à seu critério.</p>
+<p>O VSCode consegue trabalhar com manipulação de arquivos e de pastas, caso você esteja trabalhando em algum projeto mais complexo que tenha várias pastas e arquivos.</p>
+<p>Neste livro vamos trabalhar dentro desta pasta vazia que você criou. O primeiro passo é abrir esta a pasta no VSCode.</p>
+<ul class="simple">
+<li><p>Clique no botão “Explorer” no menu vertical lateral à esquerda no VSCode (ou opcionalmente selecione “File” no menu superior)</p></li>
+<li><p>Clique em “Open Folder”</p></li>
+<li><p>Selecione a pasta vazia que você criou (no caso do gif abaixo, eu optei por nomear minha pasta <code class="docutils literal notranslate"><span class="pre">scripts</span></code>)</p></li>
+</ul>
+<img alt="../_images/cap02-sec03-02-open-folder-vscode.gif" src="../_images/cap02-sec03-02-open-folder-vscode.gif" />
+</section>
+<section id="criando-o-primeiro-arquivo-python">
+<h2>Criando o primeiro arquivo Python<a class="headerlink" href="#criando-o-primeiro-arquivo-python" title="Link to this heading">#</a></h2>
+<p>Com a pasta aberta no VSCode, podemos criar nosso primeiro arquivo Python.</p>
+<div class="note admonition">
+<p class="admonition-title">Se liga nos conceitos</p>
+<p><strong>Script:</strong> são arquivos com comandos de qualquer linguagem de programação.</p>
+<p>Os scripts Python tem a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p>
+<p>Pense ser um arquivo de texto comum com comandos Python só que ao invés de ter a extensão <code class="docutils literal notranslate"><span class="pre">.txt</span></code> ele tem a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p>
+</div>
+<p>Para criar o script:</p>
+<ul class="simple">
+<li><p>Clique com o botão direito do mouse na área da pasta aberta e selecione “New file”.</p></li>
+<li><p>Dê um nome para seu script. No meu caso, eu o nomeei <code class="docutils literal notranslate"><span class="pre">meu_primeiro_script.py</span></code>. <strong>Não se esqueça de adicionar a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code> ao final para que o próprio VSCode reconheça seu arquivo como um script Python</strong></p></li>
+</ul>
+<div class="danger admonition">
+<p class="admonition-title">Atenção</p>
+<p>Não se esqueça de adicionar a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code> ao final para que o próprio VSCode reconheça seu arquivo como um script Python.</p>
+</div>
+<p>Reparem que ao criar o script no próprio VSCode, ele é criado automaticamente na pasta. O Explorer do VSCode tem exatamente essa finalidade: trabalhar com pastas e arquivos sem sair do VSCode.</p>
+<img alt="../_images/cap02-sec03-03-create-file-vscode.gif" src="../_images/cap02-sec03-03-create-file-vscode.gif" />
 </div>
 </section>
 </section>
@@ -469,6 +505,15 @@ document.write(`
         <p class="prev-next-title">Instalação VSCode</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../cap03-primeiros-passos-com-python/sec00-introducao.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Primeiro programa em Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -486,6 +531,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensao-python-no-vscode">Extensão Python no VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrindo-pasta-no-vscode">Abrindo pasta no VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-o-primeiro-arquivo-python">Criando o primeiro arquivo Python</a></li>
 </ul>
   </nav></div>
 
