@@ -1,4 +1,4 @@
-# <img src="img/python-logo.svg" width="64"/> Python para todos
+# <img src="img/config/logos/python.svg" width="64"/> Python para todos
 
 <div style="text-align: justify">
 
