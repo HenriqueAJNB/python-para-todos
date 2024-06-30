@@ -364,7 +364,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -380,6 +382,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -392,6 +408,60 @@ document.write(`
   <section id="primeiro-programa-em-python">
 <h1>Primeiro programa em Python<a class="headerlink" href="#primeiro-programa-em-python" title="Link to this heading">#</a></h1>
 <p>Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳</p>
+<p>No seu script, digite o seguinte código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Salve o seu script</strong> pressionando Ctrl + S no teclado ou clicando em “File &gt; Save” no menu superior do VSCode.</p>
+<p>Após salvá-lo, clique no botão “Run Python file” no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.</p>
+<img alt="../_images/cap03-sec00-run-python-file-icon.png" src="../_images/cap03-sec00-run-python-file-icon.png" />
+<p></br>Neste momento, o terminal integrado do VSCode se abre, e nele será possível ver nosso texto <em>Olá mundo!</em> impresso na tela.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe<span class="w"> </span>c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py
+Olá<span class="w"> </span>mundo!
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota 1</p>
+<p>O terminal mostra algumas mensagens “estranhas” junto com <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code>, mas elas têm um motivo. O VSCode executa um comando no prompt de comando para rodar nosso código. Essas mensagens extras são parte desse comando.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota 2</p>
+<p>O terminal é um programa usado no Linux e macOS para digitar e executar comandos. O prompt de comando é a versão do Windows para a mesma finalidade. Ambos permitem que você digite comandos e veja os resultados, mas são usados em sistemas operacionais diferentes.</p>
+<p>No fundo, mesmo usando Windows, é bastante comum falar em terminal ao invés de prompt de comando.</p>
+</div>
+<section id="explicacao-detalhada">
+<h2>Explicação detalhada<a class="headerlink" href="#explicacao-detalhada" title="Link to this heading">#</a></h2>
+<p>Neste primeiro exemplo, apesar de simples, temos alguns detalhes pra você começar a entender mais a fundo sobre Python. Vamos tender mais a fundo?</p>
+<section id="entendendo-cada-parte">
+<h3>Entendendo cada parte<a class="headerlink" href="#entendendo-cada-parte" title="Link to this heading">#</a></h3>
+<p>No código temos o seguinte:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>: Esta é uma função que já vem pronta na linguagem Python. A função <code class="docutils literal notranslate"><span class="pre">print</span></code> é usada para imprimir algo no terminal. Nos próximos capítulos entraremos mais no detalhe sobre funções.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code>: Esta é a mensagem que queremos que apareça na tela. As aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> são usadas para indicar que <code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code> é um texto. Todo text no mundo da programação são chamados de <code class="docutils literal notranslate"><span class="pre">string</span></code>. Também haverá um capítulo dedicados à <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
+</ul>
+<p>Agora que entendemos cada parte separada, vamos ver como elas se comportam todas juntas.</p>
+</section>
+<section id="como-funciona">
+<h3>Como funciona<a class="headerlink" href="#como-funciona" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quando você executa o programa, o Python executa o código linha a linha em sequência.</p></li>
+<li><p>Na única linha presente, o Python encontra a função <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
+<li><p>Ele vê que dentro dos parênteses da função <code class="docutils literal notranslate"><span class="pre">print()</span></code> há um texto <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> entre aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p></li>
+<li><p>Então, o Python mostra esse texto no terminal <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo</span></code></p></li>
+</ul>
+</section>
+<section id="o-resultado-final">
+<h3>O resultado final<a class="headerlink" href="#o-resultado-final" title="Link to this heading">#</a></h3>
+<p>A mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> é exibida no terminal</p>
+</section>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Você acabou de criar e executar o seu primeiro programa em linguagem Python! Embora seja simples, já é um avanço enorme para quem saiu do zero! E perceba quanta coisa você já aprendeu!</p>
+<p>Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩</p>
+<p>Na próxima seção vamos avançar com operações matemáticas em Python!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,6 +509,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
