@@ -1,5 +1,7 @@
 # Primeiro programa em Python
 
+<div style="text-align: justify">
+
 Neste momento estamos prontos para criarmos o nosso primeiro programa! 🥳
 
 No seu script, digite o seguinte código:
@@ -66,3 +68,5 @@ Você acabou de criar e executar o seu primeiro programa em linguagem Python! Em
 Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩
 
 Na próxima seção vamos avançar com operações matemáticas em Python!
+
+</div>
