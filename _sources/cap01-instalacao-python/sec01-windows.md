@@ -16,6 +16,7 @@ O site geralmente oferece a versão mais recente, como *Python 3.x.x*.
 Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu recomendo!) consulte a seção [qual versão do Python devo instalar](python-version)
 ```
 
+(execute-installer)=
 ## Passo 2: executar o instalador
 
 - Localize o arquivo baixado (normalmente na pasta "Downloads") e clique duas vezes para abrir.
@@ -34,6 +35,7 @@ Caso você não marque a opção **Add python.exe to PATH** você terá erros no
 :name: python-setup
 ```
 
+(checking-instalation)=
 ## Passo 3: verificando a instalação
 
 - Abra o prompt de comando (busque por `cmd` na barra de busca do Windows)

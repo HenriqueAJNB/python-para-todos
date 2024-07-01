@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>IDEs &#8212; Python para todos</title>
+    <title>Primeiro programa: Olá mundo! &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cap02-ambientes-desenvolvimento/sec01-ides';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cap03-primeiros-passos-com-python/sec01-ola-mundo';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Instalação VSCode" href="sec02-instalacao-vscode-windows.html" />
-    <link rel="prev" title="Ambientes para desenvolvimento Python" href="sec00-introducao.html" />
+    <link rel="next" title="Formas de execução" href="sec02-formas-execucao.html" />
+    <link rel="prev" title="Primeiro programa em Python" href="sec00-introducao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,15 +186,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../cap01-instalacao-python/sec02-versoes-python.html">Qual versão do Python devo instalar?</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-introducao.html">Ambientes para desenvolvimento Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">IDEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sec02-instalacao-vscode-windows.html">Instalação VSCode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sec03-configuracao-vscode.html">Preparando o VSCode</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cap02-ambientes-desenvolvimento/sec00-introducao.html">Ambientes para desenvolvimento Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cap02-ambientes-desenvolvimento/sec01-ides.html">IDEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cap02-ambientes-desenvolvimento/sec02-instalacao-vscode-windows.html">Instalação VSCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cap02-ambientes-desenvolvimento/sec03-configuracao-vscode.html">Preparando o VSCode</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cap03-primeiros-passos-com-python/sec00-introducao.html">Primeiro programa em Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cap03-primeiros-passos-com-python/sec01-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cap03-primeiros-passos-com-python/sec02-formas-execucao.html">Formas de execução</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-introducao.html">Primeiro programa em Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Primeiro programa: Olá mundo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec02-formas-execucao.html">Formas de execução</a></li>
 </ul>
 </details></li>
 </ul>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2Fcap02-ambientes-desenvolvimento/sec01-ides.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2Fcap03-primeiros-passos-com-python/sec01-ola-mundo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="../_sources/cap02-ambientes-desenvolvimento/sec01-ides.md" target="_blank"
+      <li><a href="../_sources/cap03-primeiros-passos-com-python/sec01-ola-mundo.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>IDEs</h1>
+    <h1>Primeiro programa: Olá mundo!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +392,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quais-ides-existem">Quais IDEs existem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-usaremos">Qual usaremos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -405,29 +410,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ides">
-<h1>IDEs<a class="headerlink" href="#ides" title="Link to this heading">#</a></h1>
+  <section id="primeiro-programa-ola-mundo">
+<h1>Primeiro programa: Olá mundo!<a class="headerlink" href="#primeiro-programa-ola-mundo" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
-<p>Você já deve ter instalado o Python e viu que temos à nossa disposição o interpretador da linguagem Python disponível no terminal (as três flechas <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, lembra)?</p>
-<p>Embora seja possível escrever e executar código Python diretamente no terminal do seu computador, isso pode ser complicado e trabalhoso.</p>
-<p>Programar diretamente no terminal significa que você precisa digitar todos os comandos manualmente em sequencia e executá-los um a um, e isso pode tornar difícil a visualização e a organização do seu código. Além disso, o terminal não oferece nenhuma ferramentas que tornam a programação mais fácil, como realce de sintaxe, auto-complete e ferramentas para debugar seu código.</p>
-<p>Para começar a programar em Python, é importante escolher um lugar adequado para escrever e testar seu código. Normalmente usamos um editor de texto com algumas funcionalidades extras para programação, também chamados de IDE (do inglês <em>Integrated Development Environment</em>, ambiente de desenvolvimento integrado).</p>
-<p>Uma boa IDE pode facilitar muito o seu trabalho, oferecendo ferramentas que ajudam a escrever, corrigir e organizar seu código.</p>
-<section id="quais-ides-existem">
-<h2>Quais IDEs existem?<a class="headerlink" href="#quais-ides-existem" title="Link to this heading">#</a></h2>
-<p>Aqui está uma lista de vários ambientes populares para desenvolvimento Python:</p>
+<p>No seu script, digite o seguinte código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Salve o seu script</strong> pressionando Ctrl + S no teclado ou clicando em “File &gt; Save” no menu superior do VSCode.</p>
+<p>Após salvá-lo, clique no botão “Run Python file” no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.</p>
+<img alt="../_images/cap03-sec00-run-python-file-icon.png" src="../_images/cap03-sec00-run-python-file-icon.png" />
+<p></br>Neste momento, o terminal integrado do VSCode se abre, e nele será possível ver nosso texto <em>Olá mundo!</em> impresso na tela.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe<span class="w"> </span>c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py
+Olá<span class="w"> </span>mundo!
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota 1</p>
+<p>O terminal mostra algumas mensagens “estranhas” junto com <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code>, mas elas têm um motivo. O VSCode executa um comando no prompt de comando para rodar nosso código. Essas mensagens extras são parte desse comando.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota 2</p>
+<p>O terminal é um programa usado no Linux e macOS para digitar e executar comandos. O prompt de comando é a versão do Windows para a mesma finalidade. Ambos permitem que você digite comandos e veja os resultados, mas são usados em sistemas operacionais diferentes.</p>
+<p>No fundo, mesmo usando Windows, é bastante comum falar em terminal ao invés de prompt de comando.</p>
+</div>
+<section id="explicacao-detalhada">
+<h2>Explicação detalhada<a class="headerlink" href="#explicacao-detalhada" title="Link to this heading">#</a></h2>
+<p>Neste primeiro exemplo, apesar de simples, temos alguns detalhes pra você começar a entender mais a fundo sobre Python. Vamos tender mais a fundo?</p>
+<section id="entendendo-cada-parte">
+<h3>Entendendo cada parte<a class="headerlink" href="#entendendo-cada-parte" title="Link to this heading">#</a></h3>
+<p>No código temos o seguinte:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.anaconda.com/">Anaconda</a></p></li>
-<li><p><a class="reference external" href="https://colab.google/">Google Colab</a></p></li>
-<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
-<li><p><a class="reference external" href="https://atom-editor.cc/">Atom</a></p></li>
-<li><p><a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a></p></li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code (VSCode)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>: Esta é uma função que já vem pronta na linguagem Python. A função <code class="docutils literal notranslate"><span class="pre">print</span></code> é usada para imprimir algo no terminal. Nos próximos capítulos entraremos mais no detalhe sobre funções.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code>: Esta é a mensagem que queremos que apareça na tela. As aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> são usadas para indicar que <code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code> é um texto. Todo text no mundo da programação são chamados de <code class="docutils literal notranslate"><span class="pre">string</span></code>. Também haverá um capítulo dedicados à <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
+</ul>
+<p>Agora que entendemos cada parte separada, vamos ver como elas se comportam todas juntas.</p>
+</section>
+<section id="como-funciona">
+<h3>Como funciona<a class="headerlink" href="#como-funciona" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quando você executa o programa, o Python executa o código linha a linha em sequência.</p></li>
+<li><p>Na única linha presente, o Python encontra a função <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
+<li><p>Ele vê que dentro dos parênteses da função <code class="docutils literal notranslate"><span class="pre">print()</span></code> há um texto <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> entre aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p></li>
+<li><p>Então, o Python mostra esse texto no terminal <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo</span></code></p></li>
 </ul>
 </section>
-<section id="qual-usaremos">
-<h2>Qual usaremos?<a class="headerlink" href="#qual-usaremos" title="Link to this heading">#</a></h2>
-<p>Na próxima seção vamos instalar e configurar o VSCode para iniciar o nosso desenvolvimento. No futuro trarei uma explicação sobre as outras IDEs.</p>
+<section id="o-resultado-final">
+<h3>O resultado final<a class="headerlink" href="#o-resultado-final" title="Link to this heading">#</a></h3>
+<p>A mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> é exibida no terminal</p>
+</section>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Você acabou de criar e executar o seu primeiro programa em linguagem Python! Embora seja simples, já é um avanço enorme para quem saiu do zero! E perceba quanta coisa você já aprendeu!</p>
+<p>Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩</p>
+<p>Na próxima seção vamos avançar com uma breve explicação sobre as diferentes formas de executar código. E, na sequencia, vamos começar a falar sobre operações matemáticas com Python.</p>
 </div>
 </section>
 </section>
@@ -445,7 +483,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./cap02-ambientes-desenvolvimento"
+            path: "./cap03-primeiros-passos-com-python"
         },
         predefinedOutput: true
     }
@@ -468,15 +506,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ambientes para desenvolvimento Python</p>
+        <p class="prev-next-title">Primeiro programa em Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="sec02-instalacao-vscode-windows.html"
+       href="sec02-formas-execucao.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Instalação VSCode</p>
+        <p class="prev-next-title">Formas de execução</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -496,8 +534,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quais-ides-existem">Quais IDEs existem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-usaremos">Qual usaremos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
