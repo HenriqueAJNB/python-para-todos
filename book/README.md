@@ -23,7 +23,7 @@ Além de ensinar em português, também lancei cursos na plataforma Coursera em 
 
 Na minha trajetória profissional, atuei como Engenheiro de Machine Learning em empresas renomadas como Bosch, Cellere IT e Grupo Boticário. Essas experiências me permitiram aplicar e aprofundar meus conhecimentos em projetos reais, desafiadores e inovadores.
 
-E dedici compartilhar conhecimento e conteúdo através deste livro.
+E decidi compartilhar conhecimento e conteúdo através deste livro.
 
 ## Objetivos
 
