@@ -14,3 +14,6 @@ chapters:
   - file: cap02-ambientes-desenvolvimento/sec02-instalacao-vscode-windows.md
   - file: cap02-ambientes-desenvolvimento/sec03-configuracao-vscode.md
 - file: cap03-primeiros-passos-com-python/sec00-introducao.md
+  sections:
+  - file: cap03-primeiros-passos-com-python/sec01-ola-mundo.md
+  - file: cap03-primeiros-passos-com-python/sec02-formas-execucao.md
