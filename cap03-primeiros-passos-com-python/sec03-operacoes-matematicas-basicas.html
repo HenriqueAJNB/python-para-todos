@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Primeiro programa: Olá mundo! &#8212; Python para todos</title>
+    <title>Operações matemáticas básicas &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cap03-primeiros-passos-com-python/sec01-ola-mundo';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cap03-primeiros-passos-com-python/sec03-operacoes-matematicas-basicas';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Formas de execução" href="sec02-formas-execucao.html" />
-    <link rel="prev" title="Primeiro programa em Python" href="sec00-introducao.html" />
+    <link rel="prev" title="Formas de execução" href="sec02-formas-execucao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,9 +192,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-introducao.html">Primeiro programa em Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Primeiro programa: Olá mundo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec01-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sec02-formas-execucao.html">Formas de execução</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sec03-operacoes-matematicas-basicas.html">Operações matemáticas básicas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Operações matemáticas básicas</a></li>
 </ul>
 </details></li>
 </ul>
@@ -269,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2Fcap03-primeiros-passos-com-python/sec01-ola-mundo.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2Fcap03-primeiros-passos-com-python/sec03-operacoes-matematicas-basicas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +298,7 @@
       
       
       
-      <li><a href="../_sources/cap03-primeiros-passos-com-python/sec01-ola-mundo.md" target="_blank"
+      <li><a href="../_sources/cap03-primeiros-passos-com-python/sec03-operacoes-matematicas-basicas.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Primeiro programa: Olá mundo!</h1>
+    <h1>Operações matemáticas básicas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,13 +392,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-tipos-de-dados-numericos">Os tipos de dados numéricos</a></li>
 </ul>
             </nav>
         </div>
@@ -411,62 +406,76 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="primeiro-programa-ola-mundo">
-<h1>Primeiro programa: Olá mundo!<a class="headerlink" href="#primeiro-programa-ola-mundo" title="Link to this heading">#</a></h1>
+  <section id="operacoes-matematicas-basicas">
+<h1>Operações matemáticas básicas<a class="headerlink" href="#operacoes-matematicas-basicas" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
-<p>No seu script, digite o seguinte código:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="p">)</span>
+<div class="tip admonition">
+<p class="admonition-title">Lembrete</p>
+<p>Ao ver <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, estamos executando o código no terminal, por isso o <code class="docutils literal notranslate"><span class="pre">print()</span></code> não se faz necessário.</p>
+<p>Caso queira experimentar o código em script (arquivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>), é necessário imprimir a saída na tela.</p>
+</div>
+<section id="comentarios">
+<h2>Comentários<a class="headerlink" href="#comentarios" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>O trecho abaixo é uma adaptação desta seção <a class="reference external" href="https://docs.python.org/pt-br/3/tutorial/introduction.html#an-informal-introduction-to-python">3. Uma introdução informal ao Python</a> da documentação oficial. Fiz alguns pequenos ajustes no texto e nos exemplos com objetivo de torná-lo mais simples e compreensível</p>
+</div>
+<blockquote>
+<div><p>Muitos exemplos neste livro, mesmo aqueles no terminal, incluem comentários. Comentários em Python começam com o caractere cerquilha <code class="docutils literal notranslate"><span class="pre">#</span></code> e estende até o final da linha. Um comentário pode aparecer no inicio da linha ou após espaço em branco ou código, mas não dentro de uma string. O caracterer cerquilha dentro de uma string é apenas uma cerquilha, um texto comum. Como os comentários são para esclarecer o código e não são executados pelo Python, eles podem ser omitidos ao digitar exemplos.</p>
+<p>Alguns exemplos:</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># este é apenas um comentário que aparece no início da linha</span>
+<span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># e este é um comentário que aparece depois de um código</span>
+          <span class="c1"># ... e agora um terceiro comentário!</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# Este trecho não é um comentário, mas sim uma string, pois está entre aspas duplas, apesar de começar com cerquilha&quot;</span>
 </pre></div>
 </div>
-<p><strong>Salve o seu script</strong> pressionando Ctrl + S no teclado ou clicando em “File &gt; Save” no menu superior do VSCode.</p>
-<p>Após salvá-lo, clique no botão “Run Python file” no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.</p>
-<img alt="../_images/cap03-sec00-run-python-file-icon.png" src="../_images/cap03-sec00-run-python-file-icon.png" />
-<p></br>Neste momento, o terminal integrado do VSCode se abre, e nele será possível ver nosso texto <em>Olá mundo!</em> impresso na tela.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe<span class="w"> </span>c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py
-Olá<span class="w"> </span>mundo!
-PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;
+</section>
+<section id="as-varias-operacoes-matematicas">
+<h2>As várias operações matemáticas<a class="headerlink" href="#as-varias-operacoes-matematicas" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Este é um <strong>livro de Python</strong> e não de matemática! Portanto, parto do princípio que você entenda matemática básica para seguir com o livro.</p>
+<p>Se achar necessário, posso esclarecer alguuns tópicos em específico. Mas, no geral, não haverá explicações de conceitos matemáticos.</p>
+</div>
+<p>Com Python é possível realizar operações como soma, subtração, multiplicação, divisão comum, divisão inteira (ou quociente da divisão), resto da divisão, potenciação e radiciação.</p>
+<p>Cada operação tem seu chamado operador, que são, para:</p>
+<ul class="simple">
+<li><p>Soma: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Subtração: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>Multiplicação: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>Divisão comun: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>Divisão inteira (ou quociente da divisão): <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
+<li><p>Resto da divisão: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p>Potenciação: <code class="docutils literal notranslate"><span class="pre">**</span></code> ou função <code class="docutils literal notranslate"><span class="pre">pow()</span></code></p></li>
+<li><p>Radiciação: potenciação de uma fração <code class="docutils literal notranslate"><span class="pre">**(1/2)</span></code></p></li>
+</ul>
+<p>Vamos à exemplos!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>        <span class="c1"># Soma de 5 com 4: 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span>        <span class="c1"># Subtraçaõ de 5 e 6: -1</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>      <span class="c1"># Multiplicação entre 10 e 20: 200</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1"># Divisão comum entre 4 e 2: 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">//</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># Divisão inteira entre 50 e 30: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">%</span> <span class="mi">30</span><span class="p">)</span>      <span class="c1"># Resto da divisão entre 50 e 30: 20</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>       <span class="c1"># 2 elevado à 3: 8</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">16</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Raiz quadrada de 16: 4</span>
 </pre></div>
 </div>
-<div class="note admonition">
-<p class="admonition-title">Nota 1</p>
-<p>O terminal mostra algumas mensagens “estranhas” junto com <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code>, mas elas têm um motivo. O VSCode executa um comando no prompt de comando para rodar nosso código. Essas mensagens extras são parte desse comando.</p>
+<p>Ao executar o código acima, você verá a seguinte saída (observem que os comentários foram ignorados pelo Python):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="mi">200</span>
+<span class="mf">2.0</span>
+<span class="mi">1</span>
+<span class="mi">20</span>
+<span class="mi">8</span>
+<span class="mf">4.0</span>
+</pre></div>
 </div>
-<div class="note admonition">
-<p class="admonition-title">Nota 2</p>
-<p>O terminal é um programa usado no Linux e macOS para digitar e executar comandos. O prompt de comando é a versão do Windows para a mesma finalidade. Ambos permitem que você digite comandos e veja os resultados, mas são usados em sistemas operacionais diferentes.</p>
-<p>No fundo, mesmo usando Windows, é bastante comum falar em terminal ao invés de prompt de comando.</p>
-</div>
-<section id="explicacao-detalhada">
-<h2>Explicação detalhada<a class="headerlink" href="#explicacao-detalhada" title="Link to this heading">#</a></h2>
-<p>Neste primeiro exemplo, apesar de simples, temos alguns detalhes pra você começar a entender mais a fundo sobre Python. Vamos tender mais a fundo?</p>
-<section id="entendendo-cada-parte">
-<h3>Entendendo cada parte<a class="headerlink" href="#entendendo-cada-parte" title="Link to this heading">#</a></h3>
-<p>No código temos o seguinte:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>: Esta é uma função que já vem pronta na linguagem Python. A função <code class="docutils literal notranslate"><span class="pre">print</span></code> é usada para imprimir algo no terminal. Nos próximos capítulos entraremos mais no detalhe sobre funções.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code>: Esta é a mensagem que queremos que apareça na tela. As aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> são usadas para indicar que <code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code> é um texto. Todo text no mundo da programação são chamados de <code class="docutils literal notranslate"><span class="pre">string</span></code>. Também haverá um capítulo dedicados à <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
-</ul>
-<p>Agora que entendemos cada parte separada, vamos ver como elas se comportam todas juntas.</p>
+<p>Reparem que duas operações retornaram um valor com <code class="docutils literal notranslate"><span class="pre">.</span></code> no meio. O que significa isso? E o que estas duas operações tem de diferente?</p>
 </section>
-<section id="como-funciona">
-<h3>Como funciona<a class="headerlink" href="#como-funciona" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Quando você executa o programa, o Python executa o código linha a linha em sequência.</p></li>
-<li><p>Na única linha presente, o Python encontra a função <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
-<li><p>Ele vê que dentro dos parênteses da função <code class="docutils literal notranslate"><span class="pre">print()</span></code> há um texto <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> entre aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>.</p></li>
-<li><p>Então, o Python mostra esse texto no terminal <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo</span></code></p></li>
-</ul>
-</section>
-<section id="o-resultado-final">
-<h3>O resultado final<a class="headerlink" href="#o-resultado-final" title="Link to this heading">#</a></h3>
-<p>A mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code> é exibida no terminal</p>
-</section>
-</section>
-<section id="conclusao">
-<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
-<p>Você acabou de criar e executar o seu primeiro programa em linguagem Python! Embora seja simples, já é um avanço enorme para quem saiu do zero! E perceba quanta coisa você já aprendeu!</p>
-<p>Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩</p>
-<p>Na próxima seção vamos avançar com uma breve explicação sobre as diferentes formas de executar código. E, na sequencia, vamos começar a falar sobre operações matemáticas com Python.</p>
+<section id="os-tipos-de-dados-numericos">
+<h2>Os tipos de dados numéricos<a class="headerlink" href="#os-tipos-de-dados-numericos" title="Link to this heading">#</a></h2>
 </div>
 </section>
 </section>
@@ -502,22 +511,13 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sec00-introducao.html"
+       href="sec02-formas-execucao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Primeiro programa em Python</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="sec02-formas-execucao.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Formas de execução</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -535,13 +535,9 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacao-detalhada">Explicação detalhada</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entendendo-cada-parte">Entendendo cada parte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-resultado-final">O resultado final</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-tipos-de-dados-numericos">Os tipos de dados numéricos</a></li>
 </ul>
   </nav></div>
 
