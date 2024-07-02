@@ -17,3 +17,4 @@ chapters:
   sections:
   - file: cap03-primeiros-passos-com-python/sec01-ola-mundo.md
   - file: cap03-primeiros-passos-com-python/sec02-formas-execucao.md
+  - file: cap03-primeiros-passos-com-python/sec03-operacoes-matematicas-basicas.md
