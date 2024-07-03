@@ -75,6 +75,6 @@ Ao executar o código acima, você verá a seguinte saída (observem que os come
 
 Reparem que duas operações retornaram um valor com `.` no meio. O que significa isso? E o que estas duas operações tem de diferente?
 
-## Os tipos de dados numéricos
+Na próxima seção vamos entender melhor e começar a nos aprofundar nos tipos de dados numéricos.
 
 </div>
