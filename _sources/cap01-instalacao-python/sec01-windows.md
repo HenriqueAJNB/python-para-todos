@@ -10,7 +10,7 @@ Direto e reto, siga todas as instruções sem pular etapas!
 - Navegue até <a href="https://www.python.org/downloads/" target="_blank">página oficial de download do Python</a>
 - Baixe o instalador clicando no botão de download do Python.
 
-```{admonition} Recomendação de leitura
+```{admonition} Nota sobre versões do Python
 :class: note
 O site geralmente oferece a versão mais recente, como *Python 3.x.x*.
 Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu recomendo!) consulte a seção [qual versão do Python devo instalar](python-version)
