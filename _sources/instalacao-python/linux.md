@@ -1,4 +1,4 @@
-(linux)=
+(install-python-linux)=
 # Linux
 
 <div style="text-align: justify">

@@ -12,7 +12,7 @@ Para que ele entenda código Python, é necessário instalarmos a extensão do P
 
 ```{admonition} Nota
 :class: note
-Percebam que não estamos instalando o Python, mas sim a **extensão Python no VSCode!** São coisas distintas! O Python foi instalado nesta [seção](windows).
+Percebam que não estamos instalando o Python, mas sim a **extensão Python no VSCode!** São coisas distintas! O Python foi instalado nesta [seção](#install-python-windows).
 ```
 
 Para instalar a extensão Python, siga os passos abaixo (demonstrados visualmente no gif):

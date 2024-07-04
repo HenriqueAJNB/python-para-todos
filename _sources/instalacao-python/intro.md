@@ -6,7 +6,7 @@ A instalação do Python por si só já tem vários detalhes, vou direto ao pont
 
 Qual sistema operacional você está usando?
 
-- [Windows](windows)
-- [Linux](linux) (Debian e Ubuntu)
+- [Windows](#install-python-windows)
+- [Linux](#install-python-linux) (Debian e Ubuntu)
 
 </div>
