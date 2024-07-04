@@ -1,11 +1,11 @@
-<div style="text-align: justify">
-
-(windows)=
+(install-python-windows)=
 # Windows
+
+<div style="text-align: justify">
 
 Direto e reto, siga todas as instruções sem pular etapas!
 
-## Passo 1: baixar o instalador do Python
+## Baixe o instalador do Python
 
 - Navegue até <a href="https://www.python.org/downloads/" target="_blank">página oficial de download do Python</a>
 - Baixe o instalador clicando no botão de download do Python.
@@ -17,7 +17,7 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
 ```
 
 (execute-installer)=
-## Passo 2: executar o instalador
+## Execute o instalador
 
 - Localize o arquivo baixado (normalmente na pasta "Downloads") e clique duas vezes para abrir.
 - Marque a opção **Add python.exe to PATH** conforme item (1) da {ref}`imagem abaixo <python-setup>`.
@@ -36,7 +36,7 @@ Caso você não marque a opção **Add python.exe to PATH** você terá erros no
 ```
 
 (checking-instalation)=
-## Passo 3: verificando a instalação
+## Verifique a instalação
 
 - Abra o prompt de comando (busque por `cmd` na barra de busca do Windows)
 - No prompt de comando (tela preta que abriu), digite `python --version` e pressione Enter. Você deve ver a versão do Python instalada impresa no terminal, conforme abaixo, confirmando que o Python foi instalado com sucesso! Parabéns!
