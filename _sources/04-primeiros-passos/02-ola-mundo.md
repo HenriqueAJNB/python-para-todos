@@ -60,6 +60,10 @@ Agora que entendemos cada parte separada, vamos ver como elas se comportam todas
 A mensagem `Olá mundo!` é exibida no terminal
 
 
+## Prática
+
+A esta altura do livro, você está apto a fazer o [exercício 1](exercício-1) proposto!
+
 ## Conclusão
 
 Você acabou de criar e executar o seu primeiro programa em linguagem Python! Embora seja simples, já é um avanço enorme para quem saiu do zero! E perceba quanta coisa você já aprendeu!
