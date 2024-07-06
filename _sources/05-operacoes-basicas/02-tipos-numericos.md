@@ -48,6 +48,12 @@ Vamos entender a execução. Ela acontece "de dentro para fora".
 Quando eu perguntar ao longo do livro **como sei qual é o tipo de dado?**, a resposta sempre será: **usando a função `type`**!
 ```
 
+## Prática
+
+Agora você já consegue fazer o [exercício 2](exercício-2) da lista!
+
+## Conclusão
+
 Na próxima seção vamos aprender sobre a ordem na qual as operações são executadas!
 
 </div>
