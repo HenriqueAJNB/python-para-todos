@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Operações matemáticas básicas &#8212; Python para todos</title>
+    <title>Precedência de operadores &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '05-operacoes-basicas/01-matematica';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05-operacoes-basicas/03-precedencia-operadores';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tipos de dados numéricos" href="02-tipos-numericos.html" />
-    <link rel="prev" title="Formas de execução" href="../04-primeiros-passos/03-execucao.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Tipos de dados numéricos" href="02-tipos-numericos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,9 +209,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Realize operações básicas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Operações matemáticas básicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-matematica.html">Operações matemáticas básicas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-tipos-numericos.html">Tipos de dados numéricos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-precedencia-operadores.html">Precedência de operadores</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Precedência de operadores</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F05-operacoes-basicas/01-matematica.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F05-operacoes-basicas/03-precedencia-operadores.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@
       
       
       
-      <li><a href="../_sources/05-operacoes-basicas/01-matematica.md" target="_blank"
+      <li><a href="../_sources/05-operacoes-basicas/03-precedencia-operadores.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Operações matemáticas básicas</h1>
+    <h1>Precedência de operadores</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,8 +411,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ordem-das-operacoes-importa">A ordem das operações importa!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacao-nao-e-matematica">Programação não é matemática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tabela-de-precedencia">A tabela de precedência</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-e-a-matematica-entao-como-fica">Mas e a matemática então, como fica?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-com-mesma-precedencia">Operadores com mesma precedência</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -424,74 +429,163 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="operacoes-matematicas-basicas">
-<h1>Operações matemáticas básicas<a class="headerlink" href="#operacoes-matematicas-basicas" title="Link to this heading">#</a></h1>
+  <section id="precedencia-de-operadores">
+<h1>Precedência de operadores<a class="headerlink" href="#precedencia-de-operadores" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
-<div class="tip admonition">
-<p class="admonition-title">Lembrete</p>
-<p>Ao ver <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, estamos executando o código no terminal, por isso o <code class="docutils literal notranslate"><span class="pre">print()</span></code> não se faz necessário.</p>
-<p>Caso queira experimentar o código em script (arquivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>), é necessário imprimir a saída na tela.</p>
+<p>Na seção anterior vimos várias operações matemáticas bem como os tipos de dados resultantes. Vamos agora aumentar a complexidade um pouco falando sobre precedência de operadores.</p>
+<p>Basicamente a precedência de operadores é a ordem na qual as operações mais complexas são feitas.</p>
+<p>Vamos entender melhor com um exemplo prático.</p>
+<section id="a-ordem-das-operacoes-importa">
+<h2>A ordem das operações importa!<a class="headerlink" href="#a-ordem-das-operacoes-importa" title="Link to this heading">#</a></h2>
+<p>Qual seria o resultado desta operação em linguagem Python? Menos três elevado ao quadrado: <code class="docutils literal notranslate"><span class="pre">-3**2</span></code></p>
+<p>Que resultado você espera? Pare e execute esta operação antes de continuar a leitura. Executou? O resultado saiu conforme esperado?</p>
+<p>Quando você executa esse código , surpreendentemente você obtém <code class="docutils literal notranslate"><span class="pre">-9</span></code> como resultado! 😱</p>
+<p>Por que isso acontece? Vamos compreender melhor.</p>
+</section>
+<section id="programacao-nao-e-matematica">
+<h2>Programação não é matemática<a class="headerlink" href="#programacao-nao-e-matematica" title="Link to this heading">#</a></h2>
+<p>Bom, no mundo da matemática, aprendemos que…</p>
+<blockquote>
+<div><p><em>Todo número negativo elevado ao quadrado resulta em um número positivo</em></p>
+</div></blockquote>
+<p>Mas então porque a operação <code class="docutils literal notranslate"><span class="pre">-3**2</span></code> resultou em <code class="docutils literal notranslate"><span class="pre">-9</span></code> e não <code class="docutils literal notranslate"><span class="pre">9</span></code>? O Python está em desacordo com a matemática então?</p>
+<p>Na verdade, não! Programação e matemática são coisas distintas. E precisamos discernir isso.</p>
+<p>O conceito mais simples de programação seria:</p>
+<blockquote>
+<div><p>Programação é como dar instruções para um robô ou computador fazer coisas. Você escreve uma lista de passos, como uma receita de bolo, e o robô ou computador segue esses passos para fazer o que você pediu.</p>
+</div></blockquote>
+<p>Bom, no nosso programa, temos basicamente duas operações: <code class="docutils literal notranslate"><span class="pre">-</span></code> (subtração) e <code class="docutils literal notranslate"><span class="pre">**</span></code> (potenciação). Só que o nosso programa não é executado sempre na sequência linear de leitura, da esquerda para direita. Dependendo dos operadores, alguns podem ser executados antes de outros, como uma fila de prioridade. E é justamente o caso que acontece aqui.</p>
+</section>
+<section id="a-tabela-de-precedencia">
+<h2>A tabela de precedência<a class="headerlink" href="#a-tabela-de-precedencia" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(expressions…), [expressões…], {chave: valor…}, {expressões…}</p></td>
+<td><p>Expressão entre parênteses ou de ligação, sintaxe de criação de lista, sintaxe de criação de dicionário, sintaxe de criação de conjunto</p></td>
+</tr>
+<tr class="row-odd"><td><p>x[índice], x[índice:índice], x(argumentos…), x.atributo</p></td>
+<td><p>subscrição, fatiamento, chamada, referência a atributo</p></td>
+</tr>
+<tr class="row-even"><td><p>await x</p></td>
+<td><p>Expressão await</p></td>
+</tr>
+<tr class="row-odd"><td><p>**</p></td>
+<td><p>Exponenciação [5]</p></td>
+</tr>
+<tr class="row-even"><td><p>+x, -x, ~x</p></td>
+<td><p>positivo, negativo, NEGAÇÃO (NOT) bit a bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>*, &#64;, /, //, %</p></td>
+<td><p>Multiplicação, multiplicação de matrizes, divisão, divisão pelo piso, resto [6]</p></td>
+</tr>
+<tr class="row-even"><td><p>+, -</p></td>
+<td><p>Adição e subtração</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;&lt;, &gt;&gt;</p></td>
+<td><p>Deslocamentos</p></td>
+</tr>
+<tr class="row-even"><td><p>&amp;</p></td>
+<td><p>E (AND) bit a bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>^</p></td>
+<td><p>OU EXCLUSIVO (XOR) bit a bit</p></td>
+</tr>
+<tr class="row-even"><td><p>|</p></td>
+<td><p>OU (OR) bit a bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>in, not in, is, is not, &lt;, &lt;=, &gt;, &gt;=, !=, ==</p></td>
+<td><p>Comparações, incluindo testes de pertinência e testes de identidade</p></td>
+</tr>
+<tr class="row-even"><td><p>not x</p></td>
+<td><p>NEGAÇÃO (NOT) booleana</p></td>
+</tr>
+<tr class="row-odd"><td><p>and</p></td>
+<td><p>E (AND) booleano</p></td>
+</tr>
+<tr class="row-even"><td><p>or</p></td>
+<td><p>OU (OR) booleano</p></td>
+</tr>
+<tr class="row-odd"><td><p>if - else</p></td>
+<td><p>Expressão condicional</p></td>
+</tr>
+<tr class="row-even"><td><p>lambda</p></td>
+<td><p>Expressão lambda</p></td>
+</tr>
+<tr class="row-odd"><td><p>:=</p></td>
+<td><p>Expressão de atribuição</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<section id="comentarios">
-<h2>Comentários<a class="headerlink" href="#comentarios" title="Link to this heading">#</a></h2>
+<p><em>Fonte: seção <a class="reference external" href="https://docs.python.org/pt-br/3/reference/expressions.html#operator-precedence">6.17. Precedência de operadores</a> da documentação oficial</em></p>
+<p>Esta tabela acima representa uma lista com todos os operadores do Python. Não se preocupe se ainda não vimos (e talvez não vamos ver todos mesmo) alguns da lista. Pra este momento o que você precisa saber o que eles fazem, somente consultar a ordem que eles aparecem. Vou deixar destacado e em negrito:</p>
+<blockquote>
+<div><p>Os operadores são executados na ordem <strong>de cima para baixo</strong>. Em outras palavras, <strong>se tenho duas operações, a operação mais acima na tabela é executada primeiro</strong>.</p>
+</div></blockquote>
+<p>Caso eles estejam na mesma linha, dai a ordem passa a ser da esquerda para a direita (ordem de leitura comum).</p>
+<p>Retornando à nossa expressão, reparem que a exponenciação <code class="docutils literal notranslate"><span class="pre">**</span></code> aparece da subtração (<code class="docutils literal notranslate"><span class="pre">-</span></code>) na tabela, sendo executada primeiro, portanto.</p>
+<p>A ordem de execução do nosso programa então seria:</p>
+<ol class="arabic simple">
+<li><p>Eleva o três ao quadrado, <code class="docutils literal notranslate"><span class="pre">3**2</span></code>, resultando em <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p></li>
+<li><p>Aloca o sinal de <code class="docutils literal notranslate"><span class="pre">-</span></code> ao resultado acima, retornando <code class="docutils literal notranslate"><span class="pre">-9</span></code>.</p></li>
+</ol>
+<p>Estão aprendendo que programação é uma execução de operações que não segue exatamente a ordem de leitura?</p>
+</section>
+<section id="mas-e-a-matematica-entao-como-fica">
+<h2>Mas e a matemática então, como fica?<a class="headerlink" href="#mas-e-a-matematica-entao-como-fica" title="Link to this heading">#</a></h2>
+<p>Bom, se quisermos que o nosso programa seja “compatível com a regra matemática”, precisamos ser super explícitos, e usar a ordem de execução da tabela acima ao nosso favor.</p>
+<p>Para nosso programa ser fiel ao que a matemática diz, não é o <code class="docutils literal notranslate"><span class="pre">3</span></code> que deve ser elevado ao quadrado, e sim o <code class="docutils literal notranslate"><span class="pre">-3</span></code>. E para forçarmos que esta operação de alocação do <code class="docutils literal notranslate"><span class="pre">-</span></code> ao <code class="docutils literal notranslate"><span class="pre">3</span></code> seja feita antes da operação de <code class="docutils literal notranslate"><span class="pre">**</span></code>, é necessario deixar explícito no programa da seguinte forma: <code class="docutils literal notranslate"><span class="pre">(-3)**2</span></code>.</p>
+<p>Observem que a primeira linha da tabela contém <em>expressões entre parênteses <code class="docutils literal notranslate"><span class="pre">()</span></code></em>. Nós forçamos a execução da operação <code class="docutils literal notranslate"><span class="pre">-3</span></code> para ser executada antes de <code class="docutils literal notranslate"><span class="pre">**</span></code> colocando-a entre <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>E agora sim o nosso programa está compatível com a regra matemática. Mas percebam que a ordem das operações é que determinou a correção!</p>
+</section>
+<section id="operadores-com-mesma-precedencia">
+<h2>Operadores com mesma precedência<a class="headerlink" href="#operadores-com-mesma-precedencia" title="Link to this heading">#</a></h2>
+<p>Quando existem operadores com mesma precedência, eles são executados da esquerda para direita, na mesma ordem de leitura.</p>
+<p>Um exemplo super simples: <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">5</span></code> é executado como <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code> resultado em <code class="docutils literal notranslate"><span class="pre">3</span></code> e depois <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">5</span></code> resultado em <code class="docutils literal notranslate"><span class="pre">-2</span></code>. Do ponto de vista matemático, para este caso, a ordem de execução não importaria, pois se fizermos <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">5</span> <span class="pre">=</span> <span class="pre">-3</span></code> e <code class="docutils literal notranslate"><span class="pre">-3</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-2</span></code>, o resultado seria o mesmo.</p>
+<p>Mas, quando chegarmos lá na frente com conceitos de programação pura, podemos nos deparar com a seguinte expressão como exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imposto</span> <span class="o">==</span> <span class="s2">&quot;COFINS&quot;</span> <span class="ow">and</span> <span class="n">imposto</span> <span class="ow">in</span> <span class="n">lista_de_impostos</span> 
+</pre></div>
+</div>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
-<p>O trecho abaixo é uma adaptação desta seção <a class="reference external" href="https://docs.python.org/pt-br/3/tutorial/introduction.html#an-informal-introduction-to-python">3. Uma introdução informal ao Python</a> da documentação oficial. Fiz alguns pequenos ajustes no texto e nos exemplos com objetivo de torná-lo mais simples e compreensível</p>
+<p>Não se preocupe com o que você não aprendeu ainda, foque em conceitos específicos! Neste momento, o conceito é a <strong>ordem da lista de precedência para execução das operações</strong></p>
 </div>
-<blockquote>
-<div><p>Muitos exemplos neste livro, mesmo aqueles no terminal, incluem comentários. Comentários em Python começam com o caractere cerquilha <code class="docutils literal notranslate"><span class="pre">#</span></code> e estende até o final da linha. Um comentário pode aparecer no inicio da linha ou após espaço em branco ou código, mas não dentro de uma string. O caracterer cerquilha dentro de uma string é apenas uma cerquilha, um texto comum. Como os comentários são para esclarecer o código e não são executados pelo Python, eles podem ser omitidos ao digitar exemplos.</p>
-<p>Alguns exemplos:</p>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># este é apenas um comentário que aparece no início da linha</span>
-<span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># e este é um comentário que aparece depois de um código</span>
-          <span class="c1"># ... e agora um terceiro comentário!</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# Este trecho não é um comentário, mas sim uma string, pois está entre aspas duplas, apesar de começar com cerquilha&quot;</span>
+<p>No código acima, temos 3 operações: <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code> e <code class="docutils literal notranslate"><span class="pre">==</span></code>. Qual delas seria executada primeiro?</p>
+<p>De acordo com a tabela de precedência:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">imposto</span> <span class="pre">==</span> <span class="pre">&quot;COFINS&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imposto</span> <span class="pre">in</span> <span class="pre">lista_de_impostos</span></code></p></li>
+<li><p>E, por último, <code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+</ol>
+<p>Porque o <code class="docutils literal notranslate"><span class="pre">==</span></code> é executado antes do <code class="docutils literal notranslate"><span class="pre">in</span></code>? Eles estão na mesma linha da tabela de precedencia dos operadores, e, neste caso, o que vale é a ordem que ele aparece na expressão. Como o <code class="docutils literal notranslate"><span class="pre">==</span></code> aparece primeiro que o <code class="docutils literal notranslate"><span class="pre">in</span></code>, ele é executado antes do <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<p>Do ponto de vista de regras de negócio, estamos verificando primeiro se o imposto é COFINS e depois se ele está presente em alguma lista de impostos.</p>
+<p>E se quiséssemos inverter tal regra ou verificação para verificar primeiro se o imposto está presente em uma lista de impostos, e somente depois, verificar se o imposto é COFINS?</p>
+<p>Precisaríamos:</p>
+<ul class="simple">
+<li><p>ou inverter a ordem e deixar <code class="docutils literal notranslate"><span class="pre">imposto</span> <span class="pre">in</span> <span class="pre">lista_de_impostos</span></code> à esquerda:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imposto</span> <span class="ow">in</span> <span class="n">lista_de_impostos</span> <span class="ow">and</span> <span class="n">imposto</span> <span class="o">==</span> <span class="s2">&quot;COFINS&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>ou colocar a expressão entre <code class="docutils literal notranslate"><span class="pre">()</span></code>:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imposto</span> <span class="o">==</span> <span class="s2">&quot;COFINS&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="n">imposto</span> <span class="ow">in</span> <span class="n">lista_de_impostos</span><span class="p">)</span> 
 </pre></div>
 </div>
 </section>
-<section id="as-varias-operacoes-matematicas">
-<h2>As várias operações matemáticas<a class="headerlink" href="#as-varias-operacoes-matematicas" title="Link to this heading">#</a></h2>
-<div class="note admonition">
-<p class="admonition-title">Nota</p>
-<p>Este é um <strong>livro de Python</strong> e não de matemática! Portanto, parto do princípio que você entenda matemática básica para seguir com o livro.</p>
-<p>Se achar necessário, posso esclarecer alguuns tópicos em específico. Mas, no geral, não haverá explicações de conceitos matemáticos.</p>
-</div>
-<p>Com Python é possível realizar operações como soma, subtração, multiplicação, divisão comum, divisão inteira (ou quociente da divisão), resto da divisão, potenciação e radiciação.</p>
-<p>Cada operação tem seu chamado operador, que são, para:</p>
-<ul class="simple">
-<li><p>Soma: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
-<li><p>Subtração: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
-<li><p>Multiplicação: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
-<li><p>Divisão comun: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
-<li><p>Divisão inteira (ou quociente da divisão): <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
-<li><p>Resto da divisão: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
-<li><p>Potenciação: <code class="docutils literal notranslate"><span class="pre">**</span></code> ou função <code class="docutils literal notranslate"><span class="pre">pow()</span></code></p></li>
-<li><p>Radiciação: potenciação de uma fração <code class="docutils literal notranslate"><span class="pre">**(1/2)</span></code></p></li>
-</ul>
-<p>Vamos à exemplos!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>        <span class="c1"># Soma de 5 com 4: 9</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span>        <span class="c1"># Subtraçaõ de 5 e 6: -1</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>      <span class="c1"># Multiplicação entre 10 e 20: 200</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1"># Divisão comum entre 4 e 2: 2.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">//</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># Divisão inteira entre 50 e 30: 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">%</span> <span class="mi">30</span><span class="p">)</span>      <span class="c1"># Resto da divisão entre 50 e 30: 20</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>       <span class="c1"># 2 elevado à 3: 8</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">16</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Raiz quadrada de 16: 4</span>
-</pre></div>
-</div>
-<p>Ao executar o código acima, você verá a seguinte saída (observem que os comentários foram ignorados pelo Python):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span>
-<span class="o">-</span><span class="mi">1</span>
-<span class="mi">200</span>
-<span class="mf">2.0</span>
-<span class="mi">1</span>
-<span class="mi">20</span>
-<span class="mi">8</span>
-<span class="mf">4.0</span>
-</pre></div>
-</div>
-<p>Reparem que duas operações retornaram um valor com <code class="docutils literal notranslate"><span class="pre">.</span></code> no meio. O que significa isso? E o que estas duas operações tem de diferente?</p>
-<p>Na próxima seção vamos entender melhor e começar a nos aprofundar nos tipos de dados numéricos.</p>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>Recomendo você fazer o <a class="reference internal" href="../exercicios.html#exercicio-3"><span class="std std-ref">exercício 3</span></a> da lista!</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Vimos a importância da ordem de execução dos operadores com vários exemplos didáticos e um exemplo real. Na próxima seção, vamos detalhar mais variáveis.</p>
 </div>
 </section>
 </section>
@@ -527,20 +621,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../04-primeiros-passos/03-execucao.html"
+       href="02-tipos-numericos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Formas de execução</p>
+        <p class="prev-next-title">Tipos de dados numéricos</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-tipos-numericos.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tipos de dados numéricos</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -560,8 +654,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ordem-das-operacoes-importa">A ordem das operações importa!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacao-nao-e-matematica">Programação não é matemática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tabela-de-precedencia">A tabela de precedência</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-e-a-matematica-entao-como-fica">Mas e a matemática então, como fica?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-com-mesma-precedencia">Operadores com mesma precedência</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 

@@ -61,7 +61,7 @@
     <link rel="icon" href="_static/python.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Tipos de dados numéricos" href="05-operacoes-basicas/02-tipos-numericos.html" />
+    <link rel="prev" title="Precedência de operadores" href="05-operacoes-basicas/03-precedencia-operadores.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,6 +210,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="05-operacoes-basicas/01-matematica.html">Operações matemáticas básicas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-operacoes-basicas/02-tipos-numericos.html">Tipos de dados numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="current nav bd-sidenav">
@@ -412,6 +413,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
 </ul>
 </li>
 </ul>
@@ -459,8 +461,7 @@ document.write(`
 <p>Qual é o tipo de dado (<code class="docutils literal notranslate"><span class="pre">int</span></code> ou <code class="docutils literal notranslate"><span class="pre">float</span></code>) do resultado de cada uma das operações matemáticas abaixo?</p>
 <div class="tip admonition">
 <p class="admonition-title">Dica</p>
-<p>Busque pensar, refletir e responder (pode até ser mentalmente) antes de verificar a saída dos tipos no código.</p>
-<p>O importante é a <strong>reflexão</strong>, que leva ao desenvolvimento do raciocínio lógico, <strong>e não só a execução do código.</strong></p>
+<p>Busque pensar, refletir e responder (pode até ser mentalmente) antes de verificar a saída dos tipos no código. O importante é a <strong>reflexão</strong>, que leva ao desenvolvimento do raciocínio lógico, <strong>e não só a execução do código.</strong></p>
 </div>
 <p>Exp 1 -&gt; 8 ÷ 4 + 2 × 3</p>
 <p>Exp 2 -&gt; 15 - 4 × 2 + 10</p>
@@ -522,6 +523,58 @@ document.write(`
 </details>
 </div>
 </section>
+<section id="exercicio-3">
+<span id="id3"></span><h3>Exercício 3<a class="headerlink" href="#exercicio-3" title="Link to this heading">#</a></h3>
+<p>Qual é o resultado das expressões do <a class="reference internal" href="#exercicio-2"><span class="std std-ref">exercício 2</span></a> quando executadas no Python?</p>
+<p>Faça na mão primeiro, e confira o resultado no código depois.</p>
+<div class="tip admonition">
+<p class="admonition-title">Dica</p>
+<p>Lembre-se da <a class="reference external" href="https://docs.python.org/pt-br/3/reference/expressions.html#operator-precedence">tabela de precedência de operadores</a>!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resposta:</span>
+<span class="c1"># 1 -&gt; 8.0</span>
+<span class="c1"># 2 -&gt; 17</span>
+<span class="c1"># 3 -&gt; 49</span>
+<span class="c1"># 4 -&gt; 10.0</span>
+<span class="c1"># 5 -&gt; 12</span>
+<span class="c1"># 6 -&gt; 22.0</span>
+<span class="c1"># 7 -&gt; 25</span>
+<span class="c1"># 8 -&gt; 14.0</span>
+<span class="c1"># 9 -&gt; 12.0</span>
+<span class="c1"># 10 -&gt; 4.0</span>
+
+<span class="c1"># Código</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">16</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">25</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.0
+17
+49
+10.0
+12
+22.0
+25
+14.0
+12.0
+4.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -556,12 +609,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="05-operacoes-basicas/02-tipos-numericos.html"
+       href="05-operacoes-basicas/03-precedencia-operadores.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tipos de dados numéricos</p>
+        <p class="prev-next-title">Precedência de operadores</p>
       </div>
     </a>
 </div>
@@ -583,6 +636,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
 </ul>
 </li>
 </ul>
