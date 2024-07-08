@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ambientes para desenvolvimento Python &#8212; Python para todos</title>
+    <title>Variáveis &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02-ambientes/01-intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-conceitos-basicos/01-variaveis';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="IDEs" href="02-ides.html" />
-    <link rel="prev" title="Qual versão do Python devo instalar?" href="../01-instalacao-python/04-versoes-python.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Precedência de operadores" href="../05-operacoes-basicas/03-precedencia-operadores.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,9 +190,9 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Entenda sobre os ambientes de desenvolvimento</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ambientes para desenvolvimento Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-ides.html">IDEs</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/01-intro.html">Ambientes para desenvolvimento Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/02-ides.html">IDEs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configure o ambiente</span></p>
 <ul class="nav bd-sidenav">
@@ -214,8 +214,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprenda conceitos básicos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06-conceitos-basicos/01-variaveis.html">Variáveis</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variáveis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -291,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F02-ambientes/01-intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-conceitos-basicos/01-variaveis.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="../_sources/02-ambientes/01-intro.md" target="_blank"
+      <li><a href="../_sources/06-conceitos-basicos/01-variaveis.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -403,11 +405,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ambientes para desenvolvimento Python</h1>
+    <h1>Variáveis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-variaveis">O que são variáveis?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-basico">Conceito básico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao-tecnica">Definição técnica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -417,17 +432,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ambientes-para-desenvolvimento-python">
-<h1>Ambientes para desenvolvimento Python<a class="headerlink" href="#ambientes-para-desenvolvimento-python" title="Link to this heading">#</a></h1>
+  <section id="variaveis">
+<h1>Variáveis<a class="headerlink" href="#variaveis" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
-<div class="note admonition">
-<p class="admonition-title">Se liga nos conceitos</p>
-<p><strong>Sintaxe:</strong> a maneira correta de escrever o código, seguindo as regras da linguagem de programação.</p>
-<p><strong>Auto-complete:</strong> funcionalidade que sugere automaticamente palavras ou comandos enquanto você digita, para economizar tempo e evitar erros.</p>
-<p><strong>Debug:</strong> processo de encontrar e corrigir erros no seu código para que ele funcione corretamente.</p>
+<p>Em todos os códigos anteriores, você percebeu que nós não salvamos o valor da expressão em lugar nenhum do nosso código? Para salvar um valor durante a execução do código, podemos usar variáveis. Vamos falar sobre elas neste capítulo!</p>
+<section id="o-que-sao-variaveis">
+<h2>O que são variáveis?<a class="headerlink" href="#o-que-sao-variaveis" title="Link to this heading">#</a></h2>
+<p>Vou responder a esta pergunta de duas formas:</p>
+<section id="conceito-basico">
+<h3>Conceito básico<a class="headerlink" href="#conceito-basico" title="Link to this heading">#</a></h3>
+<p>Variáveis são como “caixinhas” onde você pode guardar informações para usar mais tarde no seu código. Cada caixinha tem um nome para você lembrar onde guardou a informação e pode conter diferentes tipos de informações, como números, palavras ou até mesmo listas de coisas.</p>
+</section>
+<section id="definicao-tecnica">
+<h3>Definição técnica<a class="headerlink" href="#definicao-tecnica" title="Link to this heading">#</a></h3>
+<p>Variáveis são nomes que você usa para guardar valores na memória do computador enquanto um programa está sendo executado. Elas permitem armazenar e acessar dados, como números e textos, para serem usados e manipulados ao longo do programa.</p>
+<p>A melhor forma de entender isso é através de exemplos.</p>
+</section>
+</section>
+<section id="exemplos-basicos">
+<h2>Exemplos básicos<a class="headerlink" href="#exemplos-basicos" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
+</pre></div>
 </div>
-<p>A proposta desta seção é explicar o que poucas pessoas explicam sobre os diferentes ambientes para desenvolvimento. Vamos lá?</p>
+<p>Neste exemplo acima, estamos criando uma variável chamada <code class="docutils literal notranslate"><span class="pre">idade</span></code> que armazena o número inteiro 25, e <code class="docutils literal notranslate"><span class="pre">nome</span></code> que armazena o texto <code class="docutils literal notranslate"><span class="pre">Henrique</span> <span class="pre">Branco</span></code>.</p>
+<p>No fundo, é um espaço de memória que tem um nome e um valor associado, sendo possível acessar esse valor novamente no código através do nome usado na criação.</p>
+<p>O nome da variável fica a escolha de quem desenvolve, embora existam regras obrigatórias e boas práticas na criação de nomes de variáveis.</p>
+<div class="tip admonition">
+<p class="admonition-title">Dica de ouro</p>
+<p>Eu, particularmente, não gosto de ler esta linha como <em>variável idade igual a 25</em>, pois igualdade é uma comparação, se uma coisa é igual à outra. Na criação de variáveis, usando o <code class="docutils literal notranslate"><span class="pre">=</span></code>, estamos falando de uma alocação ou de uma atribuição. Então, eu sugiro você começar a ler esta linha como <em>atribui o valor 25 à variável idade</em>, ou então <em>variável idade recebe 25</em>. Mais a frente vamos aprender que existe também o operador de comparação <code class="docutils literal notranslate"><span class="pre">==</span></code>, que pode ser facilmente confundido com <code class="docutils literal notranslate"><span class="pre">=</span></code> se você não se atentar ao que eu disse aqui.</p>
 </div>
+<p>E podemos usar estas variáveis para criar uma outra variável, e imprimir uma mensagem na tela</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
+<span class="n">mensagem</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Meu nome é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mensagem</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No exemplo acima, reparem no <code class="docutils literal notranslate"><span class="pre">f</span></code> logo antes do <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, e reparem também que as variáveis usadas para criar o texto da mensagem estão entre <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>Isso é o que chamamos de f-strings em Python. São uma maneira de tornar um texto mais dinâmico usando variáveis e expressões dentro dele. Como a variável <code class="docutils literal notranslate"><span class="pre">nome</span></code> é um texto fixo, não depende de outras variáveis, não há necessidade do <code class="docutils literal notranslate"><span class="pre">f</span></code> antes dela.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -443,7 +488,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./02-ambientes"
+            path: "./06-conceitos-basicos"
         },
         predefinedOutput: true
     }
@@ -461,20 +506,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../01-instalacao-python/04-versoes-python.html"
+       href="../05-operacoes-basicas/03-precedencia-operadores.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Qual versão do Python devo instalar?</p>
+        <p class="prev-next-title">Precedência de operadores</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-ides.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">IDEs</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -484,6 +529,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-variaveis">O que são variáveis?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-basico">Conceito básico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao-tecnica">Definição técnica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
