@@ -35,6 +35,10 @@ parts:
   - file: 05-operacoes-basicas/02-tipos-numericos.md
   - file: 05-operacoes-basicas/03-precedencia-operadores.md
 
+- caption: Aprenda conceitos básicos
+  chapters:
+  - file: 06-conceitos-basicos/01-variaveis.md
+
 - caption: Pratique
   chapters:
   - file: exercicios.ipynb
