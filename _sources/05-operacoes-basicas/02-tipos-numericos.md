@@ -1,3 +1,4 @@
+(tipos-de-dados-numericos)=
 # Tipos de dados numéricos
 
 <div style="text-align: justify">

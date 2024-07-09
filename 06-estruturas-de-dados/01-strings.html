@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Formas de execução &#8212; Python para todos</title>
+    <title>Strings &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '04-primeiros-passos/03-execucao';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-estruturas-de-dados/01-strings';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Operações matemáticas básicas" href="../05-operacoes-basicas/01-matematica.html" />
-    <link rel="prev" title="Primeiro programa: Olá mundo!" href="02-ola-mundo.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Variáveis" href="../05-operacoes-basicas/04-variaveis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,10 +200,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../03-vscode/02-configuracao.html">Preparando o VSCode</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dê os primeiros passos</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="01-intro.html">Primeiro programa em Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="02-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Formas de execução</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-primeiros-passos/01-intro.html">Primeiro programa em Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/02-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/03-execucao.html">Formas de execução</a></li>
 </ul>
 </details></li>
 </ul>
@@ -215,8 +215,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprenda conceitos básicos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/01-strings.html">Strings</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +292,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F04-primeiros-passos/03-execucao.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-estruturas-de-dados/01-strings.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@
       
       
       
-      <li><a href="../_sources/04-primeiros-passos/03-execucao.md" target="_blank"
+      <li><a href="../_sources/06-estruturas-de-dados/01-strings.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -406,7 +406,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Formas de execução</h1>
+    <h1>Strings</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -416,10 +416,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-script-via-vscode">Executando script via VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-script-via-terminal">Executando script via terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-comandos-isolados-via-interpredador-do-python">Executando comandos isolados via interpredador do Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-a-diferenca-afinal-de-contas">Qual a diferença, afinal de contas? 🤔</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -431,77 +433,120 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="formas-de-execucao">
-<h1>Formas de execução<a class="headerlink" href="#formas-de-execucao" title="Link to this heading">#</a></h1>
+  <section id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
-<p>Antes de proseguirmos com operações matemática, vale a pena entender como podemos executar nosso código.</p>
-<section id="executando-script-via-vscode">
-<h2>Executando script via VSCode<a class="headerlink" href="#executando-script-via-vscode" title="Link to this heading">#</a></h2>
-<p>Na seção anterior, vimos que é possível executar um script usando o próprio VSCode. Lembre-se que scripts são um arquivo com comandos que quando executados rodam todos em sequência, linha a linha.</p>
+<p>Na seção <a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html#tipos-de-dados-numericos"><span class="std std-ref">tipos de dados numéricos</span></a> já começamos a ver um pouco sobre dois tipos de dados bastante comuns: <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>Nesta seção vamos apresentar outro tipo de dado representando textos. Tal estrutura também é chamado de <code class="docutils literal notranslate"><span class="pre">string</span></code> ou simplesmente <code class="docutils literal notranslate"><span class="pre">str</span></code>. Elas são utilizadas para armazenar e manipular texto. Neste capítulo, vamos explorar os conceitos básicos de strings e como trabalhar com elas em Python.</p>
+<section id="definicao">
+<h2>Definição<a class="headerlink" href="#definicao" title="Link to this heading">#</a></h2>
+<p>Em Python, uma <code class="docutils literal notranslate"><span class="pre">string</span></code> é uma sequência de caracteres. Você pode definir uma string usando aspas simples <code class="docutils literal notranslate"><span class="pre">'Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">simples'</span></code> ou aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">dupla&quot;</span></code>.</p>
+<p>Quando não há a presença de <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na <code class="docutils literal notranslate"><span class="pre">string</span></code>, usar aspas simples ou duplas é indiferente. Agora se o seu texto contiver uma das duas, como por exemplo, o texto <em>Ela disse “Olá mundo!”</em>, como <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> faz parte do texto, só é possível criar uma <code class="docutils literal notranslate"><span class="pre">string</span></code> com esse texto entre aspas simples <code class="docutils literal notranslate"><span class="pre">'</span></code>, conforme exemplo abaixo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg_aspas_dupla</span> <span class="o">=</span> <span class="s1">&#39;Ela disse &quot;Olá mundo!&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg_aspas_dupla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ela disse &quot;Olá mundo!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Caso contrário, o Python pode confundir o que é aspas de abertura e fechamento da <code class="docutils literal notranslate"><span class="pre">string</span></code> com aspas do próprio texto. Observem no exemplo abaixo:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">erro_de_sintaxe</span> <span class="o">=</span> <span class="s2">&quot;Ela disse &quot;</span><span class="n">Olá</span> <span class="n">mundo</span><span class="o">!</span><span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">erro_de_sintaxe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">erro_de_sintaxe</span> <span class="o">=</span> <span class="s2">&quot;Ela disse &quot;</span><span class="n">Olá</span> <span class="n">mundo</span><span class="o">!</span><span class="s2">&quot;&quot;</span>
+                                  <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>De forma a evitar tal erro, como recomendação geral, sempre que seu texto contiver <code class="docutils literal notranslate"><span class="pre">'</span></code>, a <code class="docutils literal notranslate"><span class="pre">string</span></code> deve ser iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Da mesma forma, se o texto contiver <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, a <code class="docutils literal notranslate"><span class="pre">string</span></code> deve iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
+<p>É possível definir também uma <code class="docutils literal notranslate"><span class="pre">string</span></code> com multiplas linhas usando três aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> ou três aspas simples <code class="docutils literal notranslate"><span class="pre">'''</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg_varias_linhas</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Esta é uma string</span>
+<span class="s2">que se estende por</span>
+<span class="s2">várias linhas.&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg_varias_linhas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Esta é uma string
+que se estende por
+várias linhas.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="executando-script-via-terminal">
-<h2>Executando script via terminal<a class="headerlink" href="#executando-script-via-terminal" title="Link to this heading">#</a></h2>
-<p>Mencionamos também que o VSCode executa o script através do terminal, e tivemos a seguinte saída quando executamos nosso primeiro script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe<span class="w"> </span>c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py
-Olá<span class="w"> </span>mundo!
-PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;
+<section id="operacoes-com-strings">
+<h2>Operações com strings<a class="headerlink" href="#operacoes-com-strings" title="Link to this heading">#</a></h2>
+<section id="concatenacao">
+<h3>Concatenação<a class="headerlink" href="#concatenacao" title="Link to this heading">#</a></h3>
+<p>Sabe aquela história de que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">11</span></code>? Pois bem! Isso é, em partes, verdade! Vamos entender melhor.</p>
+<p>Aqui vamos fazer uma distinção clara entre operações com <code class="docutils literal notranslate"><span class="pre">string</span></code> de operações com <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Quando somamos dois inteiros, o Python realiza a operação matemática de soma, conforme já vimos anteriormente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Vamos endender mais a fundo o que são estas mensagens a mais além do <em>Olá mundo!</em>, dividindo o comando em partes:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\Administrator\Documents\personal\python-para-todos\scripts&gt;</span></code>: esta parte significa o caminho da pasta na qual estamos trabalhando. Lembra que a abrimos no VSCode? Pois bem, quando abrimos o terminal integrado no VSCode, ele já abre na pasta do projeto.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe</span></code>: esta outra parte significa o caminho completo para o interpretador Python que está sendo usado para executar o nosso script. Reparem que é possível identificar inclusive qual é a versão do Python, no meu caso, a 3.12.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py</span></code>: finalmente, temos o caminho completo apontando para o script executado.</p></li>
-</ol>
-<p>De uma forma bem mais simplificada, podemos executar o nosso script direto do terminal se entendermos o comando acima como uma combinação de <code class="docutils literal notranslate"><span class="pre">caminho</span> <span class="pre">do</span> <span class="pre">Python</span> <span class="pre">+</span> <span class="pre">caminho</span> <span class="pre">do</span> <span class="pre">script</span></code>. O caminho do Python não precisa ser colocado sempre de forma absoluta, como o VSCode faz. Se você seguiu todos os passos durante a instalação, em especial o passo de <a class="reference internal" href="../01-instalacao-python/02-windows.html#execute-installer"><span class="std std-ref">marcar a opção <strong>Add python.exe to PATH</strong></span></a>, então você pode encurtar o caminho completo do Python simplesmente com o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>!</p>
-<p>Ou seja, <code class="docutils literal notranslate"><span class="pre">C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe</span></code> acaba virando apenas <code class="docutils literal notranslate"><span class="pre">python</span></code>. Vamos experimentar?</p>
-<p>Para isso, temos 2 opções:</p>
-<ul class="simple">
-<li><p>Abrir o terminal integrado do VSCode: basta clicar em “Terminal &gt; New Terminal” no menu superior do VSCode.</p></li>
-<li><p>Abrir o prompt de comando (cmd) fora do VSCode: fizemos isso na seção <a class="reference internal" href="../01-instalacao-python/02-windows.html#checking-instalation"><span class="std std-ref">Passo 3: verificando a instalação</span></a> no capítulo de instalação do Python, lembra?</p></li>
-</ul>
-<p>Ambos funcionam da mesma forma. A única diferença é que, caso você esteja com a pasta aberta no VSCode, o terminal se abre já na pasta do projeto. Caso contrário será preciso ou navegar até a pasta do script para executá-lo ou usar um caminho relativo entre a pasta atual e o script.</p>
-<p>Quando eu abro o cmd, ele é aberto na pasta <code class="docutils literal notranslate"><span class="pre">C:\Users\Administrator&gt;</span></code>. Desta pasta, podemos:</p>
-<ul class="simple">
-<li><p>Ou apontar para o script a partir da pasta atual. Desta forma o script será executado diretamente.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator&gt;python<span class="w"> </span>Documents/personal/python-para-todos/scripts/meu_primeiro_script.py<span class="sb">`</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Ou navegar até a pasta do script com o comand <code class="docutils literal notranslate"><span class="pre">cd</span></code>, e, em seguida, executar o script:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator&gt;cd<span class="w"> </span>Documents/personal/python-para-todos/scripts
-
-C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;python<span class="w"> </span>meu_primeiro_script.py
-Olá<span class="w"> </span>mundo!
-
-C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;
+</div>
+</div>
+<p>Porém, é possível representar <code class="docutils literal notranslate"><span class="pre">1</span></code> como o caracter número um, da seguinte forma</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1&quot;</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Ambas as formas acima são válidas. A segunda, porém, é mais utilizada.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam que são operações completamente diferentes!</p>
+<p>No primeiro caso acima, estamos somando o número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são <code class="docutils literal notranslate"><span class="pre">int</span></code>), resultando em <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>Já no segundo caso, estamos juntando o caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são strings), resultando em <code class="docutils literal notranslate"><span class="pre">11</span></code>. Tal operação de juntar texto é chamada de concatenação.</p>
+<p>Agora você entende que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> pode ser <code class="docutils literal notranslate"><span class="pre">11</span></code>? No caso em que ambos <code class="docutils literal notranslate"><span class="pre">1</span></code> forem <code class="docutils literal notranslate"><span class="pre">string</span></code>!</p>
 </section>
-<section id="executando-comandos-isolados-via-interpredador-do-python">
-<h2>Executando comandos isolados via interpredador do Python<a class="headerlink" href="#executando-comandos-isolados-via-interpredador-do-python" title="Link to this heading">#</a></h2>
-<p>Uma outra forma de executar nosso código é usando o interpretador do Python. Aqui não estamos falando de executar um script com uma sequência de comandos, mas sim rodar comandos isolados. Vamos entender melhor.</p>
-<p>Na seção <a class="reference internal" href="../01-instalacao-python/02-windows.html#checking-instalation"><span class="std std-ref">Passo 3: verificando a instalação</span></a> no capítulo de instalação do Python vimos como abrir o interpretador do Python simplesmente digitando <code class="docutils literal notranslate"><span class="pre">python</span></code> no terminal. O interpretador estará ativo quando as três flechas <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> aparecerem na tela.</p>
-<p>Podemos agora replicar o comando <code class="docutils literal notranslate"><span class="pre">print(&quot;Olá</span> <span class="pre">mundo!&quot;)</span></code> no interpretador que a mensagem será impressa na tela e o nosso código será executado.</p>
-</section>
-<section id="qual-a-diferenca-afinal-de-contas">
-<h2>Qual a diferença, afinal de contas? 🤔<a class="headerlink" href="#qual-a-diferenca-afinal-de-contas" title="Link to this heading">#</a></h2>
-<p>Quando executamos um script, ele roda <strong>todos os comandos em sequência</strong> enquanto que rodar via interpretador do Python requer a execução de cada um dos comandos praticamente de forma manual. Imagine agora ter que rodar um programa com 100 linhas no interpretador, rodando uma a uma…</p>
-<p>💬 <em>Então você está dizendo que o interpredar é ruim, e nunca devemos usá-lo, certo?</em> 💬</p>
-<p><strong>Não!</strong> O interpretador é uma forma simplificada de rodar comandos de forma rápida e, sem necessidade de pensar em caminhos de arquivos e caminho do Python. É só uma forma diferente com suas peculiaridades para executar código. Nem melhor, nem pior.</p>
-<p>O interpretador é tão simplificado na execução de códigos que nem requer o uso de <code class="docutils literal notranslate"><span class="pre">print()</span></code> para imprimir algo na tela. A saída de todos os comandos já são impressas automaticamente. Eu poderia simplesmente rodar o código retirando a função <code class="docutils literal notranslate"><span class="pre">print()</span></code> no interpretador que funcionaria do mesmo jeito.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="o">)</span>
-Olá<span class="w"> </span>mundo!
-&gt;&gt;&gt;<span class="w"> </span><span class="s2">&quot;Olá mundo!&quot;</span>
-<span class="s1">&#39;Olá mundo!&#39;</span>
+<section id="replicacao">
+<h3>Replicação<a class="headerlink" href="#replicacao" title="Link to this heading">#</a></h3>
+<p>Da mesma forma que podemos concatenar strings usando <code class="docutils literal notranslate"><span class="pre">+</span></code>, podemos replicar uma string várias vezes usando <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">risada</span> <span class="o">=</span> <span class="s2">&quot;ha&quot;</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">risada</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Porém, se eu fizesse o mesmo no script, ele não imprimiria nada na tela. Faça o teste, remova o <code class="docutils literal notranslate"><span class="pre">print()</span></code> do seu script, deixando somente a string <code class="docutils literal notranslate"><span class="pre">&quot;Olá</span> <span class="pre">mundo!&quot;</span></code> e execute!</p>
-<p>Vamos agora aprender sobre operações matemáticas em Python!</p>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hahahahahahahahahaha
+</pre></div>
+</div>
+</div>
+</div>
+<p>Novamente, não é multiplicação matemática pois não estamos trabalhando com valores numéricos <code class="docutils literal notranslate"><span class="pre">int</span></code> ou <code class="docutils literal notranslate"><span class="pre">float</span></code>, mas sim uma replicação de texto, uma operação diferente!</p>
+</section>
 </section>
 </section>
 
@@ -518,7 +563,7 @@ Olá<span class="w"> </span>mundo!
         },
         kernelOptions: {
             name: "python3",
-            path: "./04-primeiros-passos"
+            path: "./06-estruturas-de-dados"
         },
         predefinedOutput: true
     }
@@ -536,20 +581,20 @@ Olá<span class="w"> </span>mundo!
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02-ola-mundo.html"
+       href="../05-operacoes-basicas/04-variaveis.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Primeiro programa: Olá mundo!</p>
+        <p class="prev-next-title">Variáveis</p>
       </div>
     </a>
     <a class="right-next"
-       href="../05-operacoes-basicas/01-matematica.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Operações matemáticas básicas</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -569,10 +614,12 @@ Olá<span class="w"> </span>mundo!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-script-via-vscode">Executando script via VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-script-via-terminal">Executando script via terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executando-comandos-isolados-via-interpredador-do-python">Executando comandos isolados via interpredador do Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-a-diferenca-afinal-de-contas">Qual a diferença, afinal de contas? 🤔</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
