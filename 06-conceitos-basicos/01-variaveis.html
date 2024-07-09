@@ -421,6 +421,20 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamento">Comportamento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracao-antes-do-uso">Declaração antes do uso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitive">Case sensitive</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regras-na-nomenclatura-de-variaveis">Regras na nomenclatura de variáveis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis-validos">Nomes de variáveis válidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis-invalidos">Nomes de variáveis inválidos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boas-praticas">Boas práticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padroes-e-convencoes">Padrões e convenções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -470,7 +484,117 @@ document.write(`
 </pre></div>
 </div>
 <p>No exemplo acima, reparem no <code class="docutils literal notranslate"><span class="pre">f</span></code> logo antes do <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, e reparem também que as variáveis usadas para criar o texto da mensagem estão entre <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
-<p>Isso é o que chamamos de f-strings em Python. São uma maneira de tornar um texto mais dinâmico usando variáveis e expressões dentro dele. Como a variável <code class="docutils literal notranslate"><span class="pre">nome</span></code> é um texto fixo, não depende de outras variáveis, não há necessidade do <code class="docutils literal notranslate"><span class="pre">f</span></code> antes dela.</p>
+<p>Isso é o que chamamos de f-strings em Python. São uma maneira de tornar um texto mais dinâmico usando variáveis e expressões dentro dele. Como a variável <code class="docutils literal notranslate"><span class="pre">nome</span></code> é um texto fixo e não depende de outras variáveis, não há necessidade do <code class="docutils literal notranslate"><span class="pre">f</span></code> antes de abrir o texto com <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">'</span></code>. Vamos ver f-strings mais a fundo futuramente.</p>
+</section>
+<section id="comportamento">
+<h2>Comportamento<a class="headerlink" href="#comportamento" title="Link to this heading">#</a></h2>
+<section id="declaracao-antes-do-uso">
+<h3>Declaração antes do uso<a class="headerlink" href="#declaracao-antes-do-uso" title="Link to this heading">#</a></h3>
+<p>Pra usarmos uma variável, ela precisa ser criada antes. Caso contrário, o Python não reconhece o que não foi declarado. Vide, por exemplo, o exemplo simples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
+<span class="n">mensagem</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Meu nome é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mensagem</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ao executar, teremos um erro, pois a variável idade não foi definida antes de ser usada:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nv">mensagem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>f<span class="s2">&quot;Meu nome é {nome} e tenho {idade} anos.&quot;</span>
+<span class="w">                                            </span>^^^^^
+NameError:<span class="w"> </span>name<span class="w"> </span><span class="s1">&#39;idade&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>defined
+</pre></div>
+</div>
+</section>
+<section id="case-sensitive">
+<h3>Case sensitive<a class="headerlink" href="#case-sensitive" title="Link to this heading">#</a></h3>
+<p>Variáveis em Python são case-sensitive. Em outras palavras mais simples, elas são sensíveis à letras maiúsculas e minúsculas. Por isso, as variáveis <code class="docutils literal notranslate"><span class="pre">nome</span></code>, <code class="docutils literal notranslate"><span class="pre">Nome</span></code>, e <code class="docutils literal notranslate"><span class="pre">NOME</span></code> são diferentes. Veja o que acontece se declararmos a variável de uma forma e usarmos ela de outra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Nome</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ao executar o código acima:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>print<span class="o">(</span>Nome<span class="o">)</span>
+<span class="w">          </span>^^^^
+NameError:<span class="w"> </span>name<span class="w"> </span><span class="s1">&#39;Nome&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>defined.<span class="w"> </span>Did<span class="w"> </span>you<span class="w"> </span>mean:<span class="w"> </span><span class="s1">&#39;nome&#39;</span>?
+</pre></div>
+</div>
+</section>
+</section>
+<section id="regras-na-nomenclatura-de-variaveis">
+<h2>Regras na nomenclatura de variáveis<a class="headerlink" href="#regras-na-nomenclatura-de-variaveis" title="Link to this heading">#</a></h2>
+<p>Estas regras são <strong>obrigatórias</strong>. Sem seguí-las, seu código gera erros!</p>
+<p>Na nomeação de variáveis, <strong>podemos</strong>:</p>
+<ol class="arabic simple">
+<li><p>Iniciar o nome da variável com uma letra (a-z, A-Z) ou um sublinhado (_);</p></li>
+<li><p>Criar variáveis que contenham números após o primeiro caractere;</p></li>
+<li><p>Misturar maiúsculas e minúsculas no nome da variável;</p></li>
+</ol>
+<p>Por outro lado, <strong>não podemos</strong>:</p>
+<ol class="arabic simple">
+<li><p>Iniciar o nome da variável com um número;</p></li>
+<li><p>Criar variáveis que contenham caracteres especiais como &#64;, -, $, dentre outros, exceto sublinhado (_);</p></li>
+<li><p>Ter espaço em branco no nome da variável;</p></li>
+<li><p>Usar palavras reservadas do Python como nome de variáveis;</p></li>
+</ol>
+<p>Vamos para exemplos:</p>
+<section id="nomes-de-variaveis-validos">
+<h3>Nomes de variáveis válidos<a class="headerlink" href="#nomes-de-variaveis-validos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">usuario</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_saldo_inicial</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QuantidadeDeProdutos</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modeloV2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abc123</span></code></p></li>
+</ul>
+</section>
+<section id="nomes-de-variaveis-invalidos">
+<h3>Nomes de variáveis inválidos<a class="headerlink" href="#nomes-de-variaveis-invalidos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1cliente</span></code> (começa com um número)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">123valor</span></code> (começa com um número)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">endereco-email</span></code> (contém um caractere especial <code class="docutils literal notranslate"><span class="pre">-</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;usuario</span></code> (contém um caractere especial <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preco$</span></code> (contém um caractere especial <code class="docutils literal notranslate"><span class="pre">$</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idade#</span></code> (contém um caractere especial <code class="docutils literal notranslate"><span class="pre">#</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nome</span> <span class="pre">completo</span></code> (contém espaço em branco)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">usuario</span></code> (contém espaço em branco)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> (palavra reservada do Python)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> (palavra reservada do Python)</p></li>
+</ul>
+</section>
+</section>
+<section id="boas-praticas">
+<h2>Boas práticas<a class="headerlink" href="#boas-praticas" title="Link to this heading">#</a></h2>
+<p>Aqui são algumas orientações e recomendações. Diferente das regras, não é obrigatório seguí-las e ainda sim o código pode funcionar sem erros. Recomendo, porém, seguí-las sempre que possível, pois garante maior clareza, legibilidade e manutenção de quem for ler seu código no futuro. Vamos à elas:</p>
+<ul class="simple">
+<li><p><strong>Clareza e descritividade:</strong> Escolha nomes que descrevam claramente o propósito e o conteúdo da variável. Evite abreviações obscuras ou acrônimos pouco conhecidos.</p></li>
+<li><p><strong>Consistência:</strong> Mantenha um padrão na escolha de nomes ao longo do seu código. Isso facilita a compreensão e a manutenção por outros desenvolvedores (ou por você mesmo no futuro). Vamos falar sobre padrões e convenções de nomenclatura logo na sequência.</p></li>
+<li><p><strong>Evite nomes genéricos:</strong> Nomes como <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">temp</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code> ou <code class="docutils literal notranslate"><span class="pre">var</span></code> podem ser ambíguos e dificultar a compreensão do uso da variável. Prefira nomes específicos que refletem seu papel no contexto.</p></li>
+<li><p><strong>Tamanho adequado:</strong> Nomes de variáveis devem ser concisos, mas não tão curtos que percam significado. Evite nomes excessivamente longos que possam complicar a leitura do código, como por exempo <code class="docutils literal notranslate"><span class="pre">data_na_qual_o_usuario_se_cadastrou_na_plataforma_pela_primeira_vez</span></code>.</p></li>
+</ul>
+</section>
+<section id="padroes-e-convencoes">
+<h2>Padrões e convenções<a class="headerlink" href="#padroes-e-convencoes" title="Link to this heading">#</a></h2>
+<p>Há várias convenções na criação do nome de variáveis de forma geral, e os padrões mais comuns são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sneak_case</span></code>: todas as letras em minúsculas, e usa o <code class="docutils literal notranslate"><span class="pre">_</span></code> para separar as palavras</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camelCase</span></code>: todas as palavras iniciam com letra maiúsculas exceto a primeira, sem espaços entre as palavras</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PascalCase</span></code>: todas as palavras iniciam com letra maiúsculas, sem espaços entre as palavras</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UPPERCASE</span></code>: todas as letras em maiúscula, usa o <code class="docutils literal notranslate"><span class="pre">_</span></code> para separar as palavras</p></li>
+</ul>
+<p>A partir de agora, vamos adotar a convenção amplamente utilizada pela comunidade, <code class="docutils literal notranslate"><span class="pre">sneak_case</span></code>, para nomear nossas variáveis por agora.</p>
+<p>Há casos em que usaremos <code class="docutils literal notranslate"><span class="pre">UPPERCASE</span></code> quando formos representar uma variável constante. Apesar de ser estranho dizer “variável constante”, em programação isso é totalmente possível. Trata-se de uma variável que é definida, e seu valor não se modifica em nenhum momento durante a execução do programa. É bastante comum em matemática e física, nas quais temos valores constantes. O exemplo mais comum é o valor <code class="docutils literal notranslate"><span class="pre">PI</span></code> da matemática, que, seguindo nossa convenção, seria definido da seguinte forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PI</span> <span class="o">=</span> <span class="mf">3.1415</span>
+</pre></div>
+</div>
+<p>E mais à frente veremos que a convenção para nomeação de classes é a <code class="docutils literal notranslate"><span class="pre">PascalCase</span></code>. Mas não se preocupe com isso por agora.</p>
+</section>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>Sugiro fazer os exercícios <a class="reference internal" href="../exercicios.html#exercicio-4"><span class="std std-ref">4</span></a> e <a class="reference internal" href="../exercicios.html#exercicio-5"><span class="std std-ref">5</span></a> da lista! Boa prática!</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Neste capítulo, exploramos o conceito de variáveis, que são fundamentais em qualquer linguagem de programação, inclusive Python. Compreendemos o que são variáveis de maneira básica e técnica, vimos como criar e usar variáveis através de exemplos práticos e discutimos as regras obrigatórias e boas práticas para nomear variáveis de forma eficiente e clara. Também aprendemos sobre diferentes convenções de nomenclatura e a importância de manter a consistência e a clareza nos nomes das variáveis.</p>
+<p>Ao seguir essas diretrizes e práticas, seu código se tornará mais legível, compreensível e fácil de manter, tanto para você quanto para outros desenvolvedores que possam trabalhar com ele no futuro. No próximo capítulo, aprofundaremos mais sobre o tipo de dado textual chamado de <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
 </div>
 </section>
 </section>
@@ -545,6 +669,20 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamento">Comportamento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracao-antes-do-uso">Declaração antes do uso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitive">Case sensitive</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regras-na-nomenclatura-de-variaveis">Regras na nomenclatura de variáveis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis-validos">Nomes de variáveis válidos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis-invalidos">Nomes de variáveis inválidos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boas-praticas">Boas práticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padroes-e-convencoes">Padrões e convenções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
