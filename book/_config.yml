@@ -5,10 +5,10 @@ title: Python para todos
 author: Henrique Branco powered by Jupyter Book
 logo: img/config/logos/book.png
 
-# Force re-execution of notebooks on each build.
+# Cache notebooks execution on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
 
 # Define the name of the latex output file for PDF builds
 latex:
