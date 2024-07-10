@@ -21,6 +21,7 @@ A radiciação é outra operação que retorna valores `float` por padrão. Da s
 
 Interessante que, embora matematicamente `2` e `2.0` sejam iguais, no mundo da programação, `2` e `2.0` são diferentes, pois estamos falando de um `int` e um `float`. 
 
+(a-funcao-type)=
 ## A função `type`
 
 Na seção [Primeiro programa: Olá mundo!](hello-world) vimos nossa primeira função `print` que imprime uma mensagem no terminal. Vamos aprender uma segunda, a função `type`. 

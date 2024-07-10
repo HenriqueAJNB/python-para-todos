@@ -10,7 +10,7 @@ Instalar a IDE VSCode no Windows é bem simples!
     - **User Installer (2):** instalação do VSCode somente para o seu usuário, caso você não tenha permissão de admin na máquina
     - **System Installer (3):** instalação do VSCode para todos os usuários (requer permissão de admin)
 
-```{image} ../img/cap02-sec02-vscode-download-windows.png
+```{image} ../img/03-01-vscode-download-windows.png
 :height: 300
 :name: vscode-download
 :align: center

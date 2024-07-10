@@ -420,6 +420,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-strings">Métodos de strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-metodos">O que são métodos?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -437,11 +441,11 @@ document.write(`
 <h1>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h1>
 <div style="text-align: justify">
 <p>Na seção <a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html#tipos-de-dados-numericos"><span class="std std-ref">tipos de dados numéricos</span></a> já começamos a ver um pouco sobre dois tipos de dados bastante comuns: <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
-<p>Nesta seção vamos apresentar outro tipo de dado representando textos. Tal estrutura também é chamado de <code class="docutils literal notranslate"><span class="pre">string</span></code> ou simplesmente <code class="docutils literal notranslate"><span class="pre">str</span></code>. Elas são utilizadas para armazenar e manipular texto. Neste capítulo, vamos explorar os conceitos básicos de strings e como trabalhar com elas em Python.</p>
+<p>Nesta seção vamos apresentar outro tipo de dado representando textos. Tal estrutura também é chamado de string ou simplesmente <code class="docutils literal notranslate"><span class="pre">str</span></code>. Elas são utilizadas para armazenar e manipular texto. Neste capítulo, vamos explorar os conceitos básicos de strings e como trabalhar com elas em Python.</p>
 <section id="definicao">
 <h2>Definição<a class="headerlink" href="#definicao" title="Link to this heading">#</a></h2>
-<p>Em Python, uma <code class="docutils literal notranslate"><span class="pre">string</span></code> é uma sequência de caracteres. Você pode definir uma string usando aspas simples <code class="docutils literal notranslate"><span class="pre">'Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">simples'</span></code> ou aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">dupla&quot;</span></code>.</p>
-<p>Quando não há a presença de <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na <code class="docutils literal notranslate"><span class="pre">string</span></code>, usar aspas simples ou duplas é indiferente. Agora se o seu texto contiver uma das duas, como por exemplo, o texto <em>Ela disse “Olá mundo!”</em>, como <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> faz parte do texto, só é possível criar uma <code class="docutils literal notranslate"><span class="pre">string</span></code> com esse texto entre aspas simples <code class="docutils literal notranslate"><span class="pre">'</span></code>, conforme exemplo abaixo.</p>
+<p>Em Python, uma string é uma sequência de caracteres. Você pode definir uma string usando aspas simples <code class="docutils literal notranslate"><span class="pre">'Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">simples'</span></code> ou aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">dupla&quot;</span></code>.</p>
+<p>Quando não há a presença de <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na string, usar aspas simples ou duplas é indiferente. Agora se o seu texto contiver uma das duas, como por exemplo, o texto <em>Ela disse “Olá mundo!”</em>, como <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> faz parte do texto, só é possível criar uma string com esse texto entre aspas simples <code class="docutils literal notranslate"><span class="pre">'</span></code>, conforme exemplo abaixo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg_aspas_dupla</span> <span class="o">=</span> <span class="s1">&#39;Ela disse &quot;Olá mundo!&quot;&#39;</span>
@@ -455,16 +459,17 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Caso contrário, o Python pode confundir o que é aspas de abertura e fechamento da <code class="docutils literal notranslate"><span class="pre">string</span></code> com aspas do próprio texto. Observem no exemplo abaixo:</p>
+<p>Caso contrário, o Python pode confundir o que é aspas de abertura e fechamento da string com aspas do próprio texto. Observem no exemplo abaixo:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">erro_de_sintaxe</span> <span class="o">=</span> <span class="s2">&quot;Ela disse &quot;</span><span class="n">Olá</span> <span class="n">mundo</span><span class="o">!</span><span class="s2">&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erro proposital!</span>
+<span class="n">erro_de_sintaxe</span> <span class="o">=</span> <span class="s2">&quot;Ela disse &quot;</span><span class="n">Olá</span> <span class="n">mundo</span><span class="o">!</span><span class="s2">&quot;&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">erro_de_sintaxe</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="n">erro_de_sintaxe</span> <span class="o">=</span> <span class="s2">&quot;Ela disse &quot;</span><span class="n">Olá</span> <span class="n">mundo</span><span class="o">!</span><span class="s2">&quot;&quot;</span>
                                   <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -472,8 +477,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>De forma a evitar tal erro, como recomendação geral, sempre que seu texto contiver <code class="docutils literal notranslate"><span class="pre">'</span></code>, a <code class="docutils literal notranslate"><span class="pre">string</span></code> deve ser iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Da mesma forma, se o texto contiver <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, a <code class="docutils literal notranslate"><span class="pre">string</span></code> deve iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
-<p>É possível definir também uma <code class="docutils literal notranslate"><span class="pre">string</span></code> com multiplas linhas usando três aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> ou três aspas simples <code class="docutils literal notranslate"><span class="pre">'''</span></code>.</p>
+<p>De forma a evitar tal erro, como recomendação geral, sempre que seu texto contiver <code class="docutils literal notranslate"><span class="pre">'</span></code>, a string deve ser iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Da mesma forma, se o texto contiver <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, a string deve iniciar e encerrar com <code class="docutils literal notranslate"><span class="pre">'</span></code>.</p>
+<p>É possível definir também uma string com multiplas linhas usando três aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> ou três aspas simples <code class="docutils literal notranslate"><span class="pre">'''</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg_varias_linhas</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Esta é uma string</span>
@@ -491,13 +496,27 @@ várias linhas.
 </div>
 </div>
 </div>
+<p>E podemos verificar que uma variável é do tipo string usando a função <code class="docutils literal notranslate"><span class="pre">type</span></code> (lembra dela, <a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html#a-funcao-type"><span class="std std-ref">desta seção</span></a>?)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variavel_tipo_str</span> <span class="o">=</span> <span class="s1">&#39;Ela disse &quot;Olá mundo!&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">variavel_tipo_str</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="operacoes-com-strings">
 <h2>Operações com strings<a class="headerlink" href="#operacoes-com-strings" title="Link to this heading">#</a></h2>
 <section id="concatenacao">
 <h3>Concatenação<a class="headerlink" href="#concatenacao" title="Link to this heading">#</a></h3>
 <p>Sabe aquela história de que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">11</span></code>? Pois bem! Isso é, em partes, verdade! Vamos entender melhor.</p>
-<p>Aqui vamos fazer uma distinção clara entre operações com <code class="docutils literal notranslate"><span class="pre">string</span></code> de operações com <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Aqui vamos fazer uma distinção clara entre operações com string de operações com <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>Quando somamos dois inteiros, o Python realiza a operação matemática de soma, conforme já vimos anteriormente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,7 +546,7 @@ várias linhas.
 <p>Percebam que são operações completamente diferentes!</p>
 <p>No primeiro caso acima, estamos somando o número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são <code class="docutils literal notranslate"><span class="pre">int</span></code>), resultando em <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 <p>Já no segundo caso, estamos juntando o caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são strings), resultando em <code class="docutils literal notranslate"><span class="pre">11</span></code>. Tal operação de juntar texto é chamada de concatenação.</p>
-<p>Agora você entende que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> pode ser <code class="docutils literal notranslate"><span class="pre">11</span></code>? No caso em que ambos <code class="docutils literal notranslate"><span class="pre">1</span></code> forem <code class="docutils literal notranslate"><span class="pre">string</span></code>!</p>
+<p>Agora você entende que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> pode ser <code class="docutils literal notranslate"><span class="pre">11</span></code>? No caso em que ambos <code class="docutils literal notranslate"><span class="pre">1</span></code> forem string!</p>
 </section>
 <section id="replicacao">
 <h3>Replicação<a class="headerlink" href="#replicacao" title="Link to this heading">#</a></h3>
@@ -546,6 +565,43 @@ várias linhas.
 </div>
 </div>
 <p>Novamente, não é multiplicação matemática pois não estamos trabalhando com valores numéricos <code class="docutils literal notranslate"><span class="pre">int</span></code> ou <code class="docutils literal notranslate"><span class="pre">float</span></code>, mas sim uma replicação de texto, uma operação diferente!</p>
+</section>
+<section id="metodos-de-strings">
+<h3>Métodos de strings<a class="headerlink" href="#metodos-de-strings" title="Link to this heading">#</a></h3>
+<p>Nós já aprendemos a trabalhar com algumas funções já, como as funções <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">type</span></code>, que neste momento do livro você já deve saber como elas funcionam.</p>
+<p>Agora vamos aprender outro conceito super importante: métodos.</p>
+<section id="o-que-sao-metodos">
+<h4>O que são métodos?<a class="headerlink" href="#o-que-sao-metodos" title="Link to this heading">#</a></h4>
+<p>Antes de falarmos de métodos, vamos acrescentar um outro conceito: objeto.</p>
+<p>Nesta altura, falamos muito sobre tipos de dados (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>). No fundo, tipos de dados são objetos. Ao invés de falar tipo de dado <code class="docutils literal notranslate"><span class="pre">str</span></code>, podemos falar objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>. Absolutamente tudo em Python é um objeto que tem um tipo! Mudar a forma de falar já está o colocando em outro patamar de entendimento sobre programação.</p>
+<p>Vamos agora para definição de método. A dfinição que eu mais gosto é: métodos são funções que estão associadas a um determinado objeto e podem ser usadas para realizar operações nestes. Em termos simples, pense em métodos como ações que você pode realizar com um determinado objeto (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, etc.).</p>
+<p>A diferença principal entre métodos e funções é a seguinte:</p>
+<ul class="simple">
+<li><p><strong>Métodos:</strong> são funções que estão associadas a um objeto e são chamadas usando a notação de ponto <code class="docutils literal notranslate"><span class="pre">objeto.metodo()</span></code>. Eles atuam sobre o próprio objeto ou acessam seus dados internos.</p></li>
+<li><p><strong>Funções:</strong> são blocos de código independentes que realizam uma tarefa específica e podem ser chamadas em qualquer lugar do código, não estando associadas a um objeto em particular, como as funções <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+</ul>
+<p>Talvez seja mais fácil entender melhor com exemplos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mensagem</span> <span class="o">=</span> <span class="s2">&quot;Oi, eu sou uma string!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mensagem</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OI, EU SOU UMA STRING!
+</pre></div>
+</div>
+</div>
+</div>
+<p>No código acima temos uma notação que não vimos antes, <code class="docutils literal notranslate"><span class="pre">mensagem.upper()</span></code>. Sabemos já que <code class="docutils literal notranslate"><span class="pre">mensagem</span></code> é um objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (verifique com a função <code class="docutils literal notranslate"><span class="pre">type</span></code> se tiver dúvidas!). E strings tem várias “funções” associadas à ela. Estas “funções” são chamadas de métodos. No exemplo acima, estamos usando o método <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> que transforma a string toda para maiúscula.</p>
+<p>Portanto, todo método é acionado pelo <code class="docutils literal notranslate"><span class="pre">.</span></code> a partir do objeto. Veja no gif abaixo que quando você digita o <code class="docutils literal notranslate"><span class="pre">.</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, o VSCode abre uma lista de opções para você. Estas opções são todos os métodos disponíveis para <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/06-01-vscode-methods-str-autocomplete.gif"><img alt="../_images/06-01-vscode-methods-str-autocomplete.gif" src="../_images/06-01-vscode-methods-str-autocomplete.gif" style="width: 400px;" /></a>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Strings tem uma lista enorme de métodos disponíveis e aqui serão demonstrados apenas os mais comumente usados. Mas é de extrema importância que você saiba consultar todos os métodos disponíveis na documentação oficial. A lista completa com todos os métodos de string pode ser encontrada <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">aqui</a>.</p>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -618,6 +674,10 @@ várias linhas.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-strings">Métodos de strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-metodos">O que são métodos?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
