@@ -13,7 +13,7 @@ print("Olá mundo!")
 
 Após salvá-lo, clique no botão "Run Python file" no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.
 
-```{image} ../img/cap03-sec00-run-python-file-icon.png
+```{image} ../img/04-02-run-python-file-icon.png
 ```
 
 </br>Neste momento, o terminal integrado do VSCode se abre, e nele será possível ver nosso texto *Olá mundo!* impresso na tela.

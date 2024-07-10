@@ -22,7 +22,7 @@ Para instalar a extensão Python, siga os passos abaixo (demonstrados visualment
 - Procure por Python
 - Clique no botão azul **Install**
 
-```{image} ../gifs/cap02-sec03-01-install-python-ext-vscode.gif
+```{image} ../gifs/03-02-vscode-install-python-ext.gif
 :name: install-python-ext-vscode
 ```
 
@@ -47,7 +47,7 @@ Neste livro vamos trabalhar dentro desta pasta vazia que você criou. O primeiro
 - Clique em "Open Folder"
 - Selecione a pasta vazia que você criou (no caso do gif abaixo, eu optei por nomear minha pasta `scripts`)
 
-```{image} ../gifs/cap02-sec03-02-open-folder-vscode.gif
+```{image} ../gifs/03-02-vscode-open-folder.gif
 ```
 
 ## Criando o primeiro arquivo Python
@@ -76,7 +76,7 @@ Não se esqueça de adicionar a extensão `.py` ao final para que o próprio VSC
 
 Reparem que ao criar o script no próprio VSCode, ele é criado automaticamente na pasta. O Explorer do VSCode tem exatamente essa finalidade: trabalhar com pastas e arquivos sem sair do VSCode.
 
-```{image} ../gifs/cap02-sec03-03-create-file-vscode.gif
+```{image} ../gifs/03-02-vscode-create-file.gif
 ```
 
 </div>
