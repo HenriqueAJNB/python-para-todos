@@ -418,10 +418,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-com">Concatenação com <code class="docutils literal notranslate"><span class="pre">+</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-com-f-strings">Concatenação com f-strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-strings">Métodos de strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-metodos">O que são métodos?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-mais-usados-de-strings">Métodos mais usados de strings</a></li>
 </ul>
 </li>
 </ul>
@@ -513,8 +515,8 @@ várias linhas.
 </section>
 <section id="operacoes-com-strings">
 <h2>Operações com strings<a class="headerlink" href="#operacoes-com-strings" title="Link to this heading">#</a></h2>
-<section id="concatenacao">
-<h3>Concatenação<a class="headerlink" href="#concatenacao" title="Link to this heading">#</a></h3>
+<section id="concatenacao-com">
+<h3>Concatenação com <code class="docutils literal notranslate"><span class="pre">+</span></code><a class="headerlink" href="#concatenacao-com" title="Link to this heading">#</a></h3>
 <p>Sabe aquela história de que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">11</span></code>? Pois bem! Isso é, em partes, verdade! Vamos entender melhor.</p>
 <p>Aqui vamos fazer uma distinção clara entre operações com string de operações com <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>Quando somamos dois inteiros, o Python realiza a operação matemática de soma, conforme já vimos anteriormente.</p>
@@ -547,6 +549,38 @@ várias linhas.
 <p>No primeiro caso acima, estamos somando o número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro número inteiro <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são <code class="docutils literal notranslate"><span class="pre">int</span></code>), resultando em <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 <p>Já no segundo caso, estamos juntando o caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> com outro caracter <code class="docutils literal notranslate"><span class="pre">1</span></code> (ambos são strings), resultando em <code class="docutils literal notranslate"><span class="pre">11</span></code>. Tal operação de juntar texto é chamada de concatenação.</p>
 <p>Agora você entende que <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> pode ser <code class="docutils literal notranslate"><span class="pre">11</span></code>? No caso em que ambos <code class="docutils literal notranslate"><span class="pre">1</span></code> forem string!</p>
+</section>
+<section id="concatenacao-com-f-strings">
+<h3>Concatenação com f-strings<a class="headerlink" href="#concatenacao-com-f-strings" title="Link to this heading">#</a></h3>
+<p>Além do uso do operador <code class="docutils literal notranslate"><span class="pre">+</span></code> para concatenação, tal operação também pode ser feita através de f-strings, conforme vimos no <a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html#exemplo-2"><span class="std std-ref">exemplo 2</span></a> no capítulo sobre variáveis.</p>
+<p>Usar f-strings para concatenação é muito mais comum em projetos reais, e elegante, do que usar <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caracter_um</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">caracter_um</span><span class="si">}{</span><span class="n">caracter_um</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>O interessante sobre f-strings é que mesmo a variável sendo do tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, ao usá-la dentro do contexto de f-string, o Python faz a conversão automática para <code class="docutils literal notranslate"><span class="pre">str</span></code> ao usar variávels em f-strings. Vamos ver conversões entre tipos mais à frente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numero_um</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">caracter_um</span><span class="si">}{</span><span class="n">caracter_um</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="replicacao">
 <h3>Replicação<a class="headerlink" href="#replicacao" title="Link to this heading">#</a></h3>
@@ -597,9 +631,105 @@ várias linhas.
 <p>No código acima temos uma notação que não vimos antes, <code class="docutils literal notranslate"><span class="pre">mensagem.upper()</span></code>. Sabemos já que <code class="docutils literal notranslate"><span class="pre">mensagem</span></code> é um objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (verifique com a função <code class="docutils literal notranslate"><span class="pre">type</span></code> se tiver dúvidas!). E strings tem várias “funções” associadas à ela. Estas “funções” são chamadas de métodos. No exemplo acima, estamos usando o método <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> que transforma a string toda para maiúscula.</p>
 <p>Portanto, todo método é acionado pelo <code class="docutils literal notranslate"><span class="pre">.</span></code> a partir do objeto. Veja no gif abaixo que quando você digita o <code class="docutils literal notranslate"><span class="pre">.</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, o VSCode abre uma lista de opções para você. Estas opções são todos os métodos disponíveis para <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/06-01-vscode-methods-str-autocomplete.gif"><img alt="../_images/06-01-vscode-methods-str-autocomplete.gif" src="../_images/06-01-vscode-methods-str-autocomplete.gif" style="width: 400px;" /></a>
+</section>
+<section id="metodos-mais-usados-de-strings">
+<h4>Métodos mais usados de strings<a class="headerlink" href="#metodos-mais-usados-de-strings" title="Link to this heading">#</a></h4>
 <div class="note admonition">
-<p class="admonition-title">Nota</p>
-<p>Strings tem uma lista enorme de métodos disponíveis e aqui serão demonstrados apenas os mais comumente usados. Mas é de extrema importância que você saiba consultar todos os métodos disponíveis na documentação oficial. A lista completa com todos os métodos de string pode ser encontrada <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">aqui</a>.</p>
+<p class="admonition-title">Nota (lista completa de métodos)</p>
+<p>Strings tem uma lista enorme de métodos disponíveis e aqui serão demonstrados apenas os mais comumente usados. Mas é de extrema importância que você saiba consultar todos os métodos disponíveis na documentação oficial. A lista completa com todos os métodos de string e suas respectivas documentações pode ser encontrada <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">aqui</a>.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (valores booleanos)</p>
+<p>Ao longo desta lista de métodos, vamos ver de forma indireta um outro tipo de dado chamado booleano, ou <code class="docutils literal notranslate"><span class="pre">bool</span></code>. Ele é bem simples, pois é uma estrutura de dados que contém apenas 2 valores: <code class="docutils literal notranslate"><span class="pre">True</span></code>, representando verdadeiro, e <code class="docutils literal notranslate"><span class="pre">False</span></code> representando falso.</p>
+<p>Notem que as primeiras letras <strong><code class="docutils literal notranslate"><span class="pre">T</span></code></strong> e <strong><code class="docutils literal notranslate"><span class="pre">F</span></code></strong> são <strong>maísculas</strong>, caso contrário o Python gera erro de sintaxe.</p>
+</div>
+<p>Para fins puramente didáticos, vou separar os métodos em casos de uso, trazendo exemplos de uso de cada método.</p>
+<ol class="arabic simple">
+<li><p>Transformação de Case</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str.upper()</span></code>: Converte todos os caracteres da string para maiúsculas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.lower()</span></code>: Converte todos os caracteres da string para minúsculas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.capitalize()</span></code>: Converte o primeiro caractere da string para maiúscula e o restante para minúscula.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.title()</span></code>: Converte o primeiro caractere de cada palavra para maiúscula.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Um noME QuAlQuEr&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UM NOME QUALQUER
+um nome qualquer
+Um nome qualquer
+Um Nome Qualquer
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Remoção de Espaços</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str.lstrip()</span></code>: Remove espaços em branco do início da string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.rstrip()</span></code>: Remove espaços em branco do fim da string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.strip()</span></code>: Remove espaços em branco do início e do fim da string.</p></li>
+<li></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Dica</p>
+<p>O espaço em branco não é visível na saída. Sugiro selecionar o texto todo com o mouse para verificar os espaços em branco remanescentes.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_com_espacos</span> <span class="o">=</span> <span class="s2">&quot;   Um texto qualquer com espaços em branco no começo e no final...      &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Um texto qualquer com espaços em branco no começo e no final...      
+   Um texto qualquer com espaços em branco no começo e no final...
+Um texto qualquer com espaços em branco no começo e no final...
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Contagem e verificação</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str.startswith(prefix)</span></code>: Verifica se a string começa com um determinado prefixo (outra string).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.endswith(suffix)</span></code>: Verifica se a string termina com um determinado sufixo (outra string).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.count(sub)</span></code>: Conta o número de ocorrências de uma substring na string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Olá, eu estou aprendendo a manipular textos em Python &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Olá&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Atenção</p>
+<p>Você pode ter achado estranho <code class="docutils literal notranslate"><span class="pre">frase.endswith(&quot;Python&quot;)</span> <span class="pre">=</span> <span class="pre">False</span></code>, mas reparem bem que na variável original temos um espaço em branco no final <code class="docutils literal notranslate"> </code>, que faz toda a diferença. As strings <code class="docutils literal notranslate"><span class="pre">Python</span></code> e <code class="docutils literal notranslate"><span class="pre">Python</span> </code> são diferentes, apesar de ser apenas por um único caracter em branco.</p>
 </div>
 </section>
 </section>
@@ -672,10 +802,12 @@ várias linhas.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao">Concatenação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-com">Concatenação com <code class="docutils literal notranslate"><span class="pre">+</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-com-f-strings">Concatenação com f-strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replicacao">Replicação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-strings">Métodos de strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-sao-metodos">O que são métodos?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-mais-usados-de-strings">Métodos mais usados de strings</a></li>
 </ul>
 </li>
 </ul>

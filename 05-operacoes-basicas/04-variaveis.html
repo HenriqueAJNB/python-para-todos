@@ -421,7 +421,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao-tecnica">Definição técnica</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-1">Exemplo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-2">Exemplo 2</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamento">Comportamento</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracao-antes-do-uso">Declaração antes do uso</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitive">Case sensitive</a></li>
@@ -466,6 +470,8 @@ document.write(`
 </section>
 <section id="exemplos-basicos">
 <h2>Exemplos básicos<a class="headerlink" href="#exemplos-basicos" title="Link to this heading">#</a></h2>
+<section id="exemplo-1">
+<h3>Exemplo 1<a class="headerlink" href="#exemplo-1" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
 </pre></div>
@@ -477,7 +483,10 @@ document.write(`
 <p class="admonition-title">Dica de ouro</p>
 <p>Eu, particularmente, não gosto de ler esta linha como <em>variável idade igual a 25</em>, pois igualdade é uma comparação, se uma coisa é igual à outra. Na criação de variáveis, usando o <code class="docutils literal notranslate"><span class="pre">=</span></code>, estamos falando de uma alocação ou de uma atribuição. Então, eu sugiro você começar a ler esta linha como <em>atribui o valor 25 à variável idade</em>, ou então <em>variável idade recebe 25</em>. Mais a frente vamos aprender que existe também o operador de comparação <code class="docutils literal notranslate"><span class="pre">==</span></code>, que pode ser facilmente confundido com <code class="docutils literal notranslate"><span class="pre">=</span></code> se você não se atentar ao que eu disse aqui.</p>
 </div>
-<p>E podemos usar estas variáveis para criar uma outra variável, e imprimir uma mensagem na tela</p>
+<p>E podemos usar estas variáveis para criar uma outra variável, e imprimir uma mensagem na tela.</p>
+</section>
+<section id="exemplo-2">
+<span id="id1"></span><h3>Exemplo 2<a class="headerlink" href="#exemplo-2" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Henrique Branco&quot;</span>
 <span class="n">mensagem</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Meu nome é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span>
@@ -486,6 +495,7 @@ document.write(`
 </div>
 <p>No exemplo acima, reparem no <code class="docutils literal notranslate"><span class="pre">f</span></code> logo antes do <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, e reparem também que as variáveis usadas para criar o texto da mensagem estão entre <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
 <p>Isso é o que chamamos de f-strings em Python. São uma maneira de tornar um texto mais dinâmico usando variáveis e expressões dentro dele. Como a variável <code class="docutils literal notranslate"><span class="pre">nome</span></code> é um texto fixo e não depende de outras variáveis, não há necessidade do <code class="docutils literal notranslate"><span class="pre">f</span></code> antes de abrir o texto com <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">'</span></code>. Vamos ver f-strings mais a fundo futuramente.</p>
+</section>
 </section>
 <section id="comportamento">
 <h2>Comportamento<a class="headerlink" href="#comportamento" title="Link to this heading">#</a></h2>
@@ -669,7 +679,11 @@ NameError:<span class="w"> </span>name<span class="w"> </span><span class="s1">&
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao-tecnica">Definição técnica</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-basicos">Exemplos básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-1">Exemplo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-2">Exemplo 2</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamento">Comportamento</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracao-antes-do-uso">Declaração antes do uso</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-sensitive">Case sensitive</a></li>
