@@ -20,6 +20,9 @@ A melhor forma de entender isso é através de exemplos.
 
 ## Exemplos básicos
 
+
+### Exemplo 1
+
 ```python
 idade = 25
 nome = "Henrique Branco"
@@ -36,7 +39,10 @@ O nome da variável fica a escolha de quem desenvolve, embora existam regras obr
 Eu, particularmente, não gosto de ler esta linha como *variável idade igual a 25*, pois igualdade é uma comparação, se uma coisa é igual à outra. Na criação de variáveis, usando o `=`, estamos falando de uma alocação ou de uma atribuição. Então, eu sugiro você começar a ler esta linha como *atribui o valor 25 à variável idade*, ou então *variável idade recebe 25*. Mais a frente vamos aprender que existe também o operador de comparação `==`, que pode ser facilmente confundido com `=` se você não se atentar ao que eu disse aqui.
 ```
 
-E podemos usar estas variáveis para criar uma outra variável, e imprimir uma mensagem na tela
+E podemos usar estas variáveis para criar uma outra variável, e imprimir uma mensagem na tela.
+
+(exemplo-2)=
+### Exemplo 2
 
 ```python
 idade = 25
