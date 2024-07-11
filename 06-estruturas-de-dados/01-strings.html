@@ -703,19 +703,19 @@ Um texto qualquer com espaços em branco no começo e no final...
 </div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Contagem e verificação</p></li>
+<li><p>Contagem e verificação de sufixo/prefixo</p></li>
 </ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">str.startswith(prefix)</span></code>: Verifica se a string começa com um determinado prefixo (outra string).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">str.endswith(suffix)</span></code>: Verifica se a string termina com um determinado sufixo (outra string).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.startswith(prefix)</span></code>: Verifica se a string começa com um determinado prefixo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.endswith(suffix)</span></code>: Verifica se a string termina com um determinado sufixo.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">str.count(sub)</span></code>: Conta o número de ocorrências de uma substring na string.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Olá, eu estou aprendendo a manipular textos em Python &quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Olá&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span> <span class="c1"># False? Está correto mesmo?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span> <span class="c1"># A letra &#39;e&#39; aparece 5 vezes na frase</span>
 </pre></div>
 </div>
 </div>
@@ -729,7 +729,7 @@ False
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Atenção</p>
-<p>Você pode ter achado estranho <code class="docutils literal notranslate"><span class="pre">frase.endswith(&quot;Python&quot;)</span> <span class="pre">=</span> <span class="pre">False</span></code>, mas reparem bem que na variável original temos um espaço em branco no final <code class="docutils literal notranslate"> </code>, que faz toda a diferença. As strings <code class="docutils literal notranslate"><span class="pre">Python</span></code> e <code class="docutils literal notranslate"><span class="pre">Python</span> </code> são diferentes, apesar de ser apenas por um único caracter em branco.</p>
+<p>O espaço em branco (deixado propositalmente) é super relevante na comparação de strings, por isso as strings <code class="docutils literal notranslate"><span class="pre">Python</span></code> (sem espaço em branco) e <code class="docutils literal notranslate"><span class="pre">Python</span> </code> (com espaço em branco no final) são diferentes, apesar de ser apenas por um único caracter em branco. Por esta razão tivemos <code class="docutils literal notranslate"><span class="pre">frase.endswith(&quot;Python&quot;)</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
 </div>
 </section>
 </section>
