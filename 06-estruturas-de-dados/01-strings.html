@@ -426,6 +426,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-mais-usados-de-strings">Métodos mais usados de strings</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reforco-pratico-metodos-vs-funcoes">Reforço prático - métodos vs funções</a></li>
 </ul>
 </li>
 </ul>
@@ -608,7 +609,7 @@ várias linhas.
 <h4>O que são métodos?<a class="headerlink" href="#o-que-sao-metodos" title="Link to this heading">#</a></h4>
 <p>Antes de falarmos de métodos, vamos acrescentar um outro conceito: objeto.</p>
 <p>Nesta altura, falamos muito sobre tipos de dados (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>). No fundo, tipos de dados são objetos. Ao invés de falar tipo de dado <code class="docutils literal notranslate"><span class="pre">str</span></code>, podemos falar objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>. Absolutamente tudo em Python é um objeto que tem um tipo! Mudar a forma de falar já está o colocando em outro patamar de entendimento sobre programação.</p>
-<p>Vamos agora para definição de método. A dfinição que eu mais gosto é: métodos são funções que estão associadas a um determinado objeto e podem ser usadas para realizar operações nestes. Em termos simples, pense em métodos como ações que você pode realizar com um determinado objeto (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, etc.).</p>
+<p>Vamos agora para definição de método. A definição que eu mais gosto é: métodos são funções que estão associadas a um determinado objeto e podem ser usadas para realizar operações nestes. Em termos simples, pense em métodos como ações que você pode realizar com um determinado objeto (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, etc.).</p>
 <p>A diferença principal entre métodos e funções é a seguinte:</p>
 <ul class="simple">
 <li><p><strong>Métodos:</strong> são funções que estão associadas a um objeto e são chamadas usando a notação de ponto <code class="docutils literal notranslate"><span class="pre">objeto.metodo()</span></code>. Eles atuam sobre o próprio objeto ou acessam seus dados internos.</p></li>
@@ -645,7 +646,7 @@ várias linhas.
 </div>
 <p>Para fins puramente didáticos, vou separar os métodos em casos de uso, trazendo exemplos de uso de cada método.</p>
 <ol class="arabic simple">
-<li><p>Transformação de Case</p></li>
+<li><p>Transformação de case</p></li>
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">str.upper()</span></code>: Converte todos os caracteres da string para maiúsculas.</p></li>
@@ -673,7 +674,7 @@ Um Nome Qualquer
 </div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Remoção de Espaços</p></li>
+<li><p>Remoção de espaços</p></li>
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">str.lstrip()</span></code>: Remove espaços em branco do início da string.</p></li>
@@ -728,10 +729,172 @@ False
 </div>
 </div>
 <div class="warning admonition">
-<p class="admonition-title">Atenção</p>
+<p class="admonition-title">Atenção (espaços em branco)</p>
 <p>O espaço em branco (deixado propositalmente) é super relevante na comparação de strings, por isso as strings <code class="docutils literal notranslate"><span class="pre">Python</span></code> (sem espaço em branco) e <code class="docutils literal notranslate"><span class="pre">Python</span> </code> (com espaço em branco no final) são diferentes, apesar de ser apenas por um único caracter em branco. Por esta razão tivemos <code class="docutils literal notranslate"><span class="pre">frase.endswith(&quot;Python&quot;)</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
 </div>
+<ol class="arabic simple" start="4">
+<li><p>Verificação de caracteres</p></li>
+</ol>
+<p>Todos estes métodos abaixo verificam se a string contém apenas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str.islower()</span></code>: caracteres minúsculos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isupper()</span></code>: caracteres maiúsculos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isalnum()</span></code>: caracteres alfanuméricos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isalpha()</span></code>: caracteres alfabéticos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code>: dígitos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isspace()</span></code>: espaços em branco.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minusculo</span> <span class="o">=</span> <span class="s2">&quot;olá&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minusculo</span><span class="si">}</span><span class="s2"> é todo minúsculo? </span><span class="si">{</span><span class="n">minusculo</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">maiusculo</span> <span class="o">=</span> <span class="s2">&quot;MUNDO&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">maiusculo</span><span class="si">}</span><span class="s2"> é todo maiúsculo? </span><span class="si">{</span><span class="n">maiusculo</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">alfanumerico</span> <span class="o">=</span> <span class="s2">&quot;olá123&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alfanumerico</span><span class="si">}</span><span class="s2"> é alfanumérico? </span><span class="si">{</span><span class="n">alfanumerico</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">alfabetico</span> <span class="o">=</span> <span class="s2">&quot;ola, eu sou um texto puramente alfabético #sqn...&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alfabetico</span><span class="si">}</span><span class="s2"> é alfabético? </span><span class="si">{</span><span class="n">alfabetico</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">digitos</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">digitos</span><span class="si">}</span><span class="s2"> é dígito? </span><span class="si">{</span><span class="n">digitos</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">espacos</span> <span class="o">=</span> <span class="s2">&quot;   &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">espacos</span><span class="si">}</span><span class="s2">&#39; é espaço em branco? </span><span class="si">{</span><span class="n">espacos</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>olá é todo minúsculo? True
+MUNDO é todo maiúsculo? True
+olá123 é alfanumérico? True
+ola, eu sou um texto puramente alfabético #sqn... é alfabético? False
+12345 é dígito? True
+&#39;   &#39; é espaço em branco? True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (caracteres alfabéticos)</p>
+<p>O espaço em branco <code class="docutils literal notranslate"> </code> não é considerado um caracter alfabético, assim como <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> e <code class="docutils literal notranslate"><span class="pre">.</span></code>. Por outro lado, caracteres com acento, como <code class="docutils literal notranslate"><span class="pre">á</span></code>, são considerados alfabéticos.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Divisão e junção</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str.split()</span></code>: Divide a string em uma lista, utilizando um separador especificado.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.join(lista)</span></code>: Junta uma lista de strings utilizando um separador especificado.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Nota (listas)</p>
+<p>Lista é uma outra estrutura de dados, que veremos em mais detalhes logo no capítulo seguinte.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome_completo</span> <span class="o">=</span> <span class="s2">&quot;Lucas Ferreira de Almeida Gomes&quot;</span>
+
+<span class="n">lista_de_strings</span> <span class="o">=</span> <span class="n">nome_completo</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_de_strings</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista_de_strings</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Lucas&#39;, &#39;Ferreira&#39;, &#39;de&#39;, &#39;Almeida&#39;, &#39;Gomes&#39;]
+Lucas-Ferreira-de-Almeida-Gomes
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por padrão, o <code class="docutils literal notranslate"><span class="pre">split()</span></code> usa um ou mais espaços em branco para separar a string, mas é possível passar outro caracter separador. Vejamos outros exemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpf</span> <span class="o">=</span> <span class="s2">&quot;123.456.789-10&quot;</span>
+
+<span class="c1"># Dividindo o CPF através do `.`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cpf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>
+
+<span class="c1">#Dividindo o CPF através do `-`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cpf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;123&#39;, &#39;456&#39;, &#39;789-10&#39;]
+[&#39;123.456.789&#39;, &#39;10&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section id="reforco-pratico-metodos-vs-funcoes">
+<h3>Reforço prático - métodos vs funções<a class="headerlink" href="#reforco-pratico-metodos-vs-funcoes" title="Link to this heading">#</a></h3>
+<p>Anteriormente, abordamos a diferença entre métodos e funções de maneira teórica. Agora, vamos revisitar essa diferença com uma abordagem mais prática!</p>
+<p>Nós vimos vários métodos acima. E eu faço a seguinte pergunta agora: como calculamos o tamanho ou comprimento de uma string? Em outras palavras, quantos caracteres tem uma dada string?</p>
+<p>Bom, você pode se lembrar que não vimos todos os métodos disponíveis, e ir procurar na documentação oficial na <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">lista completa com todos os métodos de string</a>. Lá, você vai encontrar algo com <code class="docutils literal notranslate"><span class="pre">len</span></code>, que vem de length (comprimento) do inglês. Ótimo! Este método <code class="docutils literal notranslate"><span class="pre">len</span></code> deve servir então! Vamos testar?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
+
+<span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span> <span class="c1"># ... ops!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span> <span class="c1"># ... ops!</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;len&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Na verdade, de fato o <code class="docutils literal notranslate"><span class="pre">str.len()</span></code> não existe mesmo, pois ele não está na lista de métodos da documentação oficial.</p>
+<p>O que aconteceu afinal de contas? O erro é bem informativo: <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'str'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'len'</span></code>, ou seja, strings não possuem o <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<p>Porém, para medirmos o comprimento de uma string, podemos fazer da seguinte forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
+
+<span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nome_comprido</span><span class="p">))</span> <span class="c1"># ... agora sim!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49
+</pre></div>
+</div>
+</div>
+</div>
+<p>É aqui que começamos a entender a diferença entre métodos e funções. Quando estamos acessando <code class="docutils literal notranslate"><span class="pre">str.len()</span></code> estamos acessando <strong>o método <code class="docutils literal notranslate"><span class="pre">len</span></code> de uma string</strong>, que não existe. O que existe é a <strong>função <code class="docutils literal notranslate"><span class="pre">len()</span></code> que recebe uma string</strong>.</p>
+<p>Percebam que não existe <code class="docutils literal notranslate"><span class="pre">str.len()</span></code> na <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">lista de métodos de uma string</a>, e existe a função <code class="docutils literal notranslate"><span class="pre">len()</span></code> na <a class="reference external" href="https://docs.python.org/3/library/functions.html">lista de funções nativas do Python</a>.</p>
+<p>Porque <code class="docutils literal notranslate"><span class="pre">len()</span></code> é uma função e não um método de string? De acordo com a definição que foi dada: <em>métodos são funções que estão associadas a um determinado objeto</em>. Notem agora que eu consigo medir o comprimento de outras coisas, como uma lista de itens, por exemplo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_de_numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">156</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_de_numeros</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou seja, <code class="docutils literal notranslate"><span class="pre">len()</span></code> é uma função que mede o comprimento de uma dada sequencia qualquer. Como strings são sequencia de caracteres, eu consigo medir o comprimento de uma string unsando a função <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Mas notem que <strong><code class="docutils literal notranslate"><span class="pre">len()</span></code> não é exclusivo de strings</strong>. Métodos são exclusivos de um determinado tipo de objeto, como é o caso de <code class="docutils literal notranslate"><span class="pre">str.upper()</span></code> ou <code class="docutils literal notranslate"><span class="pre">str.lower()</span></code>.</p>
+<p>Conseguiram compreender agora porque usamos <code class="docutils literal notranslate"><span class="pre">len(string)</span></code> e não <code class="docutils literal notranslate"><span class="pre">string.len()</span></code>? Fez sentido?</p>
 </section>
 </section>
 </section>
@@ -810,6 +973,7 @@ False
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-mais-usados-de-strings">Métodos mais usados de strings</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reforco-pratico-metodos-vs-funcoes">Reforço prático - métodos vs funções</a></li>
 </ul>
 </li>
 </ul>
