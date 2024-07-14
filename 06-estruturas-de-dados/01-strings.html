@@ -427,6 +427,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reforco-pratico-metodos-vs-funcoes">Reforço prático - métodos vs funções</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatiamento-slicing">Fatiamento (slicing)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings">Indexação de strings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caracter-isolado">Caracter isolado</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grupo-de-caracteres-em-sequencia">Grupo de caracteres em sequencia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grupo-de-caracteres-pulando-de-n-em-n">Grupo de caracteres pulando de <code class="docutils literal notranslate"><span class="pre">n</span></code> em <code class="docutils literal notranslate"><span class="pre">n</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -896,6 +903,491 @@ Lucas-Ferreira-de-Almeida-Gomes
 <p>Ou seja, <code class="docutils literal notranslate"><span class="pre">len()</span></code> é uma função que mede o comprimento de uma dada sequencia qualquer. Como strings são sequencia de caracteres, eu consigo medir o comprimento de uma string unsando a função <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Mas notem que <strong><code class="docutils literal notranslate"><span class="pre">len()</span></code> não é exclusivo de strings</strong>. Métodos são exclusivos de um determinado tipo de objeto, como é o caso de <code class="docutils literal notranslate"><span class="pre">str.upper()</span></code> ou <code class="docutils literal notranslate"><span class="pre">str.lower()</span></code>.</p>
 <p>Conseguiram compreender agora porque usamos <code class="docutils literal notranslate"><span class="pre">len(string)</span></code> e não <code class="docutils literal notranslate"><span class="pre">string.len()</span></code>? Fez sentido?</p>
 </section>
+<section id="fatiamento-slicing">
+<h3>Fatiamento (slicing)<a class="headerlink" href="#fatiamento-slicing" title="Link to this heading">#</a></h3>
+<p>Fatiamento (slicing, em inglês) significa literalmente fatiar, pegar partes de uma string. Podemos pegar um único caracter isolado ou uma substring da nossa string principal. Para isso, usamos os colchetes <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> logo após a variável para aplicar a operação de fatiamento.</p>
+<p>Antes de ir para o fatiamento em si, vamos compreender melhor os índices de uma string.</p>
+<section id="indexacao-de-strings">
+<h4>Indexação de strings<a class="headerlink" href="#indexacao-de-strings" title="Link to this heading">#</a></h4>
+<p>O fatiamento se dá pela posição das letras, também chamada de índice.  Vamos compreender melhor através da tabela abaixo, usando a string <code class="docutils literal notranslate"><span class="pre">Python</span></code> como exemplo:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Caracter</p></th>
+<th class="head"><p>P</p></th>
+<th class="head"><p>y</p></th>
+<th class="head"><p>t</p></th>
+<th class="head"><p>h</p></th>
+<th class="head"><p>o</p></th>
+<th class="head"><p>n</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Índices (+)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Índices (-)</p></td>
+<td><p>-6</p></td>
+<td><p>-5</p></td>
+<td><p>-4</p></td>
+<td><p>-3</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="danger admonition">
+<p class="admonition-title">Atenção (indexação começa por 0)</p>
+<p>Chamo a atençao de vocês aqui para o fato de que <strong>a indexação em Python começa por zero!</strong> Ou seja, <strong>o primeiro caracter de uma string não é o índice <code class="docutils literal notranslate"><span class="pre">1</span></code>, mas sim o índice <code class="docutils literal notranslate"><span class="pre">0</span></code></strong>. Esse detalhe da indexação começar por zero é a fonte origem de muitos erros comuns que percebo, portanto, fique atento!</p>
+</div>
+<p>Reparem também que podemos ter índices negativos, que são os caracteres na ordem inversa de leitura, da direita para esquerda.</p>
+</section>
+<section id="caracter-isolado">
+<h4>Caracter isolado<a class="headerlink" href="#caracter-isolado" title="Link to this heading">#</a></h4>
+<p>Vamos entender melhor com exemplos, primeiro buscando por um caracter isolado em uma string. Buscando uma explicação mais visual, tenha em mente a tabela abaixo:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Caracter</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>u</p></th>
+<th class="head"><p>c</p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>s</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>l</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>e</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>o</p></th>
+<th class="head"><p>n</p></th>
+<th class="head"><p>t</p></th>
+<th class="head"><p>e</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>o</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Índices (+)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>Índices (-)</p></td>
+<td><p>-22</p></td>
+<td><p>-21</p></td>
+<td><p>-20</p></td>
+<td><p>-19</p></td>
+<td><p>-18</p></td>
+<td><p>-17</p></td>
+<td><p>-16</p></td>
+<td><p>-15</p></td>
+<td><p>-14</p></td>
+<td><p>-13</p></td>
+<td><p>-12</p></td>
+<td><p>-11</p></td>
+<td><p>-10</p></td>
+<td><p>-9</p></td>
+<td><p>-8</p></td>
+<td><p>-7</p></td>
+<td><p>-6</p></td>
+<td><p>-5</p></td>
+<td><p>-4</p></td>
+<td><p>-3</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">primeiro_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">segundo_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">terceiro_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">primeir_espaco_em_branco</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">segundo_espaco_em_branco</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O primeiro caracter do nome é a letra </span><span class="si">{</span><span class="n">primeiro_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O segundo caracter do nome é a letra </span><span class="si">{</span><span class="n">segundo_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O terceiro caracter do nome é a letra </span><span class="si">{</span><span class="n">terceiro_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Os caracteres de índice 5 e 13 são espaços em branco: </span><span class="si">{</span><span class="n">primeir_espaco_em_branco</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">segundo_espaco_em_branco</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O primeiro caracter do nome é a letra L.
+O segundo caracter do nome é a letra u.
+O terceiro caracter do nome é a letra c.
+Os caracteres de índice 5 e 13 são espaços em branco:  ,  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conforme explicado, é possível usar ínndices negativos no fatiamento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">ultimo_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">penultimo_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">antepenultimo_caracter</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O último caracter do nome é a letra </span><span class="si">{</span><span class="n">ultimo_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O penúltimo caracter do nome é a letra </span><span class="si">{</span><span class="n">penultimo_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O antepenúltimo caracter do nome é a letra </span><span class="si">{</span><span class="n">antepenultimo_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O último caracter do nome é a letra o.
+O penúltimo caracter do nome é a letra r.
+O antepenúltimo caracter do nome é a letra i.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="grupo-de-caracteres-em-sequencia">
+<h4>Grupo de caracteres em sequencia<a class="headerlink" href="#grupo-de-caracteres-em-sequencia" title="Link to this heading">#</a></h4>
+<p>Podemos usar a mesma notação de <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> para capturar não somente um único caracter mas sim um grupo de caracteres da string. Para isso, precisamos entender a forma como é feito manipulando os índices do nosso fatiamento.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">variavel[start:stop]</span></code></strong>: esta é a sintaxe básica de buscar por uma substring dentro de uma string. Eu preciso definir em qual caracter eu começo meu fatiamento através do <code class="docutils literal notranslate"><span class="pre">start</span></code> e em qual caracter eu termino meu fatiamento no <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p>
+<div class="danger admonition">
+<p class="admonition-title">Atenção (índice final não é inclusivo)</p>
+<p>O caracter do índice final não é incluído na saída do fatiamento!</p>
+</div>
+<p>Vejamos alguns exemplos para entender melhor como ler esta sintaxe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">primeiro_nome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O primeiro nome é </span><span class="si">{</span><span class="n">primeiro_nome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O primeiro nome é Lucas
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Obs:</strong> o caracter de índice <code class="docutils literal notranslate"><span class="pre">5</span></code> no exemplo é um espaço em branco! Selecionem todo o texto da saída com o mouse e percebam que ele <strong>não contém espaço em branco</strong>…</p>
+<ul class="simple">
+<li><p>O índice inicial começa no caracter de índice <code class="docutils literal notranslate"><span class="pre">0</span></code> (inclusivo)</p></li>
+<li><p>O índice final finaliza no caracter de índice <code class="docutils literal notranslate"><span class="pre">5</span></code> (exclusivo)</p></li>
+<li><p>Como o caracter de índice <code class="docutils literal notranslate"><span class="pre">5</span></code> é exclusivo, ele não é incluído no resultado final do fatiamento</p></li>
+<li><p>Como resultado, teremos apenas os caracteres de índice <code class="docutils literal notranslate"><span class="pre">0</span></code> até <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+</ul>
+<p>Quando o caracter inicial for o <code class="docutils literal notranslate"><span class="pre">0</span></code>, podemos omití-lo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">primeiro_nome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O primeiro nome é </span><span class="si">{</span><span class="n">primeiro_nome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O primeiro nome é Lucas
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos isolar o sobrenome agora.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">ultimo_sobrenome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O sobrenome é </span><span class="si">{</span><span class="n">ultimo_sobrenome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O sobrenome é Almeida
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>O índice inicial começa no caracter de índice <code class="docutils literal notranslate"><span class="pre">6</span></code> (inclusivo)</p></li>
+<li><p>O índice final finaliza no caracter de índice <code class="docutils literal notranslate"><span class="pre">13</span></code> (exclusivo)</p></li>
+<li><p>Como o caracter de índice <code class="docutils literal notranslate"><span class="pre">13</span></code> é exclusivo, ele não é incluído no resultado final do fatiamento</p></li>
+<li><p>Como resultado, teremos apenas os caracteres de índice <code class="docutils literal notranslate"><span class="pre">6</span></code> até <code class="docutils literal notranslate"><span class="pre">12</span></code>.</p></li>
+</ul>
+<p>E, finalmente, o último sobrenome:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">ultimo_sobrenome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O sobrenome é </span><span class="si">{</span><span class="n">ultimo_sobrenome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O sobrenome é Monteir
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui temos algo interessante. O último índice da string é o <code class="docutils literal notranslate"><span class="pre">21</span></code>. Mas já sabemos que o índice final do fatiamento é exclusivo. Da forma como fizemos acima, teríamos que colocar um índice a mais para incluir o último caracter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">ultimo_sobrenome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">22</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O sobrenome é </span><span class="si">{</span><span class="n">ultimo_sobrenome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O sobrenome é Monteiro
+</pre></div>
+</div>
+</div>
+</div>
+<p>Porém, apesar de funcionar, fica estranho, dado que o último índice é <code class="docutils literal notranslate"><span class="pre">21</span></code>. Quando desejamos extrair tudo, até o final da string, com o último caracter incluso, podemos omitir o <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="c1"># Leia-se: tudo do caracter 14 até o final da string incluindo o último caracter.</span>
+<span class="n">ultimo_sobrenome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">14</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O sobrenome é </span><span class="si">{</span><span class="n">ultimo_sobrenome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O sobrenome é Monteiro
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos usar índices negativos também. Para uma maior clareza, vou trazer novamente a tabela com os índices:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Caracter</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>u</p></th>
+<th class="head"><p>c</p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>s</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>l</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>e</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>o</p></th>
+<th class="head"><p>n</p></th>
+<th class="head"><p>t</p></th>
+<th class="head"><p>e</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>o</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Índices (+)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>Índices (-)</p></td>
+<td><p>-22</p></td>
+<td><p>-21</p></td>
+<td><p>-20</p></td>
+<td><p>-19</p></td>
+<td><p>-18</p></td>
+<td><p>-17</p></td>
+<td><p>-16</p></td>
+<td><p>-15</p></td>
+<td><p>-14</p></td>
+<td><p>-13</p></td>
+<td><p>-12</p></td>
+<td><p>-11</p></td>
+<td><p>-10</p></td>
+<td><p>-9</p></td>
+<td><p>-8</p></td>
+<td><p>-7</p></td>
+<td><p>-6</p></td>
+<td><p>-5</p></td>
+<td><p>-4</p></td>
+<td><p>-3</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="c1"># Leia-se: tudo do caracter -8 até o final da string incluindo o último caracter.</span>
+<span class="n">ultimo_sobrenome</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O último sobrenome é </span><span class="si">{</span><span class="n">ultimo_sobrenome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O último sobrenome é Monteiro
+</pre></div>
+</div>
+</div>
+</div>
+<p>Os índices negativos em Python começam a contagem a partir do final da string para o início. O índice <code class="docutils literal notranslate"><span class="pre">-1</span></code> refere-se ao último caractere, <code class="docutils literal notranslate"><span class="pre">-2</span></code> ao penúltimo, e assim por diante. No entanto, esses índices não invertem a ordem dos caracteres. Eles simplesmente fornecem uma maneira conveniente de referenciar caracteres a partir do final da string. Portanto, podemos dizer que os índices <code class="docutils literal notranslate"><span class="pre">14</span></code> e <code class="docutils literal notranslate"><span class="pre">-8</span></code> referem-se ao mesmo caracter da string, a letra <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
+<p>Em ambos os casos, o índice especifica a posição inicial da substring e continua até o final da string, sem alterar a ordem dos caracteres. É por isso que tanto <code class="docutils literal notranslate"><span class="pre">nome[14:]</span></code> quanto <code class="docutils literal notranslate"><span class="pre">nome[-8:]</span></code> produzem a mesma substring <code class="docutils literal notranslate"><span class="pre">Monteiro</span></code>.</p>
+</section>
+<section id="grupo-de-caracteres-pulando-de-n-em-n">
+<h4>Grupo de caracteres pulando de <code class="docutils literal notranslate"><span class="pre">n</span></code> em <code class="docutils literal notranslate"><span class="pre">n</span></code><a class="headerlink" href="#grupo-de-caracteres-pulando-de-n-em-n" title="Link to this heading">#</a></h4>
+<p>Vamos tentar ir devagar para não confundir a cabeça neste momento. Até agora, vimos que a sintaxe <code class="docutils literal notranslate"><span class="pre">variavel[start:stop]</span></code> traz todos os caracteres do <code class="docutils literal notranslate"><span class="pre">start</span></code> até o <code class="docutils literal notranslate"><span class="pre">stop</span></code> excluindo o caracter do <code class="docutils literal notranslate"><span class="pre">indice_final</span></code>. Certo?</p>
+<p>Podemos acrescentar algo nesta sintaxe para trazer os caracteres pulando os índices de 2 em 2, por exemplo. É o que chamamos de <code class="docutils literal notranslate"><span class="pre">step</span></code>, ou passo. A sintaxe fica, então <code class="docutils literal notranslate"><span class="pre">variavel[start:stop:step]</span></code> no qual:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: Índice onde a fatia começa. Se omitido, a fatia começa no início da sequência no índice <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>: Índice onde a fatia termina, mas não inclui o elemento neste índice. Se omitido, a fatia vai até o final da sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: Número que determina o intervalo entre os índices. Assume o valor padrão 1. Se for negativo, a sequência será percorrida de trás para frente.</p></li>
+</ul>
+<p>Se quisermos trazer todos os caracteres de índice par, por exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">caracteres_indice_par</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Somente os caracteres de índice par: </span><span class="si">{</span><span class="n">caracteres_indice_par</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Somente os caracteres de índice par: LcsAmiaMner
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da mesma forma, para trazermos todos os caracteres de índice ímpar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">caracteres_indice_par</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Somente os caracteres de índice ímpar: </span><span class="si">{</span><span class="n">caracteres_indice_par</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Somente os caracteres de índice ímpar: ua led otio
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos pular os caracteres de 3 em 3:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">caracteres_3_em_3</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Caracteres pulados de 3 em 3: </span><span class="si">{</span><span class="n">caracteres_3_em_3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Caracteres pulados de 3 em 3: LaAeaoeo
+</pre></div>
+</div>
+</div>
+</div>
+<p>O <code class="docutils literal notranslate"><span class="pre">step</span></code> também pode assumir um valor negativo, fato que inverte a ordem da string no fatiamento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">nome_inverso</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nome invertido: </span><span class="si">{</span><span class="n">nome_inverso</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nome invertido: orietnoM adiemlA sacuL
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trazendo os caracteres na ordem inversa pulando de 2 em 2:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Lucas Almeida Monteiro&quot;</span>
+
+<span class="n">nome_inverso_de_2_em_2</span> <span class="o">=</span> <span class="n">nome</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nome inverso de 2 em 2 caracteres: </span><span class="si">{</span><span class="n">nome_inverso_de_2_em_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nome inverso de 2 em 2 caracteres: oito del au
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -974,6 +1466,13 @@ Lucas-Ferreira-de-Almeida-Gomes
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reforco-pratico-metodos-vs-funcoes">Reforço prático - métodos vs funções</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fatiamento-slicing">Fatiamento (slicing)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings">Indexação de strings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caracter-isolado">Caracter isolado</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grupo-de-caracteres-em-sequencia">Grupo de caracteres em sequencia</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grupo-de-caracteres-pulando-de-n-em-n">Grupo de caracteres pulando de <code class="docutils literal notranslate"><span class="pre">n</span></code> em <code class="docutils literal notranslate"><span class="pre">n</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
