@@ -36,9 +36,10 @@ parts:
   - file: 05-operacoes-basicas/03-precedencia-operadores.md
   - file: 05-operacoes-basicas/04-variaveis.md
 
-- caption: Aprenda conceitos básicos
+- caption: Estruturas de dados básicas
   chapters:
   - file: 06-estruturas-de-dados/01-strings.ipynb
+  - file: 06-estruturas-de-dados/02-listas.ipynb
 
 - caption: Pratique
   chapters:
