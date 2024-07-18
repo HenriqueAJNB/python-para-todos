@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>IDEs &#8212; Python para todos</title>
+    <title>Listas &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02-ambientes/02-ides';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-estruturas-de-dados/02-listas';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Instalação VSCode (Windows)" href="../03-vscode/01-instalacao-windows.html" />
-    <link rel="prev" title="Ambientes para desenvolvimento Python" href="01-intro.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Strings" href="01-strings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,9 +190,9 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Entenda sobre os ambientes de desenvolvimento</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-intro.html">Ambientes para desenvolvimento Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">IDEs</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/01-intro.html">Ambientes para desenvolvimento Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/02-ides.html">IDEs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configure o ambiente</span></p>
 <ul class="nav bd-sidenav">
@@ -215,9 +215,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/01-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/02-listas.html">Listas</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-strings.html">Strings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Listas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -293,7 +293,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F02-ambientes/02-ides.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-estruturas-de-dados/02-listas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="../_sources/02-ambientes/02-ides.md" target="_blank"
+      <li><a href="../_sources/06-estruturas-de-dados/02-listas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +333,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -407,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>IDEs</h1>
+    <h1>Listas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,8 +417,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quais-ides-existem">Quais IDEs existem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-usaremos">Qual usaremos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando elementos</a></li>
 </ul>
             </nav>
         </div>
@@ -430,30 +431,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ides">
-<h1>IDEs<a class="headerlink" href="#ides" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
-<p>Você já deve ter instalado o Python e viu que temos à nossa disposição o interpretador da linguagem Python disponível no terminal (as três flechas <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, lembra)?</p>
-<p>Embora seja possível escrever e executar código Python diretamente no terminal do seu computador, isso pode ser complicado e trabalhoso.</p>
-<p>Programar diretamente no terminal significa que você precisa digitar todos os comandos manualmente em sequencia e executá-los um a um, e isso pode tornar difícil a visualização e a organização do seu código. Além disso, o terminal não oferece nenhuma ferramentas que tornam a programação mais fácil, como realce de sintaxe, auto-complete e ferramentas para debugar seu código.</p>
-<p>Para começar a programar em Python, é importante escolher um lugar adequado para escrever e testar seu código. Normalmente usamos um editor de texto com algumas funcionalidades extras para programação, também chamados de IDE (do inglês <em>Integrated Development Environment</em>, ambiente de desenvolvimento integrado).</p>
-<p>Uma boa IDE pode facilitar muito o seu trabalho, oferecendo ferramentas que ajudam a escrever, corrigir e organizar seu código.</p>
-<section id="quais-ides-existem">
-<h2>Quais IDEs existem?<a class="headerlink" href="#quais-ides-existem" title="Link to this heading">#</a></h2>
-<p>Aqui está uma lista de vários ambientes populares para desenvolvimento Python:</p>
+  <section id="listas">
+<h1>Listas<a class="headerlink" href="#listas" title="Link to this heading">#</a></h1>
+<p>Ao longo do capítulo anterior, surgiu uma outra estrutura de dados básica: listas. Vamos entrar mais em detalhes nesta estrutura ao longo deste capítulo.</p>
+<section id="definicao">
+<h2>Definição<a class="headerlink" href="#definicao" title="Link to this heading">#</a></h2>
+<p>Listas são um dos tipos de dados mais fundamentais e versáteis em Python. Uma lista é uma sequência ordenada de elementos que pode conter uma variedade de tipos de dados, como números, strings, outras listas, objetos, e mais. As listas em Python são mutáveis, o que significa que seus elementos podem ser alterados após a sua criação.</p>
+<p>As listas possuem as seguintes caracterísicas:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.anaconda.com/">Anaconda</a></p></li>
-<li><p><a class="reference external" href="https://colab.google/">Google Colab</a></p></li>
-<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
-<li><p><a class="reference external" href="https://atom-editor.cc/">Atom</a></p></li>
-<li><p><a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a></p></li>
-<li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code (VSCode)</a></p></li>
+<li><p><strong>Ordenadas:</strong> As listas mantêm a ordem dos elementos conforme são adicionados.</p></li>
+<li><p><strong>Mutáveis:</strong> Diferente de alguns outros tipos de coleções que vamos ver na sequência, como tuplas, as listas podem ser modificadas após a sua criação. Você pode adicionar, remover ou alterar seus elementos.</p></li>
+<li><p><strong>Permite duplicatas:</strong> Listas podem conter elementos duplicados. Cada elemento na lista mantém sua própria posição e pode ser acessado individualmente.</p></li>
+<li><p><strong>Heterogêneas:</strong> Uma lista pode conter elementos de diferentes tipos de dados. Por exemplo, você pode ter uma lista que contém números, strings e até mesmo outras listas.</p></li>
 </ul>
 </section>
-<section id="qual-usaremos">
-<h2>Qual usaremos?<a class="headerlink" href="#qual-usaremos" title="Link to this heading">#</a></h2>
-<p>Na próxima seção vamos instalar e configurar o VSCode para iniciar o nosso desenvolvimento. No futuro trarei uma explicação sobre as outras IDEs.</p>
+<section id="sintaxe-basica">
+<h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
+<p>O exemplo mais simples é uma lista de inteiros, conforme vimos no capítulo anterior, no terceiro exemplo da seção <a class="reference internal" href="01-strings.html#reforco-pratico-metodos-vs-funcoes"><span class="std std-ref">reforço prático - métodos vs funções</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_de_numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">156</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_de_numeros</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 50, 40, 65, 90, 70, 30, 156]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uma lista é criada com colchetes (<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>), cada elemento é separado por vírgula (<code class="docutils literal notranslate"><span class="pre">,</span></code>) e não necessariamente todos os elementos precisam ser do mesmo tipo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_heterogenea</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mf">25.1</span><span class="p">,</span> <span class="s2">&quot;um texto qualquer&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_heterogenea</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 25.1, &#39;um texto qualquer&#39;, True]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="acessando-elementos">
+<h2>Acessando elementos<a class="headerlink" href="#acessando-elementos" title="Link to this heading">#</a></h2>
+<p>Cada elemento tem uma posição (ou índice) na lista começando do índice 0 para o primeiro elemento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_acesso_elementos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Olá&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+
+<span class="c1"># Acessando elementos da lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_acesso_elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_acesso_elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+Olá
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vimos fatiamento de sequencias no capítulo sobre strings, na seção <a class="reference internal" href="01-strings.html#indexacao-strings"><span class="std std-ref">indexação de strings</span></a>, lembra? É possível usar o fatiamento em listas da mesma forma. Podemos usar exatamente a mesma sintaxe <code class="docutils literal notranslate"><span class="pre">variavel[start:stop:step]</span></code>, com exatamente as mesmas características. Caso queira relembrar o conteúdo, retorne ao capítulo sobre <a class="reference internal" href="01-strings.html#fatiamento"><span class="std std-ref">fatiamento de strings</span></a>.</p>
+<p>Aqui vamos abordar apenas o caso que é diferente de strings, no qual temos uma lista de listas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_de_listas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos começar com uma pergunta:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Quandos elementos tem a lista acima? Pense primeiro e clique para ver a resposta…</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Resposta correta: 4 elementos. Execute o código abaixo para conferir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista_de_listas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_de_listas</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details><p>Porque? Se você contou apenas <strong>os números de 1 a 10</strong>, talvez você não tenha entendido o conceito de listas. Vamos detalhar mais.</p>
+<p>Reparem que a variável acima começa com <code class="docutils literal notranslate"><span class="pre">[[</span></code> e termina com <code class="docutils literal notranslate"><span class="pre">]]</span></code>. A lista mais externa contém outras listas internas. Listas de listas também são chamadas de listas aninhadas. É como se tivéssemos vários “níveis” de listas, indo por camadas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_de_listas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Primeiro elemento da lista: </span><span class="si">{</span><span class="n">lista_de_listas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Segundo elemento da lista: </span><span class="si">{</span><span class="n">lista_de_listas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terceiro elemento da lista: </span><span class="si">{</span><span class="n">lista_de_listas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quarto elemento da lista: </span><span class="si">{</span><span class="n">lista_de_listas</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primeiro elemento da lista: [1]
+Segundo elemento da lista: [2, 3]
+Terceiro elemento da lista: [4, 5, 6]
+Quarto elemento da lista: [7, 8, 9, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>O caso mais simples que consigo trazer pra representar listas aninhadas é <code class="docutils literal notranslate"><span class="pre">lista</span> <span class="pre">=</span> <span class="pre">[primeiro_elemento,</span> <span class="pre">segundo_elemento,</span> <span class="pre">terceiro_elemento,</span> <span class="pre">quarto_elemento]</span></code> onde cada <code class="docutils literal notranslate"><span class="pre">_elemento</span></code> é também uma lista! Pode parecer confuso, mas creio que este exemplo ajude a esclarecer.</p>
 </section>
 </section>
 
@@ -470,7 +553,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./02-ambientes"
+            path: "./06-estruturas-de-dados"
         },
         predefinedOutput: true
     }
@@ -488,20 +571,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="01-intro.html"
+       href="01-strings.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ambientes para desenvolvimento Python</p>
+        <p class="prev-next-title">Strings</p>
       </div>
     </a>
     <a class="right-next"
-       href="../03-vscode/01-instalacao-windows.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Instalação VSCode (Windows)</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,8 +604,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quais-ides-existem">Quais IDEs existem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-usaremos">Qual usaremos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando elementos</a></li>
 </ul>
   </nav></div>
 

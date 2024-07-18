@@ -61,7 +61,7 @@
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="next" title="Listas" href="02-listas.html" />
     <link rel="prev" title="Variáveis" href="../05-operacoes-basicas/04-variaveis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -214,9 +214,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprenda conceitos básicos</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-listas.html">Listas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -436,6 +437,8 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -840,7 +843,7 @@ Lucas-Ferreira-de-Almeida-Gomes
 </section>
 </section>
 <section id="reforco-pratico-metodos-vs-funcoes">
-<h3>Reforço prático - métodos vs funções<a class="headerlink" href="#reforco-pratico-metodos-vs-funcoes" title="Link to this heading">#</a></h3>
+<span id="id1"></span><h3>Reforço prático - métodos vs funções<a class="headerlink" href="#reforco-pratico-metodos-vs-funcoes" title="Link to this heading">#</a></h3>
 <p>Anteriormente, abordamos a diferença entre métodos e funções de maneira teórica. Agora, vamos revisitar essa diferença com uma abordagem mais prática!</p>
 <p>Nós vimos vários métodos acima. E eu faço a seguinte pergunta agora: como calculamos o tamanho ou comprimento de uma string? Em outras palavras, quantos caracteres tem uma dada string?</p>
 <p>Bom, você pode se lembrar que não vimos todos os métodos disponíveis, e ir procurar na documentação oficial na <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">lista completa com todos os métodos de string</a>. Lá, você vai encontrar algo com <code class="docutils literal notranslate"><span class="pre">len</span></code>, que vem de length (comprimento) do inglês. Ótimo! Este método <code class="docutils literal notranslate"><span class="pre">len</span></code> deve servir então! Vamos testar?</p>
@@ -904,11 +907,11 @@ Lucas-Ferreira-de-Almeida-Gomes
 <p>Conseguiram compreender agora porque usamos <code class="docutils literal notranslate"><span class="pre">len(string)</span></code> e não <code class="docutils literal notranslate"><span class="pre">string.len()</span></code>? Fez sentido?</p>
 </section>
 <section id="fatiamento-slicing">
-<h3>Fatiamento (slicing)<a class="headerlink" href="#fatiamento-slicing" title="Link to this heading">#</a></h3>
+<span id="fatiamento"></span><h3>Fatiamento (slicing)<a class="headerlink" href="#fatiamento-slicing" title="Link to this heading">#</a></h3>
 <p>Fatiamento (slicing, em inglês) significa literalmente fatiar, pegar partes de uma string. Podemos pegar um único caracter isolado ou uma substring da nossa string principal. Para isso, usamos os colchetes <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> logo após a variável para aplicar a operação de fatiamento.</p>
 <p>Antes de ir para o fatiamento em si, vamos compreender melhor os índices de uma string.</p>
 <section id="indexacao-de-strings">
-<h4>Indexação de strings<a class="headerlink" href="#indexacao-de-strings" title="Link to this heading">#</a></h4>
+<span id="indexacao-strings"></span><h4>Indexação de strings<a class="headerlink" href="#indexacao-de-strings" title="Link to this heading">#</a></h4>
 <p>O fatiamento se dá pela posição das letras, também chamada de índice.  Vamos compreender melhor através da tabela abaixo, usando a string <code class="docutils literal notranslate"><span class="pre">Python</span></code> como exemplo:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1389,6 +1392,14 @@ O antepenúltimo caracter do nome é a letra i.
 </section>
 </section>
 </section>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>Agora você já é capaz de resolver os exercícios <a class="reference internal" href="../exercicios.html#exercicio-6"><span class="std std-ref">6</span></a>, <a class="reference internal" href="../exercicios.html#exercicio-7"><span class="std std-ref">7</span></a> e <a class="reference internal" href="../exercicios.html#exercicio-8"><span class="std std-ref">8</span></a> da lista! O exercício 8 é um desafio! Encara? Boa prática!</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Vimos o básico (sim, somente o básico) de manipulação de strings! Ao longo deste capítulo, você ouviu falar brevemente de listas, e é esta estrutura que vamos aprender no próximo capítulo do livro!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1431,11 +1442,11 @@ O antepenúltimo caracter do nome é a letra i.
       </div>
     </a>
     <a class="right-next"
-       href="../exercicios.html"
+       href="02-listas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lista de exercícios</p>
+        <p class="prev-next-title">Listas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1475,6 +1486,8 @@ O antepenúltimo caracter do nome é a letra i.
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
