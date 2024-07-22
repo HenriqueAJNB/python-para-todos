@@ -67,7 +67,7 @@ Pense ser um arquivo de texto comum com comandos Python só que ao invés de ter
 Para criar o script: 
 
 - Clique com o botão direito do mouse na área da pasta aberta e selecione "New file".
-- Dê um nome para seu script. No meu caso, eu o nomeei `meu_primeiro_script.py`. **Não se esqueça de adicionar a extensão `.py` ao final para que o próprio VSCode reconheça seu arquivo como um script Python**
+- Dê um nome para seu script. No meu caso, eu o nomeei `meu_primeiro_script.py`.
 
 ```{admonition} Atenção
 :class: danger
