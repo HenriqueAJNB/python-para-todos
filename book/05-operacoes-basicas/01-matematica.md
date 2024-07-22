@@ -33,7 +33,7 @@ text = "# Este trecho não é um comentário, mas sim uma string, pois está ent
 :class: note
 Este é um **livro de Python** e não de matemática! Portanto, parto do princípio que você entenda matemática básica para seguir com o livro.
 
-Se achar necessário, posso esclarecer alguuns tópicos em específico. Mas, no geral, não haverá explicações de conceitos matemáticos.
+Se achar necessário, posso esclarecer alguns tópicos em específico. Mas, no geral, não haverá explicações de conceitos matemáticos.
 ```
 
 Com Python é possível realizar operações como soma, subtração, multiplicação, divisão comum, divisão inteira (ou quociente da divisão), resto da divisão, potenciação e radiciação.
