@@ -447,6 +447,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprimento">Comprimento</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterando-pela-lista">Iterando pela lista</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substituindo-valores">Substituindo valores</a></li>
 </ul>
 </li>
 </ul>
@@ -1110,6 +1111,25 @@ Antônio
 </div>
 </div>
 </section>
+<section id="substituindo-valores">
+<h4>Substituindo valores<a class="headerlink" href="#substituindo-valores" title="Link to this heading">#</a></h4>
+<p>Como vimos bem lá no começo deste capítulo, listas são objetos mutáveis. Por isso temos vários métodos de inserção e deleção de itens em uma lista. Mas podemos também alterar valores já existentes. Vejamos um exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="n">nomes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Fernando&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fernando&#39;, &#39;José&#39;, &#39;Jonas&#39;, &#39;Joaquim&#39;, &#39;Caio&#39;, &#39;Antônio&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui, a linha <code class="docutils literal notranslate"><span class="pre">nomes[0]</span> <span class="pre">=</span> <span class="pre">&quot;Fernando&quot;</span></code> é responsável por substituir no índice 0 o nome existente <code class="docutils literal notranslate"><span class="pre">João</span></code> pelo <code class="docutils literal notranslate"><span class="pre">Fernando</span></code>.</p>
+</section>
 </section>
 </section>
 </section>
@@ -1208,6 +1228,7 @@ Antônio
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprimento">Comprimento</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterando-pela-lista">Iterando pela lista</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substituindo-valores">Substituindo valores</a></li>
 </ul>
 </li>
 </ul>
