@@ -422,16 +422,31 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando elementos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-listas">Métodos de listas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicao-de-elementos">Adição de elementos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#append">Append</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extend">Extend</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insert">Insert</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extend"><code class="docutils literal notranslate"><span class="pre">extend</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insert"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remocao-de-elementos">Remoção de elementos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove">Remove</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">Pop</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#informacoes-sobre-a-lista">Informações sobre a lista</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index">Index</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove"><code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop"><code class="docutils literal notranslate"><span class="pre">pop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clear"><code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informacoes-sobre-a-lista">Informações sobre a lista</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index"><code class="docutils literal notranslate"><span class="pre">index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenacao-e-reversao">Ordenação e reversão</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sort"><code class="docutils literal notranslate"><span class="pre">sort</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse"><code class="docutils literal notranslate"><span class="pre">reverse</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-operacoes-com-listas">Outras operações com listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprimento">Comprimento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterando-pela-lista">Iterando pela lista</a></li>
 </ul>
 </li>
 </ul>
@@ -567,7 +582,7 @@ Quarto elemento da lista: [7, 8, 9, 10]
 </ul>
 <p>Vamos ver em detalhes cada um deles.</p>
 <section id="append">
-<h4>Append<a class="headerlink" href="#append" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">append</span></code><a class="headerlink" href="#append" title="Link to this heading">#</a></h4>
 <p>O método <code class="docutils literal notranslate"><span class="pre">append(x)</span></code> adiciona um dado objeto <code class="docutils literal notranslate"><span class="pre">x</span></code> ao final da lista.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,7 +601,7 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <p>Notem que o objeto como um todo, no caso a string <code class="docutils literal notranslate"><span class="pre">uva</span></code>, foi adicionada como um objeto único (uma única string) ao final da lista.</p>
 </section>
 <section id="extend">
-<h4>Extend<a class="headerlink" href="#extend" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">extend</span></code><a class="headerlink" href="#extend" title="Link to this heading">#</a></h4>
 <p>O método <code class="docutils literal notranslate"><span class="pre">extend(x)</span></code> estende a lista adicionando todos os itens, um a um, de uma outra sequencia. Ele funciona diferente do método <code class="docutils literal notranslate"><span class="pre">append(x)</span></code> que adiciona o objeto inteiro.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,7 +708,7 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <p>No caso do <code class="docutils literal notranslate"><span class="pre">extend</span></code>, os elementos da lista <code class="docutils literal notranslate"><span class="pre">[6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code> são adicionados um a um à lista inicial. O tamanho da lista final é é o total de elementos da lista inicial + o total de elementos da lista estendida.</p>
 </section>
 <section id="insert">
-<h4>Insert<a class="headerlink" href="#insert" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">insert</span></code><a class="headerlink" href="#insert" title="Link to this heading">#</a></h4>
 <p>Tanto o <code class="docutils literal notranslate"><span class="pre">append</span></code> quanto o <code class="docutils literal notranslate"><span class="pre">extend</span></code> só adicionam/estendem elementos ao final da lista. O <code class="docutils literal notranslate"><span class="pre">insert</span></code> tem o mesmo comportamento do <code class="docutils literal notranslate"><span class="pre">append</span></code>, sendo possível especificar o índice na qual o elemento será inserido.</p>
 <p>Nesta altura do livro, espero que você tenha entendido e se lembre que <strong>a indexação em Python começa por 0!</strong></p>
 <div class="cell docutils container">
@@ -721,7 +736,7 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <li><p><code class="docutils literal notranslate"><span class="pre">clear(</span> <span class="pre">)</span></code>: Remove todos os itens da lista.</p></li>
 </ul>
 <section id="remove">
-<h4>Remove<a class="headerlink" href="#remove" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">remove</span></code><a class="headerlink" href="#remove" title="Link to this heading">#</a></h4>
 <p>O método <code class="docutils literal notranslate"><span class="pre">remove</span></code> apaga <strong>a primeira ocorrência da esquerda para direita</strong> de um item da lista.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,7 +777,7 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <p>Caso o elemento não seja encontrado, o nosso código vai apresentar o erro com a mensagem <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">list.remove(x):</span> <span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">list</span></code>, informando que o elemento passado não está na lista</p>
 </section>
 <section id="pop">
-<h4>Pop<a class="headerlink" href="#pop" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">pop</span></code><a class="headerlink" href="#pop" title="Link to this heading">#</a></h4>
 <p>O método <code class="docutils literal notranslate"><span class="pre">pop</span></code> <strong>remove</strong> e <strong>retorna</strong> o item em um índice específico.</p>
 <p>O <code class="docutils literal notranslate"><span class="pre">pop</span></code> atua diferente do <code class="docutils literal notranslate"><span class="pre">remove</span></code>. No <code class="docutils literal notranslate"><span class="pre">remove</span></code> passamos o elemento em si, e no <code class="docutils literal notranslate"><span class="pre">pop</span></code> passamos a posição do elemento que será removido, e não o elemento em si.</p>
 <div class="cell docutils container">
@@ -830,16 +845,34 @@ Quarto elemento da lista: [7, 8, 9, 10]
 </div>
 </div>
 </section>
+<section id="clear">
+<h4><code class="docutils literal notranslate"><span class="pre">clear</span></code><a class="headerlink" href="#clear" title="Link to this heading">#</a></h4>
+<p>O método <code class="docutils literal notranslate"><span class="pre">clear</span></code> é simples. Ele limpa toda a lista, removendo todos os elementos. Aqui não há segredos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;laranja&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
+<span class="n">frutas</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="informacoes-sobre-a-lista">
-<h4>Informações sobre a lista<a class="headerlink" href="#informacoes-sobre-a-lista" title="Link to this heading">#</a></h4>
+<h3>Informações sobre a lista<a class="headerlink" href="#informacoes-sobre-a-lista" title="Link to this heading">#</a></h3>
 <p>Aqui temos 2 métodos:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">index()</span></code>: Retorna o índice da primeira ocorrência de um item.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code>: Retorna o número de ocorrências de um item na lista.</p></li>
 </ul>
-</section>
 <section id="index">
-<h4>Index<a class="headerlink" href="#index" title="Link to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">index</span></code><a class="headerlink" href="#index" title="Link to this heading">#</a></h4>
 <p>O método <code class="docutils literal notranslate"><span class="pre">index</span></code> é bem simples e serve para buscar pelo menor índice de um dado elemento, sendo muito útil em localizar a posição de itens em uma lista. No exemplo abaixo, o primeiro índice encontrado para <code class="docutils literal notranslate"><span class="pre">banana</span></code> é o índice 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -859,15 +892,221 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;laranja&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
-<span class="n">indice</span> <span class="o">=</span> <span class="n">frutas</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="n">frutas</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;fruta inexistente&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menor índice encontrado:&quot;</span><span class="p">,</span> <span class="n">indice</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Menor índice encontrado: 1
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;laranja&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">indice</span> <span class="o">=</span> <span class="n">frutas</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;fruta inexistente&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menor índice encontrado:&quot;</span><span class="p">,</span> <span class="n">indice</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: &#39;fruta inexistente&#39; is not in list
 </pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="count">
+<h4><code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#count" title="Link to this heading">#</a></h4>
+<p>O método <code class="docutils literal notranslate"><span class="pre">count</span></code> é similar ao que vimos em strings, para contar quantas vezes um dado elemento aparece na lista.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;laranja&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
+<span class="n">contador</span> <span class="o">=</span> <span class="n">frutas</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantidade de ocorrências de banana encontrada:&quot;</span><span class="p">,</span> <span class="n">contador</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantidade de ocorrências de banana encontrada: 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ordenacao-e-reversao">
+<h3>Ordenação e reversão<a class="headerlink" href="#ordenacao-e-reversao" title="Link to this heading">#</a></h3>
+<p>Temos 2 métodos aqui:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sort()</span></code>: Ordena os itens da lista.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse()</span></code>: Inverte a ordem dos itens na lista.</p></li>
+</ul>
+<section id="sort">
+<h4><code class="docutils literal notranslate"><span class="pre">sort</span></code><a class="headerlink" href="#sort" title="Link to this heading">#</a></h4>
+<p>O método <code class="docutils literal notranslate"><span class="pre">sort</span></code> ordena uma dada lista em ordem crescente ou decrescente. Para definir entre crescente e decrescente é possível usar o parâmetro <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, que, por padrão, assume o valor <code class="docutils literal notranslate"><span class="pre">reverse=False</span></code>. Em outras palavras, o padrão de ordenação, quando nenhum parâmetro é passado, é crescente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">numeros</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem crescente:&quot;</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)</span>
+
+<span class="n">numeros</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem decrescente:&quot;</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordem crescente: [1, 1, 2, 3, 4, 5, 9]
+Ordem decrescente: [9, 5, 4, 3, 2, 1, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quando os elementos são strings, a ordenação é feita de forma alfabética.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="n">nomes</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem alfabética:&quot;</span><span class="p">,</span> <span class="n">nomes</span><span class="p">)</span>
+
+<span class="n">nomes</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem alfabética reversa:&quot;</span><span class="p">,</span> <span class="n">nomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordem alfabética: [&#39;Antônio&#39;, &#39;Caio&#39;, &#39;Joaquim&#39;, &#39;Jonas&#39;, &#39;José&#39;, &#39;João&#39;]
+Ordem alfabética reversa: [&#39;João&#39;, &#39;José&#39;, &#39;Jonas&#39;, &#39;Joaquim&#39;, &#39;Caio&#39;, &#39;Antônio&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quando os tipos de dados da lista são misturados, não é possível fazer a ordenação.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipos_misturados</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;Henrique&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+<span class="n">tipos_misturados</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem crescente:&quot;</span><span class="p">,</span> <span class="n">tipos_misturados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">tipos_misturados</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;Henrique&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tipos_misturados</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordem crescente:&quot;</span><span class="p">,</span> <span class="n">tipos_misturados</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reverse">
+<h4><code class="docutils literal notranslate"><span class="pre">reverse</span></code><a class="headerlink" href="#reverse" title="Link to this heading">#</a></h4>
+<p>O método <code class="docutils literal notranslate"><span class="pre">reverse</span></code> inverte uma dada lista ao contrário. É diferente do <code class="docutils literal notranslate"><span class="pre">sort</span></code>, que ordena.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipos_misturados</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;Henrique&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+<span class="n">tipos_misturados</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista invertida:&quot;</span><span class="p">,</span> <span class="n">tipos_misturados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lista invertida: [4.0, &#39;Henrique&#39;, &#39;1&#39;, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="outras-operacoes-com-listas">
+<h3>Outras operações com listas<a class="headerlink" href="#outras-operacoes-com-listas" title="Link to this heading">#</a></h3>
+<section id="pertencimento">
+<h4>Pertencimento<a class="headerlink" href="#pertencimento" title="Link to this heading">#</a></h4>
+<p>É possível verificar se um dado elemento está ou não em uma lista usando os operadores <code class="docutils literal notranslate"><span class="pre">not</span></code> e <code class="docutils literal notranslate"><span class="pre">in</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;João&quot;</span> <span class="ow">in</span> <span class="n">nomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome inexistente&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comprimento">
+<h4>Comprimento<a class="headerlink" href="#comprimento" title="Link to this heading">#</a></h4>
+<p>Como já vimos em strings, é possível usar a função <code class="docutils literal notranslate"><span class="pre">len</span></code> para mensurar o tamanho de uma lista.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="n">quantidade_nomes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nomes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A lista tem </span><span class="si">{</span><span class="n">quantidade_nomes</span><span class="si">}</span><span class="s2"> nomes.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A lista tem 6 nomes.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Lembrete (len é função e não método)</p>
+<p>A esta altura do livro você deve estar confortável em saber porque usamos <code class="docutils literal notranslate"><span class="pre">len(nomes)</span></code> e não <code class="docutils literal notranslate"><span class="pre">nomes.len()</span></code>. O motivo: `len()´ é uma função e não um método de lista, conforme vimos na seção <a class="reference internal" href="01-strings.html#reforco-pratico-metodos-vs-funcoes"><span class="std std-ref">reforço prático - métodos vs funções</span></a>.</p>
+</div>
+</section>
+<section id="iterando-pela-lista">
+<h4>Iterando pela lista<a class="headerlink" href="#iterando-pela-lista" title="Link to this heading">#</a></h4>
+<p>Podemos já adiantar um tema que vamos detalhar mais em capítulos futuros, o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Basicamente, e de forma simplificada, podemos iterar pelos elementos de uma lista.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">nome</span> <span class="ow">in</span> <span class="n">nomes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>João
+José
+Jonas
+Joaquim
+Caio
+Antônio
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, estamos usando uma variável temporária <code class="docutils literal notranslate"><span class="pre">nome</span></code>, que recebe cada um dos nomes da lista <code class="docutils literal notranslate"><span class="pre">nomes</span></code>. Cada item da lista é impresso na tela.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (identação)</p>
+<p>Reparem bem na linha <code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">print(nome)</span></code>. Há vários espaços em branco à direita dela. Pela primeira vez estamos usando identação no código.</p>
+<p>Em Python, a identação são espaços que colocamos no começo das linhas. Ela ajuda o computador a entender que partes do código pertencem juntas.</p>
+<p>A linha <code class="docutils literal notranslate"><span class="pre">print(nome)</span></code> está indentada, o que significa que ela pertence ao bloco do laço de repetição <code class="docutils literal notranslate"><span class="pre">for</span></code> da linha acima. O que está indentado aqui é a ação que queremos realizar para cada nome na lista. Nesse caso, a ação é imprimir o nome na tela.</p>
+<p>Vamos detalhar mais a fundo a identação quando começarmos a estudar estruturas de decisão <code class="docutils literal notranslate"><span class="pre">if-else</span></code> e laços de repetição <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>O que você precisa entender por agora é que a identação é obrigatória, caso contrário o código vai gerar um erro. Experimente executar o trecho abaixo e veja você mesmo o erro:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Jonas&quot;</span><span class="p">,</span> <span class="s2">&quot;Joaquim&quot;</span><span class="p">,</span> <span class="s2">&quot;Caio&quot;</span><span class="p">,</span> <span class="s2">&quot;Antônio&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">nome</span> <span class="ow">in</span> <span class="n">nomes</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -944,16 +1183,31 @@ Quarto elemento da lista: [7, 8, 9, 10]
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando elementos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-listas">Métodos de listas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicao-de-elementos">Adição de elementos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#append">Append</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extend">Extend</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insert">Insert</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extend"><code class="docutils literal notranslate"><span class="pre">extend</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insert"><code class="docutils literal notranslate"><span class="pre">insert</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remocao-de-elementos">Remoção de elementos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove">Remove</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">Pop</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#informacoes-sobre-a-lista">Informações sobre a lista</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index">Index</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove"><code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop"><code class="docutils literal notranslate"><span class="pre">pop</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clear"><code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informacoes-sobre-a-lista">Informações sobre a lista</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index"><code class="docutils literal notranslate"><span class="pre">index</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenacao-e-reversao">Ordenação e reversão</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sort"><code class="docutils literal notranslate"><span class="pre">sort</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse"><code class="docutils literal notranslate"><span class="pre">reverse</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-operacoes-com-listas">Outras operações com listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprimento">Comprimento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterando-pela-lista">Iterando pela lista</a></li>
 </ul>
 </li>
 </ul>
