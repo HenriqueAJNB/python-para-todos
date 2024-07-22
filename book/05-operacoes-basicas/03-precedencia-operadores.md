@@ -65,7 +65,7 @@ Esta tabela acima representa uma lista com todos os operadores do Python. Não s
 
 Caso eles estejam na mesma linha, dai a ordem passa a ser da esquerda para a direita (ordem de leitura comum).
 
-Retornando à nossa expressão, reparem que a exponenciação `**` aparece da subtração (`-`) na tabela, sendo executada primeiro, portanto.
+Retornando à nossa expressão, reparem que a exponenciação `**` aparece antes da subtração (`-`) na tabela, sendo executada primeiro, portanto.
 
 A ordem de execução do nosso programa então seria:
 
