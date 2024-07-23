@@ -36,6 +36,7 @@ Quero que você se sinta apoiado e confiante durante todo o processo de aprendiz
 Eu, Henrique Branco, autor deste livro, gostaria de expressar minha sincera gratidão de forma pública e honrada a todos aqueles que contribuíram para a realização deste livro.
 
 Em especial, agradeço pontualmente:
+à minha esposa, Fabiana Branco, que aceita a dedicação do meu tempo em prol da construção deste livro para a comunidade sem absolutamente nenhum tipo de retorno financeiro para mim e/ou minha família.
 - à <a href="https://www.linkedin.com/in/camilaccb/" target="_blank">Camila Caldas</a> por ter submetido a primeira contribuição voluntária para o livro.
 
 ## Conteúdo do livro
