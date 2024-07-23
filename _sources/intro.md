@@ -31,6 +31,13 @@ O objetivo deste livro é guiá-lo em sua jornada de aprendizado em Python, part
 
 Quero que você se sinta apoiado e confiante durante todo o processo de aprendizado. Por isso, ofereço uma linguagem informal e um contato próximo comigo, autor deste material, como um diferencial. Estarei disponível para esclarecer dúvidas, fornecer feedback e ajudá-lo a superar qualquer desafio que possa surgir. Minha intenção é criar uma experiência de aprendizado suave, onde você não apenas aprende Python, mas também seja ouvido com suas dúvidas.
 
+## Agradecimentos especiais
+
+Eu, Henrique Branco, autor deste livro, gostaria de expressar minha sincera gratidão de forma pública e honrada a todos aqueles que contribuíram para a realização deste livro.
+
+Em especial, agradeço pontualmente:
+- à <a href="https://www.linkedin.com/in/camilaccb/" target="_blank">Camila Caldas</a> por ter submetido a primeira contribuição voluntária para o livro.
+
 ## Conteúdo do livro
 
 ```{tableofcontents}
