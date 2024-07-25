@@ -34,6 +34,7 @@ O conceito mais simples de programação seria:
 
 Bom, no nosso programa, temos basicamente duas operações: `-` (subtração) e `**` (potenciação). Só que o nosso programa não é executado sempre na sequência linear de leitura, da esquerda para direita. Dependendo dos operadores, alguns podem ser executados antes de outros, como uma fila de prioridade. E é justamente o caso que acontece aqui.
 
+(tabela-precedencia)=
 ## A tabela de precedência
 
 | Operador                                                   | Descrição                                                                                       |

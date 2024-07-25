@@ -424,6 +424,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-a-diferenca-entre-listas-e-tuplas-afinal-de-contas">Qual a diferença entre listas e tuplas afinal de contas?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-desafio">Prática (desafio)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -452,7 +454,7 @@ document.write(`
 </section>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
-<p>Tuplas começam e terminam com <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, e seus elementos são separados com vírugla (<code class="docutils literal notranslate"><span class="pre">,</span></code>) assim como nas listas.</p>
+<p>Tuplas começam e terminam com parênteses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, e seus elementos são separados com vírugla (<code class="docutils literal notranslate"><span class="pre">,</span></code>) assim como nas listas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_de_numeros</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">156</span><span class="p">)</span>
@@ -465,6 +467,61 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+<p>Como os parênteses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> existem também para priorizar operações matemática (lembra da <a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html#tabela-precedencia"><span class="std std-ref">tabela de precedência</span></a>?) o único caso que pode ser um tanto quanto confuso é a criação de tuplas com um único elemento. Observem o caso abaixo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_de_um_elemento</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eu faço a seguinte pergunta, a variável <code class="docutils literal notranslate"><span class="pre">tupla_de_um_elemento</span></code> acima é uma tupla? Por incrível que pareça <strong>não é</strong>! Como podemos confirmar? Vamos checar essa informação ssando a função <code class="docutils literal notranslate"><span class="pre">type</span></code>, conforme já aprendemos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_de_um_elemento</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tupla_de_um_elemento</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>O trecho de código acima confirma que a variável <code class="docutils literal notranslate"><span class="pre">tupla_de_um_elemento</span></code> não é uma tupla mas sim um inteiro, apesar da existência dos parênteses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>.</p>
+<p>Por que? Como tuplas são sequências, elas precisam da existência da vírgula <code class="docutils literal notranslate"><span class="pre">,</span></code> para separar os elementos, por mais que exista apenas um único elemento.</p>
+<p>Portanto, uma tupla de um único elemento seria representada desta forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_de_um_elemento</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tupla_de_um_elemento</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Dica (tipo do elemento)</p>
+<p>O que mencionei acima sobre tuplas de um elemento é válido para qualquer tipo de dado dentro da tupla. Quer ver só? Qual seria o tipo de dado da variável abaixo? string ou tupla?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variavel</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;uma string qualquer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Se você disse tupla, eu lhe pergunto, onde está a vírgula <code class="docutils literal notranslate"><span class="pre">,</span></code> separando os elementos? No final ela acaba sendo uma string!</p>
+<p>Para transformarmos essa variável acima em tupla, precisamos adicionar a vírgula ao final.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variavel</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;uma string qualquer&quot;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>Você pode conferir o que estou dizendo usando a função <code class="docutils literal notranslate"><span class="pre">type</span></code> da mesma forma que fiz nos exemplos acima.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Por mais que seja estranho o formato `(elemento,)`, esta é a forma que o Python usa para distinguir parenteses `( )` usados em tuplas e em operações matemáticas.
+</pre></div>
 </div>
 <section id="operacoes-em-comum-entre-listas-e-tuplas">
 <h3>Operações em comum entre listas e tuplas<a class="headerlink" href="#operacoes-em-comum-entre-listas-e-tuplas" title="Link to this heading">#</a></h3>
@@ -571,7 +628,7 @@ Métodos de tuplas
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Não é possível alterar nenhum mês</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">meses</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jan&quot;</span><span class="p">,</span> <span class="s2">&quot;fev&quot;</span><span class="p">,</span> <span class="s2">&quot;mar&quot;</span><span class="p">,</span> <span class="s2">&quot;abr&quot;</span><span class="p">,</span> <span class="s2">&quot;mai&quot;</span><span class="p">,</span> <span class="s2">&quot;jun&quot;</span><span class="p">,</span> <span class="s2">&quot;jul&quot;</span><span class="p">,</span> <span class="s2">&quot;ago&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="s2">&quot;nov&quot;</span><span class="p">,</span> <span class="s2">&quot;dez&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">meses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mes inexistente&quot;</span>
@@ -592,7 +649,7 @@ Métodos de tuplas
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Não temos nenhum método de inserção, deleção e ordenação</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">meses</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jan&quot;</span><span class="p">,</span> <span class="s2">&quot;fev&quot;</span><span class="p">,</span> <span class="s2">&quot;mar&quot;</span><span class="p">,</span> <span class="s2">&quot;abr&quot;</span><span class="p">,</span> <span class="s2">&quot;mai&quot;</span><span class="p">,</span> <span class="s2">&quot;jun&quot;</span><span class="p">,</span> <span class="s2">&quot;jul&quot;</span><span class="p">,</span> <span class="s2">&quot;ago&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="s2">&quot;nov&quot;</span><span class="p">,</span> <span class="s2">&quot;dez&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">meses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;mes inexistente&quot;</span><span class="p">)</span>
@@ -612,7 +669,7 @@ Métodos de tuplas
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">meses</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jan&quot;</span><span class="p">,</span> <span class="s2">&quot;fev&quot;</span><span class="p">,</span> <span class="s2">&quot;mar&quot;</span><span class="p">,</span> <span class="s2">&quot;abr&quot;</span><span class="p">,</span> <span class="s2">&quot;mai&quot;</span><span class="p">,</span> <span class="s2">&quot;jun&quot;</span><span class="p">,</span> <span class="s2">&quot;jul&quot;</span><span class="p">,</span> <span class="s2">&quot;ago&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="s2">&quot;nov&quot;</span><span class="p">,</span> <span class="s2">&quot;dez&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">meses</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
@@ -622,6 +679,19 @@ Métodos de tuplas
 </div>
 </div>
 <p>Em resumo, a nossa sequencia de meses está totalmente protegida de modificações indesejadas. E é exataente isso que queremos!</p>
+</section>
+<section id="pratica-desafio">
+<h2>Prática (desafio)<a class="headerlink" href="#pratica-desafio" title="Link to this heading">#</a></h2>
+<p>Agora que você aprendeu a manipular listas e tuplas, eu criei um exercício desafio para você! Vamos realizar uma análise de vendas no <a class="reference internal" href="../exercicios.html#exercicio-9"><span class="std std-ref">exercício 9</span></a>?</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Nestes 2 últimos capítulo, exploramos as listas e tuplas em Python, duas estruturas de dados fundamentais. São as duas principais estruturas básicas para trabalharmos com dados ordenados.
+As listas, com sua natureza mutável, oferecem flexibilidade para armazenar, modificar e gerenciar coleções de itens de forma dinâmica.
+Já as tuplas, com sua imutabilidade, garantem a integridade dos dados, tornando-se ideais para armazenar informações que não devem ser alteradas.
+Ambas desempenham papéis cruciais em diversas situações, desde a manipulação simples de dados até a construção de estruturas mais complexas.
+Espero que você tenha compreendido principalmente a diferença entre listas e tuplas e sobre quando e como usar cada uma delas.</p>
+<p>No próximo capítulo vamos aprender sobre a primeira estrutura de dados não ordenada, os dicionários!</p>
 </section>
 </section>
 
@@ -695,6 +765,8 @@ Métodos de tuplas
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qual-a-diferenca-entre-listas-e-tuplas-afinal-de-contas">Qual a diferença entre listas e tuplas afinal de contas?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica-desafio">Prática (desafio)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 

@@ -426,6 +426,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-6-validacao-codigo-produto">Exercício 6 - validação código produto</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7-placas-veiculares">Exercício 7 - placas veiculares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
 </ul>
 </li>
 </ul>
@@ -739,6 +740,76 @@ Conclusão: o código do produto não é válido pois não começa com PROD-
 </details>
 </div>
 </section>
+<section id="exercicio-9-analise-de-vendas">
+<span id="exercicio-9"></span><h3>Exercício 9 - análise de vendas<a class="headerlink" href="#exercicio-9-analise-de-vendas" title="Link to this heading">#</a></h3>
+<p>Uma empresa de varejo quer analisar as vendas históricas de seus produtos para tomar decisões estratégicas. As vendas são armazenadas no seguinte formato, com nome do produto, quantidade vendida e preço unitário em R$:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vendas_diarias</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Produto A&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Produto B&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Produto C&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>9.1</strong> - As informações de vendas diárias são mutáveis ou imutáveis? A estrutura de dados usada é a mais adequada? Justifique sua resposta.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 9.1</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A estrutura usada para vendas diárias é uma tupla, portanto, imutável. Não é a estrutura mais adequada, pois não permite a inserção de novas vendas na estrutura.</p>
+<p class="sd-card-text">A estrutura usada para armazenar cada informação dos produtos é uma lista, portanto mutável. Também não é a estrutura mais adequada pois permite uma certa flexibilidade que pode ser indesejada, como, por exemplo, adicionar ao produto A um item a mais de categoria e os outros produtos não terem.</p>
+<p class="sd-card-text">Além disso, sendo listas, é possível não só acrescentar itens como alterá-los após a criação da estrutura de vendas. Como são dados históricos, não há motivos para tais alterações, sendo uma lista uma estrutura mutável indesejada.</p>
+</div>
+</details><p><strong>9.2</strong> - As informações específicas de cada produto são mutáveis ou imutáveis? A estrutura de dados usada é a mais adequada? Justifique sua resposta.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 9.2</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A estrutura usada para armazenar cada informação dos produtos (nome, quantidade e preço) é uma lista, portanto mutável. Também não é a estrutura mais adequada pois permite uma certa flexibilidade que pode ser indesejada, como, por exemplo, adicionar ao produto A um item a mais de categoria e os outros produtos não terem.</p>
+<p class="sd-card-text">Além disso, sendo listas, é possível não só acrescentar itens como alterá-los após a criação da estrutura de vendas. Como são dados históricos, não há motivos para tais alterações, sendo uma lista uma estrutura mutável indesejada.</p>
+</div>
+</details><p><strong>9.3</strong> - Caso as estruturas sejam inadequadas, como você sugeriria?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 9.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A estrutura externa de vendas diárias deveria ser uma lista para eventual acréscimo de mais vendas e a estrutura interna dos produtos como sendo tuplas para garantir que não haja modificações.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vendas_diarias</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Produto A&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Produto B&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Produto C&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>9.4</strong> - Faça um código que traga o faturamento da empresa (quantidade total de vendas em R$)</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vendas_diarias</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Produto A&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Produto B&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Produto C&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">total_produto_a</span> <span class="o">=</span>  <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">total_produto_b</span> <span class="o">=</span> <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">total_produto_c</span> <span class="o">=</span> <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">vendas_diarias</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">faturamento</span> <span class="o">=</span> <span class="n">total_produto_a</span> <span class="o">+</span> <span class="n">total_produto_b</span> <span class="o">+</span> <span class="n">total_produto_c</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O faturamento da empresa foi de R$ </span><span class="si">{</span><span class="n">faturamento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O faturamento da empresa foi de R$ 2050
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
 </section>
 </section>
 
@@ -806,6 +877,7 @@ Conclusão: o código do produto não é válido pois não começa com PROD-
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-6-validacao-codigo-produto">Exercício 6 - validação código produto</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7-placas-veiculares">Exercício 7 - placas veiculares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
 </ul>
 </li>
 </ul>
