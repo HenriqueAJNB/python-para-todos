@@ -423,6 +423,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-o-dicionario">Modificando o dicionário</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns">Métodos comuns</a></li>
 </ul>
 </li>
 </ul>
@@ -532,14 +533,93 @@ document.write(`
 
 <span class="c1"># Aqui não estamos acessando a chave profissão, mas sim criando-a!</span>
 <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;profissao&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;desenvolvedor&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nome&#39;: &#39;João&#39;, &#39;idade&#39;: 30, &#39;cidade&#39;: &#39;São Paulo&#39;, &#39;profissao&#39;: &#39;desenvolvedor&#39;}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota (acessar vs atribuir)</p>
-<p>Lembre-se que acessar um valor é diferente de atribuir um valor à uma chave. O acesso requer que a chave exista, e a atribuição, caso a chave não exista, ela será criada.</p>
+<p>Lembre-se que acessar é diferente de atribuir. O acesso requer que a chave exista, e a atribuição, caso a chave não exista, ela será criada.</p>
 </div>
+<p>Caso uma atribuição seja feita a uma chave existente, o valor dela será substituído.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># O valor correspondente à chave &quot;nome&quot; é substituid por &quot;José&quot; </span>
+<span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;José&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nome&#39;: &#39;José&#39;, &#39;idade&#39;: 30, &#39;cidade&#39;: &#39;São Paulo&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>É possíve remover pares de chave-valor de um dicionário de duas formas: usando o método <code class="docutils literal notranslate"><span class="pre">pop</span></code> de dicionários ou usando a instrução <code class="docutils literal notranslate"><span class="pre">del</span></code>. Vejamos:</p>
+<p>Usando a instrução <code class="docutils literal notranslate"><span class="pre">del</span></code>, o par é simplesmente apagado não sendo possível salvá-lo em variáveis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># O par de chave-valor correspondente à chave nome deixou de existir</span>
+<span class="k">del</span> <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;idade&#39;: 30, &#39;cidade&#39;: &#39;São Paulo&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Já com o método <code class="docutils literal notranslate"><span class="pre">pop</span></code>, o par de chave-valor é removido, e o valor é salvo na variável definida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># O par de chave-valor correspondente à chave nome deixou de existir</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="n">pessoa</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;idade&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+{&#39;nome&#39;: &#39;João&#39;, &#39;cidade&#39;: &#39;São Paulo&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metodos-comuns">
+<h3>Métodos comuns<a class="headerlink" href="#metodos-comuns" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -595,6 +675,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-o-dicionario">Modificando o dicionário</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns">Métodos comuns</a></li>
 </ul>
 </li>
 </ul>
