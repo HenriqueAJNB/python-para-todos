@@ -424,9 +424,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-o-dicionario">Modificando o dicionário</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns">Métodos comuns</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns-de-dicionarios">Métodos comuns de dicionários</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keys-values-e-items"><code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> e <code class="docutils literal notranslate"><span class="pre">items</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-operacoes-com-dicionarios">Outras operações com dicionários</a></li>
 </ul>
             </nav>
         </div>
@@ -619,9 +624,140 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="metodos-comuns">
-<h3>Métodos comuns<a class="headerlink" href="#metodos-comuns" title="Link to this heading">#</a></h3>
 </section>
+<section id="metodos-comuns-de-dicionarios">
+<h2>Métodos comuns de dicionários<a class="headerlink" href="#metodos-comuns-de-dicionarios" title="Link to this heading">#</a></h2>
+<section id="get">
+<h3><code class="docutils literal notranslate"><span class="pre">get</span></code><a class="headerlink" href="#get" title="Link to this heading">#</a></h3>
+<p>O método <code class="docutils literal notranslate"><span class="pre">get</span></code> é uma outra forma de acessar uma determinada chave de um dicionário. Ele retorna o valor associado à chave especificada. Porém, diferente do acesso <code class="docutils literal notranslate"><span class="pre">dict['chave']</span></code> como vimos acima, se a chave não existir, retorna None ou um valor padrão definido. Vamos ver este método com o mesmo exemplo acima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pessoa não possui a chave profissão</span>
+<span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Acessando uma chave inexistente com o método get()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissao&quot;</span><span class="p">))</span>
+
+<span class="c1"># Caso a chave não exista, podemos pasar um valor padrão que será retornado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissao&quot;</span><span class="p">,</span> <span class="s2">&quot;desenvolvedor&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+desenvolvedor
+</pre></div>
+</div>
+</div>
+</div>
+<p>O grande diferencial ao usar o método <code class="docutils literal notranslate"><span class="pre">get</span></code> é que nunca teremos o erro <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> no caso de acessar uma chave inexistente. Eu, particularmente, considero até uma forma mais segura de acessar chaves de um dicionário através deste método.</p>
+</section>
+<section id="keys-values-e-items">
+<h3><code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> e <code class="docutils literal notranslate"><span class="pre">items</span></code><a class="headerlink" href="#keys-values-e-items" title="Link to this heading">#</a></h3>
+<p>Estes 3 métodos são basicamente para listar as chaves (<code class="docutils literal notranslate"><span class="pre">keys</span></code>), valores (<code class="docutils literal notranslate"><span class="pre">values</span></code>) e pares de chave-valor (<code class="docutils literal notranslate"><span class="pre">items</span></code>) de um dicionário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Aqui serão impressas somente as chaves do dicionário</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># Aqui serão impressas somente as chaves do dicionário</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># E finalmente a combinação dos pares de chave-valor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;nome&#39;, &#39;idade&#39;, &#39;cidade&#39;])
+dict_values([&#39;João&#39;, 30, &#39;São Paulo&#39;])
+dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cidade&#39;, &#39;São Paulo&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>O último método <code class="docutils literal notranslate"><span class="pre">items</span></code> em especial é bem interessante. Ele retorna algo similar à uma lista de tuplas, e cada tupla contém 2 elementos, a chave e o seu respectivo valor. Vamos retornar à este método quando formos aprender sobre laços de repetição <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+</section>
+</section>
+<section id="outras-operacoes-com-dicionarios">
+<h2>Outras operações com dicionários<a class="headerlink" href="#outras-operacoes-com-dicionarios" title="Link to this heading">#</a></h2>
+<p>Podemos medir a quantidade de pares chave-valor através da função <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pessoa</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>É possível trabalhar com junções e atualizações de vários dicionários usando os operadores <code class="docutils literal notranslate"><span class="pre">|</span></code> e <code class="docutils literal notranslate"><span class="pre">|=</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (operadores de junção/atualização)</p>
+<p>Ambos os operadores <code class="docutils literal notranslate"><span class="pre">|</span></code> e <code class="docutils literal notranslate"><span class="pre">|=</span></code> só estão disponíveis nas versões do Python 3.9+. Caso estes operadores sejam usados em códigos Python executados na versão 3.8 ou anterior, o código apresentará um erro!</p>
+</div>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">|</span></code> une os pares de chave e valor de dois dicionários, criando um terceiro dicionário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">informacoes_basicas_produto</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Cadeira&quot;</span><span class="p">,</span> <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;codigo&quot;</span><span class="p">:</span><span class="s2">&quot;abc&quot;</span><span class="p">}</span>
+
+<span class="n">informacoes_adicionais_produto</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cor&quot;</span><span class="p">:</span> <span class="s2">&quot;azul&quot;</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;xyz&quot;</span><span class="p">}</span>
+
+<span class="n">informacoes_produto</span> <span class="o">=</span> <span class="n">informacoes_basicas_produto</span> <span class="o">|</span> <span class="n">informacoes_adicionais_produto</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">informacoes_produto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nome&#39;: &#39;Cadeira&#39;, &#39;preco&#39;: 150, &#39;codigo&#39;: &#39;xyz&#39;, &#39;cor&#39;: &#39;azul&#39;, &#39;estoque&#39;: 20}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se dois dicionários têm a mesma chave e você os une com <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">|</span> <span class="pre">b</span></code>, o valor da chave no dicionário final será o do dicionário <code class="docutils literal notranslate"><span class="pre">b</span></code>, que está à direita na união. Ou seja, os valores do dicionário <code class="docutils literal notranslate"><span class="pre">b</span></code> prevalecem sobre os do dicionário <code class="docutils literal notranslate"><span class="pre">a</span></code> quando há chaves iguais. Foi o que aconteceu com a chave <code class="docutils literal notranslate"><span class="pre">codigo</span></code> no exemplo acima.</p>
+<p>Já o operador <code class="docutils literal notranslate"><span class="pre">|=</span></code> é usado para atualizar um dicionário existente, combinando-o com outro dicionário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cliente</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s2">&quot;possui_conveio&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+<span class="n">novas_informacoes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;maria@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;possui_convenio&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">cliente</span> <span class="o">|=</span> <span class="n">novas_informacoes</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cliente</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;nome&#39;: &#39;Maria&#39;, &#39;idade&#39;: 29, &#39;possui_conveio&#39;: True, &#39;email&#39;: &#39;maria@example.com&#39;, &#39;possui_convenio&#39;: False}
+</pre></div>
+</div>
+</div>
+</div>
+<p>A diferença entre <code class="docutils literal notranslate"><span class="pre">|</span></code> e <code class="docutils literal notranslate"><span class="pre">|=</span></code> está na maneira como eles combinam dicionários.</p>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">|</span></code> cria um novo dicionário resultante da combinação de dois dicionários, sem modificar os originais. No exemplo acima, os dicionários <code class="docutils literal notranslate"><span class="pre">informacoes_basicas_produto</span></code> e <code class="docutils literal notranslate"><span class="pre">informacoes_adicionais_produto</span></code> mantiveram-se inalterados.</p>
+<p>Já o operador <code class="docutils literal notranslate"><span class="pre">|=</span></code> atualiza diretamente o dicionário à esquerda com os pares chave-valor do dicionário à direita, modificando-o. O dicionário <code class="docutils literal notranslate"><span class="pre">cliente</span></code> no exemplo foi alterado.</p>
+<p>Portanto, podemos afirmar que <code class="docutils literal notranslate"><span class="pre">|</span></code> é uma operação imutável, e <code class="docutils literal notranslate"><span class="pre">|=</span></code> é mutável.</p>
 </section>
 </section>
 
@@ -694,9 +830,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-o-dicionario">Modificando o dicionário</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns">Métodos comuns</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-comuns-de-dicionarios">Métodos comuns de dicionários</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get"><code class="docutils literal notranslate"><span class="pre">get</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keys-values-e-items"><code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> e <code class="docutils literal notranslate"><span class="pre">items</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-operacoes-com-dicionarios">Outras operações com dicionários</a></li>
 </ul>
   </nav></div>
 
