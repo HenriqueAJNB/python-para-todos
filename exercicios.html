@@ -428,6 +428,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7-placas-veiculares">Exercício 7 - placas veiculares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-10-rh-e-python">Exercício 10 - RH e Python</a></li>
 </ul>
 </li>
 </ul>
@@ -811,6 +812,97 @@ Conclusão: o código do produto não é válido pois não começa com PROD-
 </details>
 </div>
 </section>
+<section id="exercicio-10-rh-e-python">
+<span id="exercicio-10"></span><h3>Exercício 10 - RH e Python<a class="headerlink" href="#exercicio-10-rh-e-python" title="Link to this heading">#</a></h3>
+<p>Você trabalha no departamento de Recursos Humanos (RH) de uma empresa e recebeu a tarefa de analisar alguns dados de funcionários. Os dados são armazenados do seguinte formato:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">funcionarios</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Alice&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;Bruno&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">4500</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Financeiro&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;Carlos&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">6000</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Marketing&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;Diana&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">7000</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Vendas&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;Eduardo&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">5500</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Execute as seguintes manupilações, conforme descritos abaixo:</p>
+<p><strong>10.1</strong> - Acesse e imprima o salário do colaborador Bruno.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.1</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salário do Bruno:&quot;</span><span class="p">,</span> <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Bruno&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.2</strong> - Acesse e imprima os dias de férias restantes da colaboradora Diana.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.2</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dias de férias restantes da Diana:&quot;</span><span class="p">,</span> <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Diana&quot;</span><span class="p">][</span><span class="s2">&quot;ferias_restantes&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.3</strong> - Eduardo recebeu um aumento de salário de 5%. Atualize o salário dele na estrutura para o novo salário.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Eduardo&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Eduardo&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.05</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.4</strong> - Uma nova colaboradora entrou pra equipe. Adicione-a à base usando as informações abaixo:</p>
+<ul class="simple">
+<li><p>Nome: Fernanda</p></li>
+<li><p>Salário: R$6.000,00</p></li>
+<li><p>Férias restantes: 30 (CLT)</p></li>
+<li><p>Departamento: Recursos Humanos</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.4</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Fernanda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;salario&quot;</span><span class="p">:</span> <span class="mi">6000</span><span class="p">,</span> <span class="s2">&quot;ferias_restantes&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Recursos Humanos&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.5</strong> - Calcule e imprima o custo total de salários para a empresa (somatório de todos os salários).
+Considere a colaboradora recém-ingressada do item anterior.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.5</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">custo_total</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Bruno&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">+</span>
+    <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Carlos&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">+</span>
+    <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Diana&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">+</span>
+    <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Eduardo&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span> <span class="o">+</span>
+    <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Fernanda&quot;</span><span class="p">][</span><span class="s2">&quot;salario&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Custo total com a folha de pagamento: </span><span class="si">{</span><span class="n">custo_total</span><span class="si">}</span><span class="s2">)</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.6</strong> - Alice pediu demissão e foi trabalhar em outra empresa. Remova-a da base de colaboradores.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.6</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">funcionarios</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.6</strong> - O gerente gostaria de saber se há algum colaborador chamado Carlos. Verifique.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.6</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Carlos&quot;</span> <span class="ow">in</span> <span class="n">funcionarios</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>10.7</strong> - A estrutura de dados usada é a mais adequada? Justifique sua resposta.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta 10.7</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Sim, a estrutura de dados é adequada porque dicionários permitem acesso direto e mutável aos dados por meio de chaves nomeadas, o que é crucial no contexto de RH, onde informações dos funcionários, como salário e férias, precisam ser atualizadas frequentemente. Além disso, a mutabilidade dos dicionários possibilita a adição ou remoção de elementos, o que reflete bem o ambiente de RH, com processos constantes de contratação e desligamento.</p>
+<p class="sd-card-text">Em comparação, listas e tuplas são menos intuitivas para esse tipo de manipulação. As listas exigem indexação numérica, o que pode ser confuso pois requerem uma ordenação prévia, e as tuplas, sendo imutáveis, dificultam qualquer alteração, tornando-as menos adequadas para um ambiente dinâmico como o de RH.</p>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -879,6 +971,7 @@ Conclusão: o código do produto não é válido pois não começa com PROD-
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7-placas-veiculares">Exercício 7 - placas veiculares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-10-rh-e-python">Exercício 10 - RH e Python</a></li>
 </ul>
 </li>
 </ul>
