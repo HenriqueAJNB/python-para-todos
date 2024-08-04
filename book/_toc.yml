@@ -16,6 +16,7 @@ parts:
   chapters:
   - file: 02-ambientes/01-intro.md
   - file: 02-ambientes/02-ides.md
+  - file: 02-ambientes/03-anaconda.md
 
 - caption: Configure o ambiente
   chapters:
