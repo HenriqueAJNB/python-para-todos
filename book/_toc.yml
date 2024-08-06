@@ -43,6 +43,7 @@ parts:
   - file: 06-estruturas-de-dados/02-listas.ipynb
   - file: 06-estruturas-de-dados/03-tuplas.ipynb
   - file: 06-estruturas-de-dados/04-dicionarios.ipynb
+  - file: 06-estruturas-de-dados/05-sets.ipynb
 
 - caption: Pratique
   chapters:
