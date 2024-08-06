@@ -61,7 +61,7 @@
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="next" title="Sets" href="05-sets.html" />
     <link rel="prev" title="Tuplas" href="03-tuplas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -221,6 +221,7 @@
 <li class="toctree-l1"><a class="reference internal" href="02-listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-tuplas.html">Tuplas</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dicionários</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-sets.html">Sets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -420,7 +421,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
@@ -448,12 +448,10 @@ document.write(`
                   
   <section id="dicionarios">
 <h1>Dicionários<a class="headerlink" href="#dicionarios" title="Link to this heading">#</a></h1>
-<section id="definicao">
-<h2>Definição<a class="headerlink" href="#definicao" title="Link to this heading">#</a></h2>
 <p>Um dicionário em Python é uma estrutura de dados que armazena pares de chave-valor. É a primeira estrutura <strong>não ordenada</strong> que vamos aprender.</p>
 <p>Cada chave deve ser única e imutável (por exemplo, uma string, um número ou uma tupla), enquanto os valores podem ser de qualquer tipo, incluindo listas, listas e até mesmo outros dicionários.</p>
 <p>Os dicionários são úteis para armazenar dados que precisam ser rapidamente acessíveis por uma chave descritiva.</p>
-</section>
+<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Aqui</a> você encontra a documentação oficial de dicionários, cobrindo todos as operações que vamos falar neste capítulo.</p>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
 <p>Um dicionário é definido usando chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> e cada par de chave-valor é separado por dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>. Os pares são separados por vírgulas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
@@ -812,11 +810,11 @@ dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cida
       </div>
     </a>
     <a class="right-next"
-       href="../exercicios.html"
+       href="05-sets.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lista de exercícios</p>
+        <p class="prev-next-title">Sets</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -836,7 +834,6 @@ dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cida
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas-com-dicionarios">Operações básicas com dicionários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-valores-a-partir-da-chave">Acessando valores a partir da chave</a></li>
