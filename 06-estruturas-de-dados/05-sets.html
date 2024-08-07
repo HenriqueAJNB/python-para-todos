@@ -423,7 +423,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-uso-real">Caso de uso real</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-conjuntos">Teoria dos conjuntos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-conjuntos">Teoria dos conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniao-union">União (Union)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interseccao-intersection">Intersecção (Intersection)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-difference">Diferença (Difference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-simetrica-symmetric-difference">Diferença simétrica (symmetric difference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subset-e-superset">Verificação de continência (subset e superset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -485,7 +493,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGLG11&#39;, &#39;HFOF11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HFOF11&#39;, &#39;HGLG11&#39;}
 </pre></div>
 </div>
 </div>
@@ -502,7 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGRE11&#39;, &#39;HGLG11&#39;, &#39;FIIB11&#39;, &#39;FEXC11&#39;, &#39;GGRC11&#39;, &#39;HGPO11&#39;, &#39;BPFF11&#39;, &#39;HGRU11&#39;, &#39;CSHG11&#39;, &#39;BTLG11&#39;, &#39;HFOF11&#39;, &#39;BCFF11&#39;, &#39;FIIJ11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSHG11&#39;, &#39;BCFF11&#39;, &#39;FIIJ11&#39;, &#39;GGRC11&#39;, &#39;FIIB11&#39;, &#39;HFOF11&#39;, &#39;HGLG11&#39;, &#39;HGRU11&#39;, &#39;FEXC11&#39;, &#39;BPFF11&#39;, &#39;HGPO11&#39;, &#39;HGRE11&#39;, &#39;BTLG11&#39;}
 </pre></div>
 </div>
 </div>
@@ -519,7 +527,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGRE11&#39;, &#39;FIIB11&#39;, &#39;FEXC11&#39;, &#39;BPFF11&#39;, &#39;CSHG11&#39;, &#39;BTLG11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSHG11&#39;, &#39;FIIB11&#39;, &#39;FEXC11&#39;, &#39;BPFF11&#39;, &#39;HGRE11&#39;, &#39;BTLG11&#39;}
 </pre></div>
 </div>
 </div>
@@ -536,7 +544,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GGRC11&#39;, &#39;HGRU11&#39;, &#39;BCFF11&#39;, &#39;HGPO11&#39;, &#39;FIIJ11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BCFF11&#39;, &#39;GGRC11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;HGPO11&#39;}
 </pre></div>
 </div>
 </div>
@@ -544,9 +552,216 @@ document.write(`
 </section>
 <section id="teoria-dos-conjuntos">
 <h2>Teoria dos conjuntos<a class="headerlink" href="#teoria-dos-conjuntos" title="Link to this heading">#</a></h2>
-<p>Sets são a estrutura ideal para trabalharmos pensando em teoria dos conjuntos.</p>
+<p>Sets são a estrutura ideal para trabalharmos pensando em teoria dos conjuntos.Na teoria dos conjuntos, trabalhamos com operações que nos ajudam a combinar, comparar e manipular coleções de elementos. Em Python, a estrutura de dados set (conjunto) oferece uma maneira eficiente de realizar essas operações. Vamos explorar as principais operações entre conjuntos.</p>
 <img alt="../_images/06-05-sets-theory.png" id="sets-theory" src="../_images/06-05-sets-theory.png" />
 <p><em><p style="text-align: center;">Teoria dos conjuntos (fonte: autoria própria)</p></em></p>
+<section id="uniao-union">
+<h3>União (Union)<a class="headerlink" href="#uniao-union" title="Link to this heading">#</a></h3>
+<p>A união de dois conjuntos A e B resulta em um novo conjunto que contém todos os elementos de A e B, sem duplicatas. Em Python, usamos o operador <code class="docutils literal notranslate"><span class="pre">|</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.union()</span></code> para realizar a união.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Operador |</span>
+<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">|</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uniao</span><span class="p">)</span>
+
+<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Método .union()</span>
+<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uniao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interseccao-intersection">
+<h3>Intersecção (Intersection)<a class="headerlink" href="#interseccao-intersection" title="Link to this heading">#</a></h3>
+<p>A intersecção de dois conjuntos A e B resulta em um novo conjunto que contém apenas os elementos que estão em ambos os conjuntos. Em Python, usamos o operador <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.intersection()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">interseccao</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">&amp;</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interseccao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">interseccao</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">interseccao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="diferenca-difference">
+<h3>Diferença (Difference)<a class="headerlink" href="#diferenca-difference" title="Link to this heading">#</a></h3>
+<p>A diferença entre dois conjuntos A e B resulta em um novo conjunto que contém os elementos que estão em A, mas não em B. Usamos o operador de menos <code class="docutils literal notranslate"><span class="pre">-</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.difference()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">diferenca</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">-</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferenca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">diferenca</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferenca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="diferenca-simetrica-symmetric-difference">
+<h3>Diferença simétrica (symmetric difference)<a class="headerlink" href="#diferenca-simetrica-symmetric-difference" title="Link to this heading">#</a></h3>
+<p>A diferença simétrica entre dois conjuntos A e B resulta em um novo conjunto que contém os elementos que estão em A ou B, mas não em ambos. Usamos o operador <code class="docutils literal notranslate"><span class="pre">^</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.symmetric_difference().</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">diferenca_simetrica</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferenca_simetrica</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">diferenca_simetrica</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">^</span> <span class="n">conjunto_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferenca_simetrica</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verificacao-de-continencia-subset-e-superset">
+<h3>Verificação de continência (subset e superset)<a class="headerlink" href="#verificacao-de-continencia-subset-e-superset" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Subconjunto (subset):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issubset()</span></code>.</p></li>
+<li><p><strong>Superconjunto (superset):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issuperset()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="n">conjunto_c</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subconjunto&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o operador &lt;= : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">conjunto_a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o método .issubset() : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conjunto_a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Superconjunto&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o operador &gt;= : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">conjunto_c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o método .issuperset() : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">conjunto_c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Subconjunto
+O conjunto C é um subconjunto de A? Usando o operador &lt;= : True
+O conjunto C é um subconjunto de A? Usando o método .issubset() : True
+
+Superconjunto
+O conjunto B é um superconjunto de C? Usando o operador &gt;= : False
+O conjunto B é um superconjunto de C? Usando o método .issuperset() : False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pertencimento">
+<h3>Pertencimento<a class="headerlink" href="#pertencimento" title="Link to this heading">#</a></h3>
+<p>Podemos verificar se um elemento pertence a um conjunto usando o operador <code class="docutils literal notranslate"><span class="pre">in</span></code> ou <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="c1"># Pertence</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">conjunto_a</span><span class="p">)</span>
+
+<span class="c1"># Não pertence</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">conjunto_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -616,7 +831,15 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica">Sintaxe básica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-uso-real">Caso de uso real</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-conjuntos">Teoria dos conjuntos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-dos-conjuntos">Teoria dos conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniao-union">União (Union)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interseccao-intersection">Intersecção (Intersection)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-difference">Diferença (Difference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-simetrica-symmetric-difference">Diferença simétrica (symmetric difference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subset-e-superset">Verificação de continência (subset e superset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
