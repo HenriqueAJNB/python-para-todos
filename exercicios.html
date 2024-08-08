@@ -431,6 +431,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-10-rh-e-python">Exercício 10 - RH e Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-11-controle-de-estoque-de-pecas-automotivas">Exercício 11 - Controle de estoque de peças automotivas</a></li>
 </ul>
 </li>
 </ul>
@@ -905,6 +906,117 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 <p class="sd-card-text">Em comparação, listas e tuplas são menos intuitivas para esse tipo de manipulação. As listas exigem indexação numérica, o que pode ser confuso pois requerem uma ordenação prévia, e as tuplas, sendo imutáveis, dificultam qualquer alteração, tornando-as menos adequadas para um ambiente dinâmico como o de RH.</p>
 </div>
 </details></section>
+<section id="exercicio-11-controle-de-estoque-de-pecas-automotivas">
+<span id="exercicio-11"></span><h3>Exercício 11 - Controle de estoque de peças automotivas<a class="headerlink" href="#exercicio-11-controle-de-estoque-de-pecas-automotivas" title="Link to this heading">#</a></h3>
+<p>Uma concessionária de automóveis precisa gerenciar o estoque de peças de reposição em seus diferentes depósitos. O gerente gostaria de ter uma visão sobre o gerenciamento de controle de estoque das peças disponíveis para manutenção. Abaixo há uma lista de todos os depósitos com suas respectivas peças em estoque:</p>
+<p>Depósito A: junta homocinética, filtro de óleo, vela de ignição, correia dentada, pastilha de freio, amortecedor
+Depósito B: filtro de óleo, vela de ignição, pastilha de freio, disco de freio, pneu, válvula termostática
+Depósito C: correia dentada, pastilha de freio, amortecedor, bateria, filtro de óleo, alternador, vela de ignição
+Depósito D: vela de ignição, disco de freio, óleo de motor, correia alternador, sensor de oxigênio, fluido de freio
+Depósito E: pneu, amortecedor, radiador, bomba d’água, mangueira de água, rolamento de roda, filtro de óleo, vela de ignição</p>
+<p>Responda as seguintes perguntas:</p>
+<p><strong>11.1</strong> - Quais peças estão disponíveis em todos os depósitos?
+<strong>11.2</strong> - Quais peças que estão faltando em cada um dos depósitos?
+<strong>11.3</strong> - Quais peças são exclusivas de cada depósito?</p>
+<div class="tip admonition">
+<p class="admonition-title">Dica</p>
+<p>Lembre-se de usar todas as estruturas de dados que você já aprendeu até aqui para representar os dados do exercício.</p>
+</div>
+<p><strong>Resposta 11.1</strong></p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deposito_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;junta homocinética&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">}</span>
+<span class="n">deposito_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;válvula termostática&quot;</span><span class="p">}</span>
+<span class="n">deposito_c</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;bateria&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+<span class="n">deposito_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;óleo de motor&quot;</span><span class="p">,</span> <span class="s2">&quot;correia alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;sensor de oxigênio&quot;</span><span class="p">,</span> <span class="s2">&quot;fluido de freio&quot;</span><span class="p">}</span>
+<span class="n">deposito_e</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;radiador&quot;</span><span class="p">,</span> <span class="s2">&quot;bomba d&#39;água&quot;</span><span class="p">,</span> <span class="s2">&quot;mangueira de água&quot;</span><span class="p">,</span> <span class="s2">&quot;rolamento de roda&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+
+<span class="n">pecas_comuns_em_todos_depositos</span> <span class="o">=</span> <span class="n">deposito_a</span> <span class="o">&amp;</span> <span class="n">deposito_b</span> <span class="o">&amp;</span> <span class="n">deposito_c</span> <span class="o">&amp;</span> <span class="n">deposito_d</span> <span class="o">&amp;</span> <span class="n">deposito_e</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Peças disponíveis em todos os depósitos: </span><span class="si">{</span><span class="n">pecas_comuns_em_todos_depositos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peças disponíveis em todos os depósitos: {&#39;vela de ignição&#39;}
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><strong>Resposta 11.2</strong></p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deposito_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;junta homocinética&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">}</span>
+<span class="n">deposito_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;válvula termostática&quot;</span><span class="p">}</span>
+<span class="n">deposito_c</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;bateria&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+<span class="n">deposito_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;óleo de motor&quot;</span><span class="p">,</span> <span class="s2">&quot;correia alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;sensor de oxigênio&quot;</span><span class="p">,</span> <span class="s2">&quot;fluido de freio&quot;</span><span class="p">}</span>
+<span class="n">deposito_e</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;radiador&quot;</span><span class="p">,</span> <span class="s2">&quot;bomba d&#39;água&quot;</span><span class="p">,</span> <span class="s2">&quot;mangueira de água&quot;</span><span class="p">,</span> <span class="s2">&quot;rolamento de roda&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+
+<span class="n">todas_pecas</span> <span class="o">=</span> <span class="n">deposito_a</span> <span class="o">|</span> <span class="n">deposito_b</span> <span class="o">|</span> <span class="n">deposito_c</span> <span class="o">|</span> <span class="n">deposito_d</span> <span class="o">|</span> <span class="n">deposito_e</span>
+
+<span class="n">pecas_faltantes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">todas_pecas</span> <span class="o">-</span> <span class="n">deposito_a</span><span class="p">,</span>
+    <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">todas_pecas</span> <span class="o">-</span> <span class="n">deposito_b</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">todas_pecas</span> <span class="o">-</span> <span class="n">deposito_c</span><span class="p">,</span>
+    <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">todas_pecas</span> <span class="o">-</span> <span class="n">deposito_d</span><span class="p">,</span>
+    <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="n">todas_pecas</span> <span class="o">-</span> <span class="n">deposito_e</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pecas_faltantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&quot;bomba d&#39;água&quot;, &#39;bateria&#39;, &#39;disco de freio&#39;, &#39;óleo de motor&#39;, &#39;mangueira de água&#39;, &#39;válvula termostática&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;correia alternador&#39;, &#39;pneu&#39;, &#39;alternador&#39;}, &#39;B&#39;: {&quot;bomba d&#39;água&quot;, &#39;amortecedor&#39;, &#39;junta homocinética&#39;, &#39;bateria&#39;, &#39;óleo de motor&#39;, &#39;correia dentada&#39;, &#39;mangueira de água&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;correia alternador&#39;, &#39;alternador&#39;}, &#39;C&#39;: {&quot;bomba d&#39;água&quot;, &#39;junta homocinética&#39;, &#39;disco de freio&#39;, &#39;óleo de motor&#39;, &#39;mangueira de água&#39;, &#39;válvula termostática&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;correia alternador&#39;, &#39;pneu&#39;}, &#39;D&#39;: {&quot;bomba d&#39;água&quot;, &#39;pastilha de freio&#39;, &#39;amortecedor&#39;, &#39;junta homocinética&#39;, &#39;bateria&#39;, &#39;correia dentada&#39;, &#39;mangueira de água&#39;, &#39;válvula termostática&#39;, &#39;radiador&#39;, &#39;rolamento de roda&#39;, &#39;filtro de óleo&#39;, &#39;pneu&#39;, &#39;alternador&#39;}, &#39;E&#39;: {&#39;pastilha de freio&#39;, &#39;junta homocinética&#39;, &#39;bateria&#39;, &#39;disco de freio&#39;, &#39;óleo de motor&#39;, &#39;correia dentada&#39;, &#39;válvula termostática&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;alternador&#39;}}
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p><strong>Resposta 11.3</strong></p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deposito_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;junta homocinética&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">}</span>
+<span class="n">deposito_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;válvula termostática&quot;</span><span class="p">}</span>
+<span class="n">deposito_c</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;correia dentada&quot;</span><span class="p">,</span> <span class="s2">&quot;pastilha de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;bateria&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+<span class="n">deposito_d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vela de ignição&quot;</span><span class="p">,</span> <span class="s2">&quot;disco de freio&quot;</span><span class="p">,</span> <span class="s2">&quot;óleo de motor&quot;</span><span class="p">,</span> <span class="s2">&quot;correia alternador&quot;</span><span class="p">,</span> <span class="s2">&quot;sensor de oxigênio&quot;</span><span class="p">,</span> <span class="s2">&quot;fluido de freio&quot;</span><span class="p">}</span>
+<span class="n">deposito_e</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pneu&quot;</span><span class="p">,</span> <span class="s2">&quot;amortecedor&quot;</span><span class="p">,</span> <span class="s2">&quot;radiador&quot;</span><span class="p">,</span> <span class="s2">&quot;bomba d&#39;água&quot;</span><span class="p">,</span> <span class="s2">&quot;mangueira de água&quot;</span><span class="p">,</span> <span class="s2">&quot;rolamento de roda&quot;</span><span class="p">,</span> <span class="s2">&quot;filtro de óleo&quot;</span><span class="p">,</span> <span class="s2">&quot;vela de ignição&quot;</span><span class="p">}</span>
+
+<span class="n">pecas_exclusivas</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="n">deposito_a</span> <span class="o">-</span> <span class="n">deposito_b</span> <span class="o">-</span> <span class="n">deposito_c</span> <span class="o">-</span> <span class="n">deposito_d</span> <span class="o">-</span> <span class="n">deposito_e</span><span class="p">,</span>
+    <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">deposito_b</span> <span class="o">-</span> <span class="n">deposito_a</span> <span class="o">-</span> <span class="n">deposito_c</span> <span class="o">-</span> <span class="n">deposito_d</span> <span class="o">-</span> <span class="n">deposito_e</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">deposito_c</span> <span class="o">-</span> <span class="n">deposito_a</span> <span class="o">-</span> <span class="n">deposito_b</span> <span class="o">-</span> <span class="n">deposito_d</span> <span class="o">-</span> <span class="n">deposito_e</span><span class="p">,</span>
+    <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="n">deposito_d</span> <span class="o">-</span> <span class="n">deposito_a</span> <span class="o">-</span> <span class="n">deposito_b</span> <span class="o">-</span> <span class="n">deposito_c</span> <span class="o">-</span> <span class="n">deposito_e</span><span class="p">,</span>
+    <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="n">deposito_e</span> <span class="o">-</span> <span class="n">deposito_a</span> <span class="o">-</span> <span class="n">deposito_b</span> <span class="o">-</span> <span class="n">deposito_c</span> <span class="o">-</span> <span class="n">deposito_d</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pecas_exclusivas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;óleo de motor&#39;, &#39;correia alternador&#39;}, &#39;E&#39;: {&quot;bomba d&#39;água&quot;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &#39;radiador&#39;}}
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
 </section>
 </section>
 
@@ -974,6 +1086,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8-um-texto-e-um-crime">Exercício 8 - um texto e um crime</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-9-analise-de-vendas">Exercício 9 - análise de vendas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-10-rh-e-python">Exercício 10 - RH e Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-11-controle-de-estoque-de-pecas-automotivas">Exercício 11 - Controle de estoque de peças automotivas</a></li>
 </ul>
 </li>
 </ul>

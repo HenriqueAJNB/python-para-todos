@@ -432,6 +432,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -451,7 +453,7 @@ document.write(`
 <li><p><strong>Sem ordem definida:</strong> Os elementos em um set não têm uma ordem específica. Diferente de listas ou tuplas, onde a ordem dos elementos é importante, em sets a posição dos elementos não é garantida e pode variar.</p></li>
 <li><p><strong>Operações matemáticas:</strong> Sets suportam operações matemáticas como união, interseção, diferença e diferença simétrica, que são úteis para comparar e combinar conjuntos de dados.</p></li>
 </ul>
-<p>Vamos aprofundar mais neste capítulo.</p>
+<p>Vamos aprofundar mais neste capítulo. Sugiro fortemente que você leia a documntação oficial sobre sets <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set">aqui</a>, ela é a base deste capítulo todo.</p>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
 <p>a sintaxe básica para criar um set envolve colocar os elementos entre chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Por exemplo, <code class="docutils literal notranslate"><span class="pre">conjunto</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3}</span></code> cria um set contendo os números 1, 2 e 3 (o 3 aparece apenas uma vez, pois o set elimina duplicatas de forma automática).</p>
@@ -493,7 +495,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HFOF11&#39;, &#39;HGLG11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGLG11&#39;, &#39;HFOF11&#39;}
 </pre></div>
 </div>
 </div>
@@ -510,7 +512,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSHG11&#39;, &#39;BCFF11&#39;, &#39;FIIJ11&#39;, &#39;GGRC11&#39;, &#39;FIIB11&#39;, &#39;HFOF11&#39;, &#39;HGLG11&#39;, &#39;HGRU11&#39;, &#39;FEXC11&#39;, &#39;BPFF11&#39;, &#39;HGPO11&#39;, &#39;HGRE11&#39;, &#39;BTLG11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GGRC11&#39;, &#39;CSHG11&#39;, &#39;BPFF11&#39;, &#39;HGLG11&#39;, &#39;BTLG11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;HFOF11&#39;, &#39;BCFF11&#39;, &#39;FEXC11&#39;, &#39;HGRE11&#39;, &#39;HGPO11&#39;, &#39;FIIB11&#39;}
 </pre></div>
 </div>
 </div>
@@ -527,7 +529,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSHG11&#39;, &#39;FIIB11&#39;, &#39;FEXC11&#39;, &#39;BPFF11&#39;, &#39;HGRE11&#39;, &#39;BTLG11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSHG11&#39;, &#39;BPFF11&#39;, &#39;BTLG11&#39;, &#39;FEXC11&#39;, &#39;HGRE11&#39;, &#39;FIIB11&#39;}
 </pre></div>
 </div>
 </div>
@@ -544,7 +546,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BCFF11&#39;, &#39;GGRC11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;HGPO11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GGRC11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;BCFF11&#39;, &#39;HGPO11&#39;}
 </pre></div>
 </div>
 </div>
@@ -763,6 +765,18 @@ True
 </div>
 </section>
 </section>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>Sugiro o <a class="reference internal" href="../exercicios.html#exercicio-11"><span class="std std-ref">exercício 11</span></a> da lista para você praticar a estrutura de sets.</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Neste capítulo, exploramos em detalhes os sets em Python, uma estrutura de dados fundamental para lidar com teoria dos conjuntos. Aprendemos que sets são coleções não ordenadas de elementos únicos, o que os torna extremamente úteis para tarefas como remoção de duplicatas, testes de pertinência e operações entre conjuntos.</p>
+<p>Vimos como criar sets, adicionar e remover elementos, e realizar operações comuns, como união, interseção e diferença. Exploramos as principais propriedades dos sets, como a impossibilidade de duplicatas e a natureza desordenada dos elementos. Isso os torna uma escolha ideal quando a ordem dos elementos não é relevante, mas a unicidade é essencial.</p>
+<p>Além disso, discutimos o uso prático de sets em situações do mundo real, como verificação de ações exclusivas em carteiras de investimentos, identificação de amigos em comum em redes sociais e muito mais. Demonstramos como os sets podem simplificar significativamente muitos problemas comuns, tornando-os uma ferramenta essencial no arsenal do desenvolvedor Python.</p>
+<p>À medida que você continuar a explorar a linguagem Python, recomendo manter os sets em mente e considerar seu uso sempre que precisar trabalhar com coleções de elementos únicos. Sua eficiência e sua sintaxe concisa os tornam uma opção poderosa para uma ampla gama de tarefas de programação.</p>
+<p>Com o domínio das estruturas de dados básicas, como strings, listas, tuplas, dicionários e sets, agora estamos prontos para avançar para o próximo tópico: fluxos de controle. Lá, aprenderemos a criar estruturas de decisão, os famosos <code class="docutils literal notranslate"><span class="pre">if-else-elif</span></code> e de repetição, <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, que nos permitirão escrever códigos cada vez mais sofisticados e adaptáveis.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -840,6 +854,8 @@ True
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
