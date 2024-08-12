@@ -527,7 +527,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Esse erro <code class="docutils literal notranslate"><span class="pre">KeyError:</span> <span class="pre">0</span></code> indica que ele buscou pelo 0 (zero) nas chaves do meu dicionário, mas de fato eu não tenho. Eu só tenho <code class="docutils literal notranslate"><span class="pre">nome</span></code>, <code class="docutils literal notranslate"><span class="pre">idade</span></code> e <code class="docutils literal notranslate"><span class="pre">cidade</span></code>. Em resumo, o erro significa “chave 0 não encontrada”.</p>
+<p>Esse erro <code class="docutils literal notranslate"><span class="pre">KeyError:</span> <span class="pre">0</span></code> ocorre porque o código tentou acessar a chave 0 no dicionário, mas essa chave não existe. As únicas chaves presentes no dicionário são <code class="docutils literal notranslate"><span class="pre">nome</span></code>, <code class="docutils literal notranslate"><span class="pre">idade</span></code> e <code class="docutils literal notranslate"><span class="pre">cidade</span></code>. Em resumo, o erro significa que a chave 0 não foi encontrada.</p>
 </section>
 <section id="modificando-o-dicionario">
 <h3>Modificando o dicionário<a class="headerlink" href="#modificando-o-dicionario" title="Link to this heading">#</a></h3>
@@ -647,7 +647,7 @@ document.write(`
 <span class="c1"># Acessando uma chave inexistente com o método get()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissao&quot;</span><span class="p">))</span>
 
-<span class="c1"># Caso a chave não exista, podemos pasar um valor padrão que será retornado</span>
+<span class="c1"># Caso a chave não exista, podemos passar um valor padrão que será retornado</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissao&quot;</span><span class="p">,</span> <span class="s2">&quot;desenvolvedor&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -675,7 +675,7 @@ desenvolvedor
 <span class="c1"># Aqui serão impressas somente as chaves do dicionário</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
-<span class="c1"># Aqui serão impressas somente as chaves do dicionário</span>
+<span class="c1"># Aqui serão impressas somente os valores do dicionário</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
 <span class="c1"># E finalmente a combinação dos pares de chave-valor</span>
