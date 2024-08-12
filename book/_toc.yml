@@ -45,6 +45,10 @@ parts:
   - file: 06-estruturas-de-dados/04-dicionarios.ipynb
   - file: 06-estruturas-de-dados/05-sets.ipynb
 
+- caption: Estruturas de controle
+  chapters:
+  - file: 07-fluxo-controle/01-condicionais.ipynb
+
 - caption: Pratique
   chapters:
   - file: exercicios.ipynb
