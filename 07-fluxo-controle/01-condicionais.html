@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Estrutura de decisão &#8212; Python para todos</title>
+    <title>Estrutura condicional &#8212; Python para todos</title>
   
   
   
@@ -225,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estrutura de decisão</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estrutura condicional</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -415,7 +415,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estrutura de decisão</h1>
+    <h1>Estrutura condicional</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,7 +426,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-uma-condicao">O que é uma condição?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identacao">Identação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-condicoes-com-else">Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -438,8 +442,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="estrutura-de-decisao">
-<h1>Estrutura de decisão<a class="headerlink" href="#estrutura-de-decisao" title="Link to this heading">#</a></h1>
+  <section id="estrutura-condicional">
+<h1>Estrutura condicional<a class="headerlink" href="#estrutura-condicional" title="Link to this heading">#</a></h1>
 <p>Imagine que você está planejando um piquenique. Antes de sair de casa, você provavelmente verifica o tempo. Se estiver ensolarado, você vai ao parque e não leva guarda-chuvas. Se estiver chovendo, ou você vai ao parque e leva guarda-chuvas ou você fica em casa. Essa é uma estrutura de decisão simples que usamos todos os dias.</p>
 <p>Em programação, especialmente em Python, usamos estruturas semelhantes para fazer nossos programas tomarem decisões. Essas estruturas são chamadas de <em>estruturas de decisão</em> ou <em>estruturas condicionais</em>.</p>
 <p>Neste capítulo, vamos aprender como fazer o computador tomar decisões usando Python. Vamos explorar:</p>
@@ -522,11 +526,91 @@ True
 </div>
 </div>
 </div>
-<p>Mantenha isso em mente: qualquer coisa (métodos, funções, variáveis, classes, operações) que retornem <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> são considerados condicionais.</p>
+<p>Mantenha isso em mente: qualquer coisa (métodos, funções, variáveis, classes, operações) que retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code> são considerados condicionais.</p>
 <p>Agora que entendemos o conceito do que é uma condição, vamos aprender mais sobre as estruturas condicionais.</p>
 </section>
 <section id="sintaxe-basica-da-estrutura-condicional">
 <h2>Sintáxe básica da estrutura condicional<a class="headerlink" href="#sintaxe-basica-da-estrutura-condicional" title="Link to this heading">#</a></h2>
+<p>A estrutura condicional mais simples em Python é a instrução <code class="docutils literal notranslate"><span class="pre">if</span></code>. Podemos imaginá-la como uma forma de dar ao programa a capacidade de tomar decisões: “se uma determinada condição for verdadeira, execute um bloco de código; caso contrário, siga em frente sem fazer nada.”</p>
+<p>A sintaxe básica de uma estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> em Python é simples e direta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Você é maior de idade.
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> é uma expressão que o Python avalia como <code class="docutils literal notranslate"><span class="pre">True</span></code> (verdadeira) ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (falsa). Aqui, estamos comparando a variável <code class="docutils literal notranslate"><span class="pre">idade</span></code> com o valor 18 usando o operador de comparação <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (maior ou igual). Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">True</span></code>, o bloco de código indentado abaixo da instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado, e a mensagem “Você é maior de idade.” será impressa na tela. Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">False</span></code>, o programa simplesmente ignorará o bloco de código do <code class="docutils literal notranslate"><span class="pre">if</span></code> e continuará a execução.</p>
+<section id="identacao">
+<h3>Identação<a class="headerlink" href="#identacao" title="Link to this heading">#</a></h3>
+<p>Quando escrevemos código dentro de um <code class="docutils literal notranslate"><span class="pre">if</span></code>, por exemplo, precisamos adicionar alguns espaços extras no começo da linha (geralmente 4 espaços). Isso é chamado de identação. Esses espaços mostram ao Python que o código indentado deve ser executado se a condição do <code class="docutils literal notranslate"><span class="pre">if</span></code> for verdadeira. Vejamos no exemplo abaixo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">if</span> <span class="n">temperatura</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Está muito quente hoje!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lembre-se de beber água.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As duas linhas com <code class="docutils literal notranslate"><span class="pre">print</span></code> estão indentadas, o que significa que elas pertencem ao bloco <code class="docutils literal notranslate"><span class="pre">if</span></code>. Se a condição <code class="docutils literal notranslate"><span class="pre">temperatura</span> <span class="pre">&gt;</span> <span class="pre">30</span></code> for verdadeira, o Python executará essas duas linhas. Se não usarmos a identação correta, o Python não vai entender o que fazer e dará um erro <code class="docutils literal notranslate"><span class="pre">IdentationError</span></code> justamente porque depois do <code class="docutils literal notranslate"><span class="pre">if</span></code> o Python espera que exista uma identação. Veja o erro mostrado abaixo:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">if</span> <span class="n">temperatura</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Está muito quente hoje!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lembre-se de beber água.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Está muito quente hoje!&quot;</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adicionando-condicoes-com-else">
+<h3>Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#adicionando-condicoes-com-else" title="Link to this heading">#</a></h3>
+<p>E se quisermos que o programa faça algo diferente caso a condição não seja atendida? É aí que entra a instrução <code class="docutils literal notranslate"><span class="pre">else</span></code>. Vamos expandir o exemplo anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preco_produto</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">saldo_cliente</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="k">if</span> <span class="n">saldo_cliente</span> <span class="o">&gt;=</span> <span class="n">preco_produto</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Compra aprovada. Processando pedido...&quot;</span><span class="p">)</span>
+    <span class="c1"># Aqui viria o código para processar o pedido</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saldo insuficiente. Compra não aprovada.&quot;</span><span class="p">)</span>
+    <span class="c1"># Aqui poderia haver código para sugerir opções ao cliente</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saldo insuficiente. Compra não aprovada.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para compreender melhor o código, vamos analisar a condição <code class="docutils literal notranslate"><span class="pre">saldo_cliente</span> <span class="pre">&gt;=</span> <span class="pre">preco_produto</span></code>. Nesse exemplo, onde <code class="docutils literal notranslate"><span class="pre">preco_produto</span> <span class="pre">=</span> <span class="pre">100</span></code> e <code class="docutils literal notranslate"><span class="pre">saldo_cliente</span> <span class="pre">=</span> <span class="pre">80</span></code>, a condição resulta na comparação entre esses valores: <code class="docutils literal notranslate"><span class="pre">80</span> <span class="pre">&gt;=</span> <span class="pre">100</span></code>. Como 80 não é maior ou igual a 100, a condição retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>. Por conta disso, o bloco de código dentro do <code class="docutils literal notranslate"><span class="pre">if</span></code> é ignorado, e o código avança para o bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>, que imprime a mensagem <em>Saldo insuficiente. Compra não aprovada.</em>.</p>
+<p>No gif abaixo, as linhas amarelas indicam a execução do código passo a passo, com a linha sendo executada destacada em amarelo. Observe que, ao avaliar a condição na linha 4 como <code class="docutils literal notranslate"><span class="pre">False</span></code>, o código avança para a linha 8, ignorando todas as instruções do bloco <code class="docutils literal notranslate"><span class="pre">if</span></code> e executando as do bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>. Essa estrutura é conhecida como fluxo de controle de estruturas condicionais, pois nos permite controlar, com base em uma ou mais condições, quais partes do código serão executadas ou ignoradas. Em palavras mais simples, nosso código ganha, a partir de agora, a capacidade de decidir o fluxo do programa com base em uma ou mais condições condições.</p>
+<img alt="../_images/07-01-fluxo-condicional.gif" id="fluxo-condicional" src="../_images/07-01-fluxo-condicional.gif" />
+</section>
 </section>
 </section>
 
@@ -595,7 +679,11 @@ True
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-uma-condicao">O que é uma condição?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identacao">Identação</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-condicoes-com-else">Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
