@@ -428,9 +428,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-uma-condicao">O que é uma condição?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identacao">Identação</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-condicoes-com-else">Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-uma-segunda-alternativa-de-com-else">Adicionando uma segunda alternativa de com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-mais-que-2-condicoes">Trabalhando com mais que 2 condições</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uma-duvida-que-sempre-surge">Uma dúvida que sempre surge</a></li>
 </ul>
             </nav>
         </div>
@@ -584,9 +586,10 @@ True
 </div>
 </div>
 </section>
-<section id="adicionando-condicoes-com-else">
-<h3>Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#adicionando-condicoes-com-else" title="Link to this heading">#</a></h3>
-<p>E se quisermos que o programa faça algo diferente caso a condição não seja atendida? É aí que entra a instrução <code class="docutils literal notranslate"><span class="pre">else</span></code>. Vamos expandir o exemplo anterior:</p>
+</section>
+<section id="adicionando-uma-segunda-alternativa-de-com-else">
+<h2>Adicionando uma segunda alternativa de com <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#adicionando-uma-segunda-alternativa-de-com-else" title="Link to this heading">#</a></h2>
+<p>E se quisermos que o programa faça algo diferente caso a condição não seja atendida? É aí que entra a instrução <code class="docutils literal notranslate"><span class="pre">else</span></code>. Vamos trazer outro exemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preco_produto</span> <span class="o">=</span> <span class="mi">100</span>
@@ -611,6 +614,98 @@ True
 <p>No gif abaixo, as linhas amarelas indicam a execução do código passo a passo, com a linha sendo executada destacada em amarelo. Observe que, ao avaliar a condição na linha 4 como <code class="docutils literal notranslate"><span class="pre">False</span></code>, o código avança para a linha 8, ignorando todas as instruções do bloco <code class="docutils literal notranslate"><span class="pre">if</span></code> e executando as do bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>. Essa estrutura é conhecida como fluxo de controle de estruturas condicionais, pois nos permite controlar, com base em uma ou mais condições, quais partes do código serão executadas ou ignoradas. Em palavras mais simples, nosso código ganha, a partir de agora, a capacidade de decidir o fluxo do programa com base em uma ou mais condições condições.</p>
 <img alt="../_images/07-01-fluxo-condicional.gif" id="fluxo-condicional" src="../_images/07-01-fluxo-condicional.gif" />
 </section>
+<section id="trabalhando-com-mais-que-2-condicoes">
+<h2>Trabalhando com mais que 2 condições<a class="headerlink" href="#trabalhando-com-mais-que-2-condicoes" title="Link to this heading">#</a></h2>
+<p>Muita das vezes precisamos por vários motivos trabalhar com várias condições, e não apenas duas como no exemplo anterior. Para inserir mais condições na nossa árvore de decisões, podemos usar o <code class="docutils literal notranslate"><span class="pre">elif</span></code>. A sintaxe básica do <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> é a seguinte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condicao1</span><span class="p">:</span>
+    <span class="c1"># Código a ser executado caso a condição 1 seja True</span>
+<span class="k">elif</span> <span class="n">condicao2</span><span class="p">:</span>
+    <span class="c1"># Código a ser executado caso a condição 2 seja True</span>
+<span class="k">elif</span> <span class="n">condicao3</span><span class="p">:</span>
+    <span class="c1"># Código a ser executado caso a condição 3 seja True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Código a ser executado caso nenhuma das condições acima seja True</span>
+</pre></div>
+</div>
+<p>O <code class="docutils literal notranslate"><span class="pre">elif</span></code> é uma abreviação de <em>else if</em>, que significa <em>senão, se</em>. Ele permite adicionar mais condições ao nosso código, além da condição inicial do <code class="docutils literal notranslate"><span class="pre">if</span></code>. Cada <code class="docutils literal notranslate"><span class="pre">elif</span></code> precisa necessariamenter ser seguido de uma condição, que será avaliada pelo Python. Se a condição for verdadeira, o bloco de código indentado abaixo do <code class="docutils literal notranslate"><span class="pre">elif</span></code> será executado. Se a condição for falsa, o Python passará para o próximo <code class="docutils literal notranslate"><span class="pre">elif</span></code> ou, se não houver mais <code class="docutils literal notranslate"><span class="pre">elif</span></code>, para o bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Vamos ver um exemplo prático para entender melhor como funciona o bloco <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>:</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (separador de milhar)</p>
+<p>No exemplo abaixo, você vai notar um <code class="docutils literal notranslate"><span class="pre">1_000</span></code>. Esse <code class="docutils literal notranslate"><span class="pre">_</span></code> pode ser usado como símbolo de separador de milhar em números muito grandes com objetivo simplesmente de facilitar a leitura, puramente uma questão visual mesmo. É mais fácil ler um bilhão desta forma, <code class="docutils literal notranslate"><span class="pre">1_000_000_000</span></code>, do que desta outra forma, <code class="docutils literal notranslate"><span class="pre">1000000000</span></code>.</p>
+<p>Em termos de execução não muda nada, pois <code class="docutils literal notranslate"><span class="pre">1_000_000_000</span></code> continua sendo inteiro.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valor_compra</span> <span class="o">=</span> <span class="mf">850.00</span>
+
+<span class="k">if</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">1_000</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.15</span>  <span class="c1"># 15% de desconto para compras acima de 1000</span>
+<span class="k">elif</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.10</span>  <span class="c1"># 10% de desconto para compras entre 500 e 1000</span>
+<span class="k">elif</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># 5% de desconto para compras entre 100 e 500</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># Sem desconto para compras abaixo de 100</span>
+
+<span class="n">valor_final</span> <span class="o">=</span> <span class="n">valor_compra</span> <span class="o">-</span> <span class="p">(</span><span class="n">valor_compra</span> <span class="o">*</span> <span class="n">desconto</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor da compra: R$ </span><span class="si">{</span><span class="n">valor_compra</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Desconto aplicado: </span><span class="si">{</span><span class="n">desconto</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor final a pagar: R$ </span><span class="si">{</span><span class="n">valor_final</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valor da compra: R$ 850.00
+Desconto aplicado: 10%
+Valor final a pagar: R$ 765.00
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo de uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>, é importante lembrar duas coisas:</p>
+<ol class="arabic simple">
+<li><p><strong>A ordem das condições importa.</strong> O Python avalia cada condição na ordem em que elas são escritas. Se a primeira condição for verdadeira, o bloco de código correspondente será executado, e o programa sairá do <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>. Se a primeira condição for falsa, o Python avaliará a próxima condição, e assim por diante, até encontrar uma condição verdadeira ou chegar ao bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>, que é executado se nenhuma das condições anteriores for verdadeira.</p></li>
+<li><p><strong>Apenas uma condição será executada.</strong> No exemplo, apenas um dos descontos será aplicado: 15%, 10%, 5% ou nenhum. Explicando de outra forma: caso a condição do <code class="docutils literal notranslate"><span class="pre">if</span></code> seja <code class="docutils literal notranslate"><span class="pre">True</span></code>, nenhuma das condições no <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code> é avaliada; caso a condição do <code class="docutils literal notranslate"><span class="pre">if</span></code> seja <code class="docutils literal notranslate"><span class="pre">False</span></code>, o Python avalia a primeira condição do <code class="docutils literal notranslate"><span class="pre">elif</span></code> e, se for <code class="docutils literal notranslate"><span class="pre">True</span></code>, executa o bloco de código correspondente e ignora as demais condições; caso a primeira condição do <code class="docutils literal notranslate"><span class="pre">elif</span></code> seja <code class="docutils literal notranslate"><span class="pre">False</span></code>, o Python avalia a próxima condição, e assim por diante, até encontrar uma condição verdadeira ou chegar ao bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p></li>
+</ol>
+</section>
+<section id="uma-duvida-que-sempre-surge">
+<h2>Uma dúvida que sempre surge<a class="headerlink" href="#uma-duvida-que-sempre-surge" title="Link to this heading">#</a></h2>
+<p>Quando estou explicando sobre esse tema, sempre surge a seguinte dúvida do exemplo acima.</p>
+<p>🤔 <em>Por que não usar vários <code class="docutils literal notranslate"><span class="pre">if</span></code> em vez de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code></em> ❓</p>
+<p>Vamos mostrar um exemplo para entender melhor essa questão:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valor_compra</span> <span class="o">=</span> <span class="mf">1_500.00</span>
+
+<span class="k">if</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">1_000</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="k">if</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.10</span>
+<span class="k">if</span> <span class="n">valor_compra</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">valor_final</span> <span class="o">=</span> <span class="n">valor_compra</span> <span class="o">-</span> <span class="p">(</span><span class="n">valor_compra</span> <span class="o">*</span> <span class="n">desconto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo anterior, alterei o valor de <code class="docutils literal notranslate"><span class="pre">valor_compra</span></code> para <code class="docutils literal notranslate"><span class="pre">1_500.00</span></code> e substituí os <code class="docutils literal notranslate"><span class="pre">elif</span></code> por <code class="docutils literal notranslate"><span class="pre">if</span></code>. Agora, pense: qual seria o valor do desconto nesse caso? Tente analisar o código e prever a resposta antes de executá-lo e conferir a explicação a seguir.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Resposta</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Se você pensou que seria 15%, você errou! Dê um <code class="docutils literal notranslate"><span class="pre">print</span></code> na variável <code class="docutils literal notranslate"><span class="pre">desconto</span></code> e vai ver que ela terá o valor <code class="docutils literal notranslate"><span class="pre">0.05</span></code> (5%). O código executa sem erro, o problema está na lógica como ele foi feito!</p>
+</div>
+</details><p>Vamos entender o que está acontecendo:</p>
+<p>Quando o valor da compra é 1500, a primeira condição <code class="docutils literal notranslate"><span class="pre">if</span></code> verifica se o valor é maior que 1000, o que é verdadeiro, então o desconto é definido como 15%. Em um código bem estruturado com <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>, o Python pararia por aqui, pois uma condição já foi satisfeita. No entanto, como usamos apenas <code class="docutils literal notranslate"><span class="pre">if</span></code> isolados, o Python continua a avaliar as demais condições. A segunda condição <code class="docutils literal notranslate"><span class="pre">if</span></code> verifica se o valor é maior que 500, o que também é verdadeiro, e redefine o desconto para 10%, sobrepondo o valor anterior. O problema se intensifica aqui, pois o Python deveria ignorar essa verificação se usássemos <code class="docutils literal notranslate"><span class="pre">elif</span></code>. A terceira condição <code class="docutils literal notranslate"><span class="pre">if</span></code> avalia se o valor é maior que 100, e, novamente, como é verdadeiro, o desconto é redefinido novamente para 5%.</p>
+<p>Além disso, o <code class="docutils literal notranslate"><span class="pre">else</span></code> final está associado apenas ao último <code class="docutils literal notranslate"><span class="pre">if</span></code>, e por isso não será executado, já que a condição do último <code class="docutils literal notranslate"><span class="pre">if</span></code> é verdadeira. Dessa forma, o desconto final aplicado será sempre 0% ou 5%, independentemente das condições anteriores.</p>
+<p>Portanto, é interessante usar <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> quando desejamos que apenas uma condição seja executada. Se utilizarmos vários <code class="docutils literal notranslate"><span class="pre">if</span></code> independentes, o Python avaliará todas as condições de forma separada, o que pode levar a resultados inesperados e incorretos em alguns casos.</p>
+<div class="tip admonition">
+<p class="admonition-title">Dica profissional (código que funciona, mas com erro lógico)</p>
+<p>Nem sempre um código que roda sem erros está certo. Aqui acabamos de ver um exemplo de código que roda sem erros, mas que não está correto do ponto de vista de lógica de programação. Imagine só se esse código fosse parte de um sistema de pagamento de uma loja online e o cliente recebesse um desconto de 5% em vez de 15%? O cliente não ficaria nada feliz, não é mesmo? Por isso é tão fundamental conhecer os conceitos de lógica de programação e aplicá-los corretamente.</p>
+</div>
 </section>
 </section>
 
@@ -681,9 +776,11 @@ True
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-uma-condicao">O que é uma condição?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-basica-da-estrutura-condicional">Sintáxe básica da estrutura condicional</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identacao">Identação</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-condicoes-com-else">Adicionando condições com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-uma-segunda-alternativa-de-com-else">Adicionando uma segunda alternativa de com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-mais-que-2-condicoes">Trabalhando com mais que 2 condições</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uma-duvida-que-sempre-surge">Uma dúvida que sempre surge</a></li>
 </ul>
   </nav></div>
 
