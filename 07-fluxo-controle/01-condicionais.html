@@ -433,6 +433,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-uma-segunda-alternativa-de-com-else">Adicionando uma segunda alternativa de com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-mais-que-2-condicoes">Trabalhando com mais que 2 condições</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uma-duvida-que-sempre-surge">Uma dúvida que sempre surge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-if-elif-else-aninhados">Uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -707,6 +712,75 @@ Valor final a pagar: R$ 765.00
 <p>Nem sempre um código que roda sem erros está certo. Aqui acabamos de ver um exemplo de código que roda sem erros, mas que não está correto do ponto de vista de lógica de programação. Imagine só se esse código fosse parte de um sistema de pagamento de uma loja online e o cliente recebesse um desconto de 5% em vez de 15%? O cliente não ficaria nada feliz, não é mesmo? Por isso é tão fundamental conhecer os conceitos de lógica de programação e aplicá-los corretamente.</p>
 </div>
 </section>
+<section id="uso-de-if-elif-else-aninhados">
+<h2>Uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados<a class="headerlink" href="#uso-de-if-elif-else-aninhados" title="Link to this heading">#</a></h2>
+<p>Agora que você já compreendeu como funcionam as estruturas condicionais básicas em Python, vamos avançar um pouco mais e aprender o uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados. Aninhados quer dizer uma estrutura dentro da outra. Este conceito permite criar estruturas de decisão mais complexas, nas quais uma condição é avaliada dentro de outra.</p>
+<p>Vamos imaginar um cenário simples onde precisamos avaliar múltiplas condições sequencialmente. Suponha que estamos desenvolvendo um sistema que classifica a idade de uma pessoa em três categorias: criança, adolescente ou adulto. O sistema deve primeiro verificar se a pessoa é uma criança (menor de 12 anos). Se não for, o sistema verifica se a pessoa é um adolescente (entre 12 e 17 anos). Se não for nenhum dos dois, então será classificada como adulta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Criança&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adolescente&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adulto&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adolescente
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neste exemplo, o primeiro <code class="docutils literal notranslate"><span class="pre">if</span></code> verifica se a idade é menor que 12. Caso contrário, a estrutura condicional entra no bloco <code class="docutils literal notranslate"><span class="pre">else</span></code> e então verifica uma segunda condição dentro de um novo bloco <code class="docutils literal notranslate"><span class="pre">if</span></code>, conferindo se a idade é menor que 18. Se ambas as condições forem falsas, a última instrução <code class="docutils literal notranslate"><span class="pre">else</span></code> será executada, categorizando a pessoa como adulta.</p>
+<p>Os <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados são úteis quando há múltiplas condições a serem verificadas que dependem de resultados prévios. Isso é comum em situações onde a lógica de decisão precisa ser refinada em etapas, em vez de avaliar todas as condições em uma única expressão <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>.</p>
+<p>No entanto, é importante usar <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados com cuidado para evitar criar código difícil de ler e manter. Quase sempre, estruturas de <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados podem ser simplificadas usando operadores lógicos como <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> (próxima seção deste capítulo) ou mesmo utilizando estruturas <code class="docutils literal notranslate"><span class="pre">elif</span></code> para evitar blocos de código muito aninhados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Criança&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adolescente&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adulto&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adolescente
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo refeito acima, o uso do <code class="docutils literal notranslate"><span class="pre">elif</span></code> substitui a necessidade de aninhar um segundo <code class="docutils literal notranslate"><span class="pre">if</span></code> dentro do bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>, tornando o código mais limpo e direto.</p>
+<div class="danger admonition">
+<p class="admonition-title">Perigo (código hadouken)</p>
+<p>Não há limites para quantos <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados você pode usar. Pode ir fundo e criar quantos níveis forem necessários para resolver o seu problema. Mas, sejamos sinceros: quanto mais camadas, mais seu código começa a se parecer com um labirinto. E quem for ler o seu código, será que vai entender? Minha dica é simples: tente manter o aninhamento de <code class="docutils literal notranslate"><span class="pre">if</span></code> em até 2 ou 3 níveis, no máximo. Além disso, seu código pode começar a se transformar em um verdadeiro “Hadouken” de complexidade — e ninguém quer ter que decifrar um código que parece ter saído direto de um jogo de luta dos anos 90! 🤣</p>
+<img alt="../_images/07-01-codigo-hadouken.jpg" src="../_images/07-01-codigo-hadouken.jpg" />
+</div>
+</section>
+<section id="operadores-logicos">
+<h2>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h2>
+<p>Quando usamos <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>, estamos avaliando uma única condição por vez. Mas e se precisarmos avaliar duas ou mais condições simultaneamente? Para isso, podemos usar operadores lógicos, que nos permitem combinar múltiplas condições em uma única expressão final.</p>
+<p>Os operadores lógicos em Python são <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>: Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todas as condições forem verdadeiras, e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso ao menos uma das condições seja <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>: Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se pelo menos uma das expressões for verdadeira, e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso todas as expressões sejam <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>: Inverte o valor lógico da condição, ou seja, se a condição for <code class="docutils literal notranslate"><span class="pre">True</span></code>, o <code class="docutils literal notranslate"><span class="pre">not</span></code> a transforma em <code class="docutils literal notranslate"><span class="pre">False</span></code>, e vice-versa.</p></li>
+</ul>
+<p>Vamos ver como cada um deles funciona mais no detalhe.</p>
+<section id="operador-and">
+<h3>Operador <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#operador-and" title="Link to this heading">#</a></h3>
+<p>A forma mais fácil de ilustrar o operador é através de imagem.</p>
+<img alt="../_images/07-01-operador-logico-and-true.png" src="../_images/07-01-operador-logico-and-true.png" />
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -781,6 +855,11 @@ Valor final a pagar: R$ 765.00
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-uma-segunda-alternativa-de-com-else">Adicionando uma segunda alternativa de com <code class="docutils literal notranslate"><span class="pre">else</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-mais-que-2-condicoes">Trabalhando com mais que 2 condições</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uma-duvida-que-sempre-surge">Uma dúvida que sempre surge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-if-elif-else-aninhados">Uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
