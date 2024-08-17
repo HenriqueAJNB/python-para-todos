@@ -1,3 +1,4 @@
+(precedencia-operadores)=
 # Precedência de operadores
 
 <div style="text-align: justify">
