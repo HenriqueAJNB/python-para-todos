@@ -436,6 +436,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-if-elif-else-aninhados">Uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-or">Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-not">Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-operadores-logicos">Combinação de operadores lógicos</a></li>
 </ul>
 </li>
 </ul>
@@ -779,6 +782,243 @@ Valor final a pagar: R$ 765.00
 <h3>Operador <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#operador-and" title="Link to this heading">#</a></h3>
 <p>A forma mais fácil de ilustrar o operador é através de imagem.</p>
 <img alt="../_images/07-01-operador-logico-and-true.png" src="../_images/07-01-operador-logico-and-true.png" />
+<p>Nesta imagem, temos três “condições” representadas por pontes, e uma linha tracejada que indica o caminho a ser feito pela pessoa. Para que o caminho seja possível (ou seja, para que o resultado do operador <code class="docutils literal notranslate"><span class="pre">and</span></code> seja <code class="docutils literal notranslate"><span class="pre">True</span></code>), todas as condições devem ser verdadeiras.</p>
+<ul class="simple">
+<li><p>Condição 1 é verdadeira (representada por um check verde)</p></li>
+<li><p>Condição 2 é verdadeira (representada por um check verde)</p></li>
+<li><p>Condição 3 é verdadeira (representada por um check verde)</p></li>
+</ul>
+<p>Como todas as condições são verdadeiras, o caminho é completo, e o resultado do operador <code class="docutils literal notranslate"><span class="pre">and</span></code> é <code class="docutils literal notranslate"><span class="pre">True</span></code>. Vamos ver como isso funciona em Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condicao1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">condicao2</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">condicao3</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">condicao1</span> <span class="ow">and</span> <span class="n">condicao2</span> <span class="ow">and</span> <span class="n">condicao3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="../_images/07-01-operador-logico-and-false.png" src="../_images/07-01-operador-logico-and-false.png" />
+<p>Nesta outra imagem, temos o mesmo cenário, mas desta vez, uma das condições é <code class="docutils literal notranslate"><span class="pre">False</span></code>, pois uma das pontes está levantada. Como uma das condições é <code class="docutils literal notranslate"><span class="pre">False</span></code>, o caminho completo não pode ser seguido, e o resultado final do operador <code class="docutils literal notranslate"><span class="pre">and</span></code> é <code class="docutils literal notranslate"><span class="pre">False</span></code>. Novamente, vamos ver como isso funciona aplicado à linguagem Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condicao1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">condicao2</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condicao3</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">condicao1</span> <span class="ow">and</span> <span class="n">condicao2</span> <span class="ow">and</span> <span class="n">condicao3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Resumindo: o operador lógico <code class="docutils literal notranslate"><span class="pre">and</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> apenas se todas as condições forem verdadeiras; caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</section>
+<section id="operador-or">
+<h3>Operador <code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#operador-or" title="Link to this heading">#</a></h3>
+<p>Da mesma forma o operador <code class="docutils literal notranslate"><span class="pre">or</span></code> também pode ser ilustrado por imagens.</p>
+<img alt="../_images/07-01-operador-logico-ou-true.png" src="../_images/07-01-operador-logico-ou-true.png" />
+<p>De forma análoga, para que o caminho seja possível (ou seja, para que o resultado do operador <code class="docutils literal notranslate"><span class="pre">or</span></code> seja <code class="docutils literal notranslate"><span class="pre">True</span></code>), ao menos uma das condições, representadas também por pontes no desenho, precisam ser <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<ul class="simple">
+<li><p>Condição 1 é falsa (representada por um X vermelho)</p></li>
+<li><p>Condição 2 é verdadeira (representada por um check verde)</p></li>
+<li><p>Condição 3 é falsa (representada por um X vermelho)</p></li>
+</ul>
+<p>Como pelo menos uma das condições é verdadeira, há um caminho possível, e o resultado do operador <code class="docutils literal notranslate"><span class="pre">or</span></code> é <code class="docutils literal notranslate"><span class="pre">True</span></code>. Vamos ver como isso funciona em Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condicao1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">condicao2</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condicao3</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">condicao1</span> <span class="ow">or</span> <span class="n">condicao2</span> <span class="ow">or</span> <span class="n">condicao3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="../_images/07-01-operador-logico-ou-false.png" src="../_images/07-01-operador-logico-ou-false.png" />
+<p>Já neste outro caso, como todas as condições são <code class="docutils literal notranslate"><span class="pre">False</span></code>, não há caminho possível, e o resultado final do operador <code class="docutils literal notranslate"><span class="pre">or</span></code> é <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condicao1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condicao2</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condicao3</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">condicao1</span> <span class="ow">or</span> <span class="n">condicao2</span> <span class="ow">or</span> <span class="n">condicao3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operador-not">
+<h3>Operador <code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#operador-not" title="Link to this heading">#</a></h3>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">not</span></code> é o mais simples dos três. Ele simplesmente inverte o valor lógico da condição. Se a condição for <code class="docutils literal notranslate"><span class="pre">True</span></code>, o <code class="docutils literal notranslate"><span class="pre">not</span></code> a transforma em <code class="docutils literal notranslate"><span class="pre">False</span></code>, e vice-versa. Vamos ver um exemplo prático:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condicao1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">condicao1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combinacao-de-operadores-logicos">
+<h3>Combinação de operadores lógicos<a class="headerlink" href="#combinacao-de-operadores-logicos" title="Link to this heading">#</a></h3>
+<p>Ao combinar operadores lógicos, podemos criar expressões complexas que avaliam múltiplas condições simultaneamente.</p>
+<p>A execução dessas expressões segue uma ordem específica, conforme a tabela de precedência de operadores, que vimos no capítulo <a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html#precedencia-operadores"><span class="std std-ref">Precedência de operadores</span></a>. Lembram disso? No caso dos operadores lógicos, a ordem é: <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>. Isso significa que o Python avalia primeiro o <code class="docutils literal notranslate"><span class="pre">not</span></code>, depois o <code class="docutils literal notranslate"><span class="pre">and</span></code>, e, por último, o <code class="docutils literal notranslate"><span class="pre">or</span></code> na sequencia da esquerda para direita. Além disso, podemos alterar a ordem natural de avaliação usando parênteses, assim como fazemos em expressões matemáticas. Vamos explorar um exemplo prático para entender melhor como isso funciona no mundo dos negócios.</p>
+<p>Imagine uma loja de e-commerce que precisa decidir se um cliente é elegível para uma promoção de frete grátis, considerando alguns critérios específicos:</p>
+<ol class="arabic simple">
+<li><p><strong>Compras frequentes e carrinho com valor mínimo:</strong> Se você comprou pelo menos 5 vezes na loja no último ano e o valor total das suas compras no carrinho atual é maior que R$ 200,00, você pode receber frete grátis.</p></li>
+<li><p><strong>Programa de fidelidade:</strong> Se você faz parte do programa de fidelidade da loja, você pode receber frete grátis automaticamente, não importa quantas compras fez ou o valor do carrinho.</p></li>
+<li><p><strong>Limite de uso da promoção:</strong> Se você já usou essa promoção de frete grátis no mês atual, não pode usá-la novamente, mesmo que atenda às outras condições.</p></li>
+</ol>
+<p>Como você imagina a implementação desse código? Vamos ver um exemplo real!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dados do cliente</span>
+<span class="n">compras_no_ultimo_ano</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">valor_do_carrinho</span> <span class="o">=</span> <span class="mf">180.00</span>  <span class="c1"># em R$</span>
+<span class="n">membro_programa_fidelidade</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">frete_gratis_utilizado_no_mes</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Regras de elegibilidade para frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">compras_no_ultimo_ano</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">valor_do_carrinho</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Regra 1</span>
+    <span class="ow">or</span> <span class="n">membro_programa_fidelidade</span>  <span class="c1"># Regra 2</span>
+    <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>  <span class="c1"># Regra 3</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python sempre resolve o que está dentro dos parênteses primeiro. No nosso exemplo, a parte <code class="docutils literal notranslate"><span class="pre">(compras_no_ultimo_ano</span> <span class="pre">&gt;=</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">valor_do_carrinho</span> <span class="pre">&gt;</span> <span class="pre">200)</span></code> será verificada antes de qualquer outra coisa. Dentro dos parênteses, <code class="docutils literal notranslate"><span class="pre">and</span></code> é resolvido. Isso significa que o Python verifica se <code class="docutils literal notranslate"><span class="pre">compras_no_ultimo_ano</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code> (o que é <code class="docutils literal notranslate"><span class="pre">True</span></code>, pois 6 &gt;= 5) e se <code class="docutils literal notranslate"><span class="pre">valor_do_carrinho</span> <span class="pre">&gt;</span> <span class="pre">200</span></code> (o que é <code class="docutils literal notranslate"><span class="pre">False</span></code>, pois 180 não é maior que 200). Como <code class="docutils literal notranslate"><span class="pre">and</span></code> precisa que ambas as condições sejam verdadeiras, o resultado dentro dos parênteses é <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regras de elegibilidade para frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="kc">False</span>  <span class="c1"># Regra 1</span>
+    <span class="ow">or</span> <span class="n">membro_programa_fidelidade</span>  <span class="c1"># Regra 2</span>
+    <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>  <span class="c1"># Regra 3</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Depois, o Python olha para o <code class="docutils literal notranslate"><span class="pre">or</span></code> fora dos parênteses. Ele vai verificar a combinação da regra 1 que acabamos de resolver com <code class="docutils literal notranslate"><span class="pre">membro_programa_fidelidade</span></code> usando <code class="docutils literal notranslate"><span class="pre">or</span></code>. Como <code class="docutils literal notranslate"><span class="pre">membro_programa_fidelidade</span></code> é <code class="docutils literal notranslate"><span class="pre">False</span></code>, o resultado do <code class="docutils literal notranslate"><span class="pre">or</span></code> é <code class="docutils literal notranslate"><span class="pre">False</span></code>. Temos, portanto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regras de elegibilidade para frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="kc">False</span>  <span class="c1"># Combinação da regra 1 com a regra 2</span>
+    <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>  <span class="c1"># Regra 3</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O <code class="docutils literal notranslate"><span class="pre">not</span></code> é então aplicado em <code class="docutils literal notranslate"><span class="pre">frete_gratis_utilizado_no_mes</span></code>. Como <code class="docutils literal notranslate"><span class="pre">frete_gratis_utilizado_no_mes</span></code> é <code class="docutils literal notranslate"><span class="pre">False</span></code>, o <code class="docutils literal notranslate"><span class="pre">not</span></code> inverte para <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+Finalmente, o Python combina o resultado anterior (<code class="docutils literal notranslate"><span class="pre">False</span></code>) com esse <code class="docutils literal notranslate"><span class="pre">True</span></code> usando <code class="docutils literal notranslate"><span class="pre">and</span></code>. Como <code class="docutils literal notranslate"><span class="pre">and</span></code> precisa que ambas as partes sejam <code class="docutils literal notranslate"><span class="pre">True</span></code> para retornar <code class="docutils literal notranslate"><span class="pre">True</span></code>, mas uma delas é <code class="docutils literal notranslate"><span class="pre">False</span></code>, o resultado final é <code class="docutils literal notranslate"><span class="pre">False</span></code>. Vejam o exemplo completo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regras de elegibilidade para frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Combinação de todas as regras</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (parênteses de formatação)</p>
+<p>No trecho de código acima você deve ter reparado em um parenteses extra. Os parênteses extras são usados exclusivamente para formatar o código de forma a melhorar a sua legibilidade. Sem eles, todas as condições ficariam em uma única linha, o que tornaria o código mais difícil de ler e entender.</p>
+<p>Podemos englobar toda operação entre parenteses para permitir que cada condição seja quebrada em uma linha diferente, facilitando a leitura e compreensão do código.</p>
+<p>Compare com o código abaixo, que é funcional, mas menos legível. Nesse formato, a leitura do código é mais confusa e a compreensão das regras se torna mais difícil.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regras de elegibilidade para frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span><span class="n">compras_no_ultimo_ano</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">valor_do_carrinho</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span>  <span class="ow">or</span> <span class="n">membro_programa_fidelidade</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>
+</pre></div>
+</div>
+</div>
+<p>Vejam o exemplo completo do código novamente, imprimindo o valor da condição final:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dados do cliente</span>
+<span class="n">compras_no_ultimo_ano</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># Quantas vezes você comprou na loja no último ano</span>
+<span class="n">valor_do_carrinho</span> <span class="o">=</span> <span class="mf">180.00</span>  <span class="c1"># Quanto você está gastando agora</span>
+<span class="n">membro_programa_fidelidade</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Se você é parte do programa de fidelidade</span>
+<span class="n">frete_gratis_utilizado_no_mes</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Se você já usou frete grátis este mês</span>
+
+<span class="c1"># Regras para receber frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">compras_no_ultimo_ano</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">valor_do_carrinho</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Regra 1</span>
+    <span class="ow">or</span> <span class="n">membro_programa_fidelidade</span>  <span class="c1"># Regra 2</span>
+<span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>  <span class="c1"># Regra 3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">elegivel_para_frete_gratis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como a variável final <code class="docutils literal notranslate"><span class="pre">elegivel_para_frete_gratis</span></code> contém um valor booleano, podemos usá-la diretamente em uma estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> para decidir se o cliente é elegível para a promoção de frete grátis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dados do cliente</span>
+<span class="n">compras_no_ultimo_ano</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># Quantas vezes você comprou na loja no último ano</span>
+<span class="n">valor_do_carrinho</span> <span class="o">=</span> <span class="mf">180.00</span>  <span class="c1"># Quanto você está gastando agora</span>
+<span class="n">membro_programa_fidelidade</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Se você é parte do programa de fidelidade</span>
+<span class="n">frete_gratis_utilizado_no_mes</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Se você já usou frete grátis este mês</span>
+
+<span class="c1"># Regras para receber frete grátis</span>
+<span class="n">elegivel_para_frete_gratis</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">compras_no_ultimo_ano</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">valor_do_carrinho</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Regra 1</span>
+    <span class="ow">or</span> <span class="n">membro_programa_fidelidade</span>  <span class="c1"># Regra 2</span>
+<span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">frete_gratis_utilizado_no_mes</span>  <span class="c1"># Regra 3</span>
+
+<span class="k">if</span> <span class="n">elegivel_para_frete_gratis</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cliente elegível para frete grátis.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cliente não é elegível para frete grátis.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cliente não é elegível para frete grátis.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -858,6 +1098,9 @@ Valor final a pagar: R$ 765.00
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-if-elif-else-aninhados">Uso de <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> aninhados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-or">Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-not">Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-operadores-logicos">Combinação de operadores lógicos</a></li>
 </ul>
 </li>
 </ul>
