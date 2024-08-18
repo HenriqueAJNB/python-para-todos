@@ -438,9 +438,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-or">Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-not">Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-operadores-logicos">Combinação de operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-exemplo-real-de-negocios">Um exemplo real de negócios</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -825,6 +827,59 @@ Valor final a pagar: R$ 765.00
 </div>
 </div>
 </div>
+<p>É possível demonstrar o comportamento do <code class="docutils literal notranslate"><span class="pre">and</span></code> com todas as possibilidades através de uma tabela.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Condição 1</p></th>
+<th class="head text-center"><p>Condição 2</p></th>
+<th class="head text-center"><p>Condição 3</p></th>
+<th class="head text-center"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Resumindo: o operador lógico <code class="docutils literal notranslate"><span class="pre">and</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> apenas se todas as condições forem verdadeiras; caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </section>
 <section id="operador-or">
@@ -874,6 +929,60 @@ Valor final a pagar: R$ 765.00
 </div>
 </div>
 </div>
+<p>Da mesma forma, podemos apresentar a tabela lógica do operador <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Condição 1</p></th>
+<th class="head text-center"><p>Condição 2</p></th>
+<th class="head text-center"><p>Condição 3</p></th>
+<th class="head text-center"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Resumindo: o operador lógico <code class="docutils literal notranslate"><span class="pre">or</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se pelo menos uma das condições for verdadeira; caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </section>
 <section id="operador-not">
 <h3>Operador <code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#operador-not" title="Link to this heading">#</a></h3>
@@ -891,9 +1000,26 @@ Valor final a pagar: R$ 765.00
 </div>
 </div>
 </div>
+<p>Usando a tabela lógica:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Condição</p></th>
+<th class="head text-center"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="combinacao-de-operadores-logicos">
-<h3>Combinação de operadores lógicos<a class="headerlink" href="#combinacao-de-operadores-logicos" title="Link to this heading">#</a></h3>
+<section id="um-exemplo-real-de-negocios">
+<h3>Um exemplo real de negócios<a class="headerlink" href="#um-exemplo-real-de-negocios" title="Link to this heading">#</a></h3>
 <p>Ao combinar operadores lógicos, podemos criar expressões complexas que avaliam múltiplas condições simultaneamente.</p>
 <p>A execução dessas expressões segue uma ordem específica, conforme a tabela de precedência de operadores, que vimos no capítulo <a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html#precedencia-operadores"><span class="std std-ref">Precedência de operadores</span></a>. Lembram disso? No caso dos operadores lógicos, a ordem é: <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>. Isso significa que o Python avalia primeiro o <code class="docutils literal notranslate"><span class="pre">not</span></code>, depois o <code class="docutils literal notranslate"><span class="pre">and</span></code>, e, por último, o <code class="docutils literal notranslate"><span class="pre">or</span></code> na sequencia da esquerda para direita. Além disso, podemos alterar a ordem natural de avaliação usando parênteses, assim como fazemos em expressões matemáticas. Vamos explorar um exemplo prático para entender melhor como isso funciona no mundo dos negócios.</p>
 <p>Imagine uma loja de e-commerce que precisa decidir se um cliente é elegível para uma promoção de frete grátis, considerando alguns critérios específicos:</p>
@@ -1021,6 +1147,15 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
 </div>
 </section>
 </section>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>Agora que você já entendeu como funcionam as estruturas condicionais em Python, vamos praticar um pouco com os exercícios 12[exercicio-12] e 13[exercicio-13]!</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Neste capítulo, você aprendeu sobre estruturas condicionais em Python. Vimos como usar <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> e <code class="docutils literal notranslate"><span class="pre">elif</span></code> para criar decisões em nossos programas, e como combinar múltiplas condições usando operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span></code>. Além disso, você aprendeu sobre a importância de manter o código limpo e legível, evitando aninhar muitos <code class="docutils literal notranslate"><span class="pre">if</span></code> e usando parênteses para melhorar a formatação do código. Também vimos um último caso de aplicação real de negócios de como combinar estruturas condicionais e operadores lógicos para decidir se um cliente é elegível para uma promoção de frete grátis.</p>
+<p>No próximo capítulo vamos aprender sobre estruturas de repetição, que nos permitem executar um bloco de código várias vezes. Vamos aprender sobre os laços <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, e como usá-los para automatizar tarefas repetitivas em Python. Até lá!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1100,9 +1235,11 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-and">Operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-or">Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-not">Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-operadores-logicos">Combinação de operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-exemplo-real-de-negocios">Um exemplo real de negócios</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
