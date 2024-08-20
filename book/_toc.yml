@@ -48,6 +48,7 @@ parts:
 - caption: Estruturas de controle
   chapters:
   - file: 07-fluxo-controle/01-condicionais.ipynb
+  - file: 07-fluxo-controle/02-repeticao.ipynb
 
 - caption: Pratique
   chapters:
