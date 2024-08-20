@@ -61,7 +61,7 @@
     <link rel="icon" href="_static/python.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Estrutura condicional" href="07-fluxo-controle/01-condicionais.html" />
+    <link rel="prev" title="Estrutura de repetição" href="07-fluxo-controle/02-repeticao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -225,6 +225,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="07-fluxo-controle/01-condicionais.html">Estrutura condicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-fluxo-controle/02-repeticao.html">Estrutura de repetição</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="current nav bd-sidenav">
@@ -1061,7 +1062,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;fluido de freio&#39;, &#39;disco de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;correia alternador&#39;, &#39;bateria&#39;, &#39;mangueira de água&#39;, &#39;óleo de motor&#39;, &#39;rolamento de roda&#39;, &#39;válvula termostática&#39;, &#39;alternador&#39;}, &#39;B&#39;: {&#39;correia dentada&#39;, &#39;fluido de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;radiador&#39;, &#39;correia alternador&#39;, &#39;bateria&#39;, &#39;amortecedor&#39;, &#39;mangueira de água&#39;, &#39;óleo de motor&#39;, &#39;rolamento de roda&#39;, &#39;alternador&#39;, &#39;junta homocinética&#39;}, &#39;C&#39;: {&#39;fluido de freio&#39;, &#39;disco de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;correia alternador&#39;, &#39;óleo de motor&#39;, &#39;rolamento de roda&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;junta homocinética&#39;}, &#39;D&#39;: {&#39;correia dentada&#39;, &quot;bomba d&#39;água&quot;, &#39;pastilha de freio&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;filtro de óleo&#39;, &#39;bateria&#39;, &#39;amortecedor&#39;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;, &#39;válvula termostática&#39;, &#39;alternador&#39;, &#39;junta homocinética&#39;}, &#39;E&#39;: {&#39;correia dentada&#39;, &#39;fluido de freio&#39;, &#39;disco de freio&#39;, &#39;sensor de oxigênio&#39;, &#39;pastilha de freio&#39;, &#39;correia alternador&#39;, &#39;bateria&#39;, &#39;óleo de motor&#39;, &#39;válvula termostática&#39;, &#39;alternador&#39;, &#39;junta homocinética&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;radiador&#39;, &quot;bomba d&#39;água&quot;, &#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;, &#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;pneu&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;}, &#39;B&#39;: {&#39;radiador&#39;, &quot;bomba d&#39;água&quot;, &#39;correia dentada&#39;, &#39;amortecedor&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &#39;junta homocinética&#39;, &#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;}, &#39;C&#39;: {&#39;radiador&#39;, &quot;bomba d&#39;água&quot;, &#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;, &#39;junta homocinética&#39;, &#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;pneu&#39;, &#39;óleo de motor&#39;, &#39;fluido de freio&#39;}, &#39;D&#39;: {&#39;radiador&#39;, &quot;bomba d&#39;água&quot;, &#39;filtro de óleo&#39;, &#39;correia dentada&#39;, &#39;amortecedor&#39;, &#39;rolamento de roda&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;junta homocinética&#39;, &#39;pneu&#39;, &#39;pastilha de freio&#39;, &#39;bateria&#39;, &#39;alternador&#39;}, &#39;E&#39;: {&#39;disco de freio&#39;, &#39;correia dentada&#39;, &#39;válvula termostática&#39;, &#39;junta homocinética&#39;, &#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;pastilha de freio&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1133,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;sensor de oxigênio&#39;, &#39;fluido de freio&#39;, &#39;óleo de motor&#39;, &#39;correia alternador&#39;}, &#39;E&#39;: {&#39;radiador&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;óleo de motor&#39;, &#39;fluido de freio&#39;}, &#39;E&#39;: {&#39;radiador&#39;, &quot;bomba d&#39;água&quot;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1345,12 +1346,12 @@ O valor total da conta é R$ 107.10
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07-fluxo-controle/01-condicionais.html"
+       href="07-fluxo-controle/02-repeticao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Estrutura condicional</p>
+        <p class="prev-next-title">Estrutura de repetição</p>
       </div>
     </a>
 </div>
