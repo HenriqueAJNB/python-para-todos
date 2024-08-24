@@ -426,7 +426,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laco-for">Laço <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laco-for">Laço <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-range">A função <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempacotamento">Desempacotamento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-enumerate">A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -481,6 +486,8 @@ document.write(`
 </div>
 </div>
 <p>No exemplo acima, temos <code class="docutils literal notranslate"><span class="pre">variavel</span></code> que assume cada valor da sequencia.</p>
+<section id="a-funcao-range">
+<h3>A função <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#a-funcao-range" title="Link to this heading">#</a></h3>
 <p>E para a sequencia, temos uma novidade: a função <code class="docutils literal notranslate"><span class="pre">range()</span></code>. A função <code class="docutils literal notranslate"><span class="pre">range()</span></code> é uma função que gera uma sequencia de números, e é muito utilizada em conjunto com o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. A função <code class="docutils literal notranslate"><span class="pre">range()</span></code> é bem simples pode receber até três argumentos: <code class="docutils literal notranslate"><span class="pre">range(inicio,</span> <span class="pre">fim,</span> <span class="pre">passo)</span></code>. Basicamente ela gera uma sequencia de números que começa em <code class="docutils literal notranslate"><span class="pre">inicio</span></code>, vai até <code class="docutils literal notranslate"><span class="pre">fim</span></code> (sem incluir o <code class="docutils literal notranslate"><span class="pre">fim</span></code>) pulando os valores através do <code class="docutils literal notranslate"><span class="pre">passo</span></code> (1 em 1, 2 em 2, etc.). Se o <code class="docutils literal notranslate"><span class="pre">passo</span></code> não for informado, o valor padrão é 1. Fique a vontade para consultar a documentação da função <code class="docutils literal notranslate"><span class="pre">range()</span></code> <a class="reference external" href="https://docs.python.org/3/library/functions.html#func-range">aqui</a>.</p>
 <p>Se isolarmos o <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">10)</span></code> do exemplo acima:</p>
 <div class="cell docutils container">
@@ -512,6 +519,385 @@ document.write(`
 </div>
 <p>Apesar do <code class="docutils literal notranslate"><span class="pre">range()</span></code> ser um tipo de objeto até então desconhecido, ele também é uma sequencia e pode ser usado diretamente em laços <code class="docutils literal notranslate"><span class="pre">for</span></code>, sem necessariamente ser transformado em uma lista ou tupla, conforme vimos no exemplo. Quando transformado em uma lista, o <code class="docutils literal notranslate"><span class="pre">range()</span></code> nos mostra claramente a sequencia de números que ele gera, no caso, de 1 a 9 (o 10 não é incluso).</p>
 <p>E, retomando o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>,  para cada iteração, <code class="docutils literal notranslate"><span class="pre">variavel</span></code> assume um valor da sequencia que é impressa na tela.</p>
+<p>Um ponto importante sobre a variável temporária criada dentro do laço <code class="docutils literal notranslate"><span class="pre">for</span></code> é que ela não necessariamente precisa ser usada. Se quisermos, por exemplo, imprimir a mensagem “Olá, eu estou aprendendo Python!” 10 vezes, ainda sim precisamos criar a sequencia com 10 elementos para percorrê-la item a item, porém sem usar os elementos da sequencia. Vejam:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variavel</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá, eu estou aprendendo Python!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Em tais casos nos quais os elementos da sequencia <strong>não são utilizados em todo o código do laço <code class="docutils literal notranslate"><span class="pre">for</span></code></strong>, é comum utilizar o caractere <code class="docutils literal notranslate"><span class="pre">_</span></code> para representar a variável no laço <code class="docutils literal notranslate"><span class="pre">for</span></code> indicando de forma clara que ela não será utilizada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá, eu estou aprendendo Python!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+Olá, eu estou aprendendo Python!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um outro caso bastante comum é quando precisamos não apenas do valor do elemento da sequencia, mas também do índice do elemento. Vejamos no exemplo abaixo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meses</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Janeiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fevereiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Março&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abril&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Maio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Junho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Agosto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Setembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Outubro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Novembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dezembro&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meses</span><span class="p">)):</span>
+    <span class="n">numero_mes</span> <span class="o">=</span> <span class="n">indice</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">meses</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Janeiro é o 1° mês do ano.
+Fevereiro é o 2° mês do ano.
+Março é o 3° mês do ano.
+Abril é o 4° mês do ano.
+Maio é o 5° mês do ano.
+Junho é o 6° mês do ano.
+Julho é o 7° mês do ano.
+Agosto é o 8° mês do ano.
+Setembro é o 9° mês do ano.
+Outubro é o 10° mês do ano.
+Novembro é o 11° mês do ano.
+Dezembro é o 12° mês do ano.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por qual motivo não simplesmente usamos <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">mes</span> <span class="pre">in</span> <span class="pre">meses</span></code> nesse caso? O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> percorre cada elemento da lista, mas não acessa o índice daquele elemento. Portanto, precisamos fazer uma outra sequencia que contenha todos os índices da nossa sequencia original. Para isso, usamos a junção das função <code class="docutils literal notranslate"><span class="pre">range(len(meses))</span></code> que trará uma sequencia de números de 0 a 11 (12 elementos). O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> itera, portanto, através de uma sequencia que representam os índices da lista <code class="docutils literal notranslate"><span class="pre">meses</span></code>. Só que ainda precisamos, a partir do índice, acessar o valor do elemento da lista <code class="docutils literal notranslate"><span class="pre">meses</span></code>. Para isso, usamos a notação <code class="docutils literal notranslate"><span class="pre">meses[indice]</span></code>. E como a indexação começa por 0 em Python, ainda precisamos criar uma outra variável que representará o número do mês, que começa em 1 e vai até 12, diferente do <code class="docutils literal notranslate"><span class="pre">indice</span></code> que começa em 0 e vai até 11.</p>
+</section>
+<section id="desempacotamento">
+<h3>Desempacotamento<a class="headerlink" href="#desempacotamento" title="Link to this heading">#</a></h3>
+<p>Antes de seguirmos com o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>, vamos introduzir um conceito super importante que será usado: desempacotamento. O desempacotamento é uma técnica que permite quebrar uma sequencia em partes menores.</p>
+<p>De forma bem simples, é como se tivéssemos uma caixa com vários itens e quiséssemos separar cada item em uma variável diferente. Vejamos o exemplo abaixo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Podemos capturar cada valor da lista através da técnica de desempacotamento</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lista</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>O desempacotamento funciona como se quebrássemos os elementos de uma dada sequencia, no exemplo acima uma lista, e atribuíssemos cada elemento a uma variável diferente. Em palavras mais simples, podemos “desembrulhar” os elementos da sequencia em variáveis.</p>
+<p>E porque isso está sendo explicando somente nesse capítulo de laços de repetição? Vamos ver um exemplo prático:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vendas</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Camiseta&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Calça Jeans&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Tênis&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supondo que temos a estrutura acima, <code class="docutils literal notranslate"><span class="pre">vendas</span></code>, onde cada elemento da lista é uma tupla, e cada tupla contém 3 elementos: o nome do produto, a quantidade vendida e o preço unitário. E gostaríamos de imprimir na tela o nome de cada produto, sua respectiva quantidade vendida e valor total. Como faríamos isso? Talvez você pense em fazer da seguinte forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vendas</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Camiseta&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Calça Jeans&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Tênis&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+    <span class="n">produto</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">quantidade</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">preco_unitario</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">valor_total</span> <span class="o">=</span> <span class="n">quantidade</span> <span class="o">*</span> <span class="n">preco_unitario</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Produto: </span><span class="si">{</span><span class="n">produto</span><span class="si">}</span><span class="s2">, quantidade: </span><span class="si">{</span><span class="n">quantidade</span><span class="si">}</span><span class="s2">, valor total: R$</span><span class="si">{</span><span class="n">valor_total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produto: Camiseta, quantidade: 4, valor total: R$100.00
+Produto: Calça Jeans, quantidade: 2, valor total: R$200.00
+Produto: Tênis, quantidade: 1, valor total: R$150.00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta abordagem funciona, mas percebam que precisamos quebrar cada tupla em 3 partes, e isso é exatamente o que o desempacotamento faz. No lugar da variável <code class="docutils literal notranslate"><span class="pre">item</span></code>, podemos desempacotar a variável também dentro do laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Vejamos como podemos reescrever o código acima utilizando o desempacotamento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vendas</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Camiseta&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Calça Jeans&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Tênis&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span><span class="p">,</span> <span class="n">preco_unitario</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+    <span class="n">valor_total</span> <span class="o">=</span> <span class="n">quantidade</span> <span class="o">*</span> <span class="n">preco_unitario</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Produto: </span><span class="si">{</span><span class="n">produto</span><span class="si">}</span><span class="s2">, quantidade: </span><span class="si">{</span><span class="n">quantidade</span><span class="si">}</span><span class="s2">, valor total: R$</span><span class="si">{</span><span class="n">valor_total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produto: Camiseta, quantidade: 4, valor total: R$100.00
+Produto: Calça Jeans, quantidade: 2, valor total: R$200.00
+Produto: Tênis, quantidade: 1, valor total: R$150.00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trocamos esse trecho:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+    <span class="n">produto</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">quantidade</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">preco_unitario</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>por esse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span><span class="p">,</span> <span class="n">preco_unitario</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>O efeito deles é exatamente o mesmo, mas a segunda forma é mais limpa e mais fácil de entender. Mas observem que só é possível fazer isso porque todos as tuplas da lista tem exatamente 3 elementos. Se houvesse ao menos uma tupla com elementos a mais ou a menos, o código não funcionaria. Observem:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vendas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Camiseta&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Calça Jeans&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Tênis&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">150.00</span><span class="p">),</span>
+    <span class="c1"># Adição de um item sem preço, somente com 2 elementos (produto e quantidade)</span>
+    <span class="p">(</span><span class="s2">&quot;Meias&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span><span class="p">,</span> <span class="n">preco_unitario</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+    <span class="n">valor_total</span> <span class="o">=</span> <span class="n">quantidade</span> <span class="o">*</span> <span class="n">preco_unitario</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Produto: </span><span class="si">{</span><span class="n">produto</span><span class="si">}</span><span class="s2">, quantidade: </span><span class="si">{</span><span class="n">quantidade</span><span class="si">}</span><span class="s2">, valor total: R$</span><span class="si">{</span><span class="n">valor_total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produto: Camiseta, quantidade: 4, valor total: R$100.00
+Produto: Calça Jeans, quantidade: 2, valor total: R$200.00
+Produto: Tênis, quantidade: 1, valor total: R$150.00
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vendas</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="p">(</span><span class="s2">&quot;Camiseta&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">25.00</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">(</span><span class="s2">&quot;Calça Jeans&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="p">(</span><span class="s2">&quot;Meias&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span><span class="p">,</span> <span class="n">preco_unitario</span> <span class="ow">in</span> <span class="n">vendas</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">valor_total</span> <span class="o">=</span> <span class="n">quantidade</span> <span class="o">*</span> <span class="n">preco_unitario</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="nb">print</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="sa">f</span><span class="s2">&quot;Produto: </span><span class="si">{</span><span class="n">produto</span><span class="si">}</span><span class="s2">, quantidade: </span><span class="si">{</span><span class="n">quantidade</span><span class="si">}</span><span class="s2">, valor total: R$</span><span class="si">{</span><span class="n">valor_total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="p">)</span>
+
+<span class="ne">ValueError</span>: not enough values to unpack (expected 3, got 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>O erro <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">not</span> <span class="pre">enough</span> <span class="pre">values</span> <span class="pre">to</span> <span class="pre">unpack</span> <span class="pre">(expected</span> <span class="pre">3,</span> <span class="pre">got</span> <span class="pre">2)</span></code> nos informa justamente que o código esperava 3 elementos para desempacotar em 3 variáveis, mas recebeu apenas 2.</p>
+</section>
+<section id="a-funcao-enumerate">
+<h3>A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#a-funcao-enumerate" title="Link to this heading">#</a></h3>
+<p>Dado que já sabemos sobre desempacotamento, podemos introduzir a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>. Vamos retomar o exemplo anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meses</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Janeiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fevereiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Março&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abril&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Maio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Junho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Agosto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Setembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Outubro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Novembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dezembro&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meses</span><span class="p">)):</span>
+    <span class="n">numero_mes</span> <span class="o">=</span> <span class="n">indice</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">meses</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Janeiro é o 1° mês do ano.
+Fevereiro é o 2° mês do ano.
+Março é o 3° mês do ano.
+Abril é o 4° mês do ano.
+Maio é o 5° mês do ano.
+Junho é o 6° mês do ano.
+Julho é o 7° mês do ano.
+Agosto é o 8° mês do ano.
+Setembro é o 9° mês do ano.
+Outubro é o 10° mês do ano.
+Novembro é o 11° mês do ano.
+Dezembro é o 12° mês do ano.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quando precisamos acessar o índice e o valor de uma sequencia, a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> é muito útil. Ela retorna uma tupla contendo o índice e o valor do elemento da sequencia. Vejamos o exemplo abaixo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meses</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Janeiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fevereiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Março&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abril&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Maio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Junho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Agosto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Setembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Outubro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Novembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dezembro&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">meses</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, &#39;Janeiro&#39;), (1, &#39;Fevereiro&#39;), (2, &#39;Março&#39;), (3, &#39;Abril&#39;), (4, &#39;Maio&#39;), (5, &#39;Junho&#39;), (6, &#39;Julho&#39;), (7, &#39;Agosto&#39;), (8, &#39;Setembro&#39;), (9, &#39;Outubro&#39;), (10, &#39;Novembro&#39;), (11, &#39;Dezembro&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> é bem simples. Ela recebe uma sequencia e retorna um objeto que contém o índice e o valor do elemento da sequencia. E, como vimos anteriormente, podemos desempacotar essa tupla diretamente no laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ao invés de usar <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">indice</span> <span class="pre">in</span> <span class="pre">range(len(meses))</span></code>, podemos usar <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">indice,</span> <span class="pre">mes</span> <span class="pre">in</span> <span class="pre">enumerate(meses)</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (enumerate transformado em lista)</p>
+<p>O resultado da função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> por si só já é uma sequencia. Não é necessário transformá-lo em uma lista para usá-lo em um laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. O motivo de termos transformado no exemplo acima foi puramente para imprimir o resultado dele de uma forma mais visual e útil na tela. Caso contrário seria impresso algo como <code class="docutils literal notranslate"><span class="pre">&lt;enumerate</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f8e3c7b3b40&gt;</span></code>, que não é nada útil. Mostramos isso também na função <code class="docutils literal notranslate"><span class="pre">range</span></code> anteriormente, lembra?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meses</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Janeiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fevereiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Março&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abril&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Maio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Junho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Agosto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Setembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Outubro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Novembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dezembro&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">numero_mes</span><span class="p">,</span> <span class="n">mes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">meses</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mes</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Janeiro é o 0° mês do ano.
+Fevereiro é o 1° mês do ano.
+Março é o 2° mês do ano.
+Abril é o 3° mês do ano.
+Maio é o 4° mês do ano.
+Junho é o 5° mês do ano.
+Julho é o 6° mês do ano.
+Agosto é o 7° mês do ano.
+Setembro é o 8° mês do ano.
+Outubro é o 9° mês do ano.
+Novembro é o 10° mês do ano.
+Dezembro é o 11° mês do ano.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Só que ainda ficou algo estranho, pois a indexação em Python começa por 0. E, no caso acima, o nosso desejo é que a numeração dos meses comece no 1. Podemos usar um parâmetro da função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> para que a sequencia dos índices retornados pela função comece no 1. Vejamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meses</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Janeiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fevereiro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Março&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Abril&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Maio&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Junho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julho&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Agosto&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Setembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Outubro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Novembro&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dezembro&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">numero_mes</span><span class="p">,</span> <span class="n">mes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">meses</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mes</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Janeiro é o 1° mês do ano.
+Fevereiro é o 2° mês do ano.
+Março é o 3° mês do ano.
+Abril é o 4° mês do ano.
+Maio é o 5° mês do ano.
+Junho é o 6° mês do ano.
+Julho é o 7° mês do ano.
+Agosto é o 8° mês do ano.
+Setembro é o 9° mês do ano.
+Outubro é o 10° mês do ano.
+Novembro é o 11° mês do ano.
+Dezembro é o 12° mês do ano.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -579,7 +965,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laco-for">Laço <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laco-for">Laço <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-range">A função <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempacotamento">Desempacotamento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-enumerate">A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
