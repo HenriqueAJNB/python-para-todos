@@ -31,6 +31,8 @@ html:
   use_issues_button: true
   use_repository_button: true
   favicon: img/config/logos/python.svg
+  analytics:
+    google_analytics_id: G-J73VD6ZNYZ
   
 parse:
   myst_enable_extensions:
