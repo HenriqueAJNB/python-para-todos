@@ -432,6 +432,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-enumerate">A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-laco-while">O laço <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-reais-de-aplicacao-do-while">Exemplos reais de aplicação do <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-estoque-em-uma-loja">Controle de estoque em uma loja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobranca-de-pagamentos-pendentes">Cobrança de pagamentos pendentes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-juros-compostos-para-atiginr-um-objetivo">Cálculo de juros compostos para atiginr um objetivo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-do-fluxo-de-repeticao">Controle do fluxo de repetição</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -897,6 +911,373 @@ Dezembro é o 12° mês do ano.
 </div>
 </div>
 </div>
+<p>Saímos desta versão…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meses</span><span class="p">)):</span>
+    <span class="n">numero_mes</span> <span class="o">=</span> <span class="n">indice</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">meses</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>… para esta versão…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero_mes</span><span class="p">,</span> <span class="n">mes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">meses</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mes</span><span class="si">}</span><span class="s2"> é o </span><span class="si">{</span><span class="n">numero_mes</span><span class="si">}</span><span class="s2">° mês do ano.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>… simplesmente aplicando a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> junto com o conceito de desempacotamento.</p>
+<p>Agora eu te pergunto: qual das duas versões ficou mais clara, consisa e fácil de entender?</p>
+</section>
+</section>
+<section id="o-laco-while">
+<h2>O laço <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#o-laco-while" title="Link to this heading">#</a></h2>
+<p>Diferente do laço <code class="docutils literal notranslate"><span class="pre">for</span></code> o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é um laço de repetiçao no qual não sabemos previamente quantas vezes o código do bloco vai ser executado. Isso porque a execução do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é baseada em uma condição. Sim! É o mesmo <a class="reference internal" href="01-condicionais.html#o-que-e-uma-condicao"><span class="std std-ref">conceito de condição</span></a> que vimos no capítulo sobre estrutura condicional, lembra? Em resumo, é a condição que vai determinar se o código do bloco <code class="docutils literal notranslate"><span class="pre">while</span></code> deve ser executado ou não. É A sintaxe básica do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é a seguinte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condicao</span><span class="p">:</span>
+    <span class="c1"># bloco de código a ser repetido até que a condição seja falsa</span>
+</pre></div>
+</div>
+<p>Por ser baseado em uma condicional, existe o risco de cairmos em uma situação de loop infinito! Ou seja, o código do bloco <code class="docutils literal notranslate"><span class="pre">while</span></code> é executado indefinidamente. Por isso, é muito importante que <strong>a condição do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> seja alterada de forma que, em algum momento, ela se torne <code class="docutils literal notranslate"><span class="pre">False</span></code></strong>. Caso contrário, o código do bloco <code class="docutils literal notranslate"><span class="pre">while</span></code> será executado indefinidamente. Experimente executar o código abaixo na sua máquina e veja o que acontece (pressione Ctrl+C para interromper a execução):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O pequeno exemplo acima vai imprimir 0 infinitamente. Por que isso acontece? Porque a variável <code class="docutils literal notranslate"><span class="pre">n</span></code> nunca é alterada dentro do laço <code class="docutils literal notranslate"><span class="pre">while</span></code>, e ela faz parte da condição. Portanto, a condição <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> sempre será verdadeira. Para corrigir isso, precisamos incrementar a variável <code class="docutils literal notranslate"><span class="pre">n</span></code> a cada iteração. Vejamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="c1"># Acréscimo da alteração da condição para que ela seja False em algum momento</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quando <code class="docutils literal notranslate"><span class="pre">n=10</span></code> no código acima, a condição <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> passa a ser <code class="docutils literal notranslate"><span class="pre">False</span></code> e o laço não é executado. Mas isso só acontece porque a cada iteração, acrescentamos uma unidade ao valor de <code class="docutils literal notranslate"><span class="pre">n</span></code> com a linha <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+=</span> <span class="pre">1</span></code>. Se não fizermos a atualização da condição, o código entraria em loop infinito, conforme já vimos. Essa questão da atualização da condição é tão importante que vou repetir na nota abaixo!</p>
+<div class="danger admonition">
+<p class="admonition-title">Perigo (atualização da condição para evitar loop infinito)</p>
+<p><strong>É muito importante que a condição do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> seja atualizada para que, em algum momento, ela se torne <code class="docutils literal notranslate"><span class="pre">False</span></code></strong>. Caso contrário, o código do bloco <code class="docutils literal notranslate"><span class="pre">while</span></code> cairá em loop infinito!</p>
+</div>
+<section id="exemplos-reais-de-aplicacao-do-while">
+<h3>Exemplos reais de aplicação do <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#exemplos-reais-de-aplicacao-do-while" title="Link to this heading">#</a></h3>
+<p>Todas as vezes que você pensar em executar o seu código repetidas vezes <em>até que uma dada condição seja satisfeita</em>, podemos pensar no laço <code class="docutils literal notranslate"><span class="pre">while</span></code>. Vamos ver alguns exemplos reais.</p>
+<section id="controle-de-estoque-em-uma-loja">
+<h4>Controle de estoque em uma loja<a class="headerlink" href="#controle-de-estoque-em-uma-loja" title="Link to this heading">#</a></h4>
+<p>Imagine que você gerencia uma loja de roupas e precisa monitorar o estoque de camisetas. O objetivo é continuar vendendo camisetas enquanto o estoque for suficiente. Assim que o estoque atingir um limite mínimo (por exemplo, 5 unidades), você decide parar as vendas e encomendar mais.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estoque_camisetas</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Quantidade inicial de camisetas no estoque</span>
+<span class="n">limite_minimo</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Limite mínimo para parar as vendas</span>
+
+<span class="k">while</span> <span class="n">estoque_camisetas</span> <span class="o">&gt;</span> <span class="n">limite_minimo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vendendo uma camiseta. Estoque atual: </span><span class="si">{</span><span class="n">estoque_camisetas</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">estoque_camisetas</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estoque baixo! Encomendar mais camisetas.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vendendo uma camiseta. Estoque atual: 19
+Vendendo uma camiseta. Estoque atual: 18
+Vendendo uma camiseta. Estoque atual: 17
+Vendendo uma camiseta. Estoque atual: 16
+Vendendo uma camiseta. Estoque atual: 15
+Vendendo uma camiseta. Estoque atual: 14
+Vendendo uma camiseta. Estoque atual: 13
+Vendendo uma camiseta. Estoque atual: 12
+Vendendo uma camiseta. Estoque atual: 11
+Vendendo uma camiseta. Estoque atual: 10
+Vendendo uma camiseta. Estoque atual: 9
+Vendendo uma camiseta. Estoque atual: 8
+Vendendo uma camiseta. Estoque atual: 7
+Vendendo uma camiseta. Estoque atual: 6
+Vendendo uma camiseta. Estoque atual: 5
+Estoque baixo! Encomendar mais camisetas.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cobranca-de-pagamentos-pendentes">
+<h4>Cobrança de pagamentos pendentes<a class="headerlink" href="#cobranca-de-pagamentos-pendentes" title="Link to this heading">#</a></h4>
+<p>Uma empresa de serviços de assinatura precisa enviar lembretes de pagamento a clientes que ainda não pagaram a mensalidade. O sistema verifica continuamente a lista de clientes com pagamentos pendentes e envia lembretes até que todos os pagamentos sejam quitados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagamentos_pendentes</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Número inicial de clientes com pagamentos pendentes</span>
+
+<span class="k">while</span> <span class="n">pagamentos_pendentes</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Enviando lembrete de pagamento. Clientes pendentes: </span><span class="si">{</span><span class="n">pagamentos_pendentes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pagamentos_pendentes</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todos os pagamentos foram recebidos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enviando lembrete de pagamento. Clientes pendentes: 10
+Enviando lembrete de pagamento. Clientes pendentes: 9
+Enviando lembrete de pagamento. Clientes pendentes: 8
+Enviando lembrete de pagamento. Clientes pendentes: 7
+Enviando lembrete de pagamento. Clientes pendentes: 6
+Enviando lembrete de pagamento. Clientes pendentes: 5
+Enviando lembrete de pagamento. Clientes pendentes: 4
+Enviando lembrete de pagamento. Clientes pendentes: 3
+Enviando lembrete de pagamento. Clientes pendentes: 2
+Enviando lembrete de pagamento. Clientes pendentes: 1
+Todos os pagamentos foram recebidos.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculo-de-juros-compostos-para-atiginr-um-objetivo">
+<h4>Cálculo de juros compostos para atiginr um objetivo<a class="headerlink" href="#calculo-de-juros-compostos-para-atiginr-um-objetivo" title="Link to this heading">#</a></h4>
+<p>Uma pessoa quer investir um valor inicial e deixá-lo crescer com juros compostos até atingir um objetivo de investimento. O laço <code class="docutils literal notranslate"><span class="pre">while</span></code> calcula o valor do investimento ao final de cada período de tempo até que o valor desejado seja atingido.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valor_inicial</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Valor inicial do investimento</span>
+<span class="n">objetivo_investimento</span> <span class="o">=</span> <span class="mi">2000</span>  <span class="c1"># Valor desejado para o investimento</span>
+<span class="n">taxa_juros</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># Taxa de juros compostos por período</span>
+<span class="n">periodos</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Contador de períodos</span>
+
+<span class="k">while</span> <span class="n">valor_inicial</span> <span class="o">&lt;</span> <span class="n">objetivo_investimento</span><span class="p">:</span>
+    <span class="n">valor_inicial</span> <span class="o">+=</span> <span class="n">valor_inicial</span> <span class="o">*</span> <span class="n">taxa_juros</span>
+    <span class="n">periodos</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Após </span><span class="si">{</span><span class="n">periodos</span><span class="si">}</span><span class="s2"> período(s), o valor do investimento é </span><span class="si">{</span><span class="n">valor_inicial</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Objetivo de investimento de </span><span class="si">{</span><span class="n">objetivo_investimento</span><span class="si">}</span><span class="s2"> alcançado após </span><span class="si">{</span><span class="n">periodos</span><span class="si">}</span><span class="s2"> períodos.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Após 1 período(s), o valor do investimento é 1050.00
+Após 2 período(s), o valor do investimento é 1102.50
+Após 3 período(s), o valor do investimento é 1157.62
+Após 4 período(s), o valor do investimento é 1215.51
+Após 5 período(s), o valor do investimento é 1276.28
+Após 6 período(s), o valor do investimento é 1340.10
+Após 7 período(s), o valor do investimento é 1407.10
+Após 8 período(s), o valor do investimento é 1477.46
+Após 9 período(s), o valor do investimento é 1551.33
+Após 10 período(s), o valor do investimento é 1628.89
+Após 11 período(s), o valor do investimento é 1710.34
+Após 12 período(s), o valor do investimento é 1795.86
+Após 13 período(s), o valor do investimento é 1885.65
+Após 14 período(s), o valor do investimento é 1979.93
+Após 15 período(s), o valor do investimento é 2078.93
+Objetivo de investimento de 2000 alcançado após 15 períodos.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam que em todos os exemplos acima, dentro do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> existe uma atualização. No primeiro exemplo, a atualização é feita quando uma camiseta é vendida. No segundo exemplo, a atualização é feita quando um lembrete de pagamento é enviado. E no terceiro exemplo, a atualização é feita quando o valor do investimento é recalculado.</p>
+</section>
+</section>
+</section>
+<section id="controle-do-fluxo-de-repeticao">
+<h2>Controle do fluxo de repetição<a class="headerlink" href="#controle-do-fluxo-de-repeticao" title="Link to this heading">#</a></h2>
+<p>Existem alguma intruções que podemos usar para controlar o fluxo de repetição. São elas: <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code>. Vamos entender o que cada uma delas faz.</p>
+<section id="break">
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Link to this heading">#</a></h3>
+<p>A instrução <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para interromper a execução do laço <code class="docutils literal notranslate"><span class="pre">for</span></code> ou <code class="docutils literal notranslate"><span class="pre">while</span></code>. Quando o <code class="docutils literal notranslate"><span class="pre">break</span></code> é encontrado, o laço é interrompido e o código continua a execução seguindo do que vem em sequencia do bloco interrompido. O <code class="docutils literal notranslate"><span class="pre">break</span></code> é muito usado dentro de um <code class="docutils literal notranslate"><span class="pre">if</span></code> para interromper o laço quando uma condição é satisfeita.</p>
+<p>Vamos ver um exemplo de funcionamento do <code class="docutils literal notranslate"><span class="pre">break</span></code> no laço <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Suponha que você trabalhe no setor de RH de uma empresa e tenha uma lista de currículos para revisar. Você precisa encontrar o primeiro candidato que atenda a todos os requisitos mínimos: ter pelo menos 5 anos de experiência e um diploma universitário. Assim que encontrar um candidato que atenda a esses critérios, você quer parar a revisão, pois já encontrou uma opção adequada para prosseguir com o processo seletivo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de currículos, onde cada currículo é representado por um dicionário</span>
+<span class="n">curriculos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;experiencia&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;diploma&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;experiencia&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;diploma&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="s2">&quot;experiencia&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;diploma&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;experiencia&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;diploma&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Iterando sobre a lista de currículos</span>
+<span class="k">for</span> <span class="n">curriculo</span> <span class="ow">in</span> <span class="n">curriculos</span><span class="p">:</span>
+    <span class="c1"># Verifica se o currículo atende aos critérios</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Candidato avaliado: </span><span class="si">{</span><span class="n">curriculo</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">curriculo</span><span class="p">[</span><span class="s2">&quot;experiencia&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">curriculo</span><span class="p">[</span><span class="s2">&quot;diploma&quot;</span><span class="p">]:</span>
+        <span class="n">candidato_selecionado</span> <span class="o">=</span> <span class="n">curriculo</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span>
+        <span class="c1"># Encerra o laço ao encontrar o primeiro candidato adequado</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Candidato selecionado: </span><span class="si">{</span><span class="n">curriculo</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Candidato avaliado: João
+Candidato avaliado: Maria
+Candidato avaliado: Carlos
+Candidato selecionado: Carlos
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui estamos percorrendo todos os currículos na lista de dicionários. Quando determinada condição é atendida (5 anos de experiência e diploma universitário), o <code class="docutils literal notranslate"><span class="pre">break</span></code> é executado e o laço <code class="docutils literal notranslate"><span class="pre">for</span></code> é interrompido. Percebam que o último item da lista não é impresso, pois o laço <code class="docutils literal notranslate"><span class="pre">for</span></code> foi interrompido antes de chegar nele por conta do <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>Podemos usar o <code class="docutils literal notranslate"><span class="pre">break</span></code> também no laço <code class="docutils literal notranslate"><span class="pre">while</span></code>. Vamos entender através do exemplo no qual você é um administrador de segurança de um sistema de autenticação que monitora tentativas de login para detectar possíveis ataques de força bruta. O sistema está configurado para bloquear o acesso de um endereço IP após 3 tentativas de login consecutivas falhas. Assim que a terceira tentativa falha é detectada, o sistema deve interromper o processo de verificação e bloquear o IP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dicionário para armazenar o número de tentativas de login por IP</span>
+<span class="n">tentativas_login</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;192.168.1.10&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;192.168.1.15&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;192.168.1.20&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+
+<span class="c1"># Lista de tentativas de login simuladas, com IPs que tentam acessar o sistema</span>
+<span class="n">tentativas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;192.168.1.10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.20&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.20&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;192.168.1.15&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Número máximo de tentativas antes do bloqueio</span>
+<span class="n">max_tentativas</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Variável de índice para controlar a posição na lista de tentativas</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Usando um loop while para monitorar as tentativas de login</span>
+<span class="k">while</span> <span class="n">indice</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">tentativas</span><span class="p">):</span>
+    <span class="n">ip_atual</span> <span class="o">=</span> <span class="n">tentativas</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span>
+
+    <span class="c1"># Incrementa a contagem de tentativas para o IP atual</span>
+    <span class="n">tentativas_login</span><span class="p">[</span><span class="n">ip_atual</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Verifica se o IP atual excedeu o número máximo de tentativas permitidas</span>
+    <span class="k">if</span> <span class="n">tentativas_login</span><span class="p">[</span><span class="n">ip_atual</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_tentativas</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Alerta: IP </span><span class="si">{</span><span class="n">ip_atual</span><span class="si">}</span><span class="s2"> bloqueado após </span><span class="si">{</span><span class="n">tentativas_login</span><span class="p">[</span><span class="n">ip_atual</span><span class="p">]</span><span class="si">}</span><span class="s2"> tentativas falhas!&quot;</span>
+        <span class="p">)</span>
+        <span class="c1"># Encerra o loop ao detectar o IP que excedeu o limite de tentativas</span>
+        <span class="k">break</span>
+
+    <span class="c1"># Incrementa o índice para passar para a próxima tentativa</span>
+    <span class="n">indice</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alerta: IP 192.168.1.10 bloqueado após 3 tentativas falhas!
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é interrompido quando o mesmo IP atinge 3 tentativas. O <code class="docutils literal notranslate"><span class="pre">break</span></code> é executado e o laço é interrompido. Percebam que o último print não é executado, pois o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> foi interrompido antes de chegar nele por conta do <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>No caso específico do <code class="docutils literal notranslate"><span class="pre">while</span></code> o break pode ser usado para interromper o fluxo e eviar cair em loop infinito.</p>
+</section>
+<section id="continue">
+<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#continue" title="Link to this heading">#</a></h3>
+<p>Já a instrução <code class="docutils literal notranslate"><span class="pre">continue</span></code> é usado para pular a iteração atual do laço <code class="docutils literal notranslate"><span class="pre">for</span></code> ou <code class="docutils literal notranslate"><span class="pre">while</span></code> e continuar com a próxima iteração. Ou seja, o código que vem após o <code class="docutils literal notranslate"><span class="pre">continue</span></code> não é executado, e o laço segue para a próxima iteração.</p>
+<p>Você trabalha no setor de marketing de uma empresa e é responsável por enviar e-mails promocionais para uma lista de clientes. No entanto, alguns clientes optaram por não receber e-mails de marketing, e suas informações estão marcadas em um sistema com um sinalizador de “opt-out”. Você deseja percorrer a lista de clientes e enviar e-mails apenas para aqueles que não marcaram a opção de “opt-out”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de clientes, onde cada cliente é representado por um dicionário</span>
+<span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;joao@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_out&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;maria@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_out&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;carlos@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_out&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ana@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_out&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;pedro@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_out&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Iterando sobre a lista de clientes</span>
+<span class="k">for</span> <span class="n">cliente</span> <span class="ow">in</span> <span class="n">clientes</span><span class="p">:</span>
+    <span class="c1"># Verifica se o cliente optou por não receber e-mails de marketing</span>
+    <span class="k">if</span> <span class="n">cliente</span><span class="p">[</span><span class="s2">&quot;opt_out&quot;</span><span class="p">]:</span>
+        <span class="c1"># Se o cliente optou por não receber, pula para o próximo cliente</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># Envia o e-mail de marketing para o cliente</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Enviando e-mail para: </span><span class="si">{</span><span class="n">cliente</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">cliente</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processo de envio de e-mails concluído.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enviando e-mail para: João (joao@example.com)
+Enviando e-mail para: Carlos (carlos@example.com)
+Enviando e-mail para: Pedro (pedro@example.com)
+Processo de envio de e-mails concluído.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos ver outro exemplo usando o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> agora. Você é o gerente de um armazém e precisa fazer um controle de estoque diário. A cada dia, você faz a contagem dos itens em diferentes setores do armazém. Alguns setores podem estar em manutenção, e você deseja pular esses setores durante a contagem para evitar erros. O objetivo é continuar contando os itens nos setores disponíveis e ignorar aqueles que estão em manutenção.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista simulada de setores do armazém e seu status</span>
+<span class="n">setores</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Setor A&quot;</span><span class="p">,</span> <span class="s2">&quot;manutencao&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Setor B&quot;</span><span class="p">,</span> <span class="s2">&quot;manutencao&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Setor C&quot;</span><span class="p">,</span> <span class="s2">&quot;manutencao&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Setor D&quot;</span><span class="p">,</span> <span class="s2">&quot;manutencao&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Setor E&quot;</span><span class="p">,</span> <span class="s2">&quot;manutencao&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Variável de índice para controlar a posição na lista de setores</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Variável para armazenar o total de estoque contabilizado</span>
+<span class="n">total_estoque</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Usando um loop while para percorrer a lista de setores e contar o estoque</span>
+<span class="k">while</span> <span class="n">indice</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">setores</span><span class="p">):</span>
+    <span class="n">setor_atual</span> <span class="o">=</span> <span class="n">setores</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span>
+
+    <span class="c1"># Verifica se o setor está em manutenção</span>
+    <span class="k">if</span> <span class="n">setor_atual</span><span class="p">[</span><span class="s2">&quot;manutencao&quot;</span><span class="p">]:</span>
+        <span class="c1"># Se o setor estiver em manutenção, pula para o próximo setor</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">setor_atual</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> está em manutenção. Pulando para o próximo setor.&quot;</span>
+        <span class="p">)</span>
+        <span class="n">indice</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># Adiciona o estoque do setor atual ao total de estoque</span>
+    <span class="n">total_estoque</span> <span class="o">+=</span> <span class="n">setor_atual</span><span class="p">[</span><span class="s2">&quot;estoque&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contando estoque no </span><span class="si">{</span><span class="n">setor_atual</span><span class="p">[</span><span class="s1">&#39;nome&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">setor_atual</span><span class="p">[</span><span class="s1">&#39;estoque&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> itens.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Incrementa o índice para passar para o próximo setor</span>
+    <span class="n">indice</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Resultado final</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de estoque contabilizado: </span><span class="si">{</span><span class="n">total_estoque</span><span class="si">}</span><span class="s2"> itens.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Contando estoque no Setor A: 120 itens.
+Setor B está em manutenção. Pulando para o próximo setor.
+Contando estoque no Setor C: 200 itens.
+Setor D está em manutenção. Pulando para o próximo setor.
+Contando estoque no Setor E: 300 itens.
+Total de estoque contabilizado: 620 itens.
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, temos uma lista chamada <code class="docutils literal notranslate"><span class="pre">setores</span></code>, onde cada setor é representado por um dicionário com informações sobre o nome do setor, se está em manutenção, e a quantidade de estoque disponível. A variável <code class="docutils literal notranslate"><span class="pre">indice</span></code> é usada para percorrer a lista de setores. <code class="docutils literal notranslate"><span class="pre">total_estoque</span></code> é usada para armazenar o total de itens de estoque contabilizados durante o loop. O laço <code class="docutils literal notranslate"><span class="pre">while</span></code> continua enquanto o índice for menor que o tamanho da lista de setores. Dentro do laço, há uma verificação para saber se o setor atual está em manutenção (chave <code class="docutils literal notranslate"><span class="pre">manutencao</span></code> é <code class="docutils literal notranslate"><span class="pre">True</span></code>). Se o setor estiver em manutenção, o comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> é executado, o que faz com que o loop pule para a próxima iteração sem adicionar o estoque desse setor ao total. Se o setor não estiver em manutenção, o estoque do setor é adicionado à <code class="docutils literal notranslate"><span class="pre">total_estoque</span></code>, e uma mensagem é impressa confirmando a contagem. Após o loop, uma mensagem final é impressa para indicar o total de estoque contabilizado.</p>
+<p>Resumindo: a diferença entre <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> é que o <code class="docutils literal notranslate"><span class="pre">break</span></code> interrompe o laço e o <code class="docutils literal notranslate"><span class="pre">continue</span></code> pula para a próxima iteração. Ambos são muito usados com a estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> para realizar a tomada de decisão.</p>
 </section>
 </section>
 </section>
@@ -969,6 +1350,20 @@ Dezembro é o 12° mês do ano.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-range">A função <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempacotamento">Desempacotamento</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-enumerate">A função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-laco-while">O laço <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-reais-de-aplicacao-do-while">Exemplos reais de aplicação do <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-estoque-em-uma-loja">Controle de estoque em uma loja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobranca-de-pagamentos-pendentes">Cobrança de pagamentos pendentes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-juros-compostos-para-atiginr-um-objetivo">Cálculo de juros compostos para atiginr um objetivo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-do-fluxo-de-repeticao">Controle do fluxo de repetição</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
 </ul>
