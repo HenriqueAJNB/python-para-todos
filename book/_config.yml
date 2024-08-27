@@ -28,11 +28,12 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  analytics:
+    google_analytics_id: G-XLZPQ4KHKQ
   use_issues_button: true
   use_repository_button: true
   favicon: img/config/logos/python.svg
-  analytics:
-    google_analytics_id: G-J73VD6ZNYZ
+
   
 parse:
   myst_enable_extensions:
