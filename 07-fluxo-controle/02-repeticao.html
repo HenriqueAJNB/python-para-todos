@@ -446,6 +446,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1280,6 +1285,196 @@ Total de estoque contabilizado: 620 itens.
 <p>Resumindo: a diferença entre <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> é que o <code class="docutils literal notranslate"><span class="pre">break</span></code> interrompe o laço e o <code class="docutils literal notranslate"><span class="pre">continue</span></code> pula para a próxima iteração. Ambos são muito usados com a estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> para realizar a tomada de decisão.</p>
 </section>
 </section>
+<section id="compreensao-de-listas-dicionarios-e-sets">
+<h2>Compreensão de listas, dicionários e sets<a class="headerlink" href="#compreensao-de-listas-dicionarios-e-sets" title="Link to this heading">#</a></h2>
+<p>Python oferece uma forma um tanto quanto diferente para unir laços de repetição e estruturas de decisão com estrutras como listas, dicionários e sets.</p>
+<p>Compreensões de listas, dicionários e sets permitem que você crie novas sequencias a partir de sequências existentes de uma forma bastante legível. Vamos explorar como utilizar compreensões para cada tipo de coleção, entender suas sintaxes, e ver exemplos práticos de como aplicá-las.</p>
+<section id="compreensao-de-listas">
+<h3>Compreensão de listas<a class="headerlink" href="#compreensao-de-listas" title="Link to this heading">#</a></h3>
+<p>A compreensão de listas é uma maneira compacta de criar listas. Em vez de usar loops tradicionais como vimos nesse capítulo para preencher uma lista, você pode usar uma única linha de código para gerar elementos a partir de uma sequência existente. Antes, vamos ver o exemplo de como seria sem usar essa técnica.</p>
+<p>Uma loja online vende uma variedade de produtos e precisa garantir que todos os itens em seu estoque estejam acima de um nível mínimo para evitar rupturas. O estoque mínimo para cada produto é armazenado em um dicionário chamado <code class="docutils literal notranslate"><span class="pre">estoque_minimo</span></code>, onde a chave é o nome do produto e o valor é a quantidade mínima exigida. O estoque atual de cada produto está em um dicionário chamado <code class="docutils literal notranslate"><span class="pre">estoque_atual</span></code>. A loja deseja criar uma lista de produtos que estão abaixo do estoque mínimo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">estoque_atual</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;camiseta&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;calça&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;jaqueta&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;meia&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s1">&#39;sapato&#39;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+<span class="n">estoque_minimo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;camiseta&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s1">&#39;calça&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;jaqueta&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;meia&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s1">&#39;sapato&#39;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Como você faria? Usando um laço <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">if</span></code>, poderíamos fazer algo assim:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dicionários com o estoque atual e o estoque mínimo dos produtos</span>
+<span class="n">estoque_atual</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="n">estoque_minimo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Usando um loop for tradicional para encontrar produtos com estoque abaixo do mínimo</span>
+<span class="n">produtos_para_repor</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span> <span class="ow">in</span> <span class="n">estoque_atual</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">quantidade</span> <span class="o">&lt;</span> <span class="n">estoque_minimo</span><span class="p">[</span><span class="n">produto</span><span class="p">]:</span>
+        <span class="n">produtos_para_repor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">produto</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Produtos que precisam de reposição:&quot;</span><span class="p">,</span> <span class="n">produtos_para_repor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produtos que precisam de reposição: [&#39;camiseta&#39;, &#39;calça&#39;, &#39;jaqueta&#39;, &#39;sapato&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perceram que é necessário primeiro criar a lista vazia, depois percorrer os items em <code class="docutils literal notranslate"><span class="pre">estoque_atual</span></code> e verificar se o item está abaixo do estoque mínimo. Se estiver, adicionamos o item à lista.</p>
+<p>Toda essa lógica pode ser substuída por uma única linha de código usando a compreensão de listas. Vejamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dicionários com o estoque atual e o estoque mínimo dos produtos</span>
+<span class="n">estoque_atual</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="n">estoque_minimo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Usando compreensão de listas para encontrar produtos com estoque abaixo do mínimo</span>
+<span class="n">produtos_para_repor</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">produto</span>
+    <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span> <span class="ow">in</span> <span class="n">estoque_atual</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">quantidade</span> <span class="o">&lt;</span> <span class="n">estoque_minimo</span><span class="p">[</span><span class="n">produto</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Produtos que precisam de reposição:&quot;</span><span class="p">,</span> <span class="n">produtos_para_repor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produtos que precisam de reposição: [&#39;camiseta&#39;, &#39;calça&#39;, &#39;jaqueta&#39;, &#39;sapato&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trocamos este trecho de código…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produtos_para_repor</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span> <span class="ow">in</span> <span class="n">estoque_atual</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">quantidade</span> <span class="o">&lt;</span> <span class="n">estoque_minimo</span><span class="p">[</span><span class="n">produto</span><span class="p">]:</span>
+        <span class="n">produtos_para_repor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">produto</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>… por este outro:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produtos_para_repor</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">produto</span>
+    <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span> <span class="ow">in</span> <span class="n">estoque_atual</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">quantidade</span> <span class="o">&lt;</span> <span class="n">estoque_minimo</span><span class="p">[</span><span class="n">produto</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>E a imagem mostra como os 2 códigos, com e sem compreensão de listas, são equivalentes.</p>
+<img alt="../_images/07-02-compreensao-lista.png" src="../_images/07-02-compreensao-lista.png" />
+<p>Na imagem acima:</p>
+<ol class="arabic simple">
+<li><p>A lista <code class="docutils literal notranslate"><span class="pre">produtos_para_repor</span></code> é inicializada.</p></li>
+<li><p>Temos o que vai permanecer na lista ao final, no caso, <code class="docutils literal notranslate"><span class="pre">produto</span></code>.</p></li>
+<li><p>O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> com o desempacotamento de <code class="docutils literal notranslate"><span class="pre">estoque_atual.items()</span></code> em duas variáveis, <code class="docutils literal notranslate"><span class="pre">produto</span></code> e <code class="docutils literal notranslate"><span class="pre">quantidade</span></code>.</p></li>
+<li><p>O filtro condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> que verifica se a <code class="docutils literal notranslate"><span class="pre">quantidade</span></code> é menor que o <code class="docutils literal notranslate"><span class="pre">estoque_minimo[produto]</span></code>.</p></li>
+</ol>
+<p>Notem que o que vai permanecer ao final na lista vem antes do laço <code class="docutils literal notranslate"><span class="pre">for</span></code> quando usamos compreensão de listas. E a estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> vem após o laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Lembrando que este é um caso mais completo de compreensão de listas. A estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> não é obritarória.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (compreensão de listas e identação)</p>
+<p>Como compreensão de listas é uma operação interna feita dentro da própria lista, a identação não é necessária. Nos exemplos acima apenas usamos quebra de linha pra facilitar a leitura, mas poderiamos ter feito tudo em uma única linha, conforme abaixo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produtos_para_repor</span> <span class="o">=</span> <span class="p">[</span><span class="n">produto</span> <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">quantidade</span> <span class="ow">in</span> <span class="n">estoque_atual</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">quantidade</span> <span class="o">&lt;</span> <span class="n">estoque_minimo</span><span class="p">[</span><span class="n">produto</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="compreensao-de-dicionarios">
+<h3>Compreensão de dicionários<a class="headerlink" href="#compreensao-de-dicionarios" title="Link to this heading">#</a></h3>
+<p>De forma análoga, a compreensão de dicionários é uma maneira compacta de criar dicionários. Em vez de usar loops tradicionais para preencher um dicionário, você pode usar uma única linha de código para gerar pares de chave-valor a partir de uma sequência existente. Vamos ver um exemplo.</p>
+<p>Uma loja deseja criar um dicionário com os preços atualizados dos produtos, aplicando um desconto de 10% aos itens que custam mais de R$20.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produtos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;camiseta&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+    <span class="s1">&#39;calça&#39;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="s1">&#39;jaqueta&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s1">&#39;meia&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="s1">&#39;sapato&#39;</span><span class="p">:</span> <span class="mf">70.0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Novamente, como você faria? Usando um laço <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">if</span></code>, poderíamos fazer algo assim:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">produtos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+    <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">produtos_com_desconto</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">preco</span> <span class="ow">in</span> <span class="n">produtos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">preco</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">produtos_com_desconto</span><span class="p">[</span><span class="n">produto</span><span class="p">]</span> <span class="o">=</span> <span class="n">preco</span> <span class="o">*</span> <span class="mf">0.9</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Produtos com desconto:&quot;</span><span class="p">,</span> <span class="n">produtos_com_desconto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produtos com desconto: {&#39;camiseta&#39;: 22.5, &#39;calça&#39;: 45.0, &#39;jaqueta&#39;: 90.0, &#39;sapato&#39;: 63.0}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Porém, podemos usar compreensão de dicionários e realizar uma operação única de forma direta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">produtos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;camiseta&quot;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+    <span class="s2">&quot;calça&quot;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="s2">&quot;jaqueta&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;meia&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="s2">&quot;sapato&quot;</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">produtos_com_desconto</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">produto</span><span class="p">:</span> <span class="n">preco</span> <span class="o">*</span> <span class="mf">0.9</span> <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">preco</span> <span class="ow">in</span> <span class="n">produtos</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">preco</span> <span class="o">&gt;</span> <span class="mi">20</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Produtos com desconto:&quot;</span><span class="p">,</span> <span class="n">produtos_com_desconto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Produtos com desconto: {&#39;camiseta&#39;: 22.5, &#39;calça&#39;: 45.0, &#39;jaqueta&#39;: 90.0, &#39;sapato&#39;: 63.0}
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="../_images/07-02-compreensao-dicionario.png" src="../_images/07-02-compreensao-dicionario.png" />
+<p>Na imagem acima:</p>
+<ol class="arabic simple">
+<li><p>O dicionário <code class="docutils literal notranslate"><span class="pre">produtos_com_desconto</span></code> é inicializado.</p></li>
+<li><p>O conjunto final de pares de chave-valor do dicionário final.</p></li>
+<li><p>O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> com o desempacotamento de <code class="docutils literal notranslate"><span class="pre">produto.items()</span></code> em duas variáveis, <code class="docutils literal notranslate"><span class="pre">produto</span></code> e <code class="docutils literal notranslate"><span class="pre">preco</span></code>.</p></li>
+<li><p>O filtro condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> que verifica se a <code class="docutils literal notranslate"><span class="pre">preco</span></code> é maior que 20.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Nota (compreensão de dicionários e identação)</p>
+<p>Da mesma forma que compreensão de listas, a identação para compreensão de dicionários não é necessária. Novamente, nos exemplos acima apenas usamos quebra de linha pra facilitar a leitura, mas poderiamos ter feito tudo em uma única linha:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produtos_com_desconto</span> <span class="o">=</span> <span class="p">{</span><span class="n">produto</span><span class="p">:</span> <span class="n">preco</span> <span class="o">*</span> <span class="mf">0.9</span> <span class="k">for</span> <span class="n">produto</span><span class="p">,</span> <span class="n">preco</span> <span class="ow">in</span> <span class="n">produtos</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">preco</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1364,6 +1559,11 @@ Total de estoque contabilizado: 620 itens.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-do-fluxo-de-repeticao">Controle do fluxo de repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
 </ul>
 </li>
 </ul>
