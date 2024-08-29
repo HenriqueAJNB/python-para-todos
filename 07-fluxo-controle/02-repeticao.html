@@ -449,8 +449,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-sets">Compreensão de sets</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -1474,6 +1476,62 @@ Total de estoque contabilizado: 620 itens.
 </div>
 </div>
 </section>
+<section id="compreensao-de-sets">
+<h3>Compreensão de sets<a class="headerlink" href="#compreensao-de-sets" title="Link to this heading">#</a></h3>
+<p>Podemos também criar compreensão de sets de forma similar.</p>
+<p>Imagine que você tenha uma lista de dicionários, onde cada dicionário representa um cliente com informações como nome, idade, e o país de origem. Queremos identificar todos os países únicos de onde os clientes são provenientes para, por exemplo, realizar uma segmentação de mercado.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Marta&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Jorge&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Lucia&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Marina&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Fernando&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Gabriela&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Podemos usar compreensão de sets para extrair os países únicos dos clientes que possuem menos de 25 anos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Marta&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Jorge&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Lucia&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Marina&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Fernando&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Chile&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Gabriela&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Set comprehension para extrair países únicos dos clientes</span>
+<span class="n">paises_unicos</span> <span class="o">=</span> <span class="p">{</span><span class="n">cliente</span><span class="p">[</span><span class="s2">&quot;pais&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">cliente</span> <span class="ow">in</span> <span class="n">clientes</span> <span class="k">if</span> <span class="n">cliente</span><span class="p">[</span><span class="s2">&quot;idade&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">paises_unicos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Brasil&#39;, &#39;Argentina&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam que é bem similar ao que fizemos com compreensão de listas e dicionários. A diferença é que usamos <code class="docutils literal notranslate"><span class="pre">{}</span></code> para criar um set, e não precisamos de pares de chave-valor como em um dicionário.</p>
+</section>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Ao longo deste capítulo, você aprendeu sobre as estruturas de repetição em Python: <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>. O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> é usado quando sabemos quantas vezes queremos executar um bloco de código, enquanto o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é usado quando não sabemos quantas vezes queremos executar um bloco de código, mas sabemos a condição de parada. Além disso, você aprendeu sobre as instruções <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> para controlar o fluxo de repetição. Por fim, você aprendeu sobre compreensões de listas, dicionários e sets, que são maneiras compactas de criar novas sequências a partir de sequências existentes.</p>
+<p>No próximo capítulo vamos aprender em mais detalhes sobre funções em Python. Até lá!</p>
 </section>
 </section>
 
@@ -1564,8 +1622,10 @@ Total de estoque contabilizado: 620 itens.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-sets">Compreensão de sets</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
