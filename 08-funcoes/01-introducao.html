@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tipos de dados numéricos &#8212; Python para todos</title>
+    <title>Introdução à funções &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '05-operacoes-basicas/02-tipos-numericos';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08-funcoes/01-introducao';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Precedência de operadores" href="03-precedencia-operadores.html" />
-    <link rel="prev" title="Operações matemáticas básicas" href="01-matematica.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Estrutura de repetição" href="../07-fluxo-controle/02-repeticao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,11 +209,11 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Realize operações básicas</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-matematica.html">Operações matemáticas básicas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tipos de dados numéricos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-precedencia-operadores.html">Precedência de operadores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-variaveis.html">Variáveis</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/01-matematica.html">Operações matemáticas básicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html">Tipos de dados numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
 <ul class="nav bd-sidenav">
@@ -229,8 +229,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../07-fluxo-controle/02-repeticao.html">Estrutura de repetição</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Funções</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../08-funcoes/01-introducao.html">Introdução à funções</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução à funções</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F05-operacoes-basicas/02-tipos-numericos.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F08-funcoes/01-introducao.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@
       
       
       
-      <li><a href="../_sources/05-operacoes-basicas/02-tipos-numericos.md" target="_blank"
+      <li><a href="../_sources/08-funcoes/01-introducao.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +346,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -420,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tipos de dados numéricos</h1>
+    <h1>Introdução à funções</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,10 +430,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#float-e-int"><code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-type">A função <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-e-argumentos">Parâmetros e argumentos</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -445,50 +446,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="tipos-de-dados-numericos">
-<span id="id1"></span><h1>Tipos de dados numéricos<a class="headerlink" href="#tipos-de-dados-numericos" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
-<p>Dentro do mundo da programação, nós temos os chamados tipos de dados, e nesta seção vamos falar de dois tipos de dados numéricos básicos: inteiros, representados por <code class="docutils literal notranslate"><span class="pre">int</span></code> e o ponto flutuante, também chamado de <code class="docutils literal notranslate"><span class="pre">float</span></code>, representando um número decimal.</p>
-<section id="float-e-int">
-<h2><code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">int</span></code><a class="headerlink" href="#float-e-int" title="Link to this heading">#</a></h2>
-<p>Conforme vimos na seção anterior, a divisão <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span></code> retornou <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, e não simplesmente <code class="docutils literal notranslate"><span class="pre">2</span></code>. Porque isso acontece?</p>
-<p>As operações de soma e divisão de números inteiros, como <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">+</span> <span class="pre">4</span></code> e <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">6</span></code> sempre resultam em valores inteiros, chamados de <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
-<p>Na divisão, porém, nem sempre. Podemos ter divisões que resultam em valores inteiros, <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span></code> e outras não, como é o caso de <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">/</span> <span class="pre">4</span></code>, que resulta em <code class="docutils literal notranslate"><span class="pre">0.75</span></code>. Como forma de generalizar, toda divisão em Python retorna um número decimal por padrão. Isso está escrito no tutorial da documentação oficial, seção <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#numbers">3.1.1. Numbers</a> no qual temos escrito (traduzido aqui no livro) que <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">divisão</span> <span class="pre">sempre</span> <span class="pre">retorna</span> <span class="pre">um</span> <span class="pre">ponto</span> <span class="pre">flutuante</span></code>.</p>
-<p>Portanto, temos os tipos <code class="docutils literal notranslate"><span class="pre">int</span></code>, representando um número inteiro, e o tipo <code class="docutils literal notranslate"><span class="pre">float</span></code> representando um número com casas decimais.</p>
-<p>Na maioria das linguagens de programação, incluindo Python, a casa decimal é representada pelo ponto <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
-<p>A radiciação é outra operação que retorna valores <code class="docutils literal notranslate"><span class="pre">float</span></code> por padrão. Da seção passada, vimos que <code class="docutils literal notranslate"><span class="pre">16</span> <span class="pre">**</span> <span class="pre">(1/2)</span></code> nos trouxe <code class="docutils literal notranslate"><span class="pre">4.0</span></code> e não <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
-<p>Interessante que, embora matematicamente <code class="docutils literal notranslate"><span class="pre">2</span></code> e <code class="docutils literal notranslate"><span class="pre">2.0</span></code> sejam iguais, no mundo da programação, <code class="docutils literal notranslate"><span class="pre">2</span></code> e <code class="docutils literal notranslate"><span class="pre">2.0</span></code> são diferentes, pois estamos falando de um <code class="docutils literal notranslate"><span class="pre">int</span></code> e um <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+  <section id="introducao-a-funcoes">
+<h1>Introdução à funções<a class="headerlink" href="#introducao-a-funcoes" title="Link to this heading">#</a></h1>
+<p>Dentre todos os meus anos como instrutor, notei que funções é o primeiro tema que as pessoas começam a ter uma dificuldade maior. Por isso vou utilizar alguns recursos extras para explicar esse tema ao longo deste capítulo.  Nós já usamos várias funções ao longo do livro, e algumas delas não serão novidades para você. Vamos aprender mais sobre as funções que já vimos, outras funções nativas do Python e como criar nossas próprias funções.</p>
+<section id="conceito-e-definicao">
+<h2>Conceito e definição<a class="headerlink" href="#conceito-e-definicao" title="Link to this heading">#</a></h2>
+<p>Uma função é como uma <em>receita</em> que descreve um conjunto de instruções para realizar uma tarefa específica. Imagine que você quer ensinar alguém a fazer um bolo. Em vez de repetir todos os passos toda vez que alguém pedir a receita, você escreve a receita uma vez e a entrega para quem precisar. Uma função em Python funciona de maneira similar: você define o que precisa ser feito (escreve a receita), e depois pode usar essa função sempre que precisar executar aquela tarefa, sem precisar reescrever todo o código. É mais fácil exemplificar com algumas funções que já vimos.</p>
+<p>Por exemplo:</p>
+<ul class="simple">
+<li><p>a função <code class="docutils literal notranslate"><span class="pre">print()</span></code> é usada para imprimir algo na tela</p></li>
+<li><p>a função <code class="docutils literal notranslate"><span class="pre">len()</span></code> é usada para retornar o tamanho de uma sequencia</p></li>
+<li><p>a função <code class="docutils literal notranslate"><span class="pre">range()</span></code>, que vimos <a class="reference internal" href="../07-fluxo-controle/02-repeticao.html#funcao-range"><span class="std std-ref">nesta seção</span></a> do capítulo de laço <code class="docutils literal notranslate"><span class="pre">for</span></code>, é usada para criar uma sequência de números.</p></li>
+<li><p>a função <code class="docutils literal notranslate"><span class="pre">type()</span></code> é usada para retornar o tipo de um objeto. Esta vem nos acompanhando desde o início do livro, na <a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html#a-funcao-type"><span class="std std-ref">seção sobre a função <code class="docutils literal notranslate"><span class="pre">type</span></code></span></a> no capítulo de tipos numéricos.</p></li>
+</ul>
+<p>Você se lembra de outras funções que vimos ao longo do livro?</p>
+<p>Todas estas funções acima fazem parte de um conjunto maior de funções que são chamadas de funções nativas do Python, cuja lista completa pode ser encontrada neste <a class="reference external" href="https://docs.python.org/3/library/functions.html">link</a>. Estas funções nativas estão prontas pra uso, bastando chamá-las no código.</p>
+<p>As funções podem ser divididas, a princípio, em dois grupos:</p>
+<ul class="simple">
+<li><p><strong>Funções nativas</strong>: são as funções que já vêm prontas no Python, como as que vimos acima.</p></li>
+<li><p><strong>Funções definidas pelo usuário</strong>: são funções que você mesmo cria para realizar uma tarefa específica.</p></li>
+</ul>
+<p>Vamos detalhar cada um destes grupos na sequencia.</p>
 </section>
-<section id="a-funcao-type">
-<span id="id2"></span><h2>A função <code class="docutils literal notranslate"><span class="pre">type</span></code><a class="headerlink" href="#a-funcao-type" title="Link to this heading">#</a></h2>
-<p>Na seção <a class="reference internal" href="../04-primeiros-passos/02-ola-mundo.html#hello-world"><span class="std std-ref">Primeiro programa: Olá mundo!</span></a> vimos nossa primeira função <code class="docutils literal notranslate"><span class="pre">print</span></code> que imprime uma mensagem no terminal. Vamos aprender uma segunda, a função <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
-<p>A função <code class="docutils literal notranslate"><span class="pre">type</span></code> faz parte de um conjunto de funções nativas do Python. Você pode acessar a lista completa destas funções nativas <a class="reference external" href="https://docs.python.org/3/library/functions.html">aqui</a>.</p>
-<p><strong>Esta função vai te acompanhar no resto do livro</strong>, acredite em mim! Ela é simples, e super importante. Lembrando que teremos uma seção específica sobre funções.</p>
-<p>De acordo com a documentação oficial, esta função <code class="docutils literal notranslate"><span class="pre">type</span></code> retorna literalmente o tipo de algo passado para ela. Vamos vê-la na prática?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Ao executar o código acima, veremos <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'float'&gt;</span></code> impresso no terminal, indicando que divisão sempre retorna um ponto flutuante, ou <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
-<p>Vamos entender a execução. Ela acontece “de dentro para fora”.</p>
-<ol class="arabic simple">
-<li><p>O Python primeiro realiza a operação <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">/</span> <span class="pre">2</span></code>, resultando em <code class="docutils literal notranslate"><span class="pre">2.0</span></code></p></li>
-<li><p>Este resultado é passado então para a função <code class="docutils literal notranslate"><span class="pre">type</span></code>, no qual teremos <code class="docutils literal notranslate"><span class="pre">type(2.0)</span></code></p></li>
-<li><p>A função <code class="docutils literal notranslate"><span class="pre">type</span></code>, por sua vez, retorna o tipo do que foi passado para ela, no caso, o tipo de dado do número <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, um <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
-<li><p>Finalmente, o tipo do dado é impresso na tela: <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'float'&gt;</span></code></p></li>
-</ol>
+<section id="funcoes-nativas">
+<h2>Funções nativas<a class="headerlink" href="#funcoes-nativas" title="Link to this heading">#</a></h2>
+<p>As funções nativas, também chamadas de <em>built-in</em>, são funções que já vêm prontas no Python e podem ser usadas diretamente. São relativamente poucas funções, porém não vou passar por cada uma delas. Lembrando que o objetivo é falar de forma genérica sobre funções, e cabe a você consultar a documentação do Python para saber mais sobre cada uma delas. Vou passar um pequeno resumo de algumas funções que considero mais importantes:</p>
 <div class="note admonition">
-<p class="admonition-title">Grave isso!</p>
-<p>Quando eu perguntar ao longo do livro <strong>como sei qual é o tipo de dado?</strong>, a resposta sempre será: <strong>usando a função <code class="docutils literal notranslate"><span class="pre">type</span></code></strong>!</p>
+<p class="admonition-title">Nota (muita calma nesta hora!)</p>
+<p>Talvez você possa se assustar com a lista enorme (que é pequena, vá por mim!) de funções novas que você vai ver, mas não se preocupe! A ideia é que você conheça a existência delas, e não que você saiba todas de cor. Afinal, você pode consultar a documentação sempre que precisar. Eu pretendo te guiar pra consultar a documentação, então <strong>não se preocupe em decorar cada uma das funções</strong>.</p>
 </div>
+<ol class="arabic simple">
+<li><p><strong>Funções de entrada e saída</strong></p></li>
+</ol>
+<p>Essas funções são usadas para interagir com o usuário ou com arquivos.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print():</span></code> Exibe informações na tela.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input():</span></code> Recebe dados de entrada do usuário como uma string a partir do terminal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open():</span></code> Abre um arquivo e retorna um objeto de arquivo para leitura e/ou escrita.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Funções de conversão de tipos</strong></p></li>
+</ol>
+<p>Essas funções convertem valores de um tipo de dados para outro.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int():</span></code> Converte um valor para um número inteiro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float():</span></code> Converte um valor para um float.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str():</span></code> Converte um valor para uma string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list():</span></code> Converte uma sequência para uma lista. Também criar uma lista vazia.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple():</span></code> Converte uma sequência para uma tupla. Também criar uma tupla vazia.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set():</span></code> Converte uma sequência para um conjunto. Também criar um conjunto vazio.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict():</span></code> Converte uma coleção de pares chave-valor para um dicionário. Também criar um dicionário vazio.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Funções de manipulação de sequências</strong></p></li>
+</ol>
+<p>Essas funções são usadas para processar e manipular sequências como listas, tuplas e sets.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len():</span></code> Retorna o comprimento (número de itens) de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max():</span></code> Retorna o maior item de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min():</span></code> Retorna o menor item de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum():</span></code> Retorna a soma de todos os itens de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted():</span></code> Retorna uma nova lista ordenada a partir de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enumerate():</span></code> Adiciona um contador a uma sequência para capturar também os índices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zip():</span></code> Combina elementos de múltiplas sequencias em tuplas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map():</span></code> Aplica uma outra função a todos os itens de uma sequência.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter():</span></code> Filtra itens em uma sequência de acordo com uma outra função passada.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>Funções matemáticas</strong></p></li>
+</ol>
+<p>Essas funções realizam operações matemáticas.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abs():</span></code> Retorna o valor absoluto (sem sinal) de um número.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">round():</span></code> Arredonda um float para um número especificado de dígitos nas casas decimais.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">divmod():</span></code> Retorna o quociente e o resto da divisão de dois números.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><strong>Funções de controle de fluxo e comparação</strong></p></li>
+</ol>
+<p>Essas funções são usadas para controle de fluxo e comparações lógicas.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">any():</span></code> Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se qualquer elemento em uma sequência for verdadeiro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all():</span></code> Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todos os elementos em uma sequência forem verdadeiros.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p><strong>Funções de Inspeção de Objetos</strong></p></li>
+</ol>
+<p>Essas funções retornam informações sobre objetos, como seu tipo ou identificador.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type():</span></code> Retorna o tipo de um objeto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id():</span></code> Retorna o identificador único na memória do computador de um objeto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance():</span></code> Verifica se um objeto é uma instância de uma classe ou tipo.</p></li>
+</ul>
+<p>Existem outras funções, mas como disse, a ideia não é ensinar cada uma delas no detalhe, e sim uma visão mais geral. Você pode consultar a documentação para saber mais sobre cada uma delas.</p>
+<section id="parametros-e-argumentos">
+<h3>Parâmetros e argumentos<a class="headerlink" href="#parametros-e-argumentos" title="Link to this heading">#</a></h3>
 </section>
-<section id="pratica">
-<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
-<p>Agora você já consegue fazer o <a class="reference internal" href="../exercicios.html#exercicio-2"><span class="std std-ref">exercício 2</span></a> da lista!</p>
-</section>
-<section id="conclusao">
-<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
-<p>Na próxima seção vamos aprender sobre a ordem na qual as operações são executadas!</p>
-</div>
 </section>
 </section>
 
@@ -505,7 +558,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./05-operacoes-basicas"
+            path: "./08-funcoes"
         },
         predefinedOutput: true
     }
@@ -523,20 +576,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="01-matematica.html"
+       href="../07-fluxo-controle/02-repeticao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Operações matemáticas básicas</p>
+        <p class="prev-next-title">Estrutura de repetição</p>
       </div>
     </a>
     <a class="right-next"
-       href="03-precedencia-operadores.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Precedência de operadores</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -556,10 +609,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#float-e-int"><code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">int</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-funcao-type">A função <code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-e-argumentos">Parâmetros e argumentos</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
