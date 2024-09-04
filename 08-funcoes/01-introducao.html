@@ -431,10 +431,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-e-argumentos">Parâmetros e argumentos</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
 </ul>
             </nav>
         </div>
@@ -520,6 +518,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">abs():</span></code> Retorna o valor absoluto (sem sinal) de um número.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">round():</span></code> Arredonda um float para um número especificado de dígitos nas casas decimais.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">divmod():</span></code> Retorna o quociente e o resto da divisão de dois números.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum():</span></code> Retorna a soma de todos os itens de uma sequência.</p></li>
 </ul>
 <ol class="arabic simple" start="5">
 <li><p><strong>Funções de controle de fluxo e comparação</strong></p></li>
@@ -530,7 +529,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">all():</span></code> Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todos os elementos em uma sequência forem verdadeiros.</p></li>
 </ul>
 <ol class="arabic simple" start="6">
-<li><p><strong>Funções de Inspeção de Objetos</strong></p></li>
+<li><p><strong>Funções de inspeção de objetos</strong></p></li>
 </ol>
 <p>Essas funções retornam informações sobre objetos, como seu tipo ou identificador.</p>
 <ul class="simple">
@@ -539,9 +538,60 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">isinstance():</span></code> Verifica se um objeto é uma instância de uma classe ou tipo.</p></li>
 </ul>
 <p>Existem outras funções, mas como disse, a ideia não é ensinar cada uma delas no detalhe, e sim uma visão mais geral. Você pode consultar a documentação para saber mais sobre cada uma delas.</p>
-<section id="parametros-e-argumentos">
-<h3>Parâmetros e argumentos<a class="headerlink" href="#parametros-e-argumentos" title="Link to this heading">#</a></h3>
 </section>
+<section id="funcoes-customizadas">
+<h2>Funções customizadas<a class="headerlink" href="#funcoes-customizadas" title="Link to this heading">#</a></h2>
+<p>Nesta seção vamos aprender a criar nossas próprias funções.</p>
+<p>Antes de mais nada, entenda que não é necessário recriar funções que já existem. À exemplo da função <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, que soma os elementos de uma sequência, não faria sentido criar uma função <code class="docutils literal notranslate"><span class="pre">soma()</span></code> que faz a mesma coisa.</p>
+<p>O ideal é que você crie funções para tarefas específicas. Um exemplo típico é a função <code class="docutils literal notranslate"><span class="pre">media()</span></code> que calcula a média de uma sequência de números. Percebam que não existe nenhuma outra função nativa que faça isso (que poderia ser chamada de <code class="docutils literal notranslate"><span class="pre">mean()</span></code> ou <code class="docutils literal notranslate"><span class="pre">avg()</span></code>), então é uma boa ideia criar uma função para este cálculo.</p>
+<p>Vamos entender a sintaxe de criação de funções com uma função mais simples, e em seguida trabalharemos com a construção da função <code class="docutils literal notranslate"><span class="pre">media()</span></code>.</p>
+<p>A sintaxe para criar uma função é a seguinte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nome_da_funcao</span><span class="p">(</span><span class="n">parametro1</span><span class="p">,</span> <span class="n">parametro2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="c1"># corpo da função com o código</span>
+    <span class="c1"># é possível ter várias linhas</span>
+    <span class="c1"># de instruções</span>
+    <span class="k">return</span> <span class="n">valor_de_retorno</span>
+</pre></div>
+</div>
+<p>Vamos entender cada parte na criação da função:</p>
+<ol class="arabic simple">
+<li><p>Nome da função:</p></li>
+</ol>
+<p>No exemplo <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">nome_da_funcao(parametro1,</span> <span class="pre">parametro2):</span></code>, a palavra <code class="docutils literal notranslate"><span class="pre">def</span></code> é usada para indicar ao Python que estamos criando uma função. É como dizer ao computador: <em>aqui está a receita que você vai seguir</em>. E <code class="docutils literal notranslate"><span class="pre">nome_da_funcao</span></code> é o nome que você dá para essa função. Pode ser qualquer nome, mas é bom escolher algo que descreva o que a função faz e vale a mesma <a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html#regras-nomenclatura-variaveis"><span class="std std-ref">regra de nomemclatura de variáveis</span></a> que vimos anteriormente.</p>
+<ol class="arabic simple">
+<li><p>Parâmetros:</p></li>
+</ol>
+<p>Os parametros são como os ingredientes de uma receita. Eles são as informações que você passa para a função, para que ela possa fazer seu trabalho. Se você está fazendo um bolo, seus parâmetros podem ser os ingredientes como farinha, açúcar, e ovos. No exemplo, <code class="docutils literal notranslate"><span class="pre">parametro1</span></code> e <code class="docutils literal notranslate"><span class="pre">parametro2</span></code> são os nomes que você vai usar dentro da função. Quando você chamar essa função, você vai dizer quais valores quer usar como parâmetros. Por exemplo, <code class="docutils literal notranslate"><span class="pre">nome_da_funcao(10,</span> <span class="pre">20)</span></code>, onde <code class="docutils literal notranslate"><span class="pre">parametro1</span></code> vai ser 10 e <code class="docutils literal notranslate"><span class="pre">parametro2</span></code> vai ser 20.</p>
+<ol class="arabic simple">
+<li><p>Corpo da função:</p></li>
+</ol>
+<p>O corpo da função é o conjunto de instruções que dizem ao computador o que fazer com os parâmetros. No exemplo, o corpo da função está representado por linhas de código que começam logo abaixo de <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">nome_da_funcao(parametro1,</span> <span class="pre">parametro2):</span></code>. Aqui, você pode ter várias linhas que instruem o computador sobre o que fazer. Pode ser calcular algo, modificar um valor, ou até mesmo apenas mostrar uma mensagem na tela.</p>
+<ol class="arabic simple">
+<li><p>Retorno:</p></li>
+</ol>
+<p>Finalmente, temos a linha <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">valor_de_retorno</span></code>. O <code class="docutils literal notranslate"><span class="pre">return</span></code> é a palavra reservada que indica o valor a ser retornado como resultado da função, como o resultado final da receita, o bolo pronto. É o que a função vai devolver depois de fazer tudo o que tinha que fazer. E <code class="docutils literal notranslate"><span class="pre">valor_de_retorno</span></code> é o resultado que a função calcula ou produz, que pode ser um número, uma string, ou qualquer outro tipo de dado.</p>
+<p>Algumas observações importantes:</p>
+<ul class="simple">
+<li><p>A função pode ou não receber parâmetros. Se não receber, os parênteses ficariam vazios conforme trecho abaixo. Se receber, os parâmetros são separados por vírgula, conforme o exemplo acima:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao_sem_parametros</span><span class="p">():</span><span class="err">`</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Os <code class="docutils literal notranslate"><span class="pre">:</span></code> no final da definição da função são obrigatórios. Eles indicam ao Python que o bloco de código que vem a seguir é o corpo da função.</p></li>
+<li><p>O corpo da função é identado, ou seja, todas as linhas de código que fazem parte da função devem estar alinhadas com a palavra <code class="docutils literal notranslate"><span class="pre">def</span></code> indicando que todo código identado pertence à função.</p></li>
+<li><p>A palavra <code class="docutils literal notranslate"><span class="pre">return</span></code> é opcional. Se você não usar, a função vai ser executada, mas não vai retornar nada para fora dela. Vamos ver mais detalhadamente a questão de retorno vs não retorno mais adiante.</p></li>
+</ul>
+<p>E o mais importante de todos: ao definirmos uma função, ela é simplesmente criada na memória do computador, mas isso não quer dizer que ela é executada no momento da definição. Para executar a função, você precisa chamá-la, como fizemos com as funções nativas. Exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aqui estamos apenas definindo a função, nada é executado neste momento...</span>
+<span class="k">def</span> <span class="nf">funcao_sem_parametros</span><span class="p">():</span><span class="err">`</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+
+<span class="n">funcao_sem_parametros</span><span class="p">()</span> <span class="c1"># Aqui é onde estamos chamando a função, e o bloco de código dela será executado</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -610,10 +660,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-e-argumentos">Parâmetros e argumentos</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
 </ul>
   </nav></div>
 

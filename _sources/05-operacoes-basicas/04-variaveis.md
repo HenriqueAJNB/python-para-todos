@@ -91,6 +91,7 @@ Ao executar o código acima:
 NameError: name 'Nome' is not defined. Did you mean: 'nome'?
 ```
 
+(regras-nomenclatura-variaveis)=
 ## Regras na nomenclatura de variáveis
 
 Estas regras são **obrigatórias**. Sem seguí-las, seu código gera erros!
