@@ -432,7 +432,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -592,6 +595,115 @@ document.write(`
 <span class="n">funcao_sem_parametros</span><span class="p">()</span> <span class="c1"># Aqui é onde estamos chamando a função, e o bloco de código dela será executado</span>
 </pre></div>
 </div>
+<p>Vamos começar com um exemplo de uma função customizada que não existe na lista de funções nativas do Python. Vamos criar uma função que calcula a média de uma sequência de números. Conceitualmente, a média aritmética simples é a soma de todos os elementos dividida pelo número de elementos. Já existe a função <code class="docutils literal notranslate"><span class="pre">sum()</span></code> que calcula a soma de uma dada sequencia e <code class="docutils literal notranslate"><span class="pre">len()</span></code> que calcula o tamanho da sequência, então podemos usar essas duas funções para calcular a média. Vamos ver como fazer isso.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+
+
+<span class="n">valores_exemplo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">media</span> <span class="o">=</span> <span class="n">calcula_media</span><span class="p">(</span><span class="n">valores_exemplo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">media</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui definimos a função e a usamos em seguida para calcular a média da lista <code class="docutils literal notranslate"><span class="pre">valores_exemplo</span></code>. O resultado da função <code class="docutils literal notranslate"><span class="pre">calcula_media</span></code> é armazenado na variável <code class="docutils literal notranslate"><span class="pre">media</span></code> e depois é impresso na tela.</p>
+<p>É possível reaproveitar a mesma função para calcular a média de outras sequências de números, bastando passar as diferentes sequências como argumento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+
+
+<span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">51</span><span class="p">]</span>
+<span class="n">lista3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">548</span><span class="p">,</span> <span class="mi">781</span><span class="p">,</span> <span class="mi">961</span><span class="p">,</span> <span class="mi">473</span><span class="p">,</span> <span class="mi">552</span><span class="p">]</span>
+
+<span class="n">media1</span> <span class="o">=</span> <span class="n">calcula_media</span><span class="p">(</span><span class="n">lista1</span><span class="p">)</span>
+<span class="n">media2</span> <span class="o">=</span> <span class="n">calcula_media</span><span class="p">(</span><span class="n">lista2</span><span class="p">)</span>
+<span class="n">media3</span> <span class="o">=</span> <span class="n">calcula_media</span><span class="p">(</span><span class="n">lista3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;As médias são, respectivamente, </span><span class="si">{</span><span class="n">media1</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">media2</span><span class="si">}</span><span class="s2"> e </span><span class="si">{</span><span class="n">media3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>As médias são, respectivamente, 3.0, 63.8 e 663.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="escopo-de-variaveis">
+<h3>Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Link to this heading">#</a></h3>
+<p>É possível criar variável dentro de funções, porém uma variável só estará disponível dentro do escopo que ela foi criada. Elas só vão existir enquanto a função for executada. É o que chamamos de escopo local. Se você tentar acessar uma variável criada dentro de uma função fora dela, você terá um erro. Vamos ver um exemplo:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exemplo_escopo_local</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A variável x dentro da função é </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A variável x dentro da função é </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>O erro <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'x'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> ocorre porque a variável <code class="docutils literal notranslate"><span class="pre">x</span></code> foi criada dentro da função <code class="docutils literal notranslate"><span class="pre">exemplo_escopo_local</span></code>. Isso significa que <code class="docutils literal notranslate"><span class="pre">x</span></code> só existe enquanto o código está sendo executado dentro dessa função. Se você tentar acessar <code class="docutils literal notranslate"><span class="pre">x</span></code> fora da função, o Python não conseguirá encontrá-la, resultando nesse erro.</p>
+<p>O mesmo vale para os parâmetros de uma função: eles só existem no escopo interno da função e não podem ser acessados de fora.</p>
+<p>Todas as variáveis definidas no escopo principal (fora de qualquer função) são chamadas de variáveis globais. Elas podem ser acessadas de qualquer lugar do código, inclusive de dentro de funções. E sinceramente, o Python é bem confuso e neste ponto, pois ele dá abertura para algumas más práticas de programação que tornanm o código dificil de entender, apesar do código funcionar. Vejamos um exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># variável definida no escopo global</span>
+
+
+<span class="k">def</span> <span class="nf">exemplo_escopo_global</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># variável definida no escopo local da função</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A variável x dentro da função é </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="n">exemplo_escopo_global</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A variável x fora da função é </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A variável x dentro da função é 10
+A variável x fora da função é 20
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam como fica confuso! Temos um <code class="docutils literal notranslate"><span class="pre">x</span></code> global e um <code class="docutils literal notranslate"><span class="pre">x</span></code> local, e o Python não reclama disso. Isso é um problema, pois se você não tomar cuidado, você pode acabar entendendo errado e fazendo confusão com os valores.</p>
+<div class="tip admonition">
+<p class="admonition-title">Dica profissional (variáveis globais e locais)</p>
+<p>Não use variáveis globais e locais com o mesmo nome pois dá margem para confusão e erros! Busque sempre usar nomes diferentes para variáveis globais e locais.</p>
+</div>
+<p>Existe ainda uma palavra reservada chamada <code class="docutils literal notranslate"><span class="pre">global</span></code> para permitir o uso de variáveis globais dentro de funções, e o entendimento do código pode ficar pior ainda! Por isso nem gosto de ensinar esta abordagem por ser considerada uma má prática.</p>
+<div class="danger admonition">
+<p class="admonition-title">Perigo (variáveis globais)</p>
+<p>Evite ao máximo usar variáveis globais dentro de funções! Se você precisar de um valor de fora da função, passe esse valor como parâmetro. Isso torna o código mais legível e menos propenso a erros.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -661,7 +773,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
