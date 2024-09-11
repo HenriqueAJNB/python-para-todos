@@ -434,6 +434,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 </ul>
 </li>
 </ul>
@@ -704,6 +705,43 @@ A variável x fora da função é 20
 <p>Evite ao máximo usar variáveis globais dentro de funções! Se você precisar de um valor de fora da função, passe esse valor como parâmetro. Isso torna o código mais legível e menos propenso a erros.</p>
 </div>
 </section>
+<section id="dicas-de-tipo-type-hints">
+<h3>Dicas de tipo (type hints)<a class="headerlink" href="#dicas-de-tipo-type-hints" title="Link to this heading">#</a></h3>
+<p>Notem que, na função acima <code class="docutils literal notranslate"><span class="pre">calcula_media</span></code> que criamos anteriormente, é difícil dizer quais são os tipos de dados que a função espera como argumento e qual é o tipo de dado que ela retorna. Isso pode ser um problema se você estiver trabalhando em um projeto grande e complexo, ou se você estiver trabalhando em equipe. Para resolver isso, o Python permite que você adicione dicas de tipo, chamadas de <em>type hints</em>, para indicar quais são os tipos de dados esperados e retornados pela função.</p>
+<p>Infelizmente <em>type hints</em> são apenas dicas mesmo, e o Python não vai reclamar se você passar um tipo de dado diferente do esperado. Mas, ainda sim, é uma boa prática adicionar essas dicas para ajudar a entender o código. Vamos ver como fazer isso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for |: &#39;type&#39; and &#39;type&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A função acima indica o tipo do parâmetro <code class="docutils literal notranslate"><span class="pre">valores</span></code> como uma lista de números inteiros ou floats através da notação <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">list[int</span> <span class="pre">|</span> <span class="pre">float]</span></code> logo na sequencia do nome do parâmetro. Já a notação <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">float</span></code> indica que a função retorna um número float (o que faz sentido pois a média pode ser um número quebrado).</p>
+<p>Porém, como disse anteriormente, o Python não vai reclamar se você passar um tipo de dado diferente do esperado. Essa função fica um pouco mais claro em termos de tipos de dados (desde que informados corretamente) e pode ajudar a entender melhor o código.</p>
+<p>Podemos anotar qualquer parâmetro da função, bem como seu(s) retorno(s). As notações a princípio seguem os tipos básicos que vimos até agora:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: número inteiro</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code>: número de ponto flutuante</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>: lista</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>: tupla</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: dicionário</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: conjuntos</p></li>
+</ul>
+<p>Para as sequências como <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> e <code class="docutils literal notranslate"><span class="pre">set</span></code>, é possível indicar o tipo de dado que a sequência contém, como fizemos no exemplo acima, usando <code class="docutils literal notranslate"><span class="pre">list[int</span> <span class="pre">|</span> <span class="pre">float]</span></code> para indicar que a lista contém números inteiros ou floats. No caso de diciários, é possível indicar o tipo de dado da chave e do valor, como <code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">int]</span></code> para indicar um dicionário onde a chave é uma string e o valor é um inteiro.</p>
+</section>
 </section>
 </section>
 
@@ -775,6 +813,7 @@ A variável x fora da função é 20
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 </ul>
 </li>
 </ul>
