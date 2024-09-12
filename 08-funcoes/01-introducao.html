@@ -432,11 +432,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
 </ul>
             </nav>
         </div>
@@ -642,8 +641,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="escopo-de-variaveis">
-<h3>Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Link to this heading">#</a></h3>
+<h2>Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Link to this heading">#</a></h2>
 <p>É possível criar variável dentro de funções, porém uma variável só estará disponível dentro do escopo que ela foi criada. Elas só vão existir enquanto a função for executada. É o que chamamos de escopo local. Se você tentar acessar uma variável criada dentro de uma função fora dela, você terá um erro. Vamos ver um exemplo:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -706,29 +706,29 @@ A variável x fora da função é 20
 </div>
 </section>
 <section id="dicas-de-tipo-type-hints">
-<h3>Dicas de tipo (type hints)<a class="headerlink" href="#dicas-de-tipo-type-hints" title="Link to this heading">#</a></h3>
+<h2>Dicas de tipo (type hints)<a class="headerlink" href="#dicas-de-tipo-type-hints" title="Link to this heading">#</a></h2>
 <p>Notem que, na função acima <code class="docutils literal notranslate"><span class="pre">calcula_media</span></code> que criamos anteriormente, é difícil dizer quais são os tipos de dados que a função espera como argumento e qual é o tipo de dado que ela retorna. Isso pode ser um problema se você estiver trabalhando em um projeto grande e complexo, ou se você estiver trabalhando em equipe. Para resolver isso, o Python permite que você adicione dicas de tipo, chamadas de <em>type hints</em>, para indicar quais são os tipos de dados esperados e retornados pela função.</p>
 <p>Infelizmente <em>type hints</em> são apenas dicas mesmo, e o Python não vai reclamar se você passar um tipo de dado diferente do esperado. Mas, ainda sim, é uma boa prática adicionar essas dicas para ajudar a entender o código. Vamos ver como fazer isso:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+
+<span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">calcula_media</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for |: &#39;type&#39; and &#39;type&#39;
-</pre></div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Nota (importações)</p>
+<p>No código acima você verá algo novo: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">typing</span> <span class="pre">import</span> <span class="pre">Union</span></code>. Isso é uma importação de um módulo chamado <code class="docutils literal notranslate"><span class="pre">typing</span></code> que contém váriasfuncionalidades extras para trabalhar com anotação de tipos de dados. Neste caso, estamos importando <code class="docutils literal notranslate"><span class="pre">Union</span></code> que é usada para indicar que um parâmetro pode ser de um tipo ou de outro. Vamos ver mais sobre isso importações de módulos em uma seção futura. Por enquanto, entenda que estamos trazendo algo de fora para usar em nosso código.</p>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Nota (notação de tipo Python 3.10)</p>
+<p>A partir da versão 3.10 do Python, <code class="docutils literal notranslate"><span class="pre">Union</span></code> pode ser substituído por <code class="docutils literal notranslate"><span class="pre">|</span></code>, simplificando a notação de tipos. No exemplo acima, ficaria <code class="docutils literal notranslate"><span class="pre">list[int</span> <span class="pre">|</span> <span class="pre">float]</span></code> ao invés de <code class="docutils literal notranslate"><span class="pre">list[Union[int,</span> <span class="pre">float]]</span></code>. A importação <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">typing</span> <span class="pre">import</span> <span class="pre">Union</span></code> não é necessária ao usar <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
 </div>
-<p>A função acima indica o tipo do parâmetro <code class="docutils literal notranslate"><span class="pre">valores</span></code> como uma lista de números inteiros ou floats através da notação <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">list[int</span> <span class="pre">|</span> <span class="pre">float]</span></code> logo na sequencia do nome do parâmetro. Já a notação <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">float</span></code> indica que a função retorna um número float (o que faz sentido pois a média pode ser um número quebrado).</p>
+<p>A função acima indica o tipo do parâmetro <code class="docutils literal notranslate"><span class="pre">valores</span></code> como uma lista de números inteiros ou floats através da notação <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">list[Union[int,</span> <span class="pre">float]]</span></code> logo na sequencia do nome do parâmetro. Já a notação <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">float</span></code> indica que a função retorna um número float (o que faz sentido pois a média pode ser um número quebrado).</p>
 <p>Porém, como disse anteriormente, o Python não vai reclamar se você passar um tipo de dado diferente do esperado. Essa função fica um pouco mais claro em termos de tipos de dados (desde que informados corretamente) e pode ajudar a entender melhor o código.</p>
 <p>Podemos anotar qualquer parâmetro da função, bem como seu(s) retorno(s). As notações a princípio seguem os tipos básicos que vimos até agora:</p>
 <ul class="simple">
@@ -740,8 +740,71 @@ A variável x fora da função é 20
 <li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: dicionário</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: conjuntos</p></li>
 </ul>
-<p>Para as sequências como <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> e <code class="docutils literal notranslate"><span class="pre">set</span></code>, é possível indicar o tipo de dado que a sequência contém, como fizemos no exemplo acima, usando <code class="docutils literal notranslate"><span class="pre">list[int</span> <span class="pre">|</span> <span class="pre">float]</span></code> para indicar que a lista contém números inteiros ou floats. No caso de dicionários, é possível indicar o tipo de dado da chave e do valor, como <code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">int]</span></code> para indicar um dicionário onde a chave é uma string e o valor é um inteiro.</p>
+<p>Para as sequências como <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> e <code class="docutils literal notranslate"><span class="pre">set</span></code>, é possível indicar o tipo de dado que a sequência contém, como fizemos no exemplo acima, usando <code class="docutils literal notranslate"><span class="pre">list[Union[int,float]</span></code> (ou <code class="docutils literal notranslate"><span class="pre">list[int</span> <span class="pre">|float]</span></code> a partir do Python 3.10) para indicar que a lista contém números inteiros ou floats.</p>
+<p>No caso de dicionários, é possível indicar o tipo de dado da chave e do valor, como <code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">int]</span></code> para indicar um dicionário onde a chave é uma string e o valor é um inteiro.</p>
 </section>
+<section id="parametros-opcionais">
+<h2>Parâmetros opcionais<a class="headerlink" href="#parametros-opcionais" title="Link to this heading">#</a></h2>
+<p>Todos os parâmetros de uma função são obrigatórios, ou seja, se você definir um parâmetro na função, você precisa passar um valor para ele quando chamar a função. Mas é possível definir parâmetros opcionais, que são parâmetros que têm um valor padrão e podem ser omitidos quando você chama a função. A melhor forma é apresentando um exemplo real, criando uma função que calcula o salário de um colaborador, onde o valor base do salário é obrigatório, mas há benefícios opcionais, como bônus, vale-refeição, e plano de saúde. Esses benefícios podem ser incluídos ou não, dependendo das condições de cada funcionário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_salario</span><span class="p">(</span>
+    <span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bonus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">plano_saude</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">+</span> <span class="n">bonus</span> <span class="o">+</span> <span class="n">vale_refeicao</span> <span class="o">+</span> <span class="n">plano_saude</span>
+
+
+<span class="c1"># Exemplo de uso</span>
+<span class="n">salario_maria</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>  <span class="c1"># Sem benefícios adicionais</span>
+<span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">salario_maria</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salario_joao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4000
+3700
+</pre></div>
+</div>
+</div>
+</div>
+<p>O código define uma função chamada <code class="docutils literal notranslate"><span class="pre">calcular_salario</span></code> que recebe quatro parâmetros: <code class="docutils literal notranslate"><span class="pre">base</span></code>, <code class="docutils literal notranslate"><span class="pre">bonus</span></code>, <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code>, e <code class="docutils literal notranslate"><span class="pre">plano_saude</span></code>. O parâmetro <code class="docutils literal notranslate"><span class="pre">base</span></code> é obrigatório, enquanto os demais são opcionais e possuem valores padrão 0, configurados na própria definição da função. Isso significa que, se ao chamar a função, não forem fornecidos valores para <code class="docutils literal notranslate"><span class="pre">bonus</span></code>, <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code> ou <code class="docutils literal notranslate"><span class="pre">plano_saude</span></code>, o Python usará automaticamente o valor 0 para esses parâmetros.</p>
+<p>A função retorna a soma dos valores dos quatro parâmetros, representando o salário total do funcionário, que inclui a base salarial e os benefícios opcionais.</p>
+<p>Na sequência, duas chamadas à função são feitas:</p>
+<ul class="simple">
+<li><p>A primeira, <code class="docutils literal notranslate"><span class="pre">salario_maria</span> <span class="pre">=</span> <span class="pre">calcular_salario(4000)</span></code>, passa apenas o valor de base como 4000, sem fornecer valores para os outros parâmetros. Como <code class="docutils literal notranslate"><span class="pre">bonus</span></code>, <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code> e <code class="docutils literal notranslate"><span class="pre">plano_saude</span></code> possuem valores padrão de 0, o salário final de Maria será apenas 4000.</p></li>
+<li><p>A segunda, <code class="docutils literal notranslate"><span class="pre">salario_joao</span> <span class="pre">=</span> <span class="pre">calcular_salario(3000,</span> <span class="pre">500,</span> <span class="pre">200)</span></code>, passa 3000 como o valor de base, 500 como bonus e 200 como vale_refeicao. Percebam que os valores são captados na mesma ordem dos parâmetros. O parâmetro <code class="docutils literal notranslate"><span class="pre">plano_saude</span></code> não é informado, então o valor padrão de 0 será utilizado. Assim, o salário de João será 3000 + 500 + 200, totalizando 3700.</p></li>
+</ul>
+<p>Esse código ilustra o uso de parâmetros opcionais em funções, permitindo flexibilizar o cálculo de salários com ou sem benefícios adicionais.</p>
+<p>Em resumo:</p>
+<ul class="simple">
+<li><p><strong>Parâmetros obrigatórios:</strong> são parâmetros que precisam ser passados ao chamar a função e não possuem um valor padrão. Se eles não forem passados, o Python vai gerar um erro.</p></li>
+<li><p><strong>Parâmetros opcionais:</strong> são parâmetros que têm um valor padrão na definição da função e podem ser omitidos ao chamar a função.</p></li>
+</ul>
+<p>É importante ressaltar que <strong>todos os parâmetros obrigatórios devem vir antes (à esquerda) dos parâmetros opcionais na definição da função</strong>. Ou seja, você <strong>não pode ter um parâmetro opcional antes (à esquerda) de um parâmetro obrigatório</strong>. Caso isso aconteça, o Python vai gerar o erro <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">parameter</span> <span class="pre">without</span> <span class="pre">a</span> <span class="pre">default</span> <span class="pre">follows</span> <span class="pre">parameter</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">default</span></code>, conforme o exemplo abaixo:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O parâmetro `base`` é obrigatório, os demais são opcionais</span>
+<span class="c1"># Parâmetro opcional `bonus` está à esquerda do parâmetro obrigatório base</span>
+<span class="c1"># Por isso o erro SyntaxError: parameter without a default follows parameter with a default</span>
+<span class="k">def</span> <span class="nf">calcular_salario</span><span class="p">(</span>
+    <span class="n">bonus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">plano_saude</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">+</span> <span class="n">bonus</span> <span class="o">+</span> <span class="n">vale_refeicao</span> <span class="o">+</span> <span class="n">plano_saude</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="n">bonus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">plano_saude</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+                               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: non-default argument follows default argument
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -811,11 +874,10 @@ A variável x fora da função é 20
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-e-definicao">Conceito e definição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-nativas">Funções nativas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-customizadas">Funções customizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
 </ul>
   </nav></div>
 
