@@ -436,6 +436,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-posicionais-e-nominais">Parâmetros posicionais e nominais</a></li>
 </ul>
             </nav>
         </div>
@@ -806,6 +807,108 @@ A variável x fora da função é 20
 </div>
 </div>
 </section>
+<section id="parametros-posicionais-e-nominais">
+<h2>Parâmetros posicionais e nominais<a class="headerlink" href="#parametros-posicionais-e-nominais" title="Link to this heading">#</a></h2>
+<p>Partindo do exemplo abaixo, eu farei uma pergunta pra explicar este tópico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_salario</span><span class="p">(</span>
+    <span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bonus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">plano_saude</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">+</span> <span class="n">bonus</span> <span class="o">+</span> <span class="n">vale_refeicao</span> <span class="o">+</span> <span class="n">plano_saude</span>
+
+
+<span class="n">salario_maria</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como o Python sabe que ao chamar a função em <code class="docutils literal notranslate"><span class="pre">salario_maria</span> <span class="pre">=</span> <span class="pre">calcular_salario(4000)</span></code> o valor 4000 é o valor de <code class="docutils literal notranslate"><span class="pre">base</span></code> e não de <code class="docutils literal notranslate"><span class="pre">bonus</span></code> ou <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code>? E em <code class="docutils literal notranslate"><span class="pre">salario_joao</span> <span class="pre">=</span> <span class="pre">calcular_salario(3000,</span> <span class="pre">500,</span> <span class="pre">200)</span></code> como o Python sabe que 3000 é o valor de <code class="docutils literal notranslate"><span class="pre">base</span></code>, 500 é o valor de <code class="docutils literal notranslate"><span class="pre">bonus</span></code> e 200 é o valor de <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code>?</p>
+<p>Basicamente quando informamos os argumentos da função na chamada simplesmente passando o valor, o Python entende que o primeiro valor é o primeiro parâmetro, o segundo valor é o segundo parâmetro, e assim por diante. Isso é chamado de passagem de parâmetros posicionais, pois a ordem dos valores passados é importante.</p>
+<p>Existe uma outra forma de passar os argumentos para a função, que é chamada de passagem de parâmetros nomeados. Neste caso, ao chamar a função, você informa o nome do parâmetro seguido de <code class="docutils literal notranslate"><span class="pre">=</span></code> e o valor que você quer passar. Isso permite que você passe os argumentos em qualquer ordem, e o Python vai associar o valor ao parâmetro correto. Vamos ver o mesmo exemplo, porém usando parâmetros nominais:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_salario</span><span class="p">(</span>
+    <span class="n">base</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bonus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">plano_saude</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">+</span> <span class="n">bonus</span> <span class="o">+</span> <span class="n">vale_refeicao</span> <span class="o">+</span> <span class="n">plano_saude</span>
+
+
+<span class="n">salario_maria</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">bonus</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam que fica mais claro qual parâmetro recebe qual valor? Isso é uma das vantagens de usar parâmetros nomeados. Usando parâmetros nomeados, você pode passar os argumentos em qualquer ordem, o que pode ser útil em funções com muitos parâmetros, ou quando você quer deixar o código mais claro e legível. Vejamos um exemplo de chamada da função passando parâmetros nomeados em ordem diferente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">bonus</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos inclusive misturar os dois tipos de passagem de parâmetros, mas é importante lembrar que os parâmetros posicionais devem vir antes dos parâmetros nomeados obrigatoriamente. No exemplo abaixo, temos que <code class="docutils literal notranslate"><span class="pre">base=3000</span></code> (posicional), <code class="docutils literal notranslate"><span class="pre">bonus=500</span></code> (nomeado) e <code class="docutils literal notranslate"><span class="pre">vale_refeicao=200</span></code> (nomeado).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bonus</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salario_joao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3700
+</pre></div>
+</div>
+</div>
+</div>
+<p>Caso algum parâmetro nomeado seja passado antes de um parâmetro posicional, o Python vai gerar o erro <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">positional</span> <span class="pre">argument</span> <span class="pre">follows</span> <span class="pre">keyword</span> <span class="pre">argument</span></code> dizendo exatamente que parâmetro posicionais não podem vir depois de parâmetros nomeados.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bonus</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bonus</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+                                                                     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: positional argument follows keyword argument
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um outro erro muito comum também ao misturar parâmetros nomeados e posicionais é informar valores duplicados para um parâmetro, um como posicional e outro como nomeado. Isso também gera um erro, o <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">calcular_salario()</span> <span class="pre">got</span> <span class="pre">multiple</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">argument</span> <span class="pre">'base'</span></code>. Ou seja, algum parâmetro, neste caso <code class="docutils literal notranslate"><span class="pre">base</span></code>, está recebendo valor como posicional e também como nomeado, conforme mostra o exemplo abaixo.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O parâmetro `base` recebe 4000 como posicional e 8000 como nomeado, gerando um erro!</span>
+<span class="n">salario_maria</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># O parâmetro `base` recebe 4000 como posicional e 8000 como nomeado, gerando um erro!</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">salario_maria</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: calcular_salario() got multiple values for argument &#39;base&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eu, particularmente, prefiro usar majoritariamente por questões de clareza, parâmetros nomeados (desde que os nomes dos parâmetros sejam bem escolhidos), mas isso é uma questão de estilo de programação e você pode escolher o que achar melhor. A esta altura do capítulo, você provavelmente não vai lembrar mais a ordem dos parâmetros que foi definida na função. Na chamada da função abaixo…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>… qual posição era mesmo a posição do parâmetro <code class="docutils literal notranslate"><span class="pre">vale_refeicao</span></code>? Era segundo, terceiro? E <code class="docutils literal notranslate"><span class="pre">plano_saude</span></code>? <code class="docutils literal notranslate"><span class="pre">bonus</span></code>? Não dá para saber sem consultar a definição função pra lembrar da ordem!</p>
+<p>Já se você usar parâmetros nominais, você não precisa se preocupar com a ordem dos parâmetros, e o código fica mais claro e legível, mesmo que eles forem chamados em ordem diferente da definição da função. Lembrando que o parâmetro <code class="docutils literal notranslate"><span class="pre">bonus</span></code> é opcional, então não é necessário informá-lo…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">salario_joao</span> <span class="o">=</span> <span class="n">calcular_salario</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">vale_refeicao</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">plano_saude</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -878,6 +981,7 @@ A variável x fora da função é 20
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-de-variaveis">Escopo de variáveis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-posicionais-e-nominais">Parâmetros posicionais e nominais</a></li>
 </ul>
   </nav></div>
 
