@@ -466,7 +466,7 @@ document.write(`
 <p>As funções podem ser divididas, a princípio, em dois grupos:</p>
 <ul class="simple">
 <li><p><strong>Funções nativas</strong>: são as funções que já vêm prontas no Python, como as que vimos acima.</p></li>
-<li><p><strong>Funções definidas pelo usuário</strong>: são funções que você mesmo cria para realizar uma tarefa específica.</p></li>
+<li><p><strong>Funções customizadas</strong>: são funções que você mesmo cria para realizar uma tarefa específica.</p></li>
 </ul>
 <p>Vamos detalhar cada um destes grupos na sequencia.</p>
 </section>
@@ -514,7 +514,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">map():</span></code> Aplica uma outra função a todos os itens de uma sequência.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">filter():</span></code> Filtra itens em uma sequência de acordo com uma outra função passada.</p></li>
 </ul>
-<ol class="arabic simple">
+<ol class="arabic simple" start="4">
 <li><p><strong>Funções matemáticas</strong></p></li>
 </ol>
 <p>Essas funções realizam operações matemáticas.</p>
@@ -561,16 +561,16 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Nome da função:</p></li>
 </ol>
-<p>No exemplo <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">nome_da_funcao(parametro1,</span> <span class="pre">parametro2):</span></code>, a palavra <code class="docutils literal notranslate"><span class="pre">def</span></code> é usada para indicar ao Python que estamos criando uma função. É como dizer ao computador: <em>aqui está a receita que você vai seguir</em>. E <code class="docutils literal notranslate"><span class="pre">nome_da_funcao</span></code> é o nome que você dá para essa função. Pode ser qualquer nome, mas é bom escolher algo que descreva o que a função faz e vale a mesma <a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html#regras-nomenclatura-variaveis"><span class="std std-ref">regra de nomemclatura de variáveis</span></a> que vimos anteriormente.</p>
-<ol class="arabic simple">
+<p>No exemplo <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">nome_da_funcao(parametro1,</span> <span class="pre">parametro2):</span></code>, a palavra <code class="docutils literal notranslate"><span class="pre">def</span></code> é usada para indicar ao Python que estamos criando uma função. É como dizer ao computador: <em>aqui está a receita que você vai seguir</em>. E <code class="docutils literal notranslate"><span class="pre">nome_da_funcao</span></code> é o nome que você dá para essa função. Pode ser qualquer nome, mas é bom escolher algo que descreva o que a função faz e vale a mesma <a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html#regras-nomenclatura-variaveis"><span class="std std-ref">regra de nomenclatura de variáveis</span></a> que vimos anteriormente.</p>
+<ol class="arabic simple" start="2">
 <li><p>Parâmetros:</p></li>
 </ol>
 <p>Os parametros são como os ingredientes de uma receita. Eles são as informações que você passa para a função, para que ela possa fazer seu trabalho. Se você está fazendo um bolo, seus parâmetros podem ser os ingredientes como farinha, açúcar, e ovos. No exemplo, <code class="docutils literal notranslate"><span class="pre">parametro1</span></code> e <code class="docutils literal notranslate"><span class="pre">parametro2</span></code> são os nomes que você vai usar dentro da função. Quando você chamar essa função, você vai dizer quais valores quer usar como parâmetros. Por exemplo, <code class="docutils literal notranslate"><span class="pre">nome_da_funcao(10,</span> <span class="pre">20)</span></code>, onde <code class="docutils literal notranslate"><span class="pre">parametro1</span></code> vai ser 10 e <code class="docutils literal notranslate"><span class="pre">parametro2</span></code> vai ser 20.</p>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Corpo da função:</p></li>
 </ol>
 <p>O corpo da função é o conjunto de instruções que dizem ao computador o que fazer com os parâmetros. No exemplo, o corpo da função está representado por linhas de código que começam logo abaixo de <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">nome_da_funcao(parametro1,</span> <span class="pre">parametro2):</span></code>. Aqui, você pode ter várias linhas que instruem o computador sobre o que fazer. Pode ser calcular algo, modificar um valor, ou até mesmo apenas mostrar uma mensagem na tela.</p>
-<ol class="arabic simple">
+<ol class="arabic simple" start="4">
 <li><p>Retorno:</p></li>
 </ol>
 <p>Finalmente, temos a linha <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">valor_de_retorno</span></code>. O <code class="docutils literal notranslate"><span class="pre">return</span></code> é a palavra reservada que indica o valor a ser retornado como resultado da função, como o resultado final da receita, o bolo pronto. É o que a função vai devolver depois de fazer tudo o que tinha que fazer. E <code class="docutils literal notranslate"><span class="pre">valor_de_retorno</span></code> é o resultado que a função calcula ou produz, que pode ser um número, uma string, ou qualquer outro tipo de dado.</p>
