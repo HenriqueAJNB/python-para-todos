@@ -437,6 +437,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-posicionais-e-nominais">Parâmetros posicionais e nominais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-anonimas">Funções anônimas</a></li>
 </ul>
             </nav>
         </div>
@@ -909,6 +910,94 @@ A variável x fora da função é 20
 </pre></div>
 </div>
 </section>
+<section id="funcoes-anonimas">
+<h2>Funções anônimas<a class="headerlink" href="#funcoes-anonimas" title="Link to this heading">#</a></h2>
+<p>Agora que já aprendemos o básico sobre funções, vamos falar sobre um tipo especial de função chamado de função anônima.</p>
+<p>Quando criamos uma função conforme mostrei acima, usando <code class="docutils literal notranslate"><span class="pre">def</span></code>, estamos criando uma função nomeada na memória do computador. Vou apresentar um exemplo mais simples somente para fins didáticos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dobro</span><span class="p">(</span><span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">numero</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Quando executamos o código acima, ele literalmente cria algo na memória do computador que fica disponível para quando quisermos usar. Prova disso é que podemos imprimir a função (somente o objeto da função, sem chamá-la) e ver o que ela é:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dobro</span><span class="p">(</span><span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">numero</span> <span class="o">*</span> <span class="mi">2</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dobro</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function dobro at 0x7f06604e0d30&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (objetos de função vs execução da função)</p>
+<p>Reparem que usando apenas <code class="docutils literal notranslate"><span class="pre">dobro</span></code>, eu estou imprimindo o objeto da função, e não chamando a função com <code class="docutils literal notranslate"><span class="pre">()</span></code>. É diferente de <code class="docutils literal notranslate"><span class="pre">dobro(10)</span></code> que é a execução da função. A execução em si requer a passagem dos parâmetros obrigatórios.</p>
+</div>
+<p>O código acima mostra algo do tipo <code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">dobro</span> <span class="pre">at</span> <span class="pre">0x00000235A026ECA0&gt;</span></code> que representa o endereço de memória onde a função <code class="docutils literal notranslate"><span class="pre">dobro</span></code> foi armazenada. Isso é o que chamamos de função nomeada.</p>
+<p>Existe, porém, um outro tipo de função que é chamada de função anônima, ou lambda. Ela é uma função que não é armazenada na memória do computador, existindo só durante a execução do código. Quando as funções são mais simples, com apenas uma linha. Vamos construir o mesmo exemplo da função <code class="docutils literal notranslate"><span class="pre">dobro</span></code> acima, mas agora usando uma função anônima:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Percebam que a função anônima é bem mais simples e direta, sem a necessidade de usar <code class="docutils literal notranslate"><span class="pre">def</span></code> e <code class="docutils literal notranslate"><span class="pre">return</span></code>. A função anônima é criada usando a palavra reservada <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, seguida dos parâmetros e do que a função faz. Os valores à esquerda dos <code class="docutils literal notranslate"><span class="pre">:</span></code> representam os parâmetros de entrada separados por <code class="docutils literal notranslate"><span class="pre">,</span></code>, e à direita, o valor retornado pela função. No caso acima, a função anônima recebe um parâmetro <code class="docutils literal notranslate"><span class="pre">x</span></code> e retorna o dobro dele, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code>.</p>
+<p>É possível criar uma função lambda que recebe mais de um parâmetro, como no exemplo abaixo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>A função anônima é muito útil quando você precisa de uma função simples e rápida, e não quer criar uma função nomeada.</p>
+<p>Vamos aplicar ambas as funções para dobrar os valores de uma dada lista de números. Primeiro, vamos usar a função nomeada <code class="docutils literal notranslate"><span class="pre">dobro</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>  <span class="c1"># 1</span>
+
+
+<span class="k">def</span> <span class="nf">dobro</span><span class="p">(</span><span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>  <span class="c1"># 2</span>
+    <span class="k">return</span> <span class="n">numero</span> <span class="o">*</span> <span class="mi">2</span>
+
+
+<span class="n">valores_dobrados</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">dobro</span><span class="p">,</span> <span class="n">lista_numeros</span><span class="p">))</span>  <span class="c1"># 3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">valores_dobrados</span><span class="p">)</span>  <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8, 10, 12, 14]
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, nós:</p>
+<ol class="arabic simple">
+<li><p>Criamos uma lista de números</p></li>
+<li><p>Definimos a função <code class="docutils literal notranslate"><span class="pre">dobro</span></code> como uma função nomeada que recebe um parâmetro <code class="docutils literal notranslate"><span class="pre">numero</span></code> e retorna o dobro dele.</p></li>
+<li><p>Aplicamos a função <code class="docutils literal notranslate"><span class="pre">dobro</span></code> a cada elemento da lista usando a função <code class="docutils literal notranslate"><span class="pre">map()</span></code>, que aplica uma função a todos os elementos de uma sequência. Aqui a função <code class="docutils literal notranslate"><span class="pre">dobro</span></code> é passada como parâmetro para <code class="docutils literal notranslate"><span class="pre">map()</span></code>. Transformamos o resultado do <code class="docutils literal notranslate"><span class="pre">map()</span></code> em uma lista para visualização.</p></li>
+<li><p>Imprimimos a lista com os valores dobrados.</p></li>
+</ol>
+<p>Agora vamos ver o mesmo exemplo, mas usando a função anônima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="n">valores_dobrados</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">lista_numeros</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">valores_dobrados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8, 10, 12, 14]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Basicamente, ao invés de definir a função e usá-la, nós usamos a função anônima diretamente dentro do <code class="docutils literal notranslate"><span class="pre">map()</span></code>, sem precisar criar uma função nomeada. A função anônima é mais simples e direta, e é muito usada em situações onde você precisa de uma função simples (funções de uma única linha).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -982,6 +1071,7 @@ A variável x fora da função é 20
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicas-de-tipo-type-hints">Dicas de tipo (type hints)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-opcionais">Parâmetros opcionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-posicionais-e-nominais">Parâmetros posicionais e nominais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-anonimas">Funções anônimas</a></li>
 </ul>
   </nav></div>
 
