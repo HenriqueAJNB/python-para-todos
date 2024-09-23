@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Instalação do Python &#8212; Python para todos</title>
+    <title>Introdução &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01-instalacao-python/01-intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '09-modulos/01-introducao';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Windows" href="02-windows.html" />
-    <link rel="prev" title="Python para todos" href="../intro.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Introdução à funções" href="../08-funcoes/01-introducao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,11 +181,11 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Instale o Python</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Instalação do Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="02-windows.html">Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03-linux.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04-versoes-python.html">Qual versão do Python devo instalar?</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-instalacao-python/01-intro.html">Instalação do Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/02-windows.html">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/03-linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/04-versoes-python.html">Qual versão do Python devo instalar?</a></li>
 </ul>
 </details></li>
 </ul>
@@ -233,8 +233,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../08-funcoes/01-introducao.html">Introdução à funções</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Módulos e pacotes</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../09-modulos/01-introducao.html">Introdução</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F01-instalacao-python/01-intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F09-modulos/01-introducao.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@
       
       
       
-      <li><a href="../_sources/01-instalacao-python/01-intro.md" target="_blank"
+      <li><a href="../_sources/09-modulos/01-introducao.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -411,7 +411,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -422,11 +424,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Instalação do Python</h1>
+    <h1>Introdução</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porque-usar-modulos">Porque usar módulos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-vs-biblioteca">Módulo vs biblioteca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-modulos">Tipos de módulos</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -436,18 +448,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="instalacao-do-python">
-<h1>Instalação do Python<a class="headerlink" href="#instalacao-do-python" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
-<p>A instalação do Python por si só já tem vários detalhes, vou direto ao ponto pra quem gosta de já colocar a mão na massa, e fornecer mais detalhes para aqueles que gostam de se aprofundar.</p>
-<p>Qual sistema operacional você está usando?</p>
+  <section id="introducao">
+<h1>Introdução<a class="headerlink" href="#introducao" title="Link to this heading">#</a></h1>
+<p>Até o momento trabalhamos em um arquivo único que era executado do começo ao fim. A partir de agora vamos começar a trabalhar com mais arquivos para organizar melhor nosso código e permitir aumentar a complexidade dos programas. Neste capítulo, exploraremos um dos conceitos fundamentais da programação em Python: os módulos.</p>
+<p>Um módulo em Python é simplesmente um arquivo contendo definições e declarações Python. O nome do arquivo é o nome do módulo com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code> adicionada. Os módulos permitem que você organize seu código de maneira lógica e reutilizável. Até o momento trabalhamos em um arquivo único que era executado do começo ao fim. A partir de agora vamos começar a trabalhar com mais arquivos para organizar melhor nosso código e permitir aumentar a complexidade dos programas.</p>
+<section id="porque-usar-modulos">
+<h2>Porque usar módulos?<a class="headerlink" href="#porque-usar-modulos" title="Link to this heading">#</a></h2>
+<p>Separar nosso código em módulos (vários arquivos) oferecem várias vantagens:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="02-windows.html#install-python-windows"><span class="std std-ref">Windows</span></a></p></li>
-<li><p><a class="reference internal" href="03-linux.html#install-python-linux"><span class="std std-ref">Linux</span></a> (Debian e Ubuntu)</p></li>
+<li><p><strong>Organização:</strong> ajudam a organizar código relacionado em unidades lógicas.</p></li>
+<li><p><strong>Reutilização:</strong> permitem que você use o mesmo código em diferentes programas.</p></li>
+<li><p><strong>Escopo:</strong> fornecem um local isolado e separado para cada módulo, evitando conflitos de nomes.</p></li>
+<li><p><strong>Manutenção:</strong> facilitam a manutenção de códigos grandes e complexos.</p></li>
 </ul>
+</section>
+<section id="modulo-vs-biblioteca">
+<h2>Módulo vs biblioteca<a class="headerlink" href="#modulo-vs-biblioteca" title="Link to this heading">#</a></h2>
+<p>Conforme avançamos na programação, é comum ouvirmos falar sobre módulos e bibliotecas. Mas qual a diferença entre eles?</p>
+<p><strong>Módulo:</strong></p>
+<ul class="simple">
+<li><p>É um único arquivo Python <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p></li>
+<li><p>Contém funções, classes e variáveis relacionadas.</p></li>
+<li><p>É a unidade básica de organização de código em Python.</p></li>
+<li><p>Um exemplo de módulo é: um arquivo chamado <em>calculadora.py</em> com funções matemáticas.</p></li>
+</ul>
+<p><strong>Biblioteca (pacote):</strong></p>
+<ul class="simple">
+<li><p>É uma coleção de módulos (vários arquivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>) relacionados.</p></li>
+<li><p>Geralmente maior e mais abrangente que um único módulo.</p></li>
+<li><p>Pode conter vários arquivos e até subpastas.</p></li>
+<li><p>Exemplo: <code class="docutils literal notranslate"><span class="pre">numpy</span></code> é uma biblioteca para computação numérica que contém muitos módulos.</p></li>
+</ul>
+<p>Uma analogia útil é pensar em um módulo como um capítulo de um livro e uma biblioteca como o livro inteiro ou até mesmo uma série de livros sobre um tema.</p>
+<p>Muita das vezes pacote e biblioteca são usados como sinônimos e podem ser entendidos como sendo a mesma coisa.</p>
+<p>Resumindo: um módulo é uma unidade única de código, enquanto uma biblioteca (pacote) é uma coleção maior de módulos relacionados.</p>
+</section>
+<section id="tipos-de-modulos">
+<h2>Tipos de módulos<a class="headerlink" href="#tipos-de-modulos" title="Link to this heading">#</a></h2>
+<p>Existe basicamente 3 tipos de módulos em Python:</p>
+<ol class="arabic simple">
+<li><p><strong>Módulos nativos (built-in):</strong> são como caixas de ferramentas que já vêm com o Python quando você o instala. Elas contêm funções e recursos prontos para usar, sem precisar baixar nada extra.</p></li>
+<li><p><strong>Módulos próprios:</strong> São arquivos Python que você mesmo cria. Neles, você coloca suas próprias funções e códigos para usar em diferentes partes do seu programa, ajudando a organizar melhor o que você escreve.</p></li>
+<li><p><strong>Módulos (bibliotecas ou pacotes) de terceiros:</strong> são extras criados por outras pessoas. Você pode baixá-los e instalá-los para adicionar novas funcionalidades ao Python, como se fossem aplicativos que você instala no seu celular para fazer coisas novas.</p></li>
+</ol>
+<p>Ao longo deste capítulo, vamos explorar cada um desses tipos de módulos e aprender o básico sobre como usá-los.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (magnitude do ecossistema Python)</p>
+<p>O ecossistema Python é enorme e dinâmico, com centenas de módulos nativos e milhares de bibliotecas de terceiros. Para ilustrar a extensão do que eu disse:</p>
+<ol class="arabic simple">
+<li><p>Módulos nativos (built-in):</p>
+<ul class="simple">
+<li><p>Há centenas deles, cada um com múltiplas funções e classes.</p></li>
+<li><p>A cada versão do Python surgem novos módulos e funções e outros deixam de existir</p></li>
+<li><p>Você pode explorar a lista completa na <a href="https://docs.python.org/3/py-modindex.html" target="_blank">documentação oficial do Python</a>.</p></li>
+</ul>
+</li>
+<li><p>Bibliotecas de terceiros:</p>
+<ul class="simple">
+<li><p>O número de projetos é ainda maior, ultrapassando meio milhão.</p></li>
+<li><p>Algumas bibliotecas são tão complexas que podem levar semanas ou até anos para serem dominadas.</p></li>
+<li><p>Existem empresas como Google, Facebook, Amazon, Microsoft e outras que desenvolvem bibliotecas de código aberto para a comunidade Python.</p></li>
+<li><p>Para ver o número atualizado de bibliotecas, visite o <a href="https://pypi.org/" target="_blank">Python Package Index (PyPI)</a>.</p></li>
+</ul>
+</li>
+</ol>
+<p>A imagem abaixo imagem mostra o PyPI em 23/09/2024, ilustrando a vasta quantidade de bibliotecas disponíveis.
+Dada esta magnitude, entendam que a ideia <strong>não é entrar em detalhes de cada um individualmente</strong>, até porque tal tarefa seria impossível.</p>
+<a class="reference internal image-reference" href="../_images/09-01-pypi.png"><img alt="../_images/09-01-pypi.png" src="../_images/09-01-pypi.png" style="width: 800px;" /></a>
 </div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,7 +532,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./01-instalacao-python"
+            path: "./09-modulos"
         },
         predefinedOutput: true
     }
@@ -481,20 +550,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../08-funcoes/01-introducao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"> Python para todos</p>
+        <p class="prev-next-title">Introdução à funções</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-windows.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Windows</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -504,6 +573,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porque-usar-modulos">Porque usar módulos?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-vs-biblioteca">Módulo vs biblioteca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-modulos">Tipos de módulos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
