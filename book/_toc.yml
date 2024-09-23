@@ -54,6 +54,10 @@ parts:
   chapters:
   - file: 08-funcoes/01-introducao.ipynb
 
+- caption: Módulos e pacotes
+  chapters:
+  - file: 09-modulos/01-introducao.ipynb
+
 - caption: Pratique
   chapters:
   - file: exercicios.ipynb
