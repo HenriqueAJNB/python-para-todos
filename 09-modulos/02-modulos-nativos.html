@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Operações matemáticas básicas &#8212; Python para todos</title>
+    <title>Módulos nativos &#8212; Python para todos</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '05-operacoes-basicas/01-matematica';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '09-modulos/02-modulos-nativos';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tipos de dados numéricos" href="02-tipos-numericos.html" />
-    <link rel="prev" title="Formas de execução" href="../04-primeiros-passos/03-execucao.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Introdução" href="01-introducao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,11 +209,11 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Realize operações básicas</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Operações matemáticas básicas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-tipos-numericos.html">Tipos de dados numéricos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-precedencia-operadores.html">Precedência de operadores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-variaveis.html">Variáveis</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/01-matematica.html">Operações matemáticas básicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html">Tipos de dados numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
 <ul class="nav bd-sidenav">
@@ -233,9 +233,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../08-funcoes/01-introducao.html">Introdução à funções</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Módulos e pacotes</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../09-modulos/01-introducao.html">Introdução</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09-modulos/02-modulos-nativos.html">Módulos nativos</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introducao.html">Introdução</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Módulos nativos</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -311,7 +311,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F05-operacoes-basicas/01-matematica.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F09-modulos/02-modulos-nativos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,7 @@
       
       
       
-      <li><a href="../_sources/05-operacoes-basicas/01-matematica.md" target="_blank"
+      <li><a href="../_sources/09-modulos/02-modulos-nativos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +351,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -425,7 +425,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Operações matemáticas básicas</h1>
+    <h1>Módulos nativos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -435,8 +435,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-modulos">Importação de módulos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importando-um-modulo-inteiro">Importando um módulo inteiro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importando-objetos-especificoss">Importando objetos específicoss</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-pequeno-desafio-matematico">Um pequeno desafio matemático</a></li>
 </ul>
             </nav>
         </div>
@@ -448,74 +452,136 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="operacoes-matematicas-basicas">
-<h1>Operações matemáticas básicas<a class="headerlink" href="#operacoes-matematicas-basicas" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
-<div class="tip admonition">
-<p class="admonition-title">Lembrete</p>
-<p>Ao ver <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, estamos executando o código no terminal, por isso o <code class="docutils literal notranslate"><span class="pre">print()</span></code> não se faz necessário.</p>
-<p>Caso queira experimentar o código em script (arquivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>), é necessário imprimir a saída na tela.</p>
-</div>
-<section id="comentarios">
-<h2>Comentários<a class="headerlink" href="#comentarios" title="Link to this heading">#</a></h2>
-<div class="note admonition">
-<p class="admonition-title">Nota</p>
-<p>O trecho abaixo é uma adaptação desta seção <a class="reference external" href="https://docs.python.org/pt-br/3/tutorial/introduction.html#an-informal-introduction-to-python">3. Uma introdução informal ao Python</a> da documentação oficial. Fiz alguns pequenos ajustes no texto e nos exemplos com objetivo de torná-lo mais simples e compreensível</p>
-</div>
-<blockquote>
-<div><p>Muitos exemplos neste livro, mesmo aqueles no terminal, incluem comentários. Comentários em Python começam com o caractere cerquilha <code class="docutils literal notranslate"><span class="pre">#</span></code> e estende até o final da linha. Um comentário pode aparecer no inicio da linha ou após espaço em branco ou código, mas não dentro de uma string. O caracterer cerquilha dentro de uma string é apenas uma cerquilha, um texto comum. Como os comentários são para esclarecer o código e não são executados pelo Python, eles podem ser omitidos ao digitar exemplos.</p>
-<p>Alguns exemplos:</p>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># este é apenas um comentário que aparece no início da linha</span>
-<span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># e este é um comentário que aparece depois de um código</span>
-          <span class="c1"># ... e agora um terceiro comentário!</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# Este trecho não é um comentário, mas sim uma string, pois está entre aspas duplas, apesar de começar com cerquilha&quot;</span>
+  <section id="modulos-nativos">
+<h1>Módulos nativos<a class="headerlink" href="#modulos-nativos" title="Link to this heading">#</a></h1>
+<p>Conforme já mencionamos na seção anterior, o Python traz uma série de módulos nativos prontos para uso. Nesta seção, vamos explorar o conceito básico de importações de módulos e alguns módulos nativos que podem ser úteis em diversas situações. Como já disse, a lista de módulos nativos é enorme, e a ideia é apenas dar um passo inicial nesse mundo. Você pode explorar a lista completa de módulos nativos na <a class="reference external" href="https://docs.python.org/3/library/index.html">documentação oficial</a>.</p>
+<section id="importacao-de-modulos">
+<h2>Importação de módulos<a class="headerlink" href="#importacao-de-modulos" title="Link to this heading">#</a></h2>
+<section id="importando-um-modulo-inteiro">
+<h3>Importando um módulo inteiro<a class="headerlink" href="#importando-um-modulo-inteiro" title="Link to this heading">#</a></h3>
+<p>Diferentemente de funções nativas, módulos nativos precisam ser importados antes de serem utilizados.</p>
+<p>A sintaxe de importação a princípio é simples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="o">&lt;</span><span class="n">nome_do_modulo_desejado</span><span class="o">&gt;</span>
 </pre></div>
 </div>
+<p>Para isso, utilizamos a palavra-chave <code class="docutils literal notranslate"><span class="pre">import</span></code> seguida do nome do módulo. Por exemplo, para importar o módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, que contém funções matemáticas, usamos a seguinte sintaxe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<p>Aqui estamos trazendo para o escopo do nosso programa o módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, que contém uma série de funcionalidades matemáticas. Como um módulo é um arquivo <code class="docutils literal notranslate"><span class="pre">.py</span></code> contendo uma série de funções, métodos, classes, variáveis e outras coisas, podemos acessar esses elementos utilizando a notação de ponto. Por exemplo, para acessar a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, para calcular a raiz quadrada de um número, fazemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># (1)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># (2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do código acima, podemos entender as etapas:</p>
+<ol class="arabic simple">
+<li><p>Importamos o módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> com a palavra-chave <code class="docutils literal notranslate"><span class="pre">import</span></code> trazendo para o escopo do nosso programa todas as funcionalidades contidas nesse módulo.</p></li>
+<li><p>Acessamos a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> utilizando a notação de ponto, <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code>.</p></li>
+</ol>
 </section>
-<section id="as-varias-operacoes-matematicas">
-<h2>As várias operações matemáticas<a class="headerlink" href="#as-varias-operacoes-matematicas" title="Link to this heading">#</a></h2>
+<section id="importando-objetos-especificoss">
+<h3>Importando objetos específicoss<a class="headerlink" href="#importando-objetos-especificoss" title="Link to this heading">#</a></h3>
+<p>Quando fazemos a importação do módulo inteiro com <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code>, estamos trazendo para o escopo do nosso programa todas as funcionalidades contidas no módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>. No entanto, em muitos casos, não precisamos de todas as funcionalidades de um módulo, e importar o módulo inteiro pode não ser necessário. Nesses casos, podemos importar funções e variáveis específicas de um módulo ao invés de importar o módulo inteiro.</p>
+<p>A sintaxe para importar apenas partes específicas de um módulo é a seguinte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="o">&lt;</span><span class="n">nome_do_modulo</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">nome_da_funcao_ou_variavel</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Por exemplo, para importar apenas a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, fazemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui, diferentemente do exemplo anterior, estamos importando apenas a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>. Com isso, não precisamos mais utilizar a notação de ponto para acessar a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, e podemos utilizá-la diretamente no nosso código. Se quisermos importar várias funções ou variáveis de um módulo, podemos fazer isso separando os nomes por vírgula:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
+</pre></div>
+</div>
+<p>Neste exemplo, estamos trazendo para o escopo do nosso programa a função <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> e a variável matemática <code class="docutils literal notranslate"><span class="pre">pi</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+<p>Caso queira acessar a documentação oficial do módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, você pode acessar <a class="reference external" href="https://docs.python.org/3/library/math.html">este link</a>. Conforme disse (e vou repetir várias vezes), a lista de módulos nativos é enorme, e a ideia é apenas dar uma visão geral sobre o conceito de módulos. Recomendo fortemente que você explore a lista completa de módulos nativos na <a class="reference external" href="https://docs.python.org/3/library/index.html">documentação oficial</a>.</p>
+</section>
+</section>
+<section id="um-pequeno-desafio-matematico">
+<h2>Um pequeno desafio matemático<a class="headerlink" href="#um-pequeno-desafio-matematico" title="Link to this heading">#</a></h2>
+<p>Antes sequer de apresentar o desafio, vou fazer um comentário para deixar claro algo que sempre me perguntam sobre <em>problemas reais</em> em programação.</p>
+<p>Programação é só uma ferramenta, um meio para resolver um problema fim. Caso você não saiba a área do problema fim (biologia, matemática, direito, medicina, finanças, RH, esporte, seja lá qual área for), de nada adianta você saber programar…</p>
+<img alt="../_images/09-01-tapa-na-cara.gif" id="tapa-na-cara" src="../_images/09-01-tapa-na-cara.gif" />
+<p>… desculpem por esse <em>tapa na cara</em>, mas essa é a realidade que pouquíssima gente fala (talvez porque falar a verdade não vende, sei lá, mas meu livro é meu e é de graça, então posso falar…)</p>
+<p>Dito isso, vamos ao desafio, que envolve um pouco de geografia e matemática:</p>
+<blockquote>
+<div><p>A superfície da Terra é curva, e a distância entre graus de longitude varia com a latitude. Como resultado, encontrar a distância em linha reta entre dois pontos na superfície da Terra considerando a sua curvatura é mais complicado do que simplesmente usar o teorema de Pitágoras.</p>
+<p>Sejam (lat1, long1) e (lat2, long2) a latitude e longitude de dois pontos na superfície da Terra. A distância entre esses pontos, em linha reta, seguindo a superfície da Terra, em quilômetros (km) é:</p>
+<p>$$\text{distância}=6371.01\times\arccos(\sin(lat_1)\times\sin(lat_2)+\cos(lat_1)\times\cos(lat_2)\times\cos(long_1-long_2))$$</p>
+<p>O valor 6371.01 na equação anterior não foi selecionado aleatoriamente. É o raio médio da Terra em quilômetros.</p>
+<p>Crie um programa que exiba a distância entre os pontos dados, seguindo a superfície da terra, em quilômetros.</p>
+<div class="hint admonition">
+<p class="admonition-title">Dica (radianos)</p>
+<p>As funções trigonométricas do Python operam em radianos. Como resultado, você precisará converter as coordenadas de graus para radianos antes de calcular a distância com a fórmula discutida anteriormente. O módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> contém uma função chamada radians que converte de graus para radianos.</p>
+</div>
+</div></blockquote>
+<p>Este é um problema real! Depois da resolução, vou mostrar que o Google Maps mostra exatamente a mesma distância entre dois pontos que o nosso programa. Vamos lá!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="k">def</span> <span class="nf">calcular_distancia</span><span class="p">(</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">):</span>
+    <span class="c1"># Converter graus para radianos</span>
+    <span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="p">[</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">])</span>
+
+    <span class="n">distancia</span> <span class="o">=</span> <span class="mf">6371.01</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span>
+        <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lon1</span> <span class="o">-</span> <span class="n">lon2</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">distancia</span>
+
+
+<span class="c1"># ponto 1: coordenadas da praça da Sé em São Paulo capturadas usando Google Maps</span>
+<span class="n">lat_praca_da_se</span> <span class="o">=</span> <span class="o">-</span><span class="mf">23.550305025464485</span>
+<span class="n">lon_praca_da_se</span> <span class="o">=</span> <span class="o">-</span><span class="mf">46.634182529683606</span>
+
+<span class="c1"># ponto 2: coordenadas do aeroporto de Congonhas em São Paulo capturadas usando Google Maps</span>
+<span class="n">lat_aeroporto_congonhas</span> <span class="o">=</span> <span class="o">-</span><span class="mf">23.627975178268755</span>
+<span class="n">long_aeroporto_congonhas</span> <span class="o">=</span> <span class="o">-</span><span class="mf">46.65714724537711</span>
+
+<span class="n">distancia</span> <span class="o">=</span> <span class="n">calcular_distancia</span><span class="p">(</span>
+    <span class="n">lat_praca_da_se</span><span class="p">,</span> <span class="n">lon_praca_da_se</span><span class="p">,</span> <span class="n">lat_aeroporto_congonhas</span><span class="p">,</span> <span class="n">long_aeroporto_congonhas</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A distância em linha reta entre os dois pontos dados é de </span><span class="si">{</span><span class="n">distancia</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A distância em linha reta entre os dois pontos dados é de 8.95 km
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vejam no print abaixo que a distância do nosso programa é exatamente a mesma do Google Maps.</p>
+<a class="reference internal image-reference" href="../_images/09-02-distancia-se-congonhas.png"><img alt="../_images/09-02-distancia-se-congonhas.png" src="../_images/09-02-distancia-se-congonhas.png" style="height: 800px;" /></a>
 <div class="note admonition">
-<p class="admonition-title">Nota</p>
-<p>Este é um <strong>livro de Python</strong> e não de matemática! Portanto, parto do princípio que você entenda matemática básica para seguir com o livro.</p>
-<p>Se achar necessário, posso esclarecer alguns tópicos em específico. Mas, no geral, não haverá explicações de conceitos matemáticos.</p>
-</div>
-<p>Com Python é possível realizar operações como soma, subtração, multiplicação, divisão comum, divisão inteira (ou quociente da divisão), resto da divisão, potenciação e radiciação.</p>
-<p>Cada operação tem seu chamado operador, que são, para:</p>
-<ul class="simple">
-<li><p>Soma: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
-<li><p>Subtração: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
-<li><p>Multiplicação: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
-<li><p>Divisão comun: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
-<li><p>Divisão inteira (ou quociente da divisão): <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
-<li><p>Resto da divisão: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
-<li><p>Potenciação: <code class="docutils literal notranslate"><span class="pre">**</span></code> ou função <code class="docutils literal notranslate"><span class="pre">pow()</span></code></p></li>
-<li><p>Radiciação: potenciação de uma fração <code class="docutils literal notranslate"><span class="pre">**(1/2)</span></code></p></li>
-</ul>
-<p>Vamos à exemplos!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>        <span class="c1"># Soma de 5 com 4: 9</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span>        <span class="c1"># Subtraçaõ de 5 e 6: -1</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>      <span class="c1"># Multiplicação entre 10 e 20: 200</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>        <span class="c1"># Divisão comum entre 4 e 2: 2.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">//</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># Divisão inteira entre 50 e 30: 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">%</span> <span class="mi">30</span><span class="p">)</span>      <span class="c1"># Resto da divisão entre 50 e 30: 20</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>       <span class="c1"># 2 elevado à 3: 8</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">16</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Raiz quadrada de 16: 4</span>
-</pre></div>
-</div>
-<p>Ao executar o código acima, você verá a seguinte saída (observem que os comentários foram ignorados pelo Python):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span>
-<span class="o">-</span><span class="mi">1</span>
-<span class="mi">200</span>
-<span class="mf">2.0</span>
-<span class="mi">1</span>
-<span class="mi">20</span>
-<span class="mi">8</span>
-<span class="mf">4.0</span>
-</pre></div>
-</div>
-<p>Reparem que duas operações retornaram um valor com <code class="docutils literal notranslate"><span class="pre">.</span></code> no meio. O que significa isso? E o que estas duas operações tem de diferente?</p>
-<p>Na próxima seção vamos entender melhor e começar a nos aprofundar nos tipos de dados numéricos.</p>
+<p class="admonition-title">Nota (distância em linha reta!)</p>
+<p>Apesar de aparecer no print a distância do trajeto de carro de 10 km, o que calculamos é a distância em linha reta entre dois pontos na superfície da Terra considerando sua curvatura.</p>
 </div>
 </section>
 </section>
@@ -533,7 +599,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./05-operacoes-basicas"
+            path: "./09-modulos"
         },
         predefinedOutput: true
     }
@@ -551,20 +617,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../04-primeiros-passos/03-execucao.html"
+       href="01-introducao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Formas de execução</p>
+        <p class="prev-next-title">Introdução</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-tipos-numericos.html"
+       href="../exercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tipos de dados numéricos</p>
+        <p class="prev-next-title">Lista de exercícios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -584,8 +650,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-varias-operacoes-matematicas">As várias operações matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-modulos">Importação de módulos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importando-um-modulo-inteiro">Importando um módulo inteiro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importando-objetos-especificoss">Importando objetos específicoss</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-pequeno-desafio-matematico">Um pequeno desafio matemático</a></li>
 </ul>
   </nav></div>
 
