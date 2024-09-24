@@ -57,6 +57,7 @@ parts:
 - caption: Módulos e pacotes
   chapters:
   - file: 09-modulos/01-introducao.ipynb
+  - file: 09-modulos/02-modulos-nativos.ipynb
 
 - caption: Pratique
   chapters:
