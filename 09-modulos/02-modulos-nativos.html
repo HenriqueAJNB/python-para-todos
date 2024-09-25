@@ -441,6 +441,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-pequeno-desafio-matematico">Um pequeno desafio matemático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-modulos-nativos">Outros módulos nativos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -529,7 +532,7 @@ document.write(`
 <blockquote>
 <div><p>A superfície da Terra é curva, e a distância entre graus de longitude varia com a latitude. Como resultado, encontrar a distância em linha reta entre dois pontos na superfície da Terra considerando a sua curvatura é mais complicado do que simplesmente usar o teorema de Pitágoras.</p>
 <p>Sejam (lat1, long1) e (lat2, long2) a latitude e longitude de dois pontos na superfície da Terra. A distância entre esses pontos, em linha reta, seguindo a superfície da Terra, em quilômetros (km) é:</p>
-<p>distancia = 6371.01 x arccos(sen(lat1) x sen(lat2) + cos(lat1) x cos(lat2) x cos(long1 - long2))</p>
+<p>distância = 6371.01 x arccos(sin(lat_1) x sin(lat_2) + cos(lat_1) x cos(lat_2) x cos(long_1-long_2))</p>
 <p>O valor 6371.01 na equação anterior não foi selecionado aleatoriamente. É o raio médio da Terra em quilômetros.</p>
 <p>Crie um programa que exiba a distância entre os pontos dados, seguindo a superfície da terra, em quilômetros.</p>
 <div class="hint admonition">
@@ -583,6 +586,39 @@ document.write(`
 <p class="admonition-title">Nota (distância em linha reta!)</p>
 <p>Apesar de aparecer no print a distância do trajeto de carro de 10 km, o que calculamos é a distância em linha reta entre dois pontos na superfície da Terra considerando sua curvatura.</p>
 </div>
+</section>
+<section id="outros-modulos-nativos">
+<h2>Outros módulos nativos<a class="headerlink" href="#outros-modulos-nativos" title="Link to this heading">#</a></h2>
+<p>A ideia desta seção é fornecer uma visão geral sobre alguns outros módulos nativos mais usados e pra que eles servem. É possível consultar a documentação oficial de cada um deles pra se aprofundar mais. Os módulos mais comumnente utilizados, na minha visão, são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">os</span></code>: funções para interagir com o sistema operacional, permitindo manipulação de arquivos, diretórios e variáveis de ambiente do sistema operacional.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys</span></code>: acesso a variáveis e funções que interagem com o interpretador Python.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math</span></code>: funções matemáticas comuns, como operações trigonométricas, exponenciais, logaritmos e arredondamentos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code>: ajuda a trabalhar com datas e horários, permitindo calcular diferenças entre dias, formatar datas, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random</span></code>: gera números aleatórios e permite realizar operações como escolher itens aleatórios de uma lista ou embaralhar sequências.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re</span></code>: fornece suporte para expressões regulares, permitindo busca, correspondência e substituição de padrões em strings.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collections</span></code>: contém outras estruturas de dados mais especializadas, como <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>, <code class="docutils literal notranslate"><span class="pre">deque</span></code>, <code class="docutils literal notranslate"><span class="pre">Counter</span></code> e <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>, que ampliam as funcionalidades das estruturas de dados padrão.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">itertools</span></code>: ferramentas eficientes para iteração e combinações, como contagem, agrupamento, arranjos e permutações.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">functools</span></code>: funções para trabalhar com outras funções, como <code class="docutils literal notranslate"><span class="pre">reduce</span></code>, <code class="docutils literal notranslate"><span class="pre">partial</span></code> e <code class="docutils literal notranslate"><span class="pre">lru_cache</span></code>, que ajudam na composição e otimização de funções.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statistics</span></code>: funções com cálculos estatísticos como média, mediana, variância, desvio padrão, dentre outros.</p></li>
+</ul>
+<p>Existem centenas de outros módulos nativos, e abaixo estão mais alguns menos comuns, mas que podem ser úteis em situações específicas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sched</span></code>: um agendador simples para executar tarefas em horários específicos ou após determinados intervalos de tempo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pprint</span></code>: formata e imprime dados de maneira bonita e legível, útil ao depurar ou exibir estruturas complexas como listas ou dicionários aninhados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fractions</span></code>: lida com números fracionários de forma precisa, permitindo operações matemáticas sem perda de precisão.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">secrets</span></code>: gera números e tokens aleatórios seguros, usados para criptografia ou autenticação segura.</p></li>
+</ul>
+<p>… e a lista continua. Eu realmente encorajo você a pesquisar e explorar a documentação oficial para descobrir mais sobre os módulos nativos do Python.</p>
+</section>
+<section id="pratica">
+<h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
+<p>É hora de você colocar a mão na massa pra explorar por conta própria os módulos nativos do Python. Sugiro fazer o exercício <a class="reference internal" href="../exercicios.html#exercicio-16"><span class="std std-ref">16</span></a>, que na verdade é uma série de exercícios que envolvem a utilização de módulos nativos. Explore a documentação oficial, faça pesquisas na internet e pratique bastante! Se precisar de ajuda pode contar comigo!</p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Ao longo deste capítulo, você aprendeu sobre módulos nativos do Python, que são arquivos <code class="docutils literal notranslate"><span class="pre">.py</span></code> contendo funções, métodos, classes, variáveis e outras coisas. Aprendeu também como importar módulos nativos, como importar funções e variáveis específicas de um módulo, e explorou alguns módulos nativos mais comuns e suas funcionalidades. Você foi capaz de praticar o que aprendeu com o exercício proposto e agora está mais preparado para explorar o vasto mundo dos módulos nativos do Python. Parabéns!</p>
+<p>Na próxima seção, vamos explorar o conceito de módulos próprios pra que você possa criar seus próprios módulos e reutilizar código em diferentes partes do seu programa. É um conceito fundamenal para organizar melhor seu código e começar a crescer os seus projetos! Vamos lá?</p>
 </section>
 </section>
 
@@ -656,6 +692,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-pequeno-desafio-matematico">Um pequeno desafio matemático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-modulos-nativos">Outros módulos nativos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
