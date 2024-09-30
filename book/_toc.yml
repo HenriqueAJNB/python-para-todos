@@ -58,6 +58,7 @@ parts:
   chapters:
   - file: 09-modulos/01-introducao.ipynb
   - file: 09-modulos/02-modulos-nativos.ipynb
+  - file: 09-modulos/03-modulos-proprios.ipynb
 
 - caption: Pratique
   chapters:
