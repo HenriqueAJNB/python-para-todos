@@ -29,7 +29,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   analytics:
-    google_analytics_id: G-XLZPQ4KHKQ
+    google_analytics_id: G-JSWERJSPMN
   use_issues_button: true
   use_repository_button: true
   favicon: img/config/logos/python.svg
