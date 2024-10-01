@@ -42,10 +42,7 @@ Caso você não marque a opção **Add python.exe to PATH** você terá erros no
 - No prompt de comando (tela preta que abriu), digite `python --version` e pressione Enter. Você deve ver a versão do Python instalada impresa no terminal, conforme abaixo, confirmando que o Python foi instalado com sucesso! Parabéns!
 
 ```bash
-Microsoft Windows [Version 10.0.22631.3810]
-(c) Microsoft Corporation. All rights reserved.
-
-C:\Users\Administrator>python --version
+> python --version
 Python 3.11.9
 ```
 

@@ -8,7 +8,7 @@ O Python no Linux é instalado via comandos no terminal. Você pode abrir o term
 Os sistemas Linux mais recentes ja possuem uma versão do Python instalada junto com o sistema operacional. Para verificar se o seu sistema já o tem instalado, digite:
 
 ```bash
-henrique@ubuntu:~$ python3 --version
+user@computer:~$ python3 --version
 Python 3.10.6
 ```
 
