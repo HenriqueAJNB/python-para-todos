@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02-ambientes/03-anaconda';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Instalação VSCode (Windows)" href="../03-vscode/01-instalacao-windows.html" />
     <link rel="prev" title="IDEs" href="02-ides.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F02-ambientes/03-anaconda.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/02-ambientes/03-anaconda.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,12 +436,12 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-o-anaconda">O que é o Anaconda?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-um-ambiente-virtual">O que é um “ambiente virtual”?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-um-ambiente-virtual">O que é um «ambiente virtual»?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-importancia-da-instalacao-de-pacotes">A Importância da instalação de pacotes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações finais</a></li>
@@ -456,15 +458,14 @@ document.write(`
                   
   <section id="uma-visao-geral-sobre-o-anaconda">
 <h1>Uma visão geral sobre o Anaconda<a class="headerlink" href="#uma-visao-geral-sobre-o-anaconda" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
 <p>Neste capítulo, discutiremos o Anaconda, uma plataforma que é popular, mas frequentemente considerada excessiva para iniciantes. Vou explicar por que você pode querer considerar alternativas ao Anaconda, especialmente se está começando com Python. Ainda sim, se você quiser seguir com esta ferramenta, ela pode ser encontrada neste <a href="https://www.anaconda.com/download" target="_blank">link</a></p>
 <section id="o-que-e-o-anaconda">
 <h2>O que é o Anaconda?<a class="headerlink" href="#o-que-e-o-anaconda" title="Link to this heading">#</a></h2>
 <p>O Anaconda é uma plataforma abrangente para desenvolvimento em Python e R, especialmente voltada para análise de dados e ciência de dados. Ele é projetado para fornecer um ambiente completo com uma ampla gama de ferramentas e bibliotecas necessárias para trabalhar com dados. Quando você instala o Anaconda, está obtendo não apenas o Python e o R, mas também várias ferramentas de desenvolvimento integradas, como VSCode, Spyder e R Studio, além do Jupyter Notebook. Essa abordagem tem como objetivo simplificar a configuração do ambiente de desenvolvimento, reunindo tudo que você pode precisar em um único pacote.</p>
-<p>No entanto, essa “solução completa” pode não ser ideal para todos, especialmente para quem está começando. O Anaconda já vem com um ambiente virtual pré-configurado e milhares de pacotes instalados. Embora isso possa parecer conveniente, há algumas desvantagens significativas.</p>
+<p>No entanto, essa «solução completa» pode não ser ideal para todos, especialmente para quem está começando. O Anaconda já vem com um ambiente virtual pré-configurado e milhares de pacotes instalados. Embora isso possa parecer conveniente, há algumas desvantagens significativas.</p>
 </section>
 <section id="o-que-e-um-ambiente-virtual">
-<h2>O que é um “ambiente virtual”?<a class="headerlink" href="#o-que-e-um-ambiente-virtual" title="Link to this heading">#</a></h2>
+<h2>O que é um «ambiente virtual»?<a class="headerlink" href="#o-que-e-um-ambiente-virtual" title="Link to this heading">#</a></h2>
 <p>O Anaconda fornece um ambiente virtual pronto para uso, o que significa que você não precisa se preocupar em configurá-lo manualmente. No entanto, aprender a criar e gerenciar ambientes virtuais é uma habilidade crucial no desenvolvimento em Python. Um ambiente virtual é um espaço isolado no seu computador onde você pode instalar pacotes e bibliotecas específicos para um projeto sem afetar o restante do sistema. Aprender a configurar esses ambientes por conta própria pode proporcionar uma compreensão mais profunda do gerenciamento de projetos e ajudar a evitar conflitos entre diferentes conjuntos de pacotes. O ideal é começar com uma ferramenta que não traga o ambiente virtual pronto, e sim que seja ensinado em um momento oportuno. Vamos aprender sobre isso no livro.</p>
 </section>
 <section id="a-importancia-da-instalacao-de-pacotes">
@@ -481,7 +482,6 @@ document.write(`
 <p>Para iniciantes, a complexidade do Anaconda pode ser um obstáculo significativo. O Anaconda não é apenas um software. É uma plataforma robusta que inclui uma vasta gama de ferramentas e pacotes. Ao instalar o Anaconda, você obtém uma coleção de ferramentas integradas. Embora essa abordagem tenha a falsa sensação de simplificar a configuração do ambiente de desenvolvimento, para alguém que está apenas começando, essa abundância de recursos pode ser excessiva e confusa.</p>
 <p>Além disso, o Anaconda é conhecido por ser relativamente pesado. Ele exige mais espaço de armazenamento e recursos do sistema do que o necessário. Se você está usando um computador com recursos limitados ou se prefere uma abordagem mais enxuta, o Anaconda não é a melhor opção. Existem alternativas mais simples e leves que podem ser mais adequadas para iniciantes. Outra alternativa ao Anaconda é optar por editores de texto mais leves que são menos exigentes e mais fáceis de configurar para quem está começando. Aqui no livro vamos usar o VSCode.</p>
 <p>Em resumo: enquanto o Anaconda é uma ferramenta poderosa e abrangente para profissionais de ciência de dados, sua complexidade e peso podem ser desnecessários para quem está apenas começando com Python. Ela é considerada um excesso até mesmo em ambientes profissionais, pois além de ser pesada, raramente usa-se tudo que ela dispõe mesmo para projetos de análise e ciência de dados. Por estes motivos, não vamos usá-la, e sim seguir com o VSCode.</p>
-</div>
 </section>
 </section>
 
@@ -520,7 +520,7 @@ document.write(`
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">IDEs</p>
       </div>
     </a>
@@ -528,7 +528,7 @@ document.write(`
        href="../03-vscode/01-instalacao-windows.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Instalação VSCode (Windows)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -545,12 +545,12 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-o-anaconda">O que é o Anaconda?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-um-ambiente-virtual">O que é um “ambiente virtual”?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-um-ambiente-virtual">O que é um «ambiente virtual»?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-importancia-da-instalacao-de-pacotes">A Importância da instalação de pacotes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações finais</a></li>
@@ -568,7 +568,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '07-fluxo-controle/01-condicionais';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Estrutura de repetição" href="02-repeticao.html" />
     <link rel="prev" title="Sets" href="../06-estruturas-de-dados/05-sets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F07-fluxo-controle/01-condicionais.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/07-fluxo-controle/01-condicionais.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -482,7 +484,7 @@ document.write(`
 <section id="o-que-e-uma-condicao">
 <span id="id1"></span><h2>O que é uma condição?<a class="headerlink" href="#o-que-e-uma-condicao" title="Link to this heading">#</a></h2>
 <p>Antes de irmos direto para o código, é importante entendermos o conceito de <strong>condição</strong> em programação.</p>
-<p>Imagine que você está em uma loja de sorvetes. Antes de fazer seu pedido, você provavelmente se pergunta: “tenho dinheiro suficiente?”. A resposta a essa pergunta só pode ser <em>sim</em> ou <em>não</em>. Em programação, chamamos esse tipo de pergunta de <em>condição</em>, na qual só há duas possíveis respostas, sejam elas quais forem (0 ou 1, sim ou não, contém e não contém, possui e não possui, vai ou não vai, etc.).</p>
+<p>Imagine que você está em uma loja de sorvetes. Antes de fazer seu pedido, você provavelmente se pergunta: «tenho dinheiro suficiente?». A resposta a essa pergunta só pode ser <em>sim</em> ou <em>não</em>. Em programação, chamamos esse tipo de pergunta de <em>condição</em>, na qual só há duas possíveis respostas, sejam elas quais forem (0 ou 1, sim ou não, contém e não contém, possui e não possui, vai ou não vai, etc.).</p>
 <p>Uma condição em Python é qualquer coisa, literalmente, que pode ser avaliada como verdadeira (<code class="docutils literal notranslate"><span class="pre">True</span></code>) ou falsa (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Essas duas únicas opções de resposta são chamadas de valores booleanos.</p>
 <p>Ao longo do livro já vimos alguns métodos, funções e operações que retornam valores booleanos. Vamos recordar algumas?</p>
 <p>Há vários métodos e operações de strings que podem ser usados como condicional. Qualquer método que de string de verificação que comece por <code class="docutils literal notranslate"><span class="pre">str.is...()</span></code> é uma condicional:</p>
@@ -557,7 +559,7 @@ True
 </section>
 <section id="sintaxe-basica-da-estrutura-condicional">
 <h2>Sintáxe básica da estrutura condicional<a class="headerlink" href="#sintaxe-basica-da-estrutura-condicional" title="Link to this heading">#</a></h2>
-<p>A estrutura condicional mais simples em Python é a instrução <code class="docutils literal notranslate"><span class="pre">if</span></code>. Podemos imaginá-la como uma forma de dar ao programa a capacidade de tomar decisões: “se uma determinada condição for verdadeira, execute um bloco de código; caso contrário, siga em frente sem fazer nada.”</p>
+<p>A estrutura condicional mais simples em Python é a instrução <code class="docutils literal notranslate"><span class="pre">if</span></code>. Podemos imaginá-la como uma forma de dar ao programa a capacidade de tomar decisões: «se uma determinada condição for verdadeira, execute um bloco de código; caso contrário, siga em frente sem fazer nada.»</p>
 <p>A sintaxe básica de uma estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> em Python é simples e direta:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +576,7 @@ True
 </div>
 </div>
 </div>
-<p>No exemplo acima, a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> é uma expressão que o Python avalia como <code class="docutils literal notranslate"><span class="pre">True</span></code> (verdadeira) ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (falsa). Aqui, estamos comparando a variável <code class="docutils literal notranslate"><span class="pre">idade</span></code> com o valor 18 usando o operador de comparação <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (maior ou igual). Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">True</span></code>, o bloco de código indentado abaixo da instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado, e a mensagem “Você é maior de idade.” será impressa na tela. Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">False</span></code>, o programa simplesmente ignorará o bloco de código do <code class="docutils literal notranslate"><span class="pre">if</span></code> e continuará a execução.</p>
+<p>No exemplo acima, a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> é uma expressão que o Python avalia como <code class="docutils literal notranslate"><span class="pre">True</span></code> (verdadeira) ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (falsa). Aqui, estamos comparando a variável <code class="docutils literal notranslate"><span class="pre">idade</span></code> com o valor 18 usando o operador de comparação <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (maior ou igual). Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">True</span></code>, o bloco de código indentado abaixo da instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado, e a mensagem «Você é maior de idade.» será impressa na tela. Se a expressão for avaliada como <code class="docutils literal notranslate"><span class="pre">False</span></code>, o programa simplesmente ignorará o bloco de código do <code class="docutils literal notranslate"><span class="pre">if</span></code> e continuará a execução.</p>
 <section id="identacao">
 <h3>Identação<a class="headerlink" href="#identacao" title="Link to this heading">#</a></h3>
 <p>Quando escrevemos código dentro de um <code class="docutils literal notranslate"><span class="pre">if</span></code>, por exemplo, precisamos adicionar alguns espaços extras no começo da linha (geralmente 4 espaços). Isso é chamado de identação. Esses espaços mostram ao Python que o código indentado deve ser executado se a condição do <code class="docutils literal notranslate"><span class="pre">if</span></code> for verdadeira. Vejamos no exemplo abaixo:</p>
@@ -780,7 +782,7 @@ Valor final a pagar: R$ 765.00
 <p>No exemplo refeito acima, o uso do <code class="docutils literal notranslate"><span class="pre">elif</span></code> substitui a necessidade de aninhar um segundo <code class="docutils literal notranslate"><span class="pre">if</span></code> dentro do bloco <code class="docutils literal notranslate"><span class="pre">else</span></code>, tornando o código mais limpo e direto.</p>
 <div class="danger admonition">
 <p class="admonition-title">Perigo (código hadouken)</p>
-<p>Não há limites para quantos <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados você pode usar. Pode ir fundo e criar quantos níveis forem necessários para resolver o seu problema. Mas, sejamos sinceros: quanto mais camadas, mais seu código começa a se parecer com um labirinto. E quem for ler o seu código, será que vai entender? Minha dica é simples: tente manter o aninhamento de <code class="docutils literal notranslate"><span class="pre">if</span></code> em até 2 ou 3 níveis, no máximo. Além disso, seu código pode começar a se transformar em um verdadeiro “Hadouken” de complexidade — e ninguém quer ter que decifrar um código que parece ter saído direto de um jogo de luta dos anos 90! 🤣</p>
+<p>Não há limites para quantos <code class="docutils literal notranslate"><span class="pre">if</span></code> aninhados você pode usar. Pode ir fundo e criar quantos níveis forem necessários para resolver o seu problema. Mas, sejamos sinceros: quanto mais camadas, mais seu código começa a se parecer com um labirinto. E quem for ler o seu código, será que vai entender? Minha dica é simples: tente manter o aninhamento de <code class="docutils literal notranslate"><span class="pre">if</span></code> em até 2 ou 3 níveis, no máximo. Além disso, seu código pode começar a se transformar em um verdadeiro «Hadouken» de complexidade — e ninguém quer ter que decifrar um código que parece ter saído direto de um jogo de luta dos anos 90! 🤣</p>
 <img alt="../_images/07-01-codigo-hadouken.jpg" src="../_images/07-01-codigo-hadouken.jpg" />
 </div>
 </section>
@@ -798,7 +800,7 @@ Valor final a pagar: R$ 765.00
 <h3>Operador <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#operador-and" title="Link to this heading">#</a></h3>
 <p>A forma mais fácil de ilustrar o operador é através de imagem.</p>
 <img alt="../_images/07-01-operador-logico-and-true.png" src="../_images/07-01-operador-logico-and-true.png" />
-<p>Nesta imagem, temos três “condições” representadas por pontes, e uma linha tracejada que indica o caminho a ser feito pela pessoa. Para que o caminho seja possível (ou seja, para que o resultado do operador <code class="docutils literal notranslate"><span class="pre">and</span></code> seja <code class="docutils literal notranslate"><span class="pre">True</span></code>), todas as condições devem ser verdadeiras.</p>
+<p>Nesta imagem, temos três «condições» representadas por pontes, e uma linha tracejada que indica o caminho a ser feito pela pessoa. Para que o caminho seja possível (ou seja, para que o resultado do operador <code class="docutils literal notranslate"><span class="pre">and</span></code> seja <code class="docutils literal notranslate"><span class="pre">True</span></code>), todas as condições devem ser verdadeiras.</p>
 <ul class="simple">
 <li><p>Condição 1 é verdadeira (representada por um check verde)</p></li>
 <li><p>Condição 2 é verdadeira (representada por um check verde)</p></li>
@@ -1169,7 +1171,7 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
 <h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
 <p>Neste capítulo, você aprendeu sobre estruturas condicionais em Python. Vimos como usar <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> e <code class="docutils literal notranslate"><span class="pre">elif</span></code> para criar decisões em nossos programas, e como combinar múltiplas condições usando operadores lógicos <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span></code>. Além disso, você aprendeu sobre a importância de manter o código limpo e legível, evitando aninhar muitos <code class="docutils literal notranslate"><span class="pre">if</span></code> e usando parênteses para melhorar a formatação do código. Também vimos um último caso de aplicação real de negócios de como combinar estruturas condicionais e operadores lógicos para decidir se um cliente é elegível para uma promoção de frete grátis.</p>
 <p>No próximo capítulo vamos aprender sobre estruturas de repetição, que nos permitem executar um bloco de código várias vezes. Vamos aprender sobre os laços <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, e como usá-los para automatizar tarefas repetitivas em Python. Até lá!</p>
-</div></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1207,7 +1209,7 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Sets</p>
       </div>
     </a>
@@ -1215,7 +1217,7 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
        href="02-repeticao.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Estrutura de repetição</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1232,7 +1234,7 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1268,7 +1270,7 @@ Finalmente, o Python combina o resultado anterior (<code class="docutils literal
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

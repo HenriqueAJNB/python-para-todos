@@ -1,6 +1,6 @@
 # IDEs
 
-<div style="text-align: justify">
+
 
 Você já deve ter instalado o Python e viu que temos à nossa disposição o interpretador da linguagem Python disponível no terminal (as três flechas `>>>`, lembra)?
 
@@ -27,4 +27,3 @@ Aqui está uma lista de vários ambientes populares para desenvolvimento Python:
 Na próxima seção vamos instalar e configurar o VSCode para iniciar o nosso desenvolvimento. No futuro trarei uma explicação sobre as outras IDEs.
 
 
-</div>

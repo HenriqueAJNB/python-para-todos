@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '05-operacoes-basicas/03-precedencia-operadores';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Variáveis" href="04-variaveis.html" />
     <link rel="prev" title="Tipos de dados numéricos" href="02-tipos-numericos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F05-operacoes-basicas/03-precedencia-operadores.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/05-operacoes-basicas/03-precedencia-operadores.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -458,7 +460,6 @@ document.write(`
                   
   <section id="precedencia-de-operadores">
 <span id="precedencia-operadores"></span><h1>Precedência de operadores<a class="headerlink" href="#precedencia-de-operadores" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
 <p>Na seção anterior vimos várias operações matemáticas bem como os tipos de dados resultantes. Vamos agora aumentar a complexidade um pouco falando sobre precedência de operadores.</p>
 <p>Basicamente a precedência de operadores é a ordem na qual as operações mais complexas são feitas.</p>
 <p>Vamos entender melhor com um exemplo prático.</p>
@@ -565,7 +566,7 @@ document.write(`
 </section>
 <section id="mas-e-a-matematica-entao-como-fica">
 <h2>Mas e a matemática então, como fica?<a class="headerlink" href="#mas-e-a-matematica-entao-como-fica" title="Link to this heading">#</a></h2>
-<p>Bom, se quisermos que o nosso programa seja “compatível com a regra matemática”, precisamos ser super explícitos, e usar a ordem de execução da tabela acima ao nosso favor.</p>
+<p>Bom, se quisermos que o nosso programa seja «compatível com a regra matemática», precisamos ser super explícitos, e usar a ordem de execução da tabela acima ao nosso favor.</p>
 <p>Para nosso programa ser fiel ao que a matemática diz, não é o <code class="docutils literal notranslate"><span class="pre">3</span></code> que deve ser elevado ao quadrado, e sim o <code class="docutils literal notranslate"><span class="pre">-3</span></code>. E para forçarmos que esta operação de alocação do <code class="docutils literal notranslate"><span class="pre">-</span></code> ao <code class="docutils literal notranslate"><span class="pre">3</span></code> seja feita antes da operação de <code class="docutils literal notranslate"><span class="pre">**</span></code>, é necessario deixar explícito no programa da seguinte forma: <code class="docutils literal notranslate"><span class="pre">(-3)**2</span></code>.</p>
 <p>Observem que a primeira linha da tabela contém <em>expressões entre parênteses <code class="docutils literal notranslate"><span class="pre">()</span></code></em>. Nós forçamos a execução da operação <code class="docutils literal notranslate"><span class="pre">-3</span></code> para ser executada antes de <code class="docutils literal notranslate"><span class="pre">**</span></code> colocando-a entre <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <p>E agora sim o nosso programa está compatível com a regra matemática. Mas percebam que a ordem das operações é que determinou a correção!</p>
@@ -613,7 +614,6 @@ document.write(`
 <section id="conclusao">
 <h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
 <p>Vimos a importância da ordem de execução dos operadores com vários exemplos didáticos e um exemplo real. Na próxima seção, vamos detalhar mais variáveis.</p>
-</div>
 </section>
 </section>
 
@@ -652,7 +652,7 @@ document.write(`
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Tipos de dados numéricos</p>
       </div>
     </a>
@@ -660,7 +660,7 @@ document.write(`
        href="04-variaveis.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Variáveis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -677,7 +677,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -702,7 +702,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

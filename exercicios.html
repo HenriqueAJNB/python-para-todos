@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="pt" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercicios';</script>
     <link rel="icon" href="_static/python.svg"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
     <link rel="prev" title="Bibliotecas de terceiros" href="09-modulos/04-modulos-terceiros.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -162,9 +164,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -298,7 +300,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -315,7 +317,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2Fexercicios.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -336,7 +338,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -345,7 +347,7 @@
       
       <li><a href="_sources/exercicios.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -363,7 +365,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -383,7 +385,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -409,7 +411,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -433,12 +435,12 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1-ola-mundo-personalizado">Exercício 1 - “Olá mundo” personalizado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1-ola-mundo-personalizado">Exercício 1 - «Olá mundo» personalizado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2-tipos-de-dados">Exercício 2 - tipos de dados</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3-operacoes-matematicas">Exercício 3 - operações matemáticas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-4-variaveis">Exercício 4 - variáveis</a></li>
@@ -475,7 +477,7 @@ document.write(`
 <p>Minha recomendação é que você <strong>tente fazer sozinho</strong> e <strong>use a sugestão de solução somente para fins de consulta</strong>!</p>
 <p>Os exercícios a princípio tem fim didático para estimular desenvolvimento do raciocínio lógico. No futuro terão desafios mais complexos envolvendo problemas mais próximos do mundo real.</p>
 <section id="exercicio-1-ola-mundo-personalizado">
-<span id="exercicio-1"></span><h3>Exercício 1 - “Olá mundo” personalizado<a class="headerlink" href="#exercicio-1-ola-mundo-personalizado" title="Link to this heading">#</a></h3>
+<span id="exercicio-1"></span><h3>Exercício 1 - «Olá mundo» personalizado<a class="headerlink" href="#exercicio-1-ola-mundo-personalizado" title="Link to this heading">#</a></h3>
 <p>Faça um programa que escreva o seu nome completo.</p>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
@@ -1077,7 +1079,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &quot;bomba d&#39;água&quot;, &#39;pneu&#39;, &#39;correia alternador&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;rolamento de roda&#39;, &#39;sensor de oxigênio&#39;, &#39;mangueira de água&#39;}, &#39;B&#39;: {&quot;bomba d&#39;água&quot;, &#39;correia alternador&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;correia dentada&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;rolamento de roda&#39;, &#39;sensor de oxigênio&#39;, &#39;mangueira de água&#39;, &#39;amortecedor&#39;, &#39;junta homocinética&#39;}, &#39;C&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &quot;bomba d&#39;água&quot;, &#39;pneu&#39;, &#39;correia alternador&#39;, &#39;óleo de motor&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;rolamento de roda&#39;, &#39;sensor de oxigênio&#39;, &#39;mangueira de água&#39;, &#39;junta homocinética&#39;}, &#39;D&#39;: {&#39;válvula termostática&#39;, &quot;bomba d&#39;água&quot;, &#39;pneu&#39;, &#39;pastilha de freio&#39;, &#39;filtro de óleo&#39;, &#39;alternador&#39;, &#39;radiador&#39;, &#39;correia dentada&#39;, &#39;bateria&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &#39;amortecedor&#39;, &#39;junta homocinética&#39;}, &#39;E&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;pastilha de freio&#39;, &#39;correia alternador&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;, &#39;óleo de motor&#39;, &#39;correia dentada&#39;, &#39;bateria&#39;, &#39;sensor de oxigênio&#39;, &#39;junta homocinética&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;óleo de motor&#39;, &#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;disco de freio&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;alternador&#39;}, &#39;B&#39;: {&#39;óleo de motor&#39;, &#39;sensor de oxigênio&#39;, &quot;bomba d&#39;água&quot;, &#39;correia alternador&#39;, &#39;bateria&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;alternador&#39;, &#39;rolamento de roda&#39;, &#39;junta homocinética&#39;, &#39;mangueira de água&#39;, &#39;correia dentada&#39;, &#39;amortecedor&#39;}, &#39;C&#39;: {&#39;óleo de motor&#39;, &#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;fluido de freio&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;rolamento de roda&#39;, &#39;junta homocinética&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;}, &#39;D&#39;: {&#39;correia dentada&#39;, &#39;pastilha de freio&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;filtro de óleo&#39;, &#39;radiador&#39;, &#39;pneu&#39;, &#39;alternador&#39;, &#39;rolamento de roda&#39;, &#39;junta homocinética&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;amortecedor&#39;}, &#39;E&#39;: {&#39;óleo de motor&#39;, &#39;sensor de oxigênio&#39;, &#39;pastilha de freio&#39;, &#39;correia alternador&#39;, &#39;disco de freio&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;fluido de freio&#39;, &#39;junta homocinética&#39;, &#39;correia dentada&#39;, &#39;alternador&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1148,7 +1150,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;óleo de motor&#39;, &#39;fluido de freio&#39;}, &#39;E&#39;: {&#39;radiador&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;rolamento de roda&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;alternador&#39;, &#39;bateria&#39;}, &#39;D&#39;: {&#39;óleo de motor&#39;, &#39;sensor de oxigênio&#39;, &#39;correia alternador&#39;, &#39;fluido de freio&#39;}, &#39;E&#39;: {&#39;rolamento de roda&#39;, &quot;bomba d&#39;água&quot;, &#39;radiador&#39;, &#39;mangueira de água&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1624,7 +1626,7 @@ Redução sugerida em cada mês: 4.08 toneladas
 </pre></div>
 </div>
 </div>
-<p><strong>16.6</strong> - Crie um programa que imprime a mensagem “Tarefa agendada executada!” após 5 segundos.</p>
+<p><strong>16.6</strong> - Crie um programa que imprime a mensagem «Tarefa agendada executada!» após 5 segundos.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Dica 16.5</p>
 <p>Utilize funções do módulo <code class="docutils literal notranslate"><span class="pre">string</span></code> para ajudar na criação da senha e funções do módulo <code class="docutils literal notranslate"><span class="pre">random</span></code> pra gerar valores aleatórios.</p>
@@ -1694,7 +1696,7 @@ Redução sugerida em cada mês: 4.08 toneladas
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Bibliotecas de terceiros</p>
       </div>
     </a>
@@ -1710,12 +1712,12 @@ Redução sugerida em cada mês: 4.08 toneladas
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona">Como funciona</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1-ola-mundo-personalizado">Exercício 1 - “Olá mundo” personalizado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1-ola-mundo-personalizado">Exercício 1 - «Olá mundo» personalizado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2-tipos-de-dados">Exercício 2 - tipos de dados</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3-operacoes-matematicas">Exercício 3 - operações matemáticas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-4-variaveis">Exercício 4 - variáveis</a></li>
@@ -1747,7 +1749,7 @@ Redução sugerida em cada mês: 4.08 toneladas
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

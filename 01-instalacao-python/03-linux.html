@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01-instalacao-python/03-linux';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Qual versão do Python devo instalar?" href="04-versoes-python.html" />
     <link rel="prev" title="Windows" href="02-windows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F01-instalacao-python/03-linux.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/01-instalacao-python/03-linux.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -453,10 +455,9 @@ document.write(`
                   
   <section id="linux">
 <span id="install-python-linux"></span><h1>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
 <p>O Python no Linux é instalado via comandos no terminal. Você pode abrir o terminal através do atalho <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">T</span></code>.</p>
 <p>Os sistemas Linux mais recentes ja possuem uma versão do Python instalada junto com o sistema operacional. Para verificar se o seu sistema já o tem instalado, digite:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>henrique@ubuntu:~$<span class="w"> </span>python3<span class="w"> </span>--version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@computer:~$<span class="w"> </span>python3<span class="w"> </span>--version
 Python<span class="w"> </span><span class="m">3</span>.10.6
 </pre></div>
 </div>
@@ -475,9 +476,9 @@ Python<span class="w"> </span><span class="m">3</span>.10.6
 <p class="admonition-title">Em caso de erro</p>
 <p>Caso se depare com esta mensagem de erro <code class="docutils literal notranslate"><span class="pre">usuario</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">sudoers</span> <span class="pre">file.</span> <span class="pre">This</span> <span class="pre">incident</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">reported.</span></code>, vá para a seção <a class="reference internal" href="#common-error-linux"><span class="std std-ref">Erro comum - permissão de admin</span></a>.</p>
 </div>
-<p>O <code class="docutils literal notranslate"><span class="pre">software-properties-common</span></code> é um pacote no Linux que facilita a adição de novos repositórios de software, que são como lojas onde você pode baixar e instalar novos programas. Nós o usamos para instalar programas que não estão nas “lojas” padrão do seu sistema. Isso inclui versões mais recentes ou específicas de software, como o Python.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">software-properties-common</span></code> é um pacote no Linux que facilita a adição de novos repositórios de software, que são como lojas onde você pode baixar e instalar novos programas. Nós o usamos para instalar programas que não estão nas «lojas» padrão do seu sistema. Isso inclui versões mais recentes ou específicas de software, como o Python.</p>
 <p>A instalação de outras versões do Python no Linux se dá através de um PPA. Os PPAs (Personal Package Archives) são repositórios de software criados por usuários ou desenvolvedores. Eles permitem que você instale programas e atualizações que não estão disponíveis nos repositórios oficiais do seu sistema Linux.</p>
-<p>Para o Python, há um PPA chamado deadsnakes, cujo site oficial você encontra <a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa">aqui</a>. Você precisa dizer ao seu sistema onde encontrar essa nova “loja” de software e podemos fazer isso com o comando abaixo:</p>
+<p>Para o Python, há um PPA chamado deadsnakes, cujo site oficial você encontra <a class="reference external" href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa">aqui</a>. Você precisa dizer ao seu sistema onde encontrar essa nova «loja» de software e podemos fazer isso com o comando abaixo:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:deadsnakes/ppa
 </pre></div>
 </div>
@@ -530,7 +531,6 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
 <li><p>Pressione <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">O</span></code> para salvar o arquivo e <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">X</span></code> para sair.</p></li>
 <li><p>Feche o terminal e abra-o novamente. O problema foi resolvido e a mensagem de erro não deverá mais aparecer!</p></li>
 </ul>
-</div>
 </section>
 </section>
 
@@ -569,7 +569,7 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Windows</p>
       </div>
     </a>
@@ -577,7 +577,7 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
        href="04-versoes-python.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Qual versão do Python devo instalar?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -594,7 +594,7 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -614,7 +614,7 @@ Saber detalhes sobre a versão é importante, se quiser saber mais a fundo (eu r
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

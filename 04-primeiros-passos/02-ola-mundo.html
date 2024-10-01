@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04-primeiros-passos/02-ola-mundo';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Formas de execução" href="03-execucao.html" />
     <link rel="prev" title="Primeiro programa em Python" href="01-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F04-primeiros-passos/02-ola-mundo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/04-primeiros-passos/02-ola-mundo.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -459,13 +461,12 @@ document.write(`
                   
   <section id="primeiro-programa-ola-mundo">
 <span id="hello-world"></span><h1>Primeiro programa: Olá mundo!<a class="headerlink" href="#primeiro-programa-ola-mundo" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
 <p>No seu script, digite o seguinte código:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Salve o seu script</strong> pressionando Ctrl + S no teclado ou clicando em “File &gt; Save” no menu superior do VSCode.</p>
-<p>Após salvá-lo, clique no botão “Run Python file” no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.</p>
+<p><strong>Salve o seu script</strong> pressionando Ctrl + S no teclado ou clicando em «File &gt; Save» no menu superior do VSCode.</p>
+<p>Após salvá-lo, clique no botão «Run Python file» no canto superior direito da tela, conforme a imagem abaixo, para executá-lo.</p>
 <img alt="../_images/04-02-run-python-file-icon.png" src="../_images/04-02-run-python-file-icon.png" />
 <p></br>Neste momento, o terminal integrado do VSCode se abre, e nele será possível ver nosso texto <em>Olá mundo!</em> impresso na tela.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>ocuments<span class="se">\p</span>ersonal<span class="se">\p</span>ython-para-todos<span class="se">\s</span>cripts&gt;<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>C:/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe<span class="w"> </span>c:/Users/Administrator/Documents/personal/python-para-todos/scripts/meu_primeiro_script.py
@@ -475,7 +476,7 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota 1</p>
-<p>O terminal mostra algumas mensagens “estranhas” junto com <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code>, mas elas têm um motivo. O VSCode executa um comando no prompt de comando para rodar nosso código. Essas mensagens extras são parte desse comando.</p>
+<p>O terminal mostra algumas mensagens «estranhas» junto com <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">mundo!</span></code>, mas elas têm um motivo. O VSCode executa um comando no prompt de comando para rodar nosso código. Essas mensagens extras são parte desse comando.</p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota 2</p>
@@ -517,7 +518,6 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
 <p>Você acabou de criar e executar o seu primeiro programa em linguagem Python! Embora seja simples, já é um avanço enorme para quem saiu do zero! E perceba quanta coisa você já aprendeu!</p>
 <p>Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩</p>
 <p>Na próxima seção vamos avançar com uma breve explicação sobre as diferentes formas de executar código. E, na sequencia, vamos começar a falar sobre operações matemáticas com Python.</p>
-</div>
 </section>
 </section>
 
@@ -556,7 +556,7 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Primeiro programa em Python</p>
       </div>
     </a>
@@ -564,7 +564,7 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
        href="03-execucao.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Formas de execução</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -581,7 +581,7 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -607,7 +607,7 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</s
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

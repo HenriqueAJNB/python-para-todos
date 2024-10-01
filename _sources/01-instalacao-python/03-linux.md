@@ -1,14 +1,14 @@
 (install-python-linux)=
 # Linux
 
-<div style="text-align: justify">
+
 
 O Python no Linux é instalado via comandos no terminal. Você pode abrir o terminal através do atalho `Ctrl + Alt + T`. 
 
 Os sistemas Linux mais recentes ja possuem uma versão do Python instalada junto com o sistema operacional. Para verificar se o seu sistema já o tem instalado, digite:
 
 ```bash
-henrique@ubuntu:~$ python3 --version
+user@computer:~$ python3 --version
 Python 3.10.6
 ```
 
@@ -97,4 +97,4 @@ Se você não souber o seu nome de usuário, digite o comando `whoami` no termin
   
 - Feche o terminal e abra-o novamente. O problema foi resolvido e a mensagem de erro não deverá mais aparecer!
 
-</div>
+

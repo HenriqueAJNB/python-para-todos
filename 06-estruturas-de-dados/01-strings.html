@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '06-estruturas-de-dados/01-strings';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Listas" href="02-listas.html" />
     <link rel="prev" title="Variáveis" href="../05-operacoes-basicas/04-variaveis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-estruturas-de-dados/01-strings.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/06-estruturas-de-dados/01-strings.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -479,7 +481,7 @@ document.write(`
 <section id="definicao">
 <h2>Definição<a class="headerlink" href="#definicao" title="Link to this heading">#</a></h2>
 <p>Em Python, uma string é uma sequência de caracteres. Você pode definir uma string usando aspas simples <code class="docutils literal notranslate"><span class="pre">'Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">simples'</span></code> ou aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;Texto</span> <span class="pre">com</span> <span class="pre">aspas</span> <span class="pre">dupla&quot;</span></code>.</p>
-<p>Quando não há a presença de <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na string, usar aspas simples ou duplas é indiferente. Agora se o seu texto contiver uma das duas, como por exemplo, o texto <em>Ela disse “Olá mundo!”</em>, como <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> faz parte do texto, só é possível criar uma string com esse texto entre aspas simples <code class="docutils literal notranslate"><span class="pre">'</span></code>, conforme exemplo abaixo.</p>
+<p>Quando não há a presença de <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> na string, usar aspas simples ou duplas é indiferente. Agora se o seu texto contiver uma das duas, como por exemplo, o texto <em>Ela disse «Olá mundo!»</em>, como <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> faz parte do texto, só é possível criar uma string com esse texto entre aspas simples <code class="docutils literal notranslate"><span class="pre">'</span></code>, conforme exemplo abaixo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msg_aspas_dupla</span> <span class="o">=</span> <span class="s1">&#39;Ela disse &quot;Olá mundo!&quot;&#39;</span>
@@ -660,7 +662,7 @@ várias linhas.
 </div>
 </div>
 </div>
-<p>No código acima temos uma notação que não vimos antes, <code class="docutils literal notranslate"><span class="pre">mensagem.upper()</span></code>. Sabemos já que <code class="docutils literal notranslate"><span class="pre">mensagem</span></code> é um objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (verifique com a função <code class="docutils literal notranslate"><span class="pre">type</span></code> se tiver dúvidas!). E strings tem várias “funções” associadas à ela. Estas “funções” são chamadas de métodos. No exemplo acima, estamos usando o método <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> que transforma a string toda para maiúscula.</p>
+<p>No código acima temos uma notação que não vimos antes, <code class="docutils literal notranslate"><span class="pre">mensagem.upper()</span></code>. Sabemos já que <code class="docutils literal notranslate"><span class="pre">mensagem</span></code> é um objeto do tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (verifique com a função <code class="docutils literal notranslate"><span class="pre">type</span></code> se tiver dúvidas!). E strings tem várias «funções» associadas à ela. Estas «funções» são chamadas de métodos. No exemplo acima, estamos usando o método <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> que transforma a string toda para maiúscula.</p>
 <p>Portanto, todo método é acionado pelo <code class="docutils literal notranslate"><span class="pre">.</span></code> a partir do objeto. Veja no gif abaixo que quando você digita o <code class="docutils literal notranslate"><span class="pre">.</span></code> na variável <code class="docutils literal notranslate"><span class="pre">mensagem</span></code>, o VSCode abre uma lista de opções para você. Estas opções são todos os métodos disponíveis para <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/06-01-vscode-methods-str-autocomplete.gif"><img alt="../_images/06-01-vscode-methods-str-autocomplete.gif" src="../_images/06-01-vscode-methods-str-autocomplete.gif" style="width: 400px;" /></a>
 </section>
@@ -1458,7 +1460,7 @@ O antepenúltimo caracter do nome é a letra i.
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Variáveis</p>
       </div>
     </a>
@@ -1466,7 +1468,7 @@ O antepenúltimo caracter do nome é a letra i.
        href="02-listas.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Listas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1483,7 +1485,7 @@ O antepenúltimo caracter do nome é a letra i.
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1523,7 +1525,7 @@ O antepenúltimo caracter do nome é a letra i.
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>

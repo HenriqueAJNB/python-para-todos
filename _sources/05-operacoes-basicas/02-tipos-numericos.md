@@ -1,7 +1,7 @@
 (tipos-de-dados-numericos)=
 # Tipos de dados numéricos
 
-<div style="text-align: justify">
+
 
 Dentro do mundo da programação, nós temos os chamados tipos de dados, e nesta seção vamos falar de dois tipos de dados numéricos básicos: inteiros, representados por `int` e o ponto flutuante, também chamado de `float`, representando um número decimal.
 
@@ -58,4 +58,4 @@ Agora você já consegue fazer o [exercício 2](exercício-2) da lista!
 
 Na próxima seção vamos aprender sobre a ordem na qual as operações são executadas!
 
-</div>
+

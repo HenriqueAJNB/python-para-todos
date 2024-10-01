@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="pt" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -35,13 +35,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -51,6 +52,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -59,12 +61,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03-vscode/02-configuracao';</script>
     <link rel="icon" href="../_static/python.svg"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Primeiro programa em Python" href="../04-primeiros-passos/01-intro.html" />
     <link rel="prev" title="Instalação VSCode (Windows)" href="01-instalacao-windows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="pt"/>
   </head>
   
   
@@ -163,9 +165,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
+    <span class="search-button__default-text">Pesquisar</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -299,7 +301,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Repositório fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -316,7 +318,7 @@
       
       <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F03-vscode/02-configuracao.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -337,7 +339,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -346,7 +348,7 @@
       
       <li><a href="../_sources/03-vscode/02-configuracao.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -364,7 +366,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimir em PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -384,7 +386,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Modo tela cheia"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +412,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -434,7 +436,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -454,7 +456,6 @@ document.write(`
                   
   <section id="preparando-o-vscode">
 <h1>Preparando o VSCode<a class="headerlink" href="#preparando-o-vscode" title="Link to this heading">#</a></h1>
-<div style="text-align: justify">
 <p>Agora que estamos com o VSCode instalado, vamos configurá-lo com o mínimo necessário para iniciar nosso desenvolvimento em Python!</p>
 <section id="extensao-python-no-vscode">
 <h2>Extensão Python no VSCode<a class="headerlink" href="#extensao-python-no-vscode" title="Link to this heading">#</a></h2>
@@ -475,7 +476,7 @@ document.write(`
 <img alt="../_images/03-02-vscode-install-python-ext.gif" id="install-python-ext-vscode" src="../_images/03-02-vscode-install-python-ext.gif" />
 <div class="tip admonition">
 <p class="admonition-title">Curiosidade</p>
-<p>Já ouvi espalharem a notícia de que “<em>o Python havia sido comprado pela Microsoft</em>”. A notícia mostrava o print da tela da extensão do Python seguida do nome Microsoft (microsoft.com) ao lado do logo do Python.</p>
+<p>Já ouvi espalharem a notícia de que «<em>o Python havia sido comprado pela Microsoft</em>». A notícia mostrava o print da tela da extensão do Python seguida do nome Microsoft (microsoft.com) ao lado do logo do Python.</p>
 <p>Tal notícia <strong>não é é verdadeira</strong>! O que é fato/verdade: o próprio VSCode e a extensão Python (não o Python em si) foram desenvolvidos pela Microsoft. Python continua sendo open-source e gratuito.</p>
 </div>
 <p>Existem inúmeras outras extensões no VSCode para se trabalhar com Python e até com outras linguagens (SQL também), mas todas as outras são de suporte e auxiliares para o desenvolvimento. Vou preparar um capítulo ou seção a parte só sobre extensões extras e customizações no VSCode.</p>
@@ -486,8 +487,8 @@ document.write(`
 <p>O VSCode consegue trabalhar com manipulação de arquivos e de pastas, caso você esteja trabalhando em algum projeto mais complexo que tenha várias pastas e arquivos.</p>
 <p>Neste livro vamos trabalhar dentro desta pasta vazia que você criou. O primeiro passo é abrir esta a pasta no VSCode.</p>
 <ul class="simple">
-<li><p>Clique no botão “Explorer” no menu vertical lateral à esquerda no VSCode (ou opcionalmente selecione “File” no menu superior)</p></li>
-<li><p>Clique em “Open Folder”</p></li>
+<li><p>Clique no botão «Explorer» no menu vertical lateral à esquerda no VSCode (ou opcionalmente selecione «File» no menu superior)</p></li>
+<li><p>Clique em «Open Folder»</p></li>
 <li><p>Selecione a pasta vazia que você criou (no caso do gif abaixo, eu optei por nomear minha pasta <code class="docutils literal notranslate"><span class="pre">scripts</span></code>)</p></li>
 </ul>
 <img alt="../_images/03-02-vscode-open-folder.gif" src="../_images/03-02-vscode-open-folder.gif" />
@@ -503,7 +504,7 @@ document.write(`
 </div>
 <p>Para criar o script:</p>
 <ul class="simple">
-<li><p>Clique com o botão direito do mouse na área da pasta aberta e selecione “New file”.</p></li>
+<li><p>Clique com o botão direito do mouse na área da pasta aberta e selecione «New file».</p></li>
 <li><p>Dê um nome para seu script. No meu caso, eu o nomeei <code class="docutils literal notranslate"><span class="pre">meu_primeiro_script.py</span></code>.</p></li>
 </ul>
 <div class="danger admonition">
@@ -512,7 +513,6 @@ document.write(`
 </div>
 <p>Reparem que ao criar o script no próprio VSCode, ele é criado automaticamente na pasta. O Explorer do VSCode tem exatamente essa finalidade: trabalhar com pastas e arquivos sem sair do VSCode.</p>
 <img alt="../_images/03-02-vscode-create-file.gif" src="../_images/03-02-vscode-create-file.gif" />
-</div>
 </section>
 </section>
 
@@ -551,7 +551,7 @@ document.write(`
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">anterior</p>
         <p class="prev-next-title">Instalação VSCode (Windows)</p>
       </div>
     </a>
@@ -559,7 +559,7 @@ document.write(`
        href="../04-primeiros-passos/01-intro.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">próximo</p>
         <p class="prev-next-title">Primeiro programa em Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -576,7 +576,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -597,7 +597,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Henrique Branco powered by Jupyter Book
+De Henrique Branco powered by Jupyter Book
 </p>
 
   </div>
