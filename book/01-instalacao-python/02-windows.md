@@ -1,7 +1,7 @@
 (install-python-windows)=
 # Windows
 
-<div style="text-align: justify">
+
 
 Direto e reto, siga todas as instruções sem pular etapas!
 
@@ -63,4 +63,3 @@ Para sair do interpretador e retornar ao prompt de comando, digite `exit()`.
 E para abrir o interpretador novamente, digite `python`
 ```
 
-</div>

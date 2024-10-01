@@ -1,7 +1,7 @@
 (hello-world)=
 # Primeiro programa: Olá mundo!
 
-<div style="text-align: justify">
+
 
 No seu script, digite o seguinte código:
 
@@ -72,4 +72,3 @@ Parabéns! Comemore se você chegou até aqui! 🤝🎉🙌🥳🤩
 
 Na próxima seção vamos avançar com uma breve explicação sobre as diferentes formas de executar código. E, na sequencia, vamos começar a falar sobre operações matemáticas com Python.
 
-</div>

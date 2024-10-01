@@ -1,6 +1,6 @@
 # <img src="img/config/logos/python.svg" width="64"/> Python para todos
 
-<div style="text-align: justify">
+
 
 Quer aprender Python do zero? Este livro é para você!
 
@@ -44,4 +44,4 @@ Em especial, agradeço pontualmente:
 ```{tableofcontents}
 ```
 
-</div>
+

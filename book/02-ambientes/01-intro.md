@@ -1,6 +1,6 @@
 # Ambientes para desenvolvimento Python
 
-<div style="text-align: justify">
+
 
 ```{admonition} Se liga nos conceitos
 :class: note
@@ -14,4 +14,4 @@
 
 A proposta desta seção é explicar o que poucas pessoas explicam sobre os diferentes ambientes para desenvolvimento. Vamos lá?
 
-</div>
+

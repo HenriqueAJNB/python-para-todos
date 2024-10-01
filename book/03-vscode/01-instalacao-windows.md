@@ -1,6 +1,6 @@
 # Instalação VSCode (Windows)
 
-<div style="text-align: justify">
+
 
 Instalar a IDE VSCode no Windows é bem simples!
 
@@ -21,4 +21,3 @@ Instalar a IDE VSCode no Windows é bem simples!
 
 Na próxima seção, vamos configurar o VSCode e já começar a colocar a mão na massa!
 
-</div>

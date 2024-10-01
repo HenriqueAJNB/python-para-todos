@@ -1,6 +1,6 @@
 # Formas de execução
 
-<div style="text-align: justify">
+
 
 Antes de proseguirmos com operações matemática, vale a pena entender como podemos executar nosso código.
 
@@ -84,4 +84,3 @@ Porém, se eu fizesse o mesmo no script, ele não imprimiria nada na tela. Faça
 
 Vamos agora aprender sobre operações matemáticas em Python!
 
-</div>

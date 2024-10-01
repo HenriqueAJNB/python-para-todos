@@ -1,7 +1,7 @@
 (python-version)=
 # Qual versão do Python devo instalar?
 
-<div style="text-align: justify">
+
 
 Se você está começando agora, e tem um certo senso crítico e um perfil questionador, provavelmente você deve ter feito esta pergunta.
 
@@ -96,4 +96,4 @@ Para escolher a melhor versão do Python, opte por uma versão (preferencialment
 Atente-se ao mês/ano do fim do ciclo de vida de cada versão. O que é o mais atual hoje com certeza vai atingir esta data limite!
 ```
 
-</div>
+
