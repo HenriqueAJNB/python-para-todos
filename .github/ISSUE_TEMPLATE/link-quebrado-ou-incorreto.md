@@ -20,8 +20,9 @@ O link direcionada para onde atualmente? Coloque prints se necessário.
 
 Qual seria o local correto para o link apontar? É outra seção do livro, ou uma página da internet específica? Consegue dizer? Se não souber, tudo bem, pode simplesmente remover esta seção.
 
-# Você mesmo gostaria de corrigir?
+# Contribuição
 
-Marque um x na caixinha, caso você mesmo queira corrigir no livro o apontamento do link para o local correto.
+Você mesmo gostaria de contribuir realizando esta correção?
+
 - [ ] sim
 - [ ] não

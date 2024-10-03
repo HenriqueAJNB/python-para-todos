@@ -29,3 +29,10 @@ Tem alguma ideia de como resolver? Se sim, descreva-a aqui.
 # Outras informações
 
 Quaisquer outras informações que você achar relevante para ajudar a direcionar o problema
+
+# Contribuição
+
+Você mesmo gostaria de contribuir realizando esta correção?
+
+- [ ] sim
+- [ ] não

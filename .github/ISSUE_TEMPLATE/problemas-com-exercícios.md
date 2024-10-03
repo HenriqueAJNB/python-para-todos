@@ -19,3 +19,10 @@ Descreva detalhes do que está acontecendo no exercício.
 # Sugestão
 
 Tem alguma sugestão de melhoria?
+
+# Contribuição
+
+Você mesmo gostaria de contribuir realizando esta correção?
+
+- [ ] sim
+- [ ] não
