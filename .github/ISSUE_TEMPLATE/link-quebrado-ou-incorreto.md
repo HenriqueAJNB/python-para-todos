@@ -2,7 +2,7 @@
 name: Link quebrado ou incorreto
 about: Encontrou algum link do livro quebrado ou apontando para lugar errado? Relate
   aqui.
-title: ''
+title: '[LINK]'
 labels: link-quebrado
 assignees: ''
 
