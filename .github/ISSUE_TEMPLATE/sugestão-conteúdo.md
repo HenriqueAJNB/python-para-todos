@@ -1,7 +1,7 @@
 ---
 name: Sugestão conteúdo
 about: Tem algum tema ou conteúdo no livro que gostaria de ver abordado? Sugira aqui.
-title: '[TEMA]'
+title: "[TEMA]"
 labels: sugestão-temas
 assignees: ''
 

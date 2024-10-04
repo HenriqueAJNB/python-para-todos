@@ -2,7 +2,7 @@
 name: Bug de código
 about: Testou algum código do livro que não funciona? Relate aqui.
 title: "[BUG]"
-labels: bug
+labels: bug, sugestão-temas
 assignees: ''
 
 ---

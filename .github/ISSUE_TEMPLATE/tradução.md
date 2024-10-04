@@ -1,7 +1,7 @@
 ---
 name: Tradução
 about: Encontrou uma tradução que não ficou legal? Relate aqui.
-title: '[TRADUÇÃO]'
+title: "[TRADUÇÃO]"
 labels: erro-tradução
 assignees: ''
 
