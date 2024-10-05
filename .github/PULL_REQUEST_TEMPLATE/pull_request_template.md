@@ -39,3 +39,4 @@
 - [ ] A estrutura de pastas e arquivos seguem o padrão do projeto.
 - [ ] Conteúdo novo foi adicionado ao `_toc.yaml`
 - [ ] O build está funcionando localmente.
+- [ ] As referências para documentação oficial apontam para versão pt-br (quando a tradução existe).

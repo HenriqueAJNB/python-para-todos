@@ -16,6 +16,8 @@ Para mantermos o projeto organizado, siga estas orientações ao contribuir:
 - As imagens e gifs devem seguir o padrão de nomeação: 
   - `<numero-da-pasta>-<numero-do-arquivo>-descricao-da-imagem-ou-gif.extensao`. Exemplo: `09-03-modulos.png`
   - Esses arquivos são armazenados nas pastas `book/img` e `book/gifs`. Siga o padrão já existente para manter a consistência.
+- Sempre que possível deve existir a referência para um determinado conteúdo na documentação oficial
+  - Preferencialmente, a referência deve apontar para a documentação em português, caso exista.
 
 ## Como contribuir
 
