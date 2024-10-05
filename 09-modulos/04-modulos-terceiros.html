@@ -469,13 +469,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras">Outras</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-desinstalando-bibliotecas">Instalando/desinstalando bibliotecas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulando-bibliotecas">Manipulando bibliotecas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-versoes-de-bibliotecas">Sobre versões de bibliotecas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-varias-bibliotecas-de-uma-vez">Instalando várias bibliotecas de uma vez</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desinstalando-bibliotecas">Desinstalando bibliotecas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atualizando-bibliotecas">Atualizando bibliotecas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listar-bibliotecas-instaladas">Listar bibliotecas instaladas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-detalhes-de-uma-biblioteca-especifica">Mostrar detalhes de uma biblioteca específica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-bibliotecas">Utilizando bibliotecas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
             </nav>
         </div>
@@ -519,7 +523,7 @@ document.write(`
 <p>Ao longo deste capítulo vamos ver como instalar bibliotecas de terceiros, e a ferramenta oficial do Python para instalar bibliotecas é o <code class="docutils literal notranslate"><span class="pre">pip</span></code>, um acrônimo do inglês para <em><strong>p</strong>ackage <strong>i</strong>nstaller for <strong>p</strong>ython</em>, que ,traduzido para português, significa <em>instalador de pacotes do Python</em>.</p>
 <p>O <code class="docutils literal notranslate"><span class="pre">pip</span></code> é um gerenciador de pacotes que vem instalado por padrão quando você instala o Python. Com ele você pode instalar, atualizar e remover bibliotecas Python. O <code class="docutils literal notranslate"><span class="pre">pip</span></code> é uma ferramenta de linha de comando, ou seja, você precisa abrir o terminal para utilizá-lo. Não se preocupe, pois vamos aprender a utilizá-lo. Quero só que você entenda o que é por agora.</p>
 <p>É possível verificar se o <code class="docutils literal notranslate"><span class="pre">pip</span></code> está instalado em seu computador executando o comando abaixo no terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>--version
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip --version</span>
 <span class="go">pip 24.0</span>
 </pre></div>
 </div>
@@ -619,8 +623,8 @@ document.write(`
 <p>… e a lista não pára por aí.</p>
 </section>
 </section>
-<section id="instalando-desinstalando-bibliotecas">
-<h2>Instalando/desinstalando bibliotecas<a class="headerlink" href="#instalando-desinstalando-bibliotecas" title="Link to this heading">#</a></h2>
+<section id="manipulando-bibliotecas">
+<h2>Manipulando bibliotecas<a class="headerlink" href="#manipulando-bibliotecas" title="Link to this heading">#</a></h2>
 <p>Um ponto diferente de módulos nativos do Python é que você precisa instalar as bibliotecas de terceiros antes de utilizá-las. Para isso, você vai utilizar o <code class="docutils literal notranslate"><span class="pre">pip</span></code>, o gerenciador de pacotes do Python, conforme já mencionado anteriormente.</p>
 <p>Para instalar uma biblioteca, você precisa executar o comando abaixo no terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>nome-da-biblioteca
@@ -682,6 +686,56 @@ matplotlib==3.4.3
 </pre></div>
 </div>
 </section>
+<section id="atualizando-bibliotecas">
+<h3>Atualizando bibliotecas<a class="headerlink" href="#atualizando-bibliotecas" title="Link to this heading">#</a></h3>
+<p>Para atualizar uma biblioteca, você precisa executar o comando abaixo no terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nome-da-biblioteca
+</pre></div>
+</div>
+<p>Por exemplo, para atualizar a biblioteca <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, você deve executar o comando</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>numpy
+</pre></div>
+</div>
+</section>
+<section id="listar-bibliotecas-instaladas">
+<h3>Listar bibliotecas instaladas<a class="headerlink" href="#listar-bibliotecas-instaladas" title="Link to this heading">#</a></h3>
+<p>Podemos listar todas as bibliotecas que estão instaladas em nosso ambiente Python com o comando abaixo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+<p>Isso tratá uma saída parecida com a abaixo, mostrando todas as bibliotecas instaladas e suas respectivas versões:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Package                       Version
+----------------------------- -----------
+accessible-pygments           0.0.5
+alabaster                     0.7.16
+asttokens                     2.4.1
+attrs                         23.2.0
+...
+</pre></div>
+</div>
+</section>
+<section id="mostrar-detalhes-de-uma-biblioteca-especifica">
+<h3>Mostrar detalhes de uma biblioteca específica<a class="headerlink" href="#mostrar-detalhes-de-uma-biblioteca-especifica" title="Link to this heading">#</a></h3>
+<p>É possível visualizar detalhes de uma biblioteca instalada com o comando abaixo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>nome-da-biblioteca
+</pre></div>
+</div>
+<p>Por exemplo, para visualizar detalhes da biblioteca <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, você deve executar o comando</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>pandas
+</pre></div>
+</div>
+<p>A saída será algo similar ao texto abaixo, mostrando informações como nome, versão, descrição, página oficial, autor, e-mail do autor, licença e quais outras bibliotecas dependem dela:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Name: pandas
+Version: 2.2.1
+Summary: Powerful data structures for data analysis, time series, and statistics
+Home-page: https://pandas.pydata.org
+Author:
+Author-email: The Pandas Development Team &lt;pandas-dev@python.org&gt;
+License: BSD 3-Clause License
+Required-by: seaborn, yfinance
+</pre></div>
+</div>
+</section>
 </section>
 <section id="utilizando-bibliotecas">
 <h2>Utilizando bibliotecas<a class="headerlink" href="#utilizando-bibliotecas" title="Link to this heading">#</a></h2>
@@ -693,9 +747,16 @@ matplotlib==3.4.3
 <p>Aqui estamos trazendo todas as funcionalidades das duas bibliotecas para o escopo do nosso script. A partir daí, podemos utilizar todas as funções e classes disponíveis nas bibliotecas <code class="docutils literal notranslate"><span class="pre">numpy</span></code> e <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota (apelido ou alias)</p>
-<p>Repare que estamos utilizando <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">np</span></code> e <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">pd</span></code> para criar um apelido (ou alias) para as bibliotecas <code class="docutils literal notranslate"><span class="pre">numpy</span></code> e <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, respectivamente. Isso é uma convenção muito comum na comunidade Python, pois economiza tempo e evita digitar o nome completo da biblioteca toda vez que você for utilizá-la.</p>
+<p>Repare que estamos utilizando <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">np</span></code> e <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">pd</span></code> para criar um apelido (ou alias) para as bibliotecas <code class="docutils literal notranslate"><span class="pre">numpy</span></code> e <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, respectivamente. O uso do alias é opcional e o alias em si quem escolhe é você. Porém, para estas 2 bibliotecas em específico (e algumas outras) é comum ver alias padrões adotados pela comunidade. Alias é uma convenção muito comum na comunidade Python, pois economiza tempo e evita digitar o nome completo da biblioteca toda vez que você for utilizá-la.</p>
 <p>Ao invés de usar, por exemplo, <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>, você pode usar <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> chamando as funcionalidades da biblioteca pelo apelido ao invés do nome completo.</p>
 </div>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Neste capítulo você começou a entender um pouco sobre o vasto mundo de bibliotecas de terceiros disponíveis para Python. Vimos que existem bibliotecas para praticamente tudo que você imaginar, desde manipulação de dados, visualização de dados, desenvolvimento web, automação de tarefas, machine learning, desenvolvimento de jogos, e muito mais.</p>
+<p>Vimos ainda alguns conceitos como o PyPI, o <code class="docutils literal notranslate"><span class="pre">pip</span></code>, o que é <em>open-source</em>, e como instalar, desinstalar, atualizar e listar bibliotecas.</p>
+<p>Ao final, vimos como utilizar bibliotecas em nossos scripts Python, importando-as e utilizando-as em nossos projetos.</p>
+<p>Eu sei que já falei, e sim, vou repetir pra deixar isso bem claro. A ideia aqui não é ensinar cada uma das bibliotecas listadas, mas sim mostrar que elas existem e o básico para que você possa ir atrás delas e aprender a utilizá-las. Existem cursos inteiros sobre <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, <code class="docutils literal notranslate"><span class="pre">django</span></code>, <code class="docutils literal notranslate"><span class="pre">selenium</span></code>, <code class="docutils literal notranslate"><span class="pre">pygame</span></code>, e por aí vai. Aqui é só o básico para você começar a se aventurar com bibliotecas externas.</p>
 </section>
 </section>
 
@@ -781,13 +842,17 @@ matplotlib==3.4.3
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras">Outras</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-desinstalando-bibliotecas">Instalando/desinstalando bibliotecas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulando-bibliotecas">Manipulando bibliotecas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-versoes-de-bibliotecas">Sobre versões de bibliotecas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-varias-bibliotecas-de-uma-vez">Instalando várias bibliotecas de uma vez</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desinstalando-bibliotecas">Desinstalando bibliotecas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atualizando-bibliotecas">Atualizando bibliotecas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listar-bibliotecas-instaladas">Listar bibliotecas instaladas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-detalhes-de-uma-biblioteca-especifica">Mostrar detalhes de uma biblioteca específica</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-bibliotecas">Utilizando bibliotecas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
 </ul>
   </nav></div>
 
