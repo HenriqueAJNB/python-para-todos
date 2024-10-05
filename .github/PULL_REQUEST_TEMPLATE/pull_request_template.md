@@ -33,5 +33,9 @@
 <!--- Revise os pontos a seguir e marque com um `x` todos que se aplicam: -->
 <!--- Se tiver dúvidas sobre qualquer item, não hesite em perguntar. Estamos aqui para ajudar! -->
 - [ ] As alterações seguem todos os padrões [do documento de **CONTRIBUIÇÃO**](./../../CONTRIBUTING.md).
-- [ ] Eu adicionei testes para cobrir as minhas alterações.
-- [ ] Todos os testes novos e existentes foram aprovados.
+- [ ] As imagens e gifs seguem o padrão do projeto.
+- [ ] Nenhum código está quebrando o build do livro (exceto se for um erro intencional que deve ser devidamente explícito).
+- [ ] O conteúdo foi revisado e está correto e coerente.
+- [ ] A estrutura de pastas e arquivos seguem o padrão do projeto.
+- [ ] Conteúdo novo foi adicionado ao `_toc.yaml`
+- [ ] O build está funcionando localmente.
