@@ -681,7 +681,7 @@ várias linhas.
 <h4>Métodos mais usados de strings<a class="headerlink" href="#metodos-mais-usados-de-strings" title="Link to this heading">#</a></h4>
 <div class="note admonition">
 <p class="admonition-title">Nota (lista completa de métodos)</p>
-<p>Strings tem uma lista enorme de métodos disponíveis e aqui serão demonstrados apenas os mais comumente usados. Mas é de extrema importância que você saiba consultar todos os métodos disponíveis na documentação oficial. A lista completa com todos os métodos de string e suas respectivas documentações pode ser encontrada <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">aqui</a>.</p>
+<p>Strings tem uma lista enorme de métodos disponíveis e aqui serão demonstrados apenas os mais comumente usados. Mas é de extrema importância que você saiba consultar todos os métodos disponíveis na documentação oficial. A lista completa com todos os métodos de string e suas respectivas documentações pode ser encontrada <a class="reference external" href="https://docs.python.org/pt-br/3/library/stdtypes.html#string-methods">aqui</a>.</p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota (valores booleanos)</p>
@@ -732,7 +732,9 @@ Um Nome Qualquer
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_com_espacos</span> <span class="o">=</span> <span class="s2">&quot;   Um texto qualquer com espaços em branco no começo e no final...      &quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_com_espacos</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;   Um texto qualquer com espaços em branco no começo e no final...      &quot;</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_com_espacos</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
@@ -759,8 +761,8 @@ Um texto qualquer com espaços em branco no começo e no final...
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Olá, eu estou aprendendo a manipular textos em Python &quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Olá&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span> <span class="c1"># False? Está correto mesmo?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span> <span class="c1"># A letra &#39;e&#39; aparece 5 vezes na frase</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span>  <span class="c1"># False? Está correto mesmo?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>  <span class="c1"># A letra &#39;e&#39; aparece 5 vezes na frase</span>
 </pre></div>
 </div>
 </div>
@@ -862,7 +864,7 @@ Lucas-Ferreira-de-Almeida-Gomes
 <span class="c1"># Dividindo o CPF através do `.`</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cpf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>
 
-<span class="c1">#Dividindo o CPF através do `-`</span>
+<span class="c1"># Dividindo o CPF através do `-`</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cpf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -886,7 +888,7 @@ Lucas-Ferreira-de-Almeida-Gomes
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
 
 <span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span> <span class="c1"># ... ops!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span>  <span class="c1"># ... ops!</span>
 </pre></div>
 </div>
 </div>
@@ -896,7 +898,7 @@ Lucas-Ferreira-de-Almeida-Gomes
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span> <span class="c1"># ... ops!</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">nome_comprido</span><span class="o">.</span><span class="n">len</span><span class="p">())</span>  <span class="c1"># ... ops!</span>
 
 <span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;len&#39;
 </pre></div>
@@ -911,7 +913,7 @@ Lucas-Ferreira-de-Almeida-Gomes
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome_comprido</span> <span class="o">=</span> <span class="s2">&quot;João Antônio da Silva Sauro de Souza Silva Santos&quot;</span>
 
 <span class="c1"># Contando a quantidade de caracteres deste nome enorme</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nome_comprido</span><span class="p">))</span> <span class="c1"># ... agora sim!</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nome_comprido</span><span class="p">))</span>  <span class="c1"># ... agora sim!</span>
 </pre></div>
 </div>
 </div>
@@ -1080,7 +1082,9 @@ Lucas-Ferreira-de-Almeida-Gomes
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O primeiro caracter do nome é a letra </span><span class="si">{</span><span class="n">primeiro_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O segundo caracter do nome é a letra </span><span class="si">{</span><span class="n">segundo_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O terceiro caracter do nome é a letra </span><span class="si">{</span><span class="n">terceiro_caracter</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Os caracteres de índice 5 e 13 são espaços em branco: </span><span class="si">{</span><span class="n">primeir_espaco_em_branco</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">segundo_espaco_em_branco</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Os caracteres de índice 5 e 13 são espaços em branco: </span><span class="si">{</span><span class="n">primeir_espaco_em_branco</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">segundo_espaco_em_branco</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>

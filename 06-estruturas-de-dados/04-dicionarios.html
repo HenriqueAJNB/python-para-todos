@@ -481,17 +481,13 @@ document.write(`
 <p>Um dicionário em Python é uma estrutura de dados que armazena pares de chave-valor. É a primeira estrutura <strong>não ordenada</strong> que vamos aprender.</p>
 <p>Cada chave deve ser única e imutável (por exemplo, uma string, um número ou uma tupla), enquanto os valores podem ser de qualquer tipo, incluindo listas, listas e até mesmo outros dicionários.</p>
 <p>Os dicionários são úteis para armazenar dados que precisam ser rapidamente acessíveis por uma chave descritiva.</p>
-<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Aqui</a> você encontra a documentação oficial de dicionários, cobrindo todos as operações que vamos falar neste capítulo.</p>
+<p><a class="reference external" href="https://docs.python.org/pt-br/3/library/stdtypes.html#mapping-types-dict">Aqui</a> você encontra a documentação oficial de dicionários, cobrindo todos as operações que vamos falar neste capítulo.</p>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
 <p>Um dicionário é definido usando chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> e cada par de chave-valor é separado por dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>. Os pares são separados por vírgulas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -510,11 +506,7 @@ document.write(`
 <p>Lembra que com listas e tuplas podemos acessar os elementos pela índice? Pois bem, em dicionário é como se nós atribuíssemos nomes aos índices. Os índices passam a ser as nossas chaves. E ao acessarmos a chave de um dicionário o valor é retornado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -528,11 +520,7 @@ document.write(`
 <p>Note que não existe mais o acesso por índices ou posições, como era em listas e tuplas. Por este motivo, os dicionários são estruturas <strong>não ordenadas</strong>. Não há uma ordem (primeiro, segundo, terceiro) para acessarmos os valores. Vejamos o que acontece caso busquemos pelo primeiro par de chaves e valores através de índices:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -540,13 +528,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="ne">KeyError</span>: 0
 </pre></div>
@@ -562,11 +546,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pessoa não possui a chave profissão</span>
-<span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="c1"># Aqui não estamos acessando a chave profissão, mas sim criando-a!</span>
 <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;profissao&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;desenvolvedor&quot;</span>
@@ -588,13 +568,9 @@ document.write(`
 <p>Caso uma atribuição seja feita a uma chave existente, o valor dela será substituído.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
-<span class="c1"># O valor correspondente à chave &quot;nome&quot; é substituid por &quot;José&quot; </span>
+<span class="c1"># O valor correspondente à chave &quot;nome&quot; é substituid por &quot;José&quot;</span>
 <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;José&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
@@ -611,14 +587,10 @@ document.write(`
 <p>Usando a instrução <code class="docutils literal notranslate"><span class="pre">del</span></code>, o par é simplesmente apagado não sendo possível salvá-lo em variáveis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="c1"># O par de chave-valor correspondente à chave nome deixou de existir</span>
-<span class="k">del</span> <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">pessoa</span><span class="p">[</span><span class="s2">&quot;nome&quot;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="p">)</span>
 </pre></div>
@@ -633,11 +605,7 @@ document.write(`
 <p>Já com o método <code class="docutils literal notranslate"><span class="pre">pop</span></code>, o par de chave-valor é removido, e o valor é salvo na variável definida.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="c1"># O par de chave-valor correspondente à chave nome deixou de existir</span>
 <span class="n">idade</span> <span class="o">=</span> <span class="n">pessoa</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;idade&quot;</span><span class="p">)</span>
@@ -664,11 +632,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pessoa não possui a chave profissão</span>
-<span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="c1"># Acessando uma chave inexistente com o método get()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;profissao&quot;</span><span class="p">))</span>
@@ -692,11 +656,7 @@ desenvolvedor
 <p>Estes 3 métodos são basicamente para listar as chaves (<code class="docutils literal notranslate"><span class="pre">keys</span></code>), valores (<code class="docutils literal notranslate"><span class="pre">values</span></code>) e pares de chave-valor (<code class="docutils literal notranslate"><span class="pre">items</span></code>) de um dicionário.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="c1"># Aqui serão impressas somente as chaves do dicionário</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pessoa</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -725,11 +685,7 @@ dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cida
 <p>Podemos medir a quantidade de pares chave-valor através da função <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pessoa</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;cidade&quot;</span><span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pessoa</span><span class="p">))</span>
 </pre></div>
@@ -749,7 +705,7 @@ dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cida
 <p>O operador <code class="docutils literal notranslate"><span class="pre">|</span></code> une os pares de chave e valor de dois dicionários, criando um terceiro dicionário.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">informacoes_basicas_produto</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Cadeira&quot;</span><span class="p">,</span> <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;codigo&quot;</span><span class="p">:</span><span class="s2">&quot;abc&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">informacoes_basicas_produto</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Cadeira&quot;</span><span class="p">,</span> <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">}</span>
 
 <span class="n">informacoes_adicionais_produto</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cor&quot;</span><span class="p">:</span> <span class="s2">&quot;azul&quot;</span><span class="p">,</span> <span class="s2">&quot;estoque&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;xyz&quot;</span><span class="p">}</span>
 
@@ -771,7 +727,11 @@ dict_items([(&#39;nome&#39;, &#39;João&#39;), (&#39;idade&#39;, 30), (&#39;cida
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cliente</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="s2">&quot;possui_conveio&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 
-<span class="n">novas_informacoes</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;maria@example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;possui_convenio&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">novas_informacoes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;maria@example.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+    <span class="s2">&quot;possui_convenio&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
 
 <span class="n">cliente</span> <span class="o">|=</span> <span class="n">novas_informacoes</span>
 

@@ -483,7 +483,7 @@ document.write(`
 <li><p><strong>Sem ordem definida:</strong> Os elementos em um set não têm uma ordem específica. Diferente de listas ou tuplas, onde a ordem dos elementos é importante, em sets a posição dos elementos não é garantida e pode variar.</p></li>
 <li><p><strong>Operações matemáticas:</strong> Sets suportam operações matemáticas como união, interseção, diferença e diferença simétrica, que são úteis para comparar e combinar conjuntos de dados.</p></li>
 </ul>
-<p>Vamos aprofundar mais neste capítulo. Sugiro fortemente que você leia a documntação oficial sobre sets <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set">aqui</a>, ela é a base deste capítulo todo.</p>
+<p>Vamos aprofundar mais neste capítulo. Sugiro fortemente que você leia a documntação oficial sobre sets <a class="reference external" href="https://docs.python.org/pt-br/3/library/stdtypes.html#set">aqui</a>, ela é a base deste capítulo todo.</p>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
 <p>a sintaxe básica para criar um set envolve colocar os elementos entre chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Por exemplo, <code class="docutils literal notranslate"><span class="pre">conjunto</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3}</span></code> cria um set contendo os números 1, 2 e 3 (o 3 aparece apenas uma vez, pois o set elimina duplicatas de forma automática).</p>
@@ -515,8 +515,26 @@ document.write(`
 <p>Com sets podemos rapidamente responder às seguintes perguntas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span> <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span> <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span> <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span> <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGRE11&quot;</span><span class="p">}</span>
-<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span><span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span><span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span><span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span><span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span><span class="s2">&quot;HGRU11&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRE11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRU11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
 <span class="c1"># Quais são os ativos em comum entre as pessoas A e B?</span>
 <span class="n">investimentos_em_comum</span> <span class="o">=</span> <span class="n">investimentos_pessoa_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">investimentos_pessoa_b</span><span class="p">)</span>
@@ -525,15 +543,33 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGLG11&#39;, &#39;HFOF11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HFOF11&#39;, &#39;HGLG11&#39;}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span> <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span> <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span> <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span> <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGRE11&quot;</span><span class="p">}</span>
-<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span><span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span><span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span><span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span><span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span><span class="s2">&quot;HGRU11&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRE11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRU11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
 <span class="c1"># Quais são os ativos das carteiras de ambas as pessoas (A, B ou ambas)?</span>
 <span class="n">todos_os_ativos</span> <span class="o">=</span> <span class="n">investimentos_pessoa_a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">investimentos_pessoa_b</span><span class="p">)</span>
@@ -542,15 +578,33 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGPO11&#39;, &#39;BTLG11&#39;, &#39;CSHG11&#39;, &#39;FIIB11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;HGRE11&#39;, &#39;BCFF11&#39;, &#39;HGLG11&#39;, &#39;GGRC11&#39;, &#39;BPFF11&#39;, &#39;HFOF11&#39;, &#39;FEXC11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BPFF11&#39;, &#39;FEXC11&#39;, &#39;HFOF11&#39;, &#39;GGRC11&#39;, &#39;HGRU11&#39;, &#39;CSHG11&#39;, &#39;HGRE11&#39;, &#39;HGPO11&#39;, &#39;FIIJ11&#39;, &#39;FIIB11&#39;, &#39;HGLG11&#39;, &#39;BCFF11&#39;, &#39;BTLG11&#39;}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span> <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span> <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span> <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span> <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGRE11&quot;</span><span class="p">}</span>
-<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span><span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span><span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span><span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span><span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span><span class="s2">&quot;HGRU11&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRE11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRU11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
 <span class="c1"># Quais são os ativos que somente a pessoa A tem em carteira?</span>
 <span class="n">investimentos_exclusivos_pessoa_a</span> <span class="o">=</span> <span class="n">investimentos_pessoa_a</span> <span class="o">-</span> <span class="n">investimentos_pessoa_b</span>
@@ -559,15 +613,33 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BTLG11&#39;, &#39;CSHG11&#39;, &#39;FIIB11&#39;, &#39;HGRE11&#39;, &#39;BPFF11&#39;, &#39;FEXC11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BPFF11&#39;, &#39;FEXC11&#39;, &#39;CSHG11&#39;, &#39;HGRE11&#39;, &#39;FIIB11&#39;, &#39;BTLG11&#39;}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span> <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span> <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span> <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span> <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGRE11&quot;</span><span class="p">}</span>
-<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span><span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span><span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span><span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span><span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span> <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span><span class="s2">&quot;HGRU11&quot;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BPFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BTLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CSHG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FEXC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIB11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRE11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">investimentos_pessoa_b</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BCFF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FIIJ11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GGRC11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HFOF11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGLG11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGPO11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HGRU11&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
 <span class="c1"># Quais são os ativos que somente a pessoa B tem em carteira?</span>
 <span class="n">investimentos_exclusivos_pessoa_b</span> <span class="o">=</span> <span class="n">investimentos_pessoa_b</span> <span class="o">-</span> <span class="n">investimentos_pessoa_a</span>
@@ -576,7 +648,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGPO11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;BCFF11&#39;, &#39;GGRC11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GGRC11&#39;, &#39;HGPO11&#39;, &#39;FIIJ11&#39;, &#39;HGRU11&#39;, &#39;BCFF11&#39;}
 </pre></div>
 </div>
 </div>
@@ -749,12 +821,20 @@ document.write(`
 <span class="n">conjunto_c</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subconjunto&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o operador &lt;= : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">conjunto_a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o método .issubset() : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conjunto_a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o operador &lt;= : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">conjunto_a</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;O conjunto C é um subconjunto de A? Usando o método .issubset() : </span><span class="si">{</span><span class="n">conjunto_c</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">conjunto_a</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Superconjunto&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o operador &gt;= : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">conjunto_c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o método .issuperset() : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">conjunto_c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o operador &gt;= : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">conjunto_c</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;O conjunto B é um superconjunto de C? Usando o método .issuperset() : </span><span class="si">{</span><span class="n">conjunto_b</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">conjunto_c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
