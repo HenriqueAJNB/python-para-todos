@@ -61,6 +61,10 @@ parts:
   - file: 09-modulos/03-modulos-proprios.ipynb
   - file: 09-modulos/04-modulos-terceiros.ipynb
 
+- caption: Programação orientada a objetos
+  chapters:
+  - file: 10-orientacao-objetos/01-introducao.ipynb
+
 - caption: Pratique
   chapters:
   - file: exercicios.ipynb
