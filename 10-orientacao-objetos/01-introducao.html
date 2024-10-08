@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Python para todos</title>
+    <title>Introdução &#8212; Python para todos</title>
   
   
   
@@ -55,14 +55,29 @@
     <script src="../_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JSWERJSPMN"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '10-orientacao-objetos/01-introducao';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Bibliotecas de terceiros" href="../09-modulos/04-modulos-terceiros.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="pt"/>
@@ -135,8 +150,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -252,6 +265,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../09-modulos/03-modulos-proprios.html">Módulos customizados</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../09-modulos/04-modulos-terceiros.html">Bibliotecas de terceiros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programação orientada a objetos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="nav bd-sidenav">
@@ -441,7 +458,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Introdução</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -450,9 +467,24 @@ document.write(`
                 <h2> Conteúdo </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-paradigmas-de-programacao">Os paradigmas de programação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-poo">O que é POO?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais-de-poo">Conceitos fundamentais de POO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classe">Classe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instancia">Instância</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-o-que-o-objeto-tem">Atributos (o que o objeto tem?)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-o-que-o-objeto-faz">Métodos (o que o objeto faz?)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-reais">Exemplos reais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-1-conta-bancaria">Exemplo 1: conta bancária</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-2-reserva-de-hotel">Exemplo 2: reserva de hotel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-3-pedido-de-uma-plataforma-de-e-commerce">Exemplo 3: pedido de uma plataforma de e-commerce</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -463,7 +495,356 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section id="introducao">
+<h1>Introdução<a class="headerlink" href="#introducao" title="Link to this heading">#</a></h1>
+<p>Ah, a tal da <em>programação orientada a objetos</em>!</p>
+<p>Muita gente não entende bem o que é isso, e por não entender acaba não usando ou usando da forma errada. Nesta seção eu vou tentar explicar esse tema de uma forma simples e prática, para que você possa entender e considerar usar essa nova forma de programar daqui para a frente.</p>
+<section id="os-paradigmas-de-programacao">
+<h2>Os paradigmas de programação<a class="headerlink" href="#os-paradigmas-de-programacao" title="Link to this heading">#</a></h2>
+<p>A <strong>programação orientada a objetos</strong> também chamada pelo acrônimo <strong>POO</strong> e a <strong>programação estruturada</strong> são dois jeitos diferentes de programar, cada um com suas características e finalidades.</p>
+<p>Tudo que vimos até aqui foi <strong>programação estruturada</strong>, que segue uma sequência linear.</p>
+<p>Na <strong>programação estruturada</strong>, o foco está em dividir o código em funções. Essas funções fazem tarefas específicas, como calcular algo ou mostrar uma mensagem na tela. O código segue uma sequência de passos, como uma receita de bolo, com começo, meio e fim. Os dados, ou seja, as informações que o código usa, ficam separados das funções e são manipulados diretamente por elas. Esse método funciona bem para códigos menores e mais simples, mas pode se tornar difícil de organizar à medida que o código cresce e fica mais complexo.</p>
+<p>Já na <strong>POO</strong>, o foco é em criar objetos que representam coisas ou conceitos do mundo real. Esses objetos possuem tanto dados (as características do objeto) quanto comportamentos (as ações que ele pode fazer). Por exemplo, você pode imaginar um <em>Carro</em> como um objeto com características como <em>cor</em> e <em>velocidade</em>, e com comportamentos como <em>acelerar</em> e <em>frear</em>. Na POO, o código fica mais organizado, porque cada objeto é responsável pelos seus próprios dados e ações, o que facilita manter e melhorar o código com o tempo.</p>
+<p>Outro exemplo é uma classe <em>Televisão</em> que tem características como <em>marca</em>, <em>tamanho</em> e <em>canal atual</em>, e comportamentos como <em>ligar</em>, <em>desligar</em> e <em>trocar de canal</em>. Cada televisão que você criar a partir dessa classe terá suas próprias características e comportamentos, mas todas seguirão o mesmo modelo.</p>
+<p>Mas vamos com calma e entender melhor esse negócio de classes e objetos. Antes de ir direto ao ponto, vamos entender melhor o que é POO.</p>
+</section>
+<section id="o-que-e-poo">
+<h2>O que é POO?<a class="headerlink" href="#o-que-e-poo" title="Link to this heading">#</a></h2>
+<p>Quero deixar claro aqui que POO não é algo específico de Python, mas sim uma forma de programar que considera a construção de objetos personalizados para resolver problemas. Essa nova forma de programar é inclusive usada em várias outras lingaugens de programação.</p>
+<p>POO é um paradigma de programação (uma forma de programar) que utiliza objetos para representar entidades do mundo real. Falando especificamente de Python, absolutamente tudo em Python é um objeto. Nós já utilizamos POO em Python, mas não de forma explícita.</p>
+<p>O que eu quero dizer com isso?</p>
+<p>Nós vimos, por exemplo, como manipular valores numéricos (<code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">float</span></code>), strings, listas, dicionários e conjuntos. Cada um destes tipos de dados representa um objeto em Python. Um exemplo básico e simples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nesse exemplo, a variável <code class="docutils literal notranslate"><span class="pre">minha_lista</span></code> representa um objeto do tipo <code class="docutils literal notranslate"><span class="pre">list</span></code>. Por ela ser deste tipo, eu posso utilizar todas as funcionalidades de listas, conforme vimos no <a class="reference internal" href="../06-estruturas-de-dados/02-listas.html#listas"><span class="std std-ref">capítulo de listas</span></a>. E da mesma forma, vimos também operações que são específicas de strings, dicionários e conjuntos.</p>
+<p>Esse é o poder da orientação a objetos. Só que a partir de agora nós não vamos trabalhar apenas com os objetos nativos do Python, e sim vamos aprender a construir nossos próprios objetos, que vão ter operações que nós mesmos podemos definir!</p>
+<p>A melhor forma de entender POO é através de exemplos e prática, sem perder de vista a parte conceitual que será nova e é super importante. Então vamos lá? Vamos aprender a criar nossos próprios objetos em Python!</p>
+</section>
+<section id="conceitos-fundamentais-de-poo">
+<h2>Conceitos fundamentais de POO<a class="headerlink" href="#conceitos-fundamentais-de-poo" title="Link to this heading">#</a></h2>
+<section id="classe">
+<h3>Classe<a class="headerlink" href="#classe" title="Link to this heading">#</a></h3>
+<p>Uma <strong>classe</strong> em POO é como um <strong>molde</strong> ou <strong>modelo</strong> que descreve como um certo tipo de objeto deve ser. É uma forma de agrupar dados (chamados de atributos) e funções (chamadas de métodos) que trabalham juntos para representar algo do mundo real no código. E eu gosto ainda de dizer que atributos são o que o objeto tem, e métodos são o que o objeto faz.</p>
+<p>Vamos para um exemplo prático.</p>
+<p>Em Python (e acredito eu que em nenhuma outra linguagem), temos um objeto que represente um carro, certo? Pois bem, em Python, podemos criar uma classe que representa de forma genérica um carro. Veja como podemos fazer isso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nós definimos uma classe em Python conforme acima. Usamos a palavra-chave <code class="docutils literal notranslate"><span class="pre">class</span></code> seguida do nome da classe, e em seguida abrimos um bloco de código com <code class="docutils literal notranslate"><span class="pre">:</span></code>. Dentro desse bloco, vamos definir como os objetos criados a partir desse molde vão se comportar. A princípio a nossa classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code> não faz nada, mas ela já é um objeto em si, e podemos criar objetos a partir dela.</p>
+</section>
+<section id="instancia">
+<h3>Instância<a class="headerlink" href="#instancia" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="n">carro</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui já entra outro conceito de POO, instância. A classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code> representa de forma genérica um molde para todos os carros, e a partir desse molde, eu posso criar objetos específicos. Cada objeto destes chamamos de instância. No exemplo acima, a variável <code class="docutils literal notranslate"><span class="pre">carro</span></code> é uma instância da classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>. É um tipo específico de carro criado a partir do molde genérico. Vamos ver outro exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="n">chevrolet_onix</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">()</span>
+<span class="n">fiat_uno</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neste outro exemplo, temos uma classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code> e a partir dela, criamos 2 instâncias, <code class="docutils literal notranslate"><span class="pre">chevrolet_onix</span></code> e <code class="docutils literal notranslate"><span class="pre">fiat_uno</span></code>. Cada instância dessa é um objeto da classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>, e são 2 instâncias diferentes.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (PascalCase)</p>
+<p>Um padrão comum em POO é usar <em>PascalCase</em> para nomear classes. Isso significa que cada palavra no nome da classe começa com letra maiúscula, sem espaços. Alguns exemplos: <code class="docutils literal notranslate"><span class="pre">Carro</span></code>, <code class="docutils literal notranslate"><span class="pre">Televisao</span></code>, <code class="docutils literal notranslate"><span class="pre">ContaCorrente</span></code>, <code class="docutils literal notranslate"><span class="pre">BancoDeDados</span></code>, <code class="docutils literal notranslate"><span class="pre">Conexao</span></code>. Vamos seguir esse padrão daqui para frente!</p>
+</div>
+</section>
+<section id="atributos-o-que-o-objeto-tem">
+<h3>Atributos (o que o objeto tem?)<a class="headerlink" href="#atributos-o-que-o-objeto-tem" title="Link to this heading">#</a></h3>
+<p>Vamos pensar na classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>. O que um carro tem? Um carro tem marca, modelo, cor, ano de fabricação, e quilometragem. Estas informações que um carro tem é o que chamamos de <strong>atributos</strong>.</p>
+<p>Atributos basicamente respondem à pergunta <em>o que esse objeto tem?</em> e são definidos dentro da classe. Vamos adicionar esses atributos à nossa classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>:</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (muita calma nesta hora)</p>
+<p>O que você verá a seguir parece algo assustador, mas fique comigo que vou explicar passo a passo, no detalhe, e você vá pensando e refletindo pra ver principalmente se compreende cada um dos conceitos.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="c1"># O que um carro tem? Estes são os atributos da classe Carro</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+
+
+<span class="n">onix</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span><span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Chevrolet&quot;</span><span class="p">)</span>
+<span class="n">uno</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span><span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Fiat&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">onix</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chevrolet
+Fiat
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nós acrescentamos um método especial na nossa classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code> chamado <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Métodos são exatamente como funções, tanto é que são definidos com a mesma palavra reservada <code class="docutils literal notranslate"><span class="pre">def</span></code>, a diferença é que métodos são funções que pertencem a um objeto. E todo método de uma classe deve ter como primeiro parâmetro a palavra-chave <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<p>Esse método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> é chamado de <strong>método construtor</strong> e é um método especial que é chamado toda vez que um objeto é criado a partir da classe. Ou seja, na criação do objeto, por exemplo, na linha <code class="docutils literal notranslate"><span class="pre">onix</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Chevrolet&quot;)</span></code>, o método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> da classe é chamado.</p>
+<p>Quando nós inicializamos a instância <code class="docutils literal notranslate"><span class="pre">onix</span></code> com a linha <code class="docutils literal notranslate"><span class="pre">onix</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Chevrolet&quot;)</span></code>, percebam que após a instanciação eu consigo acessar o atributo <code class="docutils literal notranslate"><span class="pre">marca</span></code> da instância <code class="docutils literal notranslate"><span class="pre">onix</span></code> com a notação de ponto com <code class="docutils literal notranslate"><span class="pre">onix.marca</span></code>. O método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> que é responsável por inicializar os atributos da instância.</p>
+<p>O gif abaixo mostra exatamente isso, quando as linhas <code class="docutils literal notranslate"><span class="pre">onix</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Chevrolet&quot;)</span></code> e <code class="docutils literal notranslate"><span class="pre">uno</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Fiat&quot;)</span></code>, o método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> é executado.</p>
+<img alt="../_images/10-01-execucao-metodo-construtor.gif" src="../_images/10-01-execucao-metodo-construtor.gif" />
+<div class="tip admonition">
+<p class="admonition-title">Dica (entendendo o tal do self)</p>
+<p>Eu demorei uns 6 meses pra entender o que significa esse <code class="docutils literal notranslate"><span class="pre">self</span></code>. E depois que entendi, eu tento trazer clareza para as pessoas que estão começando.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">self</span></code> em Python é uma maneira de a própria classe se referir ao objeto que está sendo criado ou manipulado. Eu sei que é difícil entender, mas vamos com calma. Leia e releia várias vezes e pense a respeito.</p>
+<p>Quando executamos <code class="docutils literal notranslate"><span class="pre">onix</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Chevrolet&quot;)</span></code>, o <code class="docutils literal notranslate"><span class="pre">self</span></code> dentro do método <code class="docutils literal notranslate"><span class="pre">__init__</span></code> se refere a esse objeto <code class="docutils literal notranslate"><span class="pre">onix</span></code> em específico. Em palavras mais simples, quando executamos <code class="docutils literal notranslate"><span class="pre">onix</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Chevrolet&quot;)</span></code>, o <code class="docutils literal notranslate"><span class="pre">self</span></code> representa a instância <code class="docutils literal notranslate"><span class="pre">onix</span></code>, e quando executamos <code class="docutils literal notranslate"><span class="pre">uno</span> <span class="pre">=</span> <span class="pre">Carro(marca=&quot;Fiat&quot;)</span></code>, o <code class="docutils literal notranslate"><span class="pre">self</span></code> representa a instância <code class="docutils literal notranslate"><span class="pre">uno</span></code>.</p>
+<p>Quando fazemos <code class="docutils literal notranslate"><span class="pre">self.marca</span> <span class="pre">=</span> <span class="pre">marca</span></code>, estamos dizendo que o atributo <code class="docutils literal notranslate"><span class="pre">.marca</span></code> do objeto sendo criado vai receber algum valor, e esse valor é o parâmetro <code class="docutils literal notranslate"><span class="pre">marca</span></code> da função <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<p>Nós só conseguimos acessar o atributo marca com a notação de ponto, <code class="docutils literal notranslate"><span class="pre">onix.marca</span></code> e <code class="docutils literal notranslate"><span class="pre">uno.marca</span></code>, pois existe <code class="docutils literal notranslate"><span class="pre">self.marca</span> <span class="pre">=</span> <span class="pre">marca</span></code> no método <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<p>Pra finalizar, novamente: o <code class="docutils literal notranslate"><span class="pre">self</span></code> é um parâmetro obrigatório em todos os métodos de uma classe, e ele se refere ao objeto que está sendo criado ou manipulado.</p>
+<p>É super importante você entenda o que é o <code class="docutils literal notranslate"><span class="pre">self</span></code>. Se você não entendeu, por favor, me chame na <a class="reference external" href="https://discord.gg/muuHarcNHb">comunidade do Discord</a> ou no <a class="reference external" href="https://www.linkedin.com/in/henriqueajnb/">meu LinkedIn</a> que eu vou tentar explicar de uma forma que você consiga entender. Se for necessário eu até gravo um vídeo explicando isso. Só preciso saber de alguma forma se você entendeu somente com o texto ou não.</p>
+<p><strong>Atenção: não continue a leitura se não tiver um entendimento claro do que é o <code class="docutils literal notranslate"><span class="pre">self</span></code>. Me chame nos canais de comunicação acima se não entendeu!</strong></p>
+<p>A partir deste ponto do livro, <strong>eu vou pressupor que você entendeu o que é o <code class="docutils literal notranslate"><span class="pre">self</span></code></strong>, ok?</p>
+</div>
+<p>Dado que você entendeu o que significa o <code class="docutils literal notranslate"><span class="pre">self</span></code>, vamos seguir com outros exemplos, acrescentando mais atributos à nossa classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="c1"># O que um carro tem? Estes são os atributos da classe Carro</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cor</span> <span class="o">=</span> <span class="n">cor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ano_fabricacao</span> <span class="o">=</span> <span class="n">ano_fabricacao</span>
+
+
+<span class="n">onix</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span>
+    <span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Chevrolet&quot;</span><span class="p">,</span> <span class="n">modelo</span><span class="o">=</span><span class="s2">&quot;Onix Hatch 1.0&quot;</span><span class="p">,</span> <span class="n">cor</span><span class="o">=</span><span class="s2">&quot;prata&quot;</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="o">=</span><span class="mi">2024</span>
+<span class="p">)</span>
+<span class="n">uno</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span><span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Fiat&quot;</span><span class="p">,</span> <span class="n">modelo</span><span class="o">=</span><span class="s2">&quot;Uno 1.6&quot;</span><span class="p">,</span> <span class="n">cor</span><span class="o">=</span><span class="s2">&quot;Vermelho&quot;</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="o">=</span><span class="mi">1997</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Acessando os atributos do objeto onix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onix</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onix</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onix</span><span class="o">.</span><span class="n">cor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onix</span><span class="o">.</span><span class="n">ano_fabricacao</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Acessando os atributos do objeto uno:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="o">.</span><span class="n">cor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="o">.</span><span class="n">ano_fabricacao</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Acessando os atributos do objeto onix:
+Chevrolet
+Onix Hatch 1.0
+prata
+2024
+Acessando os atributos do objeto uno:
+Fiat
+Uno 1.6
+Vermelho
+1997
+</pre></div>
+</div>
+</div>
+</div>
+<p>Olhem só que legal! Agora temos 4 atributos na nossa classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>: <code class="docutils literal notranslate"><span class="pre">marca</span></code>, <code class="docutils literal notranslate"><span class="pre">modelo</span></code>, <code class="docutils literal notranslate"><span class="pre">cor</span></code> e <code class="docutils literal notranslate"><span class="pre">ano_fabricacao</span></code>.</p>
+<p>E quando vamos instanciar um novo carro, podemos passar valores diferentes para uma nova instância, e cada instância terá seus próprios valores para cada um dos atributos.</p>
+<p>Notem bem os conceitos:</p>
+<ul class="simple">
+<li><p><strong>classe</strong> é o molde genérico que define o que tem em um carro. No nosso exemplo, a classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>.</p></li>
+<li><p><strong>instância</strong> é um objeto específico criado a partir do molde genérico. No nosso exemplo, temos 2 instâncias, <code class="docutils literal notranslate"><span class="pre">onix</span></code> e <code class="docutils literal notranslate"><span class="pre">uno</span></code>.</p></li>
+<li><p><strong>atributos</strong> são as características do objeto criado, o que ele tem. No nosso exemplo, a classe tem os seguintes atributos: <code class="docutils literal notranslate"><span class="pre">marca</span></code>, <code class="docutils literal notranslate"><span class="pre">modelo</span></code>, <code class="docutils literal notranslate"><span class="pre">cor</span></code> e <code class="docutils literal notranslate"><span class="pre">ano_fabricacao</span></code>.</p></li>
+</ul>
+<p>É como se agrupássemos variáveis de algo (um objeto) para representar algo do mundo real. Esse é o poder da POO!</p>
+<p>A parte mais interessante é que a estratégia para definir os atributos é você quem escolhe. Vamos modificar um pouco a nossa classe para representar um carro zero quilômetros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="c1"># O que um carro tem? Estes são os atributos da classe Carro</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cor</span> <span class="o">=</span> <span class="n">cor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ano_fabricacao</span> <span class="o">=</span> <span class="n">ano_fabricacao</span>
+        <span class="c1"># Aqui eu defino a quilometragem inicial de todas as instâncias da classe Carro como 0 por padrão</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quilometragem</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="n">onix</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span>
+    <span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Chevrolet&quot;</span><span class="p">,</span> <span class="n">modelo</span><span class="o">=</span><span class="s2">&quot;Onix Hatch 1.0&quot;</span><span class="p">,</span> <span class="n">cor</span><span class="o">=</span><span class="s2">&quot;prata&quot;</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="o">=</span><span class="mi">2024</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">marca</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">modelo</span><span class="si">}</span><span class="s2"> está com </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">quilometragem</span><span class="si">}</span><span class="s2"> km rodados&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O Chevrolet Onix Hatch 1.0 está com 0 km rodados
+</pre></div>
+</div>
+</div>
+</div>
+<p>No exemplo acima, eu adicionei um novo atributo <code class="docutils literal notranslate"><span class="pre">quilometragem</span></code> que representa a quilometragem do carro, que, por padrão, é zero. Ou seja, qualquer instanciação de um carro da forma como foi feito, o objeto será representado por um carro zero quilômetros.</p>
+<p>Quem define como os atributos serão criados é você, e para isso, é necessário bastante criatividade e poder de abstração!</p>
+</section>
+<section id="metodos-o-que-o-objeto-faz">
+<h3>Métodos (o que o objeto faz?)<a class="headerlink" href="#metodos-o-que-o-objeto-faz" title="Link to this heading">#</a></h3>
+<p>Da mesma forma que podemos pensar que <strong>atributos são o que um objeto tem</strong>, podemos pensar que <strong>métodos são o que um objeto faz</strong>. Métodos são funções que pertencem a um objeto, e são definidos dentro da classe. Eu te pergunto, o que um carro faz? Podemos pensar que um carro viaja, acelera, freia, liga, desliga, e por aí vai. Vamos ver como é a implementação do método viaja.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cor</span> <span class="o">=</span> <span class="n">cor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ano_fabricacao</span> <span class="o">=</span> <span class="n">ano_fabricacao</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quilometragem</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">viaja</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">km_viajados</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quilometragem</span> <span class="o">+=</span> <span class="n">km_viajados</span>
+
+
+<span class="n">onix</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span>
+    <span class="n">marca</span><span class="o">=</span><span class="s2">&quot;Chevrolet&quot;</span><span class="p">,</span> <span class="n">modelo</span><span class="o">=</span><span class="s2">&quot;Onix Hatch 1.0&quot;</span><span class="p">,</span> <span class="n">cor</span><span class="o">=</span><span class="s2">&quot;prata&quot;</span><span class="p">,</span> <span class="n">ano_fabricacao</span><span class="o">=</span><span class="mi">2024</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;O </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">marca</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">modelo</span><span class="si">}</span><span class="s2"> está com </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">quilometragem</span><span class="si">}</span><span class="s2"> km rodados antes de viajar.&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># O carro viajou 100 km quando eu chamo o método</span>
+<span class="n">onix</span><span class="o">.</span><span class="n">viaja</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># O carro viajou 100 km quando eu chamo o método</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Depois da primeira viagem o carro agora está com </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">quilometragem</span><span class="si">}</span><span class="s2"> km rodados.&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># O carro viajou mais 300 km na segunda chamada do método</span>
+<span class="n">onix</span><span class="o">.</span><span class="n">viaja</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Depois da segunda viagem o carro agora está com </span><span class="si">{</span><span class="n">onix</span><span class="o">.</span><span class="n">quilometragem</span><span class="si">}</span><span class="s2"> km rodados.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O Chevrolet Onix Hatch 1.0 está com 0 km rodados antes de viajar.
+Depois da primeira viagem o carro agora está com 100 km rodados.
+Depois da segunda viagem o carro agora está com 400 km rodados.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observem só que legal!</p>
+<p>Nós definimos um método <code class="docutils literal notranslate"><span class="pre">viaja</span></code> que recebe como parâmetro a distância que o carro vai viajar (e o <code class="docutils literal notranslate"><span class="pre">self</span></code>, mas já vimos que ele aparecerá como primeiro parâmetro em todos os métodos) e somamos esse valor ao atributo <code class="docutils literal notranslate"><span class="pre">.quilometragem</span></code> da instância <code class="docutils literal notranslate"><span class="pre">onix</span></code> criada. Percebam que o atributo é acessado via <code class="docutils literal notranslate"><span class="pre">onix.quilometragem</span></code> e o valor é acumulado. Toda vez que eu chamar <code class="docutils literal notranslate"><span class="pre">onix.viaja(distancia)</span></code>, o valor do atributo <code class="docutils literal notranslate"><span class="pre">.quilometragem</span></code> será incrementado.</p>
+<p>É literalmente como se fosse um estado do carro, que se inicia com quilometragem zero e se acumula a cada viagem (chamada do método) que o carro faz.</p>
+<p>Não é simplesmente fantástico o que conseguimos fazer com POO? Daqui pra frente, é a imaginação e a criatividade que falam mais alto na hora de criar nossos objetos!</p>
+</section>
+</section>
+<section id="exemplos-reais">
+<h2>Exemplos reais<a class="headerlink" href="#exemplos-reais" title="Link to this heading">#</a></h2>
+<p>Vamos ver alguns exemplos mais reais com contexto de negócio.</p>
+<section id="exemplo-1-conta-bancaria">
+<h3>Exemplo 1: conta bancária<a class="headerlink" href="#exemplo-1-conta-bancaria" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ContaBancaria</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">saldo</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">=</span> <span class="n">saldo</span>
+
+    <span class="k">def</span> <span class="nf">depositar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">+=</span> <span class="n">valor</span>
+
+    <span class="k">def</span> <span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">&gt;=</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">-=</span> <span class="n">valor</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="n">conta_joao</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="n">numero</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">saldo</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">conta_maria</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="n">numero</span><span class="o">=</span><span class="mi">5678</span><span class="p">,</span> <span class="n">saldo</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui temos um exemplo bem clássico de uma classe que representa uma conta bancária. No nosso caso em específico, a classe <code class="docutils literal notranslate"><span class="pre">ContaBancaria</span></code> tem os atributos <code class="docutils literal notranslate"><span class="pre">numero</span></code> e <code class="docutils literal notranslate"><span class="pre">saldo</span></code>, e os métodos <code class="docutils literal notranslate"><span class="pre">depositar</span></code> e <code class="docutils literal notranslate"><span class="pre">sacar</span></code> (além do método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code>).</p>
+<p>Podemos até pensar em outros métodos, como <code class="docutils literal notranslate"><span class="pre">transferir</span></code>, <code class="docutils literal notranslate"><span class="pre">extrato</span></code>, <code class="docutils literal notranslate"><span class="pre">render_juros</span></code>, e por aí vai. A sua criatividade é o limite!</p>
+</section>
+<section id="exemplo-2-reserva-de-hotel">
+<h3>Exemplo 2: reserva de hotel<a class="headerlink" href="#exemplo-2-reserva-de-hotel" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Reserva</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_cliente</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">hora</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_cliente</span> <span class="o">=</span> <span class="n">id_cliente</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirmada</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">confirmar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirmada</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pensando em uma reserva, temos o cliente que fez a reserva, a data e hora da reserva. Nossa classe bem simples ainda tem implementado um método <code class="docutils literal notranslate"><span class="pre">confirmar</span></code> que atualiza o status do atributo <code class="docutils literal notranslate"><span class="pre">.confirmada</span></code> para <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</section>
+<section id="exemplo-3-pedido-de-uma-plataforma-de-e-commerce">
+<h3>Exemplo 3: pedido de uma plataforma de e-commerce<a class="headerlink" href="#exemplo-3-pedido-de-uma-plataforma-de-e-commerce" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pedido</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">itens</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">itens</span> <span class="o">=</span> <span class="n">itens</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Em processamento&quot;</span>
+
+    <span class="k">def</span> <span class="nf">calcular_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;preco&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;quantidade&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">itens</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">atualizar_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">novo_status</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">novo_status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nada de novo até aqui. Temos uma classe <code class="docutils literal notranslate"><span class="pre">Pedido</span></code>, que contém os atributos <code class="docutils literal notranslate"><span class="pre">numero</span></code> representando o número do pedido e <code class="docutils literal notranslate"><span class="pre">itens</span></code>, que são os itens do pedido. A partir de um pedido podemos calcular o total do pedido baseado no preço unitário e quantidade de cada item da lista. É possível ainda atualizar o status de um pedido passando um novo status.</p>
+<p>Não sei se vocês perceberam, mas a POO é abstração pura! Você consegue representar qualquer coisa do mundo real em código, e isso realmente é muito poderoso!</p>
+</section>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Vimos até aqui o básico de POO. Acredite, é o básico mesmo, pois este é um tema que é vasto e complexo. Mas o que eu quero que você entenda é que POO é uma forma de programar que considera a construção de objetos personalizados para resolver problemas. E a partir de agora, nós aprendemos a construir nossos próprios objetos em Python.</p>
+<p>Neste capítulo, vimos os conceitos fundamentais de POO, como classe, instância, atributos e métodos, incluindo o método construtor. Vimos também exemplos práticos de como criar classes e objetos em Python, e como definir atributos e métodos.</p>
+<p>Na próxima seção vamos aprofundar um pouco mais em POO, e vamos ver conceitos mais avançados, como atributos de classe, herança, polimorfismo e encapsulamento! Até lá!</p>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -494,6 +875,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../09-modulos/04-modulos-terceiros.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Bibliotecas de terceiros</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercicios.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Lista de exercícios</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -509,9 +908,24 @@ document.write(`
     <i class="fa-solid fa-list"></i> Conteúdo
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-paradigmas-de-programacao">Os paradigmas de programação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-poo">O que é POO?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais-de-poo">Conceitos fundamentais de POO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classe">Classe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instancia">Instância</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-o-que-o-objeto-tem">Atributos (o que o objeto tem?)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-o-que-o-objeto-faz">Métodos (o que o objeto faz?)</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-reais">Exemplos reais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-1-conta-bancaria">Exemplo 1: conta bancária</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-2-reserva-de-hotel">Exemplo 2: reserva de hotel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-3-pedido-de-uma-plataforma-de-e-commerce">Exemplo 3: pedido de uma plataforma de e-commerce</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
   </nav></div>
 
 </div></div>

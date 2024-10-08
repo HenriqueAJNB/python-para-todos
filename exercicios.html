@@ -55,15 +55,28 @@
     <script src="_static/translations.js?v=5f54a428"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JSWERJSPMN"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercicios';</script>
     <link rel="icon" href="_static/python.svg"/>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
-    <link rel="prev" title="Bibliotecas de terceiros" href="09-modulos/04-modulos-terceiros.html" />
+    <link rel="prev" title="Introdução" href="10-orientacao-objetos/01-introducao.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="pt"/>
@@ -251,6 +264,10 @@
 <li class="toctree-l1"><a class="reference internal" href="09-modulos/03-modulos-proprios.html">Módulos customizados</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="09-modulos/04-modulos-terceiros.html">Bibliotecas de terceiros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programação orientada a objetos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10-orientacao-objetos/01-introducao.html">Introdução</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="current nav bd-sidenav">
@@ -1090,7 +1107,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;bateria&#39;, &#39;pneu&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;disco de freio&#39;, &#39;mangueira de água&#39;, &#39;alternador&#39;, &#39;válvula termostática&#39;}, &#39;B&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;correia dentada&#39;, &#39;junta homocinética&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &#39;amortecedor&#39;, &quot;bomba d&#39;água&quot;, &#39;bateria&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &#39;alternador&#39;}, &#39;C&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;junta homocinética&#39;, &#39;radiador&#39;, &#39;fluido de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;pneu&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;disco de freio&#39;, &#39;mangueira de água&#39;, &#39;válvula termostática&#39;}, &#39;D&#39;: {&#39;correia dentada&#39;, &#39;filtro de óleo&#39;, &#39;junta homocinética&#39;, &#39;radiador&#39;, &#39;amortecedor&#39;, &quot;bomba d&#39;água&quot;, &#39;bateria&#39;, &#39;pneu&#39;, &#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &#39;alternador&#39;, &#39;pastilha de freio&#39;, &#39;válvula termostática&#39;}, &#39;E&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;correia dentada&#39;, &#39;junta homocinética&#39;, &#39;fluido de freio&#39;, &#39;bateria&#39;, &#39;sensor de oxigênio&#39;, &#39;disco de freio&#39;, &#39;alternador&#39;, &#39;pastilha de freio&#39;, &#39;válvula termostática&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;pneu&#39;, &#39;radiador&#39;, &#39;bateria&#39;, &#39;óleo de motor&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;fluido de freio&#39;, &#39;correia alternador&#39;}, &#39;B&#39;: {&#39;junta homocinética&#39;, &#39;radiador&#39;, &#39;bateria&#39;, &#39;amortecedor&#39;, &#39;óleo de motor&#39;, &#39;correia dentada&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;fluido de freio&#39;, &#39;correia alternador&#39;}, &#39;C&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;junta homocinética&#39;, &#39;pneu&#39;, &#39;radiador&#39;, &#39;óleo de motor&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;fluido de freio&#39;, &#39;correia alternador&#39;}, &#39;D&#39;: {&#39;válvula termostática&#39;, &#39;junta homocinética&#39;, &#39;pneu&#39;, &#39;radiador&#39;, &#39;bateria&#39;, &#39;amortecedor&#39;, &#39;correia dentada&#39;, &#39;filtro de óleo&#39;, &quot;bomba d&#39;água&quot;, &#39;mangueira de água&#39;, &#39;alternador&#39;, &#39;rolamento de roda&#39;, &#39;pastilha de freio&#39;}, &#39;E&#39;: {&#39;disco de freio&#39;, &#39;válvula termostática&#39;, &#39;junta homocinética&#39;, &#39;bateria&#39;, &#39;óleo de motor&#39;, &#39;correia dentada&#39;, &#39;alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;fluido de freio&#39;, &#39;pastilha de freio&#39;, &#39;correia alternador&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1161,7 +1178,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;}, &#39;E&#39;: {&quot;bomba d&#39;água&quot;, &#39;radiador&#39;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;sensor de oxigênio&#39;, &#39;fluido de freio&#39;, &#39;correia alternador&#39;, &#39;óleo de motor&#39;}, &#39;E&#39;: {&#39;rolamento de roda&#39;, &#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;radiador&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1703,12 +1720,12 @@ Redução sugerida em cada mês: 4.08 toneladas
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="09-modulos/04-modulos-terceiros.html"
+       href="10-orientacao-objetos/01-introducao.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Bibliotecas de terceiros</p>
+        <p class="prev-next-title">Introdução</p>
       </div>
     </a>
 </div>
