@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sets &#8212; Python para todos</title>
+    <title>Conjuntos &#8212; Python para todos</title>
   
   
   
@@ -72,7 +72,7 @@
                 gtag('config', 'G-JSWERJSPMN');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '06-estruturas-de-dados/05-sets';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06-estruturas-de-dados/05-conjuntos';</script>
     <link rel="icon" href="../_static/python.svg"/>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
@@ -247,7 +247,7 @@
 <li class="toctree-l1"><a class="reference internal" href="02-listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-tuplas.html">Tuplas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-dicionarios.html">Dicionários</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conjuntos</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
 <ul class="nav bd-sidenav">
@@ -344,7 +344,7 @@
       
       
       
-      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-estruturas-de-dados/05-sets.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F06-estruturas-de-dados/05-conjuntos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Abra um problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,7 +374,7 @@
       
       
       
-      <li><a href="../_sources/06-estruturas-de-dados/05-sets.ipynb" target="_blank"
+      <li><a href="../_sources/06-estruturas-de-dados/05-conjuntos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Baixar arquivo fonte"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -458,7 +458,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sets</h1>
+    <h1>Conjuntos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -475,7 +475,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interseccao-intersection">Intersecção (Intersection)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-difference">Diferença (Difference)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-simetrica-symmetric-difference">Diferença simétrica (symmetric difference)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subset-e-superset">Verificação de continência (subset e superset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subconjunto-e-superconjunto">Verificação de continência (subconjunto e superconjunto)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 </ul>
 </li>
@@ -492,18 +492,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="sets">
-<h1>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h1>
-<p>Sets é uma estrutura de dados um tanto quanto interessante (e pouco falada, na minha visão). Trata-se de uma sequencia também, assim como lista e tuplas, mas com algumas características bem distintas:</p>
+  <section id="conjuntos">
+<h1>Conjuntos<a class="headerlink" href="#conjuntos" title="Link to this heading">#</a></h1>
+<p>Conjuntos, em inglês <em>sets</em>, são uma estrutura de dados interessante (e pouco falada, na minha visão). São coleções mas não são considerados sequências, como listas e tuplas, por não preservarem a ordem e os itens não poderem ser acessados por posição, tendo assim algumas características distintas:</p>
 <ul class="simple">
-<li><p><strong>Elementos únicos:</strong> Um set não permite que elementos duplicados sejam armazenados. Se você tentar adicionar o mesmo elemento mais de uma vez, ele será armazenado apenas uma vez.</p></li>
-<li><p><strong>Sem ordem definida:</strong> Os elementos em um set não têm uma ordem específica. Diferente de listas ou tuplas, onde a ordem dos elementos é importante, em sets a posição dos elementos não é garantida e pode variar.</p></li>
-<li><p><strong>Operações matemáticas:</strong> Sets suportam operações matemáticas como união, interseção, diferença e diferença simétrica, que são úteis para comparar e combinar conjuntos de dados.</p></li>
+<li><p><strong>Elementos únicos:</strong> Um conjunto não permite que elementos duplicados sejam armazenados. Se você tentar adicionar o mesmo elemento mais de uma vez, ele será armazenado apenas uma vez.</p></li>
+<li><p><strong>Sem ordem definida:</strong> Os elementos em um conjunto não têm uma ordem específica. Diferente de listas ou tuplas, onde a ordem dos elementos é importante, em conjuntos a posição dos elementos não é garantida e pode variar.</p></li>
+<li><p><strong>Operações matemáticas:</strong> Conjuntos suportam operações matemáticas como união, interseção, diferença e diferença simétrica, que são úteis para comparar e combinar conjuntos de dados.</p></li>
 </ul>
-<p>Vamos aprofundar mais neste capítulo. Sugiro fortemente que você leia a documntação oficial sobre sets <a class="reference external" href="https://docs.python.org/pt-br/3/library/stdtypes.html#set">aqui</a>, ela é a base deste capítulo todo.</p>
+<p>Vamos aprofundar mais neste capítulo. Sugiro fortemente que você leia a documntação oficial sobre conjuntos <a class="reference external" href="https://docs.python.org/pt-br/3/library/stdtypes.html#set">aqui</a>, ela é a base deste capítulo todo.</p>
 <section id="sintaxe-basica">
 <h2>Sintaxe básica<a class="headerlink" href="#sintaxe-basica" title="Link to this heading">#</a></h2>
-<p>a sintaxe básica para criar um set envolve colocar os elementos entre chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Por exemplo, <code class="docutils literal notranslate"><span class="pre">conjunto</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3}</span></code> cria um set contendo os números 1, 2 e 3 (o 3 aparece apenas uma vez, pois o set elimina duplicatas de forma automática).</p>
+<p>a sintaxe básica para criar um conjunto (<em>set</em>) envolve colocar os elementos entre chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Por exemplo, <code class="docutils literal notranslate"><span class="pre">conjunto</span> <span class="pre">=</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3}</span></code> cria um conjunto contendo os números 1, 2 e 3 (o 3 aparece apenas uma vez, pois o conjunto elimina duplicatas de forma automática).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
@@ -517,19 +517,19 @@ document.write(`
 </div>
 </div>
 </div>
-<p>A diferença entre a sintaxe de um set e a de um dicionário está no formato e no propósito de cada estrutura, apesar de ambos se iniciarem com <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>A diferença entre a sintaxe de um conjunto e a de um dicionário está no formato e no propósito de cada estrutura, apesar de ambos se iniciarem com <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota (type)</p>
-<p>Lembra da função <code class="docutils literal notranslate"><span class="pre">type</span></code>? Se quiser de fato conferir se uma variável que começa e termina com <code class="docutils literal notranslate"><span class="pre">{}</span></code> é um set ou dicionário, é possível verificar com a função <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+<p>Lembra da função <code class="docutils literal notranslate"><span class="pre">type</span></code>? Se quiser de fato conferir se uma variável que começa e termina com <code class="docutils literal notranslate"><span class="pre">{}</span></code> é um conjunto ou dicionário, é possível verificar com a função <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
 </div>
-<p>Um set é uma coleção de elementos únicos, sem nenhuma relação de chave e valor, e os elementos são separados por vírgulas dentro das chaves. Já um dicionário também é criado com chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>, mas ele armazena pares de chave e valor, como <code class="docutils literal notranslate"><span class="pre">pessoa</span> <span class="pre">=</span> <span class="pre">{&quot;nome&quot;:</span> <span class="pre">&quot;João&quot;,</span> <span class="pre">&quot;idade&quot;:</span> <span class="pre">30}</span></code>. No dicionário, cada chave é associada a um valor específico, enquanto no set, você apenas tem valores sem uma chave correspondente.</p>
-<p>Portanto, a principal diferença na sintaxe é que em um set, você apenas lista os elementos, enquanto em um dicionário, você precisa especificar chaves e valores, separados por dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Um conjunto é uma coleção de elementos únicos, sem nenhuma relação de chave e valor, e os elementos são separados por vírgulas dentro das chaves. Já um dicionário também é criado com chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>, mas ele armazena pares de chave e valor, como <code class="docutils literal notranslate"><span class="pre">pessoa</span> <span class="pre">=</span> <span class="pre">{&quot;nome&quot;:</span> <span class="pre">&quot;João&quot;,</span> <span class="pre">&quot;idade&quot;:</span> <span class="pre">30}</span></code>. No dicionário, cada chave é associada a um valor específico, enquanto no conjunto, você apenas tem valores sem uma chave correspondente.</p>
+<p>Portanto, a principal diferença na sintaxe é que em um conjunto, você apenas lista os elementos, enquanto em um dicionário, você precisa especificar chaves e valores, separados por dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 </section>
 <section id="caso-de-uso-real">
 <h2>Caso de uso real<a class="headerlink" href="#caso-de-uso-real" title="Link to this heading">#</a></h2>
 <p>Supondo que uma pessoa A tenha uma carteira de investimento com os seguintes fundos imobiliários: BPFF11, BTLG11, CSHG11, FEXC11, FIIB11, HFOF11, HGLG11 e HGRE11.</p>
 <p>Uma outra pessoa B também tem uma outra carteira de fundos imobiliários com os seguintes fundos: BCFF11, FIIJ11, GGRC11, HFOF11,  HGLG11, HGLG11,  HGPO11 e HGRU11.</p>
-<p>Com sets podemos rapidamente responder às seguintes perguntas:</p>
+<p>Com conjuntos podemos rapidamente responder às seguintes perguntas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">investimentos_pessoa_a</span> <span class="o">=</span> <span class="p">{</span>
@@ -560,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HFOF11&#39;, &#39;HGLG11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGLG11&#39;, &#39;HFOF11&#39;}
 </pre></div>
 </div>
 </div>
@@ -595,7 +595,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BPFF11&#39;, &#39;CSHG11&#39;, &#39;HFOF11&#39;, &#39;BTLG11&#39;, &#39;HGRE11&#39;, &#39;BCFF11&#39;, &#39;GGRC11&#39;, &#39;HGLG11&#39;, &#39;HGPO11&#39;, &#39;FIIJ11&#39;, &#39;FIIB11&#39;, &#39;HGRU11&#39;, &#39;FEXC11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGRE11&#39;, &#39;HFOF11&#39;, &#39;BTLG11&#39;, &#39;HGRU11&#39;, &#39;GGRC11&#39;, &#39;FEXC11&#39;, &#39;CSHG11&#39;, &#39;HGLG11&#39;, &#39;FIIB11&#39;, &#39;BPFF11&#39;, &#39;HGPO11&#39;, &#39;BCFF11&#39;, &#39;FIIJ11&#39;}
 </pre></div>
 </div>
 </div>
@@ -630,7 +630,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BPFF11&#39;, &#39;CSHG11&#39;, &#39;BTLG11&#39;, &#39;HGRE11&#39;, &#39;FIIB11&#39;, &#39;FEXC11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGRE11&#39;, &#39;BTLG11&#39;, &#39;CSHG11&#39;, &#39;FEXC11&#39;, &#39;FIIB11&#39;, &#39;BPFF11&#39;}
 </pre></div>
 </div>
 </div>
@@ -665,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;BCFF11&#39;, &#39;GGRC11&#39;, &#39;FIIJ11&#39;, &#39;HGPO11&#39;, &#39;HGRU11&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HGRU11&#39;, &#39;GGRC11&#39;, &#39;HGPO11&#39;, &#39;BCFF11&#39;, &#39;FIIJ11&#39;}
 </pre></div>
 </div>
 </div>
@@ -673,8 +673,8 @@ document.write(`
 </section>
 <section id="teoria-dos-conjuntos">
 <h2>Teoria dos conjuntos<a class="headerlink" href="#teoria-dos-conjuntos" title="Link to this heading">#</a></h2>
-<p>Sets são a estrutura ideal para trabalharmos pensando em teoria dos conjuntos.Na teoria dos conjuntos, trabalhamos com operações que nos ajudam a combinar, comparar e manipular coleções de elementos. Em Python, a estrutura de dados set (conjunto) oferece uma maneira eficiente de realizar essas operações. Vamos explorar as principais operações entre conjuntos.</p>
-<img alt="../_images/06-05-sets-theory.png" id="sets-theory" src="../_images/06-05-sets-theory.png" />
+<p>Conjuntos são a estrutura ideal para trabalharmos pensando em teoria dos conjuntos. Na teoria dos conjuntos, trabalhamos com operações que nos ajudam a combinar, comparar e manipular coleções de elementos. Em Python, a estrutura de dados conjunto (<em>set</em>) oferece uma maneira eficiente de realizar essas operações. Vamos explorar as principais operações entre conjuntos.</p>
+<img alt="../_images/06-05-teoria-conjuntos.png" id="teoria-conjuntos" src="../_images/06-05-teoria-conjuntos.png" />
 <p><em><p style="text-align: center;">Teoria dos conjuntos (fonte: autoria própria)</p></em></p>
 <section id="uniao-union">
 <h3>União (Union)<a class="headerlink" href="#uniao-union" title="Link to this heading">#</a></h3>
@@ -824,11 +824,11 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="verificacao-de-continencia-subset-e-superset">
-<h3>Verificação de continência (subset e superset)<a class="headerlink" href="#verificacao-de-continencia-subset-e-superset" title="Link to this heading">#</a></h3>
+<section id="verificacao-de-continencia-subconjunto-e-superconjunto">
+<h3>Verificação de continência (subconjunto e superconjunto)<a class="headerlink" href="#verificacao-de-continencia-subconjunto-e-superconjunto" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Subconjunto (subset):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issubset()</span></code>.</p></li>
-<li><p><strong>Superconjunto (superset):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issuperset()</span></code>.</p></li>
+<li><p><strong>Subconjunto (<em>subset</em>):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issubset()</span></code>.</p></li>
+<li><p><strong>Superconjunto (<em>superset</em>):</strong> Verifica se todos os elementos de um conjunto estão presentes em outro conjunto. Usamos o operador <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> ou o método <code class="docutils literal notranslate"><span class="pre">.issuperset()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,15 +894,15 @@ True
 </section>
 <section id="pratica">
 <h2>Prática<a class="headerlink" href="#pratica" title="Link to this heading">#</a></h2>
-<p>Sugiro o <a class="reference internal" href="../exercicios.html#exercicio-11"><span class="std std-ref">exercício 11</span></a> da lista para você praticar a estrutura de sets.</p>
+<p>Sugiro o <a class="reference internal" href="../exercicios.html#exercicio-11"><span class="std std-ref">exercício 11</span></a> da lista para você praticar a estrutura de conjuntos.</p>
 </section>
 <section id="conclusao">
 <h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
-<p>Neste capítulo, exploramos em detalhes os sets em Python, uma estrutura de dados fundamental para lidar com teoria dos conjuntos. Aprendemos que sets são coleções não ordenadas de elementos únicos, o que os torna extremamente úteis para tarefas como remoção de duplicatas, testes de pertinência e operações entre conjuntos.</p>
-<p>Vimos como criar sets, adicionar e remover elementos, e realizar operações comuns, como união, interseção e diferença. Exploramos as principais propriedades dos sets, como a impossibilidade de duplicatas e a natureza desordenada dos elementos. Isso os torna uma escolha ideal quando a ordem dos elementos não é relevante, mas a unicidade é essencial.</p>
-<p>Além disso, discutimos o uso prático de sets em situações do mundo real, como verificação de ações exclusivas em carteiras de investimentos, identificação de amigos em comum em redes sociais e muito mais. Demonstramos como os sets podem simplificar significativamente muitos problemas comuns, tornando-os uma ferramenta essencial no arsenal do desenvolvedor Python.</p>
-<p>À medida que você continuar a explorar a linguagem Python, recomendo manter os sets em mente e considerar seu uso sempre que precisar trabalhar com coleções de elementos únicos. Sua eficiência e sua sintaxe concisa os tornam uma opção poderosa para uma ampla gama de tarefas de programação.</p>
-<p>Com o domínio das estruturas de dados básicas, como strings, listas, tuplas, dicionários e sets, agora estamos prontos para avançar para o próximo tópico: fluxos de controle. Lá, aprenderemos a criar estruturas de decisão, os famosos <code class="docutils literal notranslate"><span class="pre">if-else-elif</span></code> e de repetição, <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, que nos permitirão escrever códigos cada vez mais sofisticados e adaptáveis.</p>
+<p>Neste capítulo, exploramos em detalhes os conjuntos em Python, uma estrutura de dados fundamental para lidar com teoria dos conjuntos. Aprendemos que conjuntos são coleções não ordenadas de elementos únicos, o que os torna extremamente úteis para tarefas como remoção de duplicatas, testes de pertinência e operações entre conjuntos.</p>
+<p>Vimos como criar conjuntos, adicionar e remover elementos, e realizar operações comuns, como união, interseção e diferença. Exploramos as principais propriedades dos conjuntos, como a impossibilidade de duplicatas e a natureza desordenada dos elementos. Isso os torna uma escolha ideal quando a ordem dos elementos não é relevante, mas a unicidade é essencial.</p>
+<p>Além disso, discutimos o uso prático de conjuntos em situações do mundo real, como verificação de ações exclusivas em carteiras de investimentos, identificação de amigos em comum em redes sociais e muito mais. Demonstramos como os conjuntos podem simplificar significativamente muitos problemas comuns, tornando-os uma ferramenta essencial no arsenal do desenvolvedor Python.</p>
+<p>À medida que você continuar a explorar a linguagem Python, recomendo manter os conjuntos em mente e considerar seu uso sempre que precisar trabalhar com coleções de elementos únicos. Sua eficiência e sua sintaxe concisa os tornam uma opção poderosa para uma ampla gama de tarefas de programação.</p>
+<p>Com o domínio das estruturas de dados básicas, como strings, listas, tuplas, dicionários e conjuntos, agora estamos prontos para avançar para o próximo tópico: fluxos de controle. Lá, aprenderemos a criar estruturas de decisão, os famosos <code class="docutils literal notranslate"><span class="pre">if-else-elif</span></code> e de repetição, <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, que nos permitirão escrever códigos cada vez mais sofisticados e adaptáveis.</p>
 </section>
 </section>
 
@@ -977,7 +977,7 @@ True
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interseccao-intersection">Intersecção (Intersection)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-difference">Diferença (Difference)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenca-simetrica-symmetric-difference">Diferença simétrica (symmetric difference)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subset-e-superset">Verificação de continência (subset e superset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificacao-de-continencia-subconjunto-e-superconjunto">Verificação de continência (subconjunto e superconjunto)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pertencimento">Pertencimento</a></li>
 </ul>
 </li>
