@@ -64,6 +64,7 @@ parts:
 - caption: Programação orientada a objetos
   chapters:
   - file: 10-orientacao-objetos/01-introducao.ipynb
+  - file: 10-orientacao-objetos/02-atributo-classe.ipynb
 
 - caption: Pratique
   chapters:
