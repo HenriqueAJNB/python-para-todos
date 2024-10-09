@@ -247,7 +247,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/02-listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/03-tuplas.html">Tuplas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/04-dicionarios.html">Dicionários</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/05-conjuntos.html">Conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/05-sets.html">Conjuntos</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
 <ul class="current nav bd-sidenav">
@@ -488,10 +488,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-conjuntos">Compreensão de listas, dicionários e conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-conjuntos">Compreensão de conjuntos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-sets">Compreensão de sets</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
@@ -1330,10 +1330,10 @@ Total de estoque contabilizado: 620 itens.
 <p>Resumindo: a diferença entre <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> é que o <code class="docutils literal notranslate"><span class="pre">break</span></code> interrompe o laço e o <code class="docutils literal notranslate"><span class="pre">continue</span></code> pula para a próxima iteração. Ambos são muito usados com a estrutura condicional <code class="docutils literal notranslate"><span class="pre">if</span></code> para realizar a tomada de decisão.</p>
 </section>
 </section>
-<section id="compreensao-de-listas-dicionarios-e-conjuntos">
-<h2>Compreensão de listas, dicionários e conjuntos<a class="headerlink" href="#compreensao-de-listas-dicionarios-e-conjuntos" title="Link to this heading">#</a></h2>
-<p>Python oferece uma forma um tanto quanto diferente para unir laços de repetição e estruturas de decisão com estrutras como listas, dicionários e conjuntos.</p>
-<p>Compreensões de listas, dicionários e conjuntos permitem que você crie novas sequencias a partir de sequências existentes de uma forma bastante legível. Vamos explorar como utilizar compreensões para cada tipo de coleção, entender suas sintaxes, e ver exemplos práticos de como aplicá-las.</p>
+<section id="compreensao-de-listas-dicionarios-e-sets">
+<h2>Compreensão de listas, dicionários e sets<a class="headerlink" href="#compreensao-de-listas-dicionarios-e-sets" title="Link to this heading">#</a></h2>
+<p>Python oferece uma forma um tanto quanto diferente para unir laços de repetição e estruturas de decisão com estrutras como listas, dicionários e sets.</p>
+<p>Compreensões de listas, dicionários e sets permitem que você crie novas sequencias a partir de sequências existentes de uma forma bastante legível. Vamos explorar como utilizar compreensões para cada tipo de coleção, entender suas sintaxes, e ver exemplos práticos de como aplicá-las.</p>
 <section id="compreensao-de-listas">
 <h3>Compreensão de listas<a class="headerlink" href="#compreensao-de-listas" title="Link to this heading">#</a></h3>
 <p>A compreensão de listas é uma maneira compacta de criar listas. Em vez de usar loops tradicionais como vimos nesse capítulo para preencher uma lista, você pode usar uma única linha de código para gerar elementos a partir de uma sequência existente. Antes, vamos ver o exemplo de como seria sem usar essa técnica.</p>
@@ -1519,9 +1519,9 @@ Total de estoque contabilizado: 620 itens.
 </div>
 </div>
 </section>
-<section id="compreensao-de-conjuntos">
-<h3>Compreensão de conjuntos<a class="headerlink" href="#compreensao-de-conjuntos" title="Link to this heading">#</a></h3>
-<p>Podemos também criar compreensão de conjuntos de forma similar.</p>
+<section id="compreensao-de-sets">
+<h3>Compreensão de sets<a class="headerlink" href="#compreensao-de-sets" title="Link to this heading">#</a></h3>
+<p>Podemos também criar compreensão de sets de forma similar.</p>
 <p>Imagine que você tenha uma lista de dicionários, onde cada dicionário representa um cliente com informações como nome, idade, e o país de origem. Queremos identificar todos os países únicos de onde os clientes são provenientes para, por exemplo, realizar uma segmentação de mercado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;idade&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;pais&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasil&quot;</span><span class="p">},</span>
@@ -1538,7 +1538,7 @@ Total de estoque contabilizado: 620 itens.
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Podemos usar compreensão de conjuntos para extrair os países únicos dos clientes que possuem menos de 25 anos.</p>
+<p>Podemos usar compreensão de sets para extrair os países únicos dos clientes que possuem menos de 25 anos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clientes</span> <span class="o">=</span> <span class="p">[</span>
@@ -1563,7 +1563,7 @@ Total de estoque contabilizado: 620 itens.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Argentina&#39;, &#39;Brasil&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Brasil&#39;, &#39;Argentina&#39;}
 </pre></div>
 </div>
 </div>
@@ -1577,7 +1577,7 @@ Total de estoque contabilizado: 620 itens.
 </section>
 <section id="conclusao">
 <h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
-<p>Ao longo deste capítulo, você aprendeu sobre as estruturas de repetição em Python: <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>. O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> é usado quando sabemos quantas vezes queremos executar um bloco de código, enquanto o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é usado quando não sabemos quantas vezes queremos executar um bloco de código, mas sabemos a condição de parada. Além disso, você aprendeu sobre as instruções <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> para controlar o fluxo de repetição. Por fim, você aprendeu sobre compreensões de listas, dicionários e conjuntos, que são maneiras compactas de criar novas sequências a partir de sequências existentes.</p>
+<p>Ao longo deste capítulo, você aprendeu sobre as estruturas de repetição em Python: <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>. O laço <code class="docutils literal notranslate"><span class="pre">for</span></code> é usado quando sabemos quantas vezes queremos executar um bloco de código, enquanto o laço <code class="docutils literal notranslate"><span class="pre">while</span></code> é usado quando não sabemos quantas vezes queremos executar um bloco de código, mas sabemos a condição de parada. Além disso, você aprendeu sobre as instruções <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> para controlar o fluxo de repetição. Por fim, você aprendeu sobre compreensões de listas, dicionários e sets, que são maneiras compactas de criar novas sequências a partir de sequências existentes.</p>
 <p>No próximo capítulo vamos aprender em mais detalhes sobre funções em Python. Até lá!</p>
 </section>
 </section>
@@ -1666,10 +1666,10 @@ Total de estoque contabilizado: 620 itens.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-conjuntos">Compreensão de listas, dicionários e conjuntos</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas-dicionarios-e-sets">Compreensão de listas, dicionários e sets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-listas">Compreensão de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-dicionarios">Compreensão de dicionários</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-conjuntos">Compreensão de conjuntos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compreensao-de-sets">Compreensão de sets</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pratica">Prática</a></li>
