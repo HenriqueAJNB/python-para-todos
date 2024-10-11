@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Herança &#8212; Python para todos</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JSWERJSPMN"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10-orientacao-objetos/03-heranca';</script>
+    <link rel="icon" href="../_static/python.svg"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Atributos de classes" href="02-atributo-classe.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-code"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JSWERJSPMN');
+</script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/book.png" class="logo__image only-light" alt="Python para todos - Home"/>
+    <script>document.write(`<img src="../_static/book.png" class="logo__image only-dark" alt="Python para todos - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Pesquisar</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                     Python para todos
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Instale o Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-instalacao-python/01-intro.html">Instalação do Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/02-windows.html">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/03-linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/04-versoes-python.html">Qual versão do Python devo instalar?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Entenda sobre os ambientes de desenvolvimento</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/01-intro.html">Ambientes para desenvolvimento Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/02-ides.html">IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/03-anaconda.html">Uma visão geral sobre o Anaconda</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configure o ambiente</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-vscode/01-instalacao-windows.html">Instalação VSCode (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-vscode/02-configuracao.html">Preparando o VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dê os primeiros passos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-primeiros-passos/01-intro.html">Primeiro programa em Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/02-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/03-execucao.html">Formas de execução</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Realize operações básicas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/01-matematica.html">Operações matemáticas básicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html">Tipos de dados numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/01-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/02-listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/03-tuplas.html">Tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/04-dicionarios.html">Dicionários</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/05-conjuntos.html">Conjuntos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-fluxo-controle/01-condicionais.html">Estrutura condicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-fluxo-controle/02-repeticao.html">Estrutura de repetição</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funções</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-funcoes/01-introducao.html">Introdução à funções</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Módulos e pacotes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/01-introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/02-modulos-nativos.html">Módulos nativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/03-modulos-proprios.html">Módulos customizados</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/04-modulos-terceiros.html">Bibliotecas de terceiros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programação orientada a objetos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-atributo-classe.html">Atributos de classes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Herança</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercicios.html">Lista de exercícios</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositório fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F10-orientacao-objetos/03-heranca.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abra um problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/10-orientacao-objetos/03-heranca.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Herança</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-heranca">O que é herança?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vantagens-da-heranca">Vantagens da herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-jogo-online">Exemplo: jogo online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-problema-da-heranca">O problema da herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wip-capitulo-em-construcao">⚒️👷 (WIP) capítulo em construção ⚒️👷</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="heranca">
+<h1>Herança<a class="headerlink" href="#heranca" title="Link to this heading">#</a></h1>
+<p>Neste capítulo vamos falar sobre herança em POO.</p>
+<p>Herança é um dos quatro pilares da programação orientada a objetos. Os outros três são encapsulamento, polimorfismo e abstração. Veremos os outros em capítulos seguintes.</p>
+<section id="o-que-e-heranca">
+<h2>O que é herança?<a class="headerlink" href="#o-que-e-heranca" title="Link to this heading">#</a></h2>
+<p>Herança é um conceito em POO que permite a criação de uma nova classe que herda atributos e métodos de uma classe existente. A nova classe é chamada de <strong>subclasse</strong> ou <strong>classe filha</strong>, e a classe existente é chamada de <strong>superclasse</strong> ou classe <strong>pai/mãe</strong>. A subclasse usa atributos e métodos da superclasse sem precisar reescrevê-los.</p>
+<p>É importante ressaltar que a herança estabelece uma relação na qual <strong>a subclasse é um tipo da superclasse</strong>. Por exemplo, se temos uma classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> e uma classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, podemos dizer que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Ou então, se tivermos uma classe <code class="docutils literal notranslate"><span class="pre">Veículo</span></code> e uma classe <code class="docutils literal notranslate"><span class="pre">Carro</span></code>, podemos dizer que <code class="docutils literal notranslate"><span class="pre">Carro</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Veículo</span></code>.</p>
+<p>Caso essa relação não exista, talvez a herança não seja a melhor opção. Nesse caso, podemos usar a <strong>composição</strong>, que é outro conceito da POO o qual veremos também mais adiante aqui no livro. Portanto, sempre que for pensar em herança, pergunte-se: <strong>a subclasse é um tipo da superclasse?</strong></p>
+</section>
+<section id="vantagens-da-heranca">
+<h2>Vantagens da herança<a class="headerlink" href="#vantagens-da-heranca" title="Link to this heading">#</a></h2>
+<p>As principais vantagens de usar herança são:</p>
+<ol class="arabic simple">
+<li><p><strong>Reutilização de código</strong>: a subclasse herda atributos e métodos da superclasse, o que evita a reescrita de código.</p></li>
+<li><p><strong>Facilidade de manutenção</strong>: se precisarmos alterar um método ou atributo, basta alterar na superclasse, e a mudança será refletida em todas as subclasses.</p></li>
+<li><p><strong>Facilidade de extensão</strong>: podemos adicionar novos métodos e atributos na subclasse sem alterar a superclasses.</p></li>
+</ol>
+</section>
+<section id="sintaxe-de-heranca">
+<h2>Sintaxe de herança<a class="headerlink" href="#sintaxe-de-heranca" title="Link to this heading">#</a></h2>
+<p>Para usar herança em Python, basta passar a superclasse entre parênteses na definição da subclasse. Veja o exemplo abaixo uma demonstração simples com a explicação na sequencia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span>  <span class="c1"># 2.1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Subclasse</span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>  <span class="c1"># 1</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># 2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># 3</span>
+
+    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 4</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">raca</span><span class="si">}</span><span class="s2">, está latindo!&quot;</span><span class="p">)</span>
+
+
+<span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>  <span class="c1"># 5</span>
+
+<span class="n">cachorro</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span>  <span class="c1"># 6</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span>  <span class="c1"># 6</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">latir</span><span class="p">()</span>  <span class="c1"># 7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rex está comendo.
+Rex está dormindo.
+Rex, o Labrador, está latindo!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Temos algumas novidades no código acima, vamos entender melhor. Acompanhe pelas marcações numéricas no código:</p>
+<ol class="arabic simple">
+<li><p>Na definição da classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, passamos <code class="docutils literal notranslate"><span class="pre">Animal</span></code> entre parênteses. Isso indica que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é uma subclasse de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Ou seja, <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> herda atributos e métodos de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> sem precisar reescrevê-los.</p></li>
+<li><p>Aqui talvez seja o ponto principal. Na subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, estamos executando o construtor da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code> com a linha <code class="docutils literal notranslate"><span class="pre">super().__init__(nome)</span></code>. Isso é necessário para que a subclasse tenha acesso aos atributos e métodos da superclasse. Percebam que o método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> da superclasse (2.1) recebe apenas <code class="docutils literal notranslate"><span class="pre">nome</span></code> como parâmetro.</p></li>
+<li><p>A subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> possui um atributo a mais que a superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>: <code class="docutils literal notranslate"><span class="pre">raca</span></code>.</p></li>
+<li><p>Definição de um método <code class="docutils literal notranslate"><span class="pre">latir</span></code> que só a subclasse possui.</p></li>
+<li><p>Criamos uma instância <code class="docutils literal notranslate"><span class="pre">cachorro</span></code> a partir da subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code></p></li>
+<li><p>A maravilha da herança acontecendo: percebam que o método <code class="docutils literal notranslate"><span class="pre">.comer()</span></code> e <code class="docutils literal notranslate"><span class="pre">.dormir()</span></code> não foi definido na subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, mas mesmo assim conseguimos chamá-lo! Estamos reutilizando o método da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>.</p></li>
+<li><p>E finalmente chamamos o método <code class="docutils literal notranslate"><span class="pre">.latir()</span></code> que só a subclasse possui.</p></li>
+</ol>
+<p>Agora, e se quisermos adicionar outras subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, como <code class="docutils literal notranslate"><span class="pre">Gato</span></code>, <code class="docutils literal notranslate"><span class="pre">Peixe</span></code>, ou outros animais? Basta criar novas subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> e seguir a mesma lógica que fizemos com <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>
+
+    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">raca</span><span class="si">}</span><span class="s2">, está latindo!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Gato</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cor</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cor</span> <span class="o">=</span> <span class="n">cor</span>
+
+    <span class="k">def</span> <span class="nf">miar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o gato </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cor</span><span class="si">}</span><span class="s2">, está miando: &#39;Miau!&#39;&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">escalar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o gato </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cor</span><span class="si">}</span><span class="s2">, está escalando uma árvore!&quot;</span><span class="p">)</span>
+
+
+<span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">latir</span><span class="p">()</span>
+
+<span class="n">gato</span> <span class="o">=</span> <span class="n">Gato</span><span class="p">(</span><span class="s2">&quot;Mingau&quot;</span><span class="p">,</span> <span class="s2">&quot;tigrado&quot;</span><span class="p">)</span>
+<span class="n">gato</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span>
+<span class="n">gato</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span>
+<span class="n">gato</span><span class="o">.</span><span class="n">miar</span><span class="p">()</span>
+<span class="n">gato</span><span class="o">.</span><span class="n">escalar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rex está comendo.
+Rex está dormindo.
+Rex, o Labrador, está latindo!
+Mingau está comendo.
+Mingau está dormindo.
+Mingau, o gato tigrado, está miando: &#39;Miau!&#39;
+Mingau, o gato tigrado, está escalando uma árvore!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da mesma forma que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, a subclasse <code class="docutils literal notranslate"><span class="pre">Gato</span></code> herda os atributos e métodos da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, implementando apenas o atributo específico <code class="docutils literal notranslate"><span class="pre">cor</span></code> e os métodos <code class="docutils literal notranslate"><span class="pre">.miar()</span></code> e <code class="docutils literal notranslate"><span class="pre">.escalar()</span></code>.</p>
+<div class="attention admonition">
+<p class="admonition-title">Atenção (relação entre subclasses e superclasse)</p>
+<p>Só podemos usar herança no caso acima pois a relação entre as subclasses e a superclasse faz sentido. Ou seja, <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, e <code class="docutils literal notranslate"><span class="pre">Gato</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Se tal relação não fizer sentido, talvez o melhor seja não usar herança!</p>
+</div>
+<p>Vamos ver um outro exemplo real para fixar o conceito de herança.</p>
+</section>
+<section id="exemplo-jogo-online">
+<h2>Exemplo: jogo online<a class="headerlink" href="#exemplo-jogo-online" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personagem</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">vida</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ataque</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">defesa</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vida</span> <span class="o">=</span> <span class="n">vida</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ataque</span> <span class="o">=</span> <span class="n">ataque</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">defesa</span> <span class="o">=</span> <span class="n">defesa</span>
+
+    <span class="k">def</span> <span class="nf">atacar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> atacou com </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ataque</span><span class="si">}</span><span class="s2"> pontos!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">defender</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está se defendendo com </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">defesa</span><span class="si">}</span><span class="s2"> pontos!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">: Vida = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vida</span><span class="si">}</span><span class="s2">; Poder de ataque = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ataque</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Guerreiro</span><span class="p">(</span><span class="n">Personagem</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">vida</span><span class="p">,</span> <span class="n">ataque</span><span class="p">,</span> <span class="n">defesa</span><span class="p">,</span> <span class="n">forca_extra</span><span class="p">):</span>
+        <span class="c1"># Chamando o construtor da superclasse Personagem</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">vida</span><span class="p">,</span> <span class="n">ataque</span><span class="p">,</span> <span class="n">defesa</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forca_extra</span> <span class="o">=</span> <span class="n">forca_extra</span>
+
+    <span class="k">def</span> <span class="nf">golpe_espada</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dano</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ataque</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">forca_extra</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> desferiu um golpe de espada com </span><span class="si">{</span><span class="n">dano</span><span class="si">}</span><span class="s2"> de dano!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Mago</span><span class="p">(</span><span class="n">Personagem</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">vida</span><span class="p">,</span> <span class="n">ataque</span><span class="p">,</span> <span class="n">defesa</span><span class="p">,</span> <span class="n">mana</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">vida</span><span class="p">,</span> <span class="n">ataque</span><span class="p">,</span> <span class="n">defesa</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">=</span> <span class="n">mana</span>
+
+    <span class="k">def</span> <span class="nf">lançar_magia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mana</span> <span class="o">-=</span> <span class="mi">10</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> lançou uma magia poderosa e consumiu 10 de mana!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> não tem mana suficiente!&quot;</span><span class="p">)</span>
+
+
+<span class="n">guerreiro</span> <span class="o">=</span> <span class="n">Guerreiro</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span> <span class="n">vida</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ataque</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">defesa</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">forca_extra</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">guerreiro</span><span class="o">.</span><span class="n">atacar</span><span class="p">()</span>
+<span class="n">guerreiro</span><span class="o">.</span><span class="n">defender</span><span class="p">()</span>
+<span class="n">guerreiro</span><span class="o">.</span><span class="n">golpe_espada</span><span class="p">()</span>
+<span class="n">guerreiro</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+
+
+<span class="n">mago</span> <span class="o">=</span> <span class="n">Mago</span><span class="p">(</span><span class="s2">&quot;Gandalf&quot;</span><span class="p">,</span> <span class="n">vida</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">ataque</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">defesa</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">mana</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">mago</span><span class="o">.</span><span class="n">atacar</span><span class="p">()</span>
+<span class="n">mago</span><span class="o">.</span><span class="n">lançar_magia</span><span class="p">()</span>
+<span class="n">mago</span><span class="o">.</span><span class="n">lançar_magia</span><span class="p">()</span>
+<span class="n">mago</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thor atacou com 20 pontos!
+Thor está se defendendo com 10 pontos!
+Thor desferiu um golpe de espada com 70 de dano!
+Thor: Vida = 100; Poder de ataque = 20
+Gandalf atacou com 15 pontos!
+Gandalf lançou uma magia poderosa e consumiu 10 de mana!
+Gandalf não tem mana suficiente!
+Gandalf: Vida = 80; Poder de ataque = 15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observem bem como o código acima fica agradável de ler! Parece realmente uma história, ainda mais considerando bons nomes para as variáveis, classes e métodos! E aqui nem começamos a brincar com a interação entre as classes, estamos trabalhando com elas (<code class="docutils literal notranslate"><span class="pre">Mago</span></code> e <code class="docutils literal notranslate"><span class="pre">Guerreiro</span></code>) de forma isolada usando herança.</p>
+<p>Poderíamos, por exemplo, fazer as classes interagirem entre si, e quando uma atacar, a outra perde pontos de vida baseado na diferença entre ataque e defesa… enfim, as possibilidades são infinitas!</p>
+<p>Mas vamos com calma, um passo de cada vez.</p>
+</section>
+<section id="o-problema-da-heranca">
+<h2>O problema da herança<a class="headerlink" href="#o-problema-da-heranca" title="Link to this heading">#</a></h2>
+<p>Nem tudo são flores! A herança pode trazer alguns problemas, como:</p>
+<ol class="arabic simple">
+<li><p><strong>Acoplamento</strong>: a subclasse fica muito dependente da superclasse, o que pode dificultar a manutenção do código. Se a superclasse mudar, todas as subclasses serão impactadas. E isso, se não for bem controlado, pode virar um cenário caótido.</p></li>
+<li><p><strong>Herança múltipla</strong>: Python permite herança múltipla, ou seja, uma subclasse pode herdar de mais de uma superclasse. Eu sequer vou explicar isso aqui, pois é confuso e difícil demais pra entender (e não tem muita utilidade também). A subclasse herda atributos e métodos de várias superclasses, o que pode gerar conflitos e dores de cabeça pra entender.</p></li>
+<li><p><strong>Explosão de subclasses</strong>: Se não tivermos cuidado, podemos criar subclasses em excesso, o que pode dificultar e muito a manutenção do código. Se tivermos muitas subclasses, talvez seja melhor repensar a estrutura do código. Para evitar esse tipo de problema, podemos usar uma outra estratégia chamada <strong>composição</strong>, que falarei mais à frente no livro.</p></li>
+<li><p><strong>Não respeitar a relação</strong>: quando a relação <em>subclasse é um tipo da superclasse</em> não fizer sentido, usar herança é conceitualmente errado, e o código fica horrível de ler. Ou então inverter a relação, ou seja, a superclasse ser um tipo da subclasse. Imagine que você implemente uma classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> que herda de <code class="docutils literal notranslate"><span class="pre">Pessoa</span></code> (cachorro é um tipo de pessoa, oi??), ou então uma classe <code class="docutils literal notranslate"><span class="pre">AparelhoEletronico</span></code> que herda de <code class="docutils literal notranslate"><span class="pre">Televisão</span></code> (um aparelho eletrônico é um tipo de TV, não seria o contrário?)… enfim, são exemplos de relações que não fazem sentido.</p></li>
+</ol>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Nesta seção você aprendeu sobre herança em POO. A herança é um conceito importante que permite a reutilização de código. Vimos uma sintaxe básica de implementação, com a expansão de 2 subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>: <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> e <code class="docutils literal notranslate"><span class="pre">Gato</span></code>. Também vimos um exemplo mais real de herança com as classes <code class="docutils literal notranslate"><span class="pre">Mago</span></code> e <code class="docutils literal notranslate"><span class="pre">Guerreiro</span></code> em um jogo online. Ao final, discutimos os problemas da herança e quando não devemos usá-la.</p>
+<p>No próximo capítulo vamos falar sobre <strong>encapsulamento</strong>, que é outro pilar da programação orientada a objetos. As classes devem ser como caixas pretas, e o encapsulamento é o conceito que nos ajuda a manter essa caixa preta fechada.</p>
+</section>
+<section id="wip-capitulo-em-construcao">
+<h2>⚒️👷 (WIP) capítulo em construção ⚒️👷<a class="headerlink" href="#wip-capitulo-em-construcao" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./10-orientacao-objetos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-atributo-classe.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Atributos de classes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercicios.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Lista de exercícios</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-heranca">O que é herança?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vantagens-da-heranca">Vantagens da herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-jogo-online">Exemplo: jogo online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-problema-da-heranca">O problema da herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wip-capitulo-em-construcao">⚒️👷 (WIP) capítulo em construção ⚒️👷</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Henrique Branco powered by Jupyter Book
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

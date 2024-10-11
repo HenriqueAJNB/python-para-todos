@@ -76,7 +76,7 @@
     <link rel="icon" href="_static/python.svg"/>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
-    <link rel="prev" title="Atributos de classes" href="10-orientacao-objetos/02-atributo-classe.html" />
+    <link rel="prev" title="Herança" href="10-orientacao-objetos/03-heranca.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="pt"/>
@@ -269,6 +269,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="10-orientacao-objetos/01-introducao.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10-orientacao-objetos/02-atributo-classe.html">Atributos de classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-orientacao-objetos/03-heranca.html">Herança</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
 <ul class="current nav bd-sidenav">
@@ -485,6 +486,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-14-avaliacao-de-sustentabilidade-e-reducao-de-emissoes-de-co2">Exercício 14 - Avaliação de sustentabilidade e redução de emissões de CO2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-15-monitoramento-de-qualidade-de-produtos">Exercício 15 - Monitoramento de qualidade de produtos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-16-explorando-modulos-nativos">Exercício 16 - Explorando módulos nativos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-17-fabricando-um-carro-literalmente">Exercício 17 - Fabricando um carro (literalmente)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-18-gerenciando-uma-biblioteca">Exercício 18 - Gerenciando uma biblioteca</a></li>
 </ul>
 </li>
 </ul>
@@ -1108,7 +1111,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;radiador&#39;, &#39;óleo de motor&#39;, &#39;alternador&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;disco de freio&#39;, &#39;correia alternador&#39;, &#39;mangueira de água&#39;, &#39;pneu&#39;, &#39;fluido de freio&#39;}, &#39;B&#39;: {&#39;radiador&#39;, &#39;correia dentada&#39;, &#39;óleo de motor&#39;, &#39;alternador&#39;, &#39;bateria&#39;, &#39;junta homocinética&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;amortecedor&#39;, &#39;correia alternador&#39;, &#39;mangueira de água&#39;, &#39;fluido de freio&#39;, &#39;rolamento de roda&#39;}, &#39;C&#39;: {&#39;radiador&#39;, &#39;óleo de motor&#39;, &#39;junta homocinética&#39;, &#39;válvula termostática&#39;, &quot;bomba d&#39;água&quot;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;disco de freio&#39;, &#39;correia alternador&#39;, &#39;mangueira de água&#39;, &#39;pneu&#39;, &#39;fluido de freio&#39;}, &#39;D&#39;: {&#39;radiador&#39;, &#39;correia dentada&#39;, &#39;alternador&#39;, &#39;bateria&#39;, &#39;junta homocinética&#39;, &#39;pastilha de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;válvula termostática&#39;, &#39;amortecedor&#39;, &#39;filtro de óleo&#39;, &#39;pneu&#39;, &#39;mangueira de água&#39;, &#39;rolamento de roda&#39;}, &#39;E&#39;: {&#39;correia dentada&#39;, &#39;óleo de motor&#39;, &#39;alternador&#39;, &#39;bateria&#39;, &#39;junta homocinética&#39;, &#39;pastilha de freio&#39;, &#39;válvula termostática&#39;, &#39;sensor de oxigênio&#39;, &#39;disco de freio&#39;, &#39;correia alternador&#39;, &#39;fluido de freio&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;correia alternador&#39;, &#39;radiador&#39;, &#39;sensor de oxigênio&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;disco de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;alternador&#39;, &#39;fluido de freio&#39;, &#39;pneu&#39;, &#39;rolamento de roda&#39;}, &#39;B&#39;: {&#39;correia alternador&#39;, &#39;radiador&#39;, &#39;sensor de oxigênio&#39;, &#39;amortecedor&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;correia dentada&#39;, &#39;mangueira de água&#39;, &#39;alternador&#39;, &quot;bomba d&#39;água&quot;, &#39;fluido de freio&#39;, &#39;junta homocinética&#39;, &#39;rolamento de roda&#39;}, &#39;C&#39;: {&#39;correia alternador&#39;, &#39;radiador&#39;, &#39;sensor de oxigênio&#39;, &#39;rolamento de roda&#39;, &#39;óleo de motor&#39;, &#39;válvula termostática&#39;, &#39;mangueira de água&#39;, &#39;disco de freio&#39;, &quot;bomba d&#39;água&quot;, &#39;fluido de freio&#39;, &#39;junta homocinética&#39;, &#39;pneu&#39;}, &#39;D&#39;: {&#39;radiador&#39;, &#39;amortecedor&#39;, &#39;rolamento de roda&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;correia dentada&#39;, &#39;mangueira de água&#39;, &#39;pastilha de freio&#39;, &#39;alternador&#39;, &quot;bomba d&#39;água&quot;, &#39;filtro de óleo&#39;, &#39;junta homocinética&#39;, &#39;pneu&#39;}, &#39;E&#39;: {&#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;óleo de motor&#39;, &#39;bateria&#39;, &#39;válvula termostática&#39;, &#39;correia dentada&#39;, &#39;pastilha de freio&#39;, &#39;disco de freio&#39;, &#39;alternador&#39;, &#39;fluido de freio&#39;, &#39;junta homocinética&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1179,7 +1182,7 @@ Considere a colaboradora recém-ingressada do item anterior.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;alternador&#39;, &#39;bateria&#39;}, &#39;D&#39;: {&#39;correia alternador&#39;, &#39;sensor de oxigênio&#39;, &#39;óleo de motor&#39;, &#39;fluido de freio&#39;}, &#39;E&#39;: {&quot;bomba d&#39;água&quot;, &#39;mangueira de água&#39;, &#39;radiador&#39;, &#39;rolamento de roda&#39;}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: {&#39;junta homocinética&#39;}, &#39;B&#39;: {&#39;válvula termostática&#39;}, &#39;C&#39;: {&#39;bateria&#39;, &#39;alternador&#39;}, &#39;D&#39;: {&#39;óleo de motor&#39;, &#39;correia alternador&#39;, &#39;fluido de freio&#39;, &#39;sensor de oxigênio&#39;}, &#39;E&#39;: {&#39;mangueira de água&#39;, &quot;bomba d&#39;água&quot;, &#39;radiador&#39;, &#39;rolamento de roda&#39;}}
 </pre></div>
 </div>
 </div>
@@ -1687,6 +1690,225 @@ Redução sugerida em cada mês: 4.08 toneladas
 </div>
 </div>
 </section>
+<section id="exercicio-17-fabricando-um-carro-literalmente">
+<span id="exercicio-17"></span><h3>Exercício 17 - Fabricando um carro (literalmente)<a class="headerlink" href="#exercicio-17-fabricando-um-carro-literalmente" title="Link to this heading">#</a></h3>
+<p>Imagine que você está dirigindo um carro. Quando você acelera, a velocidade aumenta, e quando você freia, a velocidade diminui. Se continuar freando, o carro eventualmente vai parar. Também há momentos em que você quer saber o modelo do carro, o ano de fabricação e, claro, a velocidade atual.</p>
+<p>Agora, pense nas ações que você pode realizar enquanto dirige:</p>
+<ul class="simple">
+<li><p><strong>Acelerar:</strong> A cada vez que você pressiona o acelerador, a velocidade do carro aumenta em 10 km/h.</p></li>
+<li><p><strong>Frear:</strong> Ao pisar no freio, a velocidade diminui em 10 km/h, mas o carro nunca pode andar com velocidade negativa.</p></li>
+<li><p><strong>Parar:</strong> Quando você freia até o carro parar completamente, a velocidade vai para 0 km/h.</p></li>
+<li><p><strong>Checar informações:</strong> Às vezes, você quer saber qual o modelo do carro, o ano de fabricação e a velocidade atual.</p></li>
+</ul>
+<p>Agora, tente pensar em como você organizaria essas funcionalidades de forma lógica. Como você armazenaria o modelo e o ano do carro? E como você controlaria as ações de acelerar e frear?</p>
+<p>Exemplo:</p>
+<ul class="simple">
+<li><p>Você começa dirigindo um Fusca, fabricado em 1980, com uma velocidade inicial de 0 km/h.</p></li>
+<li><p>Ao acelerar duas vezes, sua velocidade chega a 20 km/h.</p></li>
+<li><p>Você freia uma vez e a velocidade cai para 10 km/h.</p></li>
+<li><p>Se frear mais uma vez, a velocidade vai para 0 km/h, e o carro para completamente.</p></li>
+</ul>
+<p>Pense em como organizar isso de forma que você possa controlar o carro, saber suas informações e decidir quando acelerar ou frear.</p>
+<p><strong>Desafio:</strong> E se você quisesse reverter a marcha do carro? Imagine que em marcha ré o fusca ande a no máximo 10 km/h. Como você implementaria isso?</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modelo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ano</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="c1"># Inicialização dos atributos de instância</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ano</span> <span class="o">=</span> <span class="n">ano</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Inicializa a velocidade como 0</span>
+
+    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">+=</span> <span class="mi">10</span>
+
+    <span class="k">def</span> <span class="nf">frear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">-=</span> <span class="mi">10</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">parar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">informacoes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Modelo: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="si">}</span><span class="s2">, Ano: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ano</span><span class="si">}</span><span class="s2">, Velocidade: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span><span class="si">}</span><span class="s2"> km/h&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reverter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">velocidade</span> <span class="o">-=</span> <span class="mi">10</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O carro está em marcha à ré.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O carro já está parado.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Criando um objeto da classe Carro</span>
+<span class="n">carro</span> <span class="o">=</span> <span class="n">Carro</span><span class="p">(</span><span class="s2">&quot;Fusca&quot;</span><span class="p">,</span> <span class="mi">1980</span><span class="p">)</span>
+
+<span class="c1"># Exibindo as informações iniciais</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;Modelo: Fusca, Ano: 1980, Velocidade: 0 km/h&quot;</span>
+
+<span class="c1"># Acelerando o carro</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+
+<span class="c1"># Exibindo as informações após acelerar</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;Modelo: Fusca, Ano: 1980, Velocidade: 20 km/h&quot;</span>
+
+<span class="c1"># Freando o carro</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">frear</span><span class="p">()</span>
+
+<span class="c1"># Exibindo as informações após frear</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;Modelo: Fusca, Ano: 1980, Velocidade: 10 km/h&quot;</span>
+
+<span class="c1"># Parando o carro</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">parar</span><span class="p">()</span>
+
+<span class="c1"># Exibindo as informações finais</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;Modelo: Fusca, Ano: 1980, Velocidade: 0 km/h&quot;</span>
+
+<span class="c1"># Tentando reverter o carro</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">reverter</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;O carro já está parado.&quot;</span>
+
+<span class="c1"># Acelerando novamente para testar o reverter</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">acelerar</span><span class="p">()</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Velocidade: 20 km/h</span>
+
+<span class="c1"># Revertendo a marcha</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">reverter</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;O carro está em marcha à ré.&quot;</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Velocidade: 10 km/h</span>
+
+<span class="c1"># Revertendo novamente</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">reverter</span><span class="p">()</span>  <span class="c1"># Deve mostrar &quot;O carro está em marcha à ré.&quot;</span>
+<span class="n">carro</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>  <span class="c1"># Velocidade: 0 km/h</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo: Fusca, Ano: 1980, Velocidade: 0 km/h
+Modelo: Fusca, Ano: 1980, Velocidade: 20 km/h
+Modelo: Fusca, Ano: 1980, Velocidade: 10 km/h
+Modelo: Fusca, Ano: 1980, Velocidade: 0 km/h
+O carro já está parado.
+Modelo: Fusca, Ano: 1980, Velocidade: 20 km/h
+O carro está em marcha à ré.
+Modelo: Fusca, Ano: 1980, Velocidade: 10 km/h
+O carro está em marcha à ré.
+Modelo: Fusca, Ano: 1980, Velocidade: 0 km/h
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="exercicio-18-gerenciando-uma-biblioteca">
+<span id="exercicio-18"></span><h3>Exercício 18 - Gerenciando uma biblioteca<a class="headerlink" href="#exercicio-18-gerenciando-uma-biblioteca" title="Link to this heading">#</a></h3>
+<p>Você está criando um sistema para gerenciar uma biblioteca. Nesse sistema, você terá um conceito central de um livro. Cada livro terá algumas características importantes, como:</p>
+<ul class="simple">
+<li><p>O nome do livro.</p></li>
+<li><p>O nome do autor que escreveu o livro.</p></li>
+<li><p>O ano em que o livro foi publicado.</p></li>
+<li><p>Um status que mostra se o livro está disponível para empréstimo ou se já foi retirado.</p></li>
+<li><p>Além disso, é importante ter uma contagem que rastreie quantos livros foram cadastrados na biblioteca. Essa contagem deve ser atualizado sempre que um novo livro for adicionado.</p></li>
+</ul>
+<p>Segue algumas sugestões de funcionalidades que você pode implementar no sistema:</p>
+<ul class="simple">
+<li><p>Quando um usuário deseja pegar um livro emprestado, o sistema deve verificar se o livro está disponível. Se estiver, a disponibilidade deve ser alterada para refletir que o livro foi emprestado. Caso contrário, uma mensagem deve ser exibida informando que o livro não está disponível.</p></li>
+<li><p>Quando o usuário retorna o livro, o sistema deve atualizar a disponibilidade do livro para indicar que ele está novamente disponível para empréstimo.</p></li>
+<li><p>Para cada livro, o sistema deve ser capaz de mostrar as informações relevantes, como título, autor, ano de publicação e o status de disponibilidade.</p></li>
+<li><p>Você também deve ter a capacidade de saber quantos livros estão cadastrados na biblioteca.</p></li>
+</ul>
+<p>Exemplo de uso do sistema:</p>
+<ul class="simple">
+<li><p>Você cria um livro chamado «1984», escrito por George Orwell, publicado em 1949.</p></li>
+<li><p>Outro livro que você adiciona é «O Senhor dos Anéis», de J.R.R. Tolkien, publicado em 1954.</p></li>
+<li><p>Ao tentar emprestar «1984», o sistema deve confirmar que ele está disponível.</p></li>
+<li><p>Se você tentar emprestar «1984» novamente, o sistema deve informar que ele não está mais disponível.</p></li>
+<li><p>Ao devolver «1984», o sistema deve registrar que ele está novamente disponível para ser emprestado.</p></li>
+<li><p>Por fim, você pode verificar quantos livros estão cadastrados na biblioteca.</p></li>
+</ul>
+<p><strong>Desafio:</strong>
+Pense em como você poderia implementar uma funcionalidade que permite buscar um livro pelo título e exibir suas informações, caso ele exista na biblioteca. Além disso, considere como a contagem de livros pode ser atualizada quando um livro é removido.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Livro</span><span class="p">:</span>
+    <span class="c1"># Atributo de classe para contar o total de livros</span>
+    <span class="n">total_livros</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">titulo</span><span class="p">,</span> <span class="n">autor</span><span class="p">,</span> <span class="n">ano_publicacao</span><span class="p">):</span>
+        <span class="c1"># Atributos de instância</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titulo</span> <span class="o">=</span> <span class="n">titulo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autor</span> <span class="o">=</span> <span class="n">autor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ano_publicacao</span> <span class="o">=</span> <span class="n">ano_publicacao</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disponibilidade</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># O livro começa como disponível</span>
+
+        <span class="c1"># Incrementa o contador de livros ao criar um novo livro</span>
+        <span class="n">Livro</span><span class="o">.</span><span class="n">total_livros</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">emprestar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disponibilidade</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">disponibilidade</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O livro &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titulo</span><span class="si">}</span><span class="s2">&#39; foi emprestado.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O livro &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titulo</span><span class="si">}</span><span class="s2">&#39; não está disponível.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">devolver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disponibilidade</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O livro &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titulo</span><span class="si">}</span><span class="s2">&#39; foi devolvido.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">exibir_informacoes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;disponível&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">disponibilidade</span> <span class="k">else</span> <span class="s2">&quot;não disponível&quot;</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Título: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">titulo</span><span class="si">}</span><span class="s2">, Autor: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">autor</span><span class="si">}</span><span class="s2">, Ano de Publicação: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ano_publicacao</span><span class="si">}</span><span class="s2">, Status: </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="c1"># Criando alguns objetos da classe Livro</span>
+<span class="n">livro1</span> <span class="o">=</span> <span class="n">Livro</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">,</span> <span class="mi">1949</span><span class="p">)</span>
+<span class="n">livro2</span> <span class="o">=</span> <span class="n">Livro</span><span class="p">(</span><span class="s2">&quot;O Senhor dos Anéis&quot;</span><span class="p">,</span> <span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span> <span class="mi">1954</span><span class="p">)</span>
+
+<span class="c1"># Exibindo informações dos livros</span>
+<span class="n">livro1</span><span class="o">.</span><span class="n">exibir_informacoes</span><span class="p">()</span>
+<span class="n">livro2</span><span class="o">.</span><span class="n">exibir_informacoes</span><span class="p">()</span>
+
+<span class="c1"># Emprestando um livro</span>
+<span class="n">livro1</span><span class="o">.</span><span class="n">emprestar</span><span class="p">()</span>  <span class="c1"># Deve indicar que o livro foi emprestado</span>
+<span class="n">livro1</span><span class="o">.</span><span class="n">emprestar</span><span class="p">()</span>  <span class="c1"># Deve indicar que o livro não está disponível</span>
+
+<span class="c1"># Devolvendo o livro</span>
+<span class="n">livro1</span><span class="o">.</span><span class="n">devolver</span><span class="p">()</span>  <span class="c1"># Deve indicar que o livro foi devolvido</span>
+
+<span class="c1"># Exibindo total de livros na biblioteca</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total de livros na biblioteca: </span><span class="si">{</span><span class="n">Livro</span><span class="o">.</span><span class="n">total_livros</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Título: 1984, Autor: George Orwell, Ano de Publicação: 1949, Status: disponível
+Título: O Senhor dos Anéis, Autor: J.R.R. Tolkien, Ano de Publicação: 1954, Status: disponível
+O livro &#39;1984&#39; foi emprestado.
+O livro &#39;1984&#39; não está disponível.
+O livro &#39;1984&#39; foi devolvido.
+Total de livros na biblioteca: 2
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
 </section>
 </section>
 
@@ -1721,12 +1943,12 @@ Redução sugerida em cada mês: 4.08 toneladas
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="10-orientacao-objetos/02-atributo-classe.html"
+       href="10-orientacao-objetos/03-heranca.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Atributos de classes</p>
+        <p class="prev-next-title">Herança</p>
       </div>
     </a>
 </div>
@@ -1762,6 +1984,8 @@ Redução sugerida em cada mês: 4.08 toneladas
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-14-avaliacao-de-sustentabilidade-e-reducao-de-emissoes-de-co2">Exercício 14 - Avaliação de sustentabilidade e redução de emissões de CO2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-15-monitoramento-de-qualidade-de-produtos">Exercício 15 - Monitoramento de qualidade de produtos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-16-explorando-modulos-nativos">Exercício 16 - Explorando módulos nativos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-17-fabricando-um-carro-literalmente">Exercício 17 - Fabricando um carro (literalmente)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-18-gerenciando-uma-biblioteca">Exercício 18 - Gerenciando uma biblioteca</a></li>
 </ul>
 </li>
 </ul>
