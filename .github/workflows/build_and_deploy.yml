@@ -1,9 +1,16 @@
 name: Build e deploy do livro
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,3 +35,21 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/_build/html
+
+  build-only:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup GitHub Actions
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Instalação jupyter-book
+        run: pip install jupyter-book
+
+      - name: Build do livro
+        run: jupyter-book build ./book
