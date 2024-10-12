@@ -1,6 +1,6 @@
 # <img src="img/config/logos/python.svg" width="64"/> Python para todos
 
-<div style="text-align: justify">
+
 
 Quer aprender Python do zero? Este livro é para você!
 
@@ -19,7 +19,7 @@ Olá, sou Henrique Branco, e este é meu <a href="https://www.linkedin.com/in/he
 
 Desde 2018, mergulhei de cabeça no mundo de Python e, desde então, tive a alegria de ensinar centenas de alunos, tanto em aulas particulares quanto em grupo. Um dos momentos mais marcantes da minha carreira de ensino foi liderar um bootcamp de Python pela How Bootcamps em parceria com a Stone, onde 200 alunos participaram ao vivo durante 6 meses!
 
-Além de ensinar em português, também lancei cursos na plataforma Coursera em inglês, abordando temas como <a href="https://www.coursera.org/projects/gen-ai-code-generation-for-python" target="_blank">Python com IA generativa</a>, <a href="https://www.coursera.org/projects/git-for-developers-managing-workflows-and-conflicts" target="_blank">git avançado</a> e VSCode avançado (à lançar em Agosto de 2024), ampliando o alcance do meu trabalho e ajudando ainda mais pessoas a desenvolverem suas habilidades.
+Além de ensinar em português, também lancei cursos na plataforma Coursera em inglês, abordando temas como <a href="https://www.coursera.org/projects/gen-ai-code-generation-for-python" target="_blank">Python com IA generativa</a>, <a href="https://www.coursera.org/projects/git-for-developers-managing-workflows-and-conflicts" target="_blank">git avançado</a> e <a href="https://www.coursera.org/projects/vscode-for-developers-set-up-a-professional-environment" target="_blank">VSCode avançado</a>, ampliando o alcance do meu trabalho e ajudando ainda mais pessoas a desenvolverem suas habilidades. Se quiser dar uma olhada na minha página como instrutor do Coursera com todos os meus cursos lançados, é só clicar <a href="https://www.coursera.org/instructor/~37484066" target="_blank">aqui</a>.
 
 Na minha trajetória profissional, atuei como Engenheiro de Machine Learning em empresas renomadas como Bosch, Cellere IT e Grupo Boticário. Essas experiências me permitiram aplicar e aprofundar meus conhecimentos em projetos reais, desafiadores e inovadores.
 
@@ -44,4 +44,4 @@ Em especial, agradeço pontualmente:
 ```{tableofcontents}
 ```
 
-</div>
+

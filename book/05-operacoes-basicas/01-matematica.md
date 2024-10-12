@@ -1,6 +1,6 @@
 # Operações matemáticas básicas
 
-<div style="text-align: justify">
+
 
 ```{admonition} Lembrete
 :class: tip
@@ -77,4 +77,4 @@ Reparem que duas operações retornaram um valor com `.` no meio. O que signific
 
 Na próxima seção vamos entender melhor e começar a nos aprofundar nos tipos de dados numéricos.
 
-</div>
+

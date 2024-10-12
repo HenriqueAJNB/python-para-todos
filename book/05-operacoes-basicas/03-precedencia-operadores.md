@@ -1,6 +1,7 @@
+(precedencia-operadores)=
 # Precedência de operadores
 
-<div style="text-align: justify">
+
 
 Na seção anterior vimos várias operações matemáticas bem como os tipos de dados resultantes. Vamos agora aumentar a complexidade um pouco falando sobre precedência de operadores.
 
@@ -136,4 +137,4 @@ Recomendo você fazer o [exercício 3](exercício-3) da lista!
 
 Vimos a importância da ordem de execução dos operadores com vários exemplos didáticos e um exemplo real. Na próxima seção, vamos detalhar mais variáveis.
 
-</div>
+

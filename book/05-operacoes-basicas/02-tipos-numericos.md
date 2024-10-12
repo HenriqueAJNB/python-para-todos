@@ -1,7 +1,7 @@
 (tipos-de-dados-numericos)=
 # Tipos de dados numéricos
 
-<div style="text-align: justify">
+
 
 Dentro do mundo da programação, nós temos os chamados tipos de dados, e nesta seção vamos falar de dois tipos de dados numéricos básicos: inteiros, representados por `int` e o ponto flutuante, também chamado de `float`, representando um número decimal.
 
@@ -11,7 +11,7 @@ Conforme vimos na seção anterior, a divisão `4 / 2` retornou `2.0`, e não si
 
 As operações de soma e divisão de números inteiros, como `5 + 4` e `5 - 6` sempre resultam em valores inteiros, chamados de `int`.
 
-Na divisão, porém, nem sempre. Podemos ter divisões que resultam em valores inteiros, `4 / 2` e outras não, como é o caso de `3 / 4`, que resulta em `0.75`. Como forma de generalizar, toda divisão em Python retorna um número decimal por padrão. Isso está escrito no tutorial da documentação oficial, seção [3.1.1. Numbers](https://docs.python.org/3/tutorial/introduction.html#numbers) no qual temos escrito (traduzido aqui no livro) que `# divisão sempre retorna um ponto flutuante`.
+Na divisão, porém, nem sempre. Podemos ter divisões que resultam em valores inteiros, `4 / 2` e outras não, como é o caso de `3 / 4`, que resulta em `0.75`. Como forma de generalizar, toda divisão em Python retorna um número decimal por padrão. Isso está escrito no tutorial da documentação oficial, seção [3.1.1. Numbers](https://docs.python.org/pt-br/3/tutorial/introduction.html#numbers) no qual temos escrito (traduzido aqui no livro) que `# divisão sempre retorna um ponto flutuante`.
 
 Portanto, temos os tipos `int`, representando um número inteiro, e o tipo `float` representando um número com casas decimais.
 
@@ -26,7 +26,7 @@ Interessante que, embora matematicamente `2` e `2.0` sejam iguais, no mundo da p
 
 Na seção [Primeiro programa: Olá mundo!](hello-world) vimos nossa primeira função `print` que imprime uma mensagem no terminal. Vamos aprender uma segunda, a função `type`. 
 
-A função `type` faz parte de um conjunto de funções nativas do Python. Você pode acessar a lista completa destas funções nativas [aqui](https://docs.python.org/3/library/functions.html). 
+A função `type` faz parte de um conjunto de funções nativas do Python. Você pode acessar a lista completa destas funções nativas [aqui](https://docs.python.org/pt-br/3/library/functions.html). 
 
 **Esta função vai te acompanhar no resto do livro**, acredite em mim! Ela é simples, e super importante. Lembrando que teremos uma seção específica sobre funções.
 
@@ -58,4 +58,4 @@ Agora você já consegue fazer o [exercício 2](exercício-2) da lista!
 
 Na próxima seção vamos aprender sobre a ordem na qual as operações são executadas!
 
-</div>
+

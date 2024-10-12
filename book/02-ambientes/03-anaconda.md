@@ -1,6 +1,6 @@
 # Uma visão geral sobre o Anaconda
 
-<div style="text-align: justify">
+
 
 Neste capítulo, discutiremos o Anaconda, uma plataforma que é popular, mas frequentemente considerada excessiva para iniciantes. Vou explicar por que você pode querer considerar alternativas ao Anaconda, especialmente se está começando com Python. Ainda sim, se você quiser seguir com esta ferramenta, ela pode ser encontrada neste <a href="https://www.anaconda.com/download" target="_blank">link</a> 
 
@@ -32,4 +32,3 @@ Além disso, o Anaconda é conhecido por ser relativamente pesado. Ele exige mai
 
 Em resumo: enquanto o Anaconda é uma ferramenta poderosa e abrangente para profissionais de ciência de dados, sua complexidade e peso podem ser desnecessários para quem está apenas começando com Python. Ela é considerada um excesso até mesmo em ambientes profissionais, pois além de ser pesada, raramente usa-se tudo que ela dispõe mesmo para projetos de análise e ciência de dados. Por estes motivos, não vamos usá-la, e sim seguir com o VSCode.
 
-</div>

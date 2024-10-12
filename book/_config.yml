@@ -28,12 +28,22 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  analytics:
+    google_analytics_id: G-JSWERJSPMN
   use_issues_button: true
   use_repository_button: true
   favicon: img/config/logos/python.svg
+
   
 parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default! See here: https://jupyterbook.org/en/stable/customize/config.html
     - html_image
+
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    language: pt
+    templates_path:
+      - _templates

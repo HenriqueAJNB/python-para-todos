@@ -1,6 +1,6 @@
 # Variáveis
 
-<div style="text-align: justify">
+
 
 Em todos os códigos anteriores, você percebeu que nós não salvamos o valor da expressão em lugar nenhum do nosso código? Para salvar um valor durante a execução do código, podemos usar variáveis. Vamos falar sobre elas neste capítulo!
 
@@ -91,6 +91,7 @@ Ao executar o código acima:
 NameError: name 'Nome' is not defined. Did you mean: 'nome'?
 ```
 
+(regras-nomenclatura-variaveis)=
 ## Regras na nomenclatura de variáveis
 
 Estas regras são **obrigatórias**. Sem seguí-las, seu código gera erros!
@@ -172,4 +173,3 @@ Neste capítulo, exploramos o conceito de variáveis, que são fundamentais em q
 
 Ao seguir essas diretrizes e práticas, seu código se tornará mais legível, compreensível e fácil de manter, tanto para você quanto para outros desenvolvedores que possam trabalhar com ele no futuro. No próximo capítulo, aprofundaremos mais sobre o tipo de dado textual chamado de `string`.
 
-</div>

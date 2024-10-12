@@ -1,6 +1,6 @@
 # Preparando o VSCode
 
-<div style="text-align: justify">
+
 
 Agora que estamos com o VSCode instalado, vamos configurá-lo com o mínimo necessário para iniciar nosso desenvolvimento em Python!
 
@@ -79,4 +79,3 @@ Reparem que ao criar o script no próprio VSCode, ele é criado automaticamente 
 ```{image} ../gifs/03-02-vscode-create-file.gif
 ```
 
-</div>

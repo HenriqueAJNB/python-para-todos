@@ -9,3 +9,6 @@ _build
 
 # Ambiente virtual
 .venv
+
+# Scripts
+scripts/

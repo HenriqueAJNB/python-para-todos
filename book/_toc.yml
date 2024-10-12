@@ -43,7 +43,29 @@ parts:
   - file: 06-estruturas-de-dados/02-listas.ipynb
   - file: 06-estruturas-de-dados/03-tuplas.ipynb
   - file: 06-estruturas-de-dados/04-dicionarios.ipynb
-  - file: 06-estruturas-de-dados/05-sets.ipynb
+  - file: 06-estruturas-de-dados/05-conjuntos.ipynb
+
+- caption: Estruturas de controle
+  chapters:
+  - file: 07-fluxo-controle/01-condicionais.ipynb
+  - file: 07-fluxo-controle/02-repeticao.ipynb
+
+- caption: Funções
+  chapters:
+  - file: 08-funcoes/01-introducao.ipynb
+
+- caption: Módulos e pacotes
+  chapters:
+  - file: 09-modulos/01-introducao.ipynb
+  - file: 09-modulos/02-modulos-nativos.ipynb
+  - file: 09-modulos/03-modulos-proprios.ipynb
+  - file: 09-modulos/04-modulos-terceiros.ipynb
+
+- caption: Programação orientada a objetos
+  chapters:
+  - file: 10-orientacao-objetos/01-introducao.ipynb
+  - file: 10-orientacao-objetos/02-atributo-classe.ipynb
+  - file: 10-orientacao-objetos/03-heranca.ipynb
 
 - caption: Pratique
   chapters:
