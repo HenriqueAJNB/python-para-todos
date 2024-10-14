@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Encapsulamento &#8212; Python para todos</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/justify.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=0ff6c57f"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=5f54a428"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JSWERJSPMN"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JSWERJSPMN');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10-orientacao-objetos/04-encapsulamento';</script>
+    <link rel="icon" href="../_static/python.svg"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Lista de exercícios" href="../exercicios.html" />
+    <link rel="prev" title="Herança" href="03-heranca.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-code"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JSWERJSPMN');
+</script>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/book.png" class="logo__image only-light" alt="Python para todos - Home"/>
+    <script>document.write(`<img src="../_static/book.png" class="logo__image only-dark" alt="Python para todos - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Pesquisar</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                     Python para todos
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Instale o Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-instalacao-python/01-intro.html">Instalação do Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/02-windows.html">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/03-linux.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-instalacao-python/04-versoes-python.html">Qual versão do Python devo instalar?</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Entenda sobre os ambientes de desenvolvimento</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/01-intro.html">Ambientes para desenvolvimento Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/02-ides.html">IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-ambientes/03-anaconda.html">Uma visão geral sobre o Anaconda</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configure o ambiente</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-vscode/01-instalacao-windows.html">Instalação VSCode (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-vscode/02-configuracao.html">Preparando o VSCode</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dê os primeiros passos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04-primeiros-passos/01-intro.html">Primeiro programa em Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/02-ola-mundo.html">Primeiro programa: Olá mundo!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-primeiros-passos/03-execucao.html">Formas de execução</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Realize operações básicas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/01-matematica.html">Operações matemáticas básicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/02-tipos-numericos.html">Tipos de dados numéricos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/03-precedencia-operadores.html">Precedência de operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-operacoes-basicas/04-variaveis.html">Variáveis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de dados básicas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/01-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/02-listas.html">Listas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/03-tuplas.html">Tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/04-dicionarios.html">Dicionários</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-estruturas-de-dados/05-conjuntos.html">Conjuntos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estruturas de controle</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-fluxo-controle/01-condicionais.html">Estrutura condicional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-fluxo-controle/02-repeticao.html">Estrutura de repetição</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funções</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-funcoes/01-introducao.html">Introdução à funções</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Módulos e pacotes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/01-introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/02-modulos-nativos.html">Módulos nativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/03-modulos-proprios.html">Módulos customizados</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../09-modulos/04-modulos-terceiros.html">Bibliotecas de terceiros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programação orientada a objetos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-atributo-classe.html">Atributos de classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-heranca.html">Herança</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Encapsulamento</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pratique</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exercicios.html">Lista de exercícios</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositório fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/HenriqueAJNB/python-para-todos/issues/new?title=Issue%20on%20page%20%2F10-orientacao-objetos/04-encapsulamento.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abra um problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/10-orientacao-objetos/04-encapsulamento.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Encapsulamento</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-encapsulamento">O que é encapsulamento?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-conceitual">Exemplo conceitual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-privados">Atributos «privados»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-privados">Métodos «privados»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-publicos">Métodos públicos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso">Casos de uso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-de-propriedade">Conceito de propriedade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-misterio-com-dois-sublinhados">O mistério com dois sublinhados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="encapsulamento">
+<h1>Encapsulamento<a class="headerlink" href="#encapsulamento" title="Link to this heading">#</a></h1>
+<section id="o-que-e-encapsulamento">
+<h2>O que é encapsulamento?<a class="headerlink" href="#o-que-e-encapsulamento" title="Link to this heading">#</a></h2>
+<p>Encapsulamento é um dos quatro princípios fundamentais da programação orientada a objetos (POO). Até agora vimos apenas herança, vamos ver neste capítulo sobre encapsulamento, e os outros dois, abstração e polimorfismo veremos em capítulos seguintes.</p>
+<p>Em essência, encapsulamento é o conceito de agrupar atributos e os métodos que operam nesses dados dentro de objeto. Além disso, o encapsulamento envolve a restrição de acesso direto a alguns dos componentes do objeto, essencialmente «escondendo» os detalhes internos da implementação.</p>
+</section>
+<section id="exemplo-conceitual">
+<h2>Exemplo conceitual<a class="headerlink" href="#exemplo-conceitual" title="Link to this heading">#</a></h2>
+<p>O melhor exemplo que consigo trazer é de uma máquina de café. Imagine que você tem uma máquina de café automática, como aquelas que encontramos em escritórios. Você sabe que, ao apertar o botão, a máquina faz café para você. No entanto, você não precisa (e nem deveria) saber todos os detalhes internos sobre como ela faz o café, como os grãos são moídos, como a água é aquecida ou como a pressão é ajustada. Tudo o que você sabe é que, ao apertar o botão, você recebe um café pronto, sem se preocupar com o que acontece dentro da máquina. Aqui vamos literalmente separar o que é público e o que é privado ao criar a nossa classe.</p>
+<p>Agora, trazendo isso para o mundo da programação:</p>
+<ul class="simple">
+<li><p>A máquina de café é a nossa classe.</p></li>
+<li><p>O botão para fazer café é um método público, ou seja, algo que você pode acessar diretamente e usar.</p></li>
+<li><p>O que acontece dentro da máquina — moagem de grãos, controle da temperatura, pressão da água — são as variáveis e métodos privados, protegidos de você (o usuário) porque não é necessário que você mexa diretamente neles. Eles estão encapsulados, «escondidos» dentro da máquina para evitar que você cause algum problema ou quebrem o funcionamento correto.</p></li>
+</ul>
+<p>Vamos construir esse exemplo passo a passo.</p>
+<p>Primeiro, vamos criar a nossa classe.</p>
+<section id="atributos-privados">
+<h3>Atributos «privados»<a class="headerlink" href="#atributos-privados" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Quantidade de grãos (privado)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui já temos a primeira diferença. Notem que os atributos da máquina de café tem um <code class="docutils literal notranslate"><span class="pre">_</span></code> antes do nome do atributo, como acontece em <code class="docutils literal notranslate"><span class="pre">self._agua</span></code> e <code class="docutils literal notranslate"><span class="pre">self._graos</span></code>. Eles foram declarados como privados, ou seja, só devem ser acessados dentro da própria classe. Isso é uma <em>«convençao de cavalheiros»</em> em Python e significa que você não deveria acessar ou modificar tais atributos fora da classe.</p>
+<p>Mas porque eu disse <em>«convençao de cavalheiros»</em>? Na realidade, em Python, não existe atributos privados. Você pode acessar e modificar qualquer atributo de qualquer objeto em Python. Mas, por convenção, se um atributo tem um sublinhado <code class="docutils literal notranslate"><span class="pre">_</span></code> antes do nome, você não deve acessá-lo diretamente. Se você fizer isso, você está assumindo a responsabilidade de saber o que está fazendo e quebrar o código é por sua conta e risco.</p>
+<p>Vou mostrar como acessar e modificar estes atributos ainda é possível, mesmo com sublinhado <code class="docutils literal notranslate"><span class="pre">_</span></code> antes do nome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Quantidade de grãos (privado)</span>
+
+
+<span class="n">maquina_cafe</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="c1"># Aqui estamos acessando um atributo que, em teoria,</span>
+<span class="c1"># deveria ser privado e acessado somente pela própria classe!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maquina_cafe</span><span class="o">.</span><span class="n">_agua</span><span class="p">)</span>
+
+<span class="c1"># E aqui estamos modificando um atributo que, em teoria</span>
+<span class="c1"># deveria ser privado e modificado somente pela própria classe!</span>
+<span class="n">maquina_cafe</span><span class="o">.</span><span class="n">_agua</span> <span class="o">=</span> <span class="mi">5000</span>
+
+<span class="c1"># Mudamos algo interno da classe!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maquina_cafe</span><span class="o">.</span><span class="n">_agua</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+5000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Portanto, entenda que o <code class="docutils literal notranslate"><span class="pre">_</span></code> no início do nome do atributo é uma convenção, e não uma regra rígida. O Python permite acessar e modificar qualquer atributo de qualquer objeto, mas você deve saber o que está fazendo. Como regra geral, <em><strong>siga a convenção e não acesse ou modifique atributos privados diretamente fora da classe!</strong></em></p>
+</section>
+<section id="metodos-privados">
+<h3>Métodos «privados»<a class="headerlink" href="#metodos-privados" title="Link to this heading">#</a></h3>
+<p>Vamos continuar com a nossa classe. Agora vamos criar os métodos privados, que são os métodos que não devem ser acessados diretamente. Eles são métodos que fazem parte da implementação interna da classe e não devem ser chamados diretamente pelo usuário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Quantidade de grãos (privado)</span>
+
+    <span class="k">def</span> <span class="nf">_moer_graos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moendo os grãos...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">-=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">_aquecer_agua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aquecendo a água...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">-=</span> <span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Novamente, métodos privados começam com <code class="docutils literal notranslate"><span class="pre">_</span></code> no nome, e vale a mesma ideia de convenção e não regra rígida. Você conseguiria criar uma instância e chamar o método privado diretamente, mas não é recomendado, apesar de a linguagem Python nos permitir. Novamente, <em><strong>siga a convenção e não execute métodos privados diretamente fora da classe!</strong></em></p>
+</section>
+<section id="metodos-publicos">
+<h3>Métodos públicos<a class="headerlink" href="#metodos-publicos" title="Link to this heading">#</a></h3>
+<p>Vamos agora criar um método público <code class="docutils literal notranslate"><span class="pre">fazer_cafe()</span></code>. Ele é definido normalmente, sem <code class="docutils literal notranslate"><span class="pre">_</span></code> no nome, e são métodos que em teoria deveriam ser os únicos acessados diretamente por quem usa a classe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Quantidade de grãos (privado)</span>
+
+    <span class="k">def</span> <span class="nf">_moer_graos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moendo os grãos...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">-=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">_aquecer_agua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aquecendo a água...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">-=</span> <span class="mi">200</span>
+
+    <span class="k">def</span> <span class="nf">fazer_cafe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método público</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agua</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graos</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_moer_graos</span><span class="p">()</span>  <span class="c1"># Método privados sendo acessados pela própria classe!</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_aquecer_agua</span><span class="p">()</span>  <span class="c1"># Método privados sendo acessados pela própria classe!</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Café pronto!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sem água ou grãos suficientes.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Usuário (externo) da classe</span>
+<span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="n">maquina</span><span class="o">.</span><span class="n">fazer_cafe</span><span class="p">()</span>  <span class="c1"># Acesso ao método público fora da classe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moendo os grãos...
+Aquecendo a água...
+Café pronto!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reparem bem que os métodos privados <code class="docutils literal notranslate"><span class="pre">_moer_graos()</span></code> e <code class="docutils literal notranslate"><span class="pre">_aquecer_agua()</span></code> são chamados dentro do método público <code class="docutils literal notranslate"><span class="pre">fazer_cafe()</span></code>. Aqui é a magia do encapsulamento em ação! O usuário da classe não precisa saber como o café é feito, ele só precisa saber que ao chamar <code class="docutils literal notranslate"><span class="pre">fazer_cafe()</span></code>, ele vai receber um café pronto.</p>
+<p>Basicamente é esta a distinção mais básica do encapsulamento: o que é público e o que é privado. O usuário da classe só precisa saber o que é público, e não precisa saber o que acontece internamente.</p>
+<div class="attention admonition">
+<p class="admonition-title">Atenção (definição privado vs público)</p>
+<p>Dentro do conceito de encapsulamento, quem define quais métodos e atributos serão privados ou públicos é você, caro leitor! Você é quem decide o que é público e o que é privado, e o que o usuário da sua classe vai poder acessar diretamente. A ideia é esconder os detalhes de implementação e expor apenas o que é necessário para quem vai usar a sua classe.</p>
+<p>Portanto, é importante que você pense bem sobre o que é público e o que é privado, e que você siga a convenção de Python de usar <code class="docutils literal notranslate"><span class="pre">_</span></code> no início do nome para indicar que algo é privado. Mas lembre-se que, em Python, não existe atributos ou métodos privados de verdade, e você pode acessar e modificar qualquer coisa. A convenção é uma forma de dizer «não faça isso» e de indicar que algo é privado e não deve ser acessado diretamente.</p>
+</div>
+</section>
+</section>
+<section id="casos-de-uso">
+<h2>Casos de uso<a class="headerlink" href="#casos-de-uso" title="Link to this heading">#</a></h2>
+<p>Vou trazer aqui alguns casos de uso para te ajudar a pensar e refletir sobre essa questão de público e privado.</p>
+<ul class="simple">
+<li><p><strong>Saldo de conta bancária:</strong> O saldo de uma conta bancária deve ser privado, acessível apenas por métodos autorizados, como depósito ou saque. O usuário não pode simplesmente modificar o saldo diretamente. Já pensou você aumentando seu próprio saldo no terminal do banco ou no seu celular? Não seria legal, né?</p></li>
+<li><p><strong>Controle de acessos em um sistema de segurança:</strong> Informações como senhas ou níveis de permissão dos usuários são encapsuladas, garantindo que elas não sejam acessadas ou modificadas diretamente, apenas através de métodos controlados.</p></li>
+<li><p><strong>Configurações de uma máquina industrial:</strong> Em uma máquina complexa, parâmetros como temperatura, pressão ou velocidade de operação podem ser ajustados apenas por métodos específicos, sem permitir que esses valores sejam alterados diretamente pelos usuários. Ninguém quer explodir um reator porque alguém que não deveria mexeu na temperatura, certo?</p></li>
+<li><p><strong>Sistema de registro médico:</strong> Informações sensíveis sobre pacientes, como diagnósticos e históricos médicos, devem ser protegidas. Apenas funções específicas podem acessar ou modificar esses dados, e quem usa o sistema não pode mexer diretamente nos registros. Aqui é para evitar que alguém veja ou modifique informações sensíveis sem autorização.</p></li>
+<li><p><strong>Gerenciamento de inventário de estoque:</strong> O número de itens no estoque pode ser encapsulado para evitar que o número de produtos seja alterado diretamente. Apenas funções específicas de entrada e saída de mercadorias podem atualizar o valor real.</p></li>
+<li><p><strong>Configurações de conexão a um banco de dados:</strong> As credenciais e parâmetros de conexão a um banco de dados são encapsulados para que apenas os métodos internos da classe façam a conexão, garantindo a segurança dos dados sensíveis.</p></li>
+<li><p><strong>Jogo de vídeo game - pontuação do jogador:</strong> A pontuação ou vida de um jogador em um jogo é protegida por encapsulamento, permitindo que apenas ações válidas dentro do jogo modifiquem esses valores, e não diretamente pelo usuário.</p></li>
+</ul>
+<p>Em resumo, muita das vezes quem determina o que é público e o que é privado é a lógica do seu programa ditada pela regra de negócio. Se algo não deve ser acessado diretamente, você deve encapsular e proteger esse dado ou método. Se algo pode ser acessado diretamente, você pode deixar público. A ideia é esconder os detalhes de implementação e expor apenas o que é necessário para quem for usar a classe.</p>
+</section>
+<section id="conceito-de-propriedade">
+<h2>Conceito de propriedade<a class="headerlink" href="#conceito-de-propriedade" title="Link to this heading">#</a></h2>
+<p>Às vezes um atributo privado da classe precisa ser acessado somente como leitura. É o caso de um saldo de conta bancária, por exemplo. Você não quer que o saldo seja modificado diretamente, mas você quer que ele possa ser lido. Temos um novo conceito aqui de propriedade. Vamos entender melhor com um exemplo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ContaBancaria</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">depositar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">+=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para depósito.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">-=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para saque.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Até aqui nenhuma novidade. Porém, pela convenção, sabemos que o atributo <code class="docutils literal notranslate"><span class="pre">_saldo</span></code> é privado e não deve ser acessado diretamente. Mas e se eu quisesse que um usuário da classe tivesse o acesso somente de leitura do saldo? Como eu faço? Acompanhe a seguir.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ContaBancaria</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">saldo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span>
+
+    <span class="k">def</span> <span class="nf">depositar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">+=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para depósito.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">-=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para saque.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Acrescentamos algo novo no nosso código. Temos um <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>, e um método <code class="docutils literal notranslate"><span class="pre">saldo()</span></code> que retorna o atributo <code class="docutils literal notranslate"><span class="pre">_saldo</span></code> privado. O que está acontecendo aqui? Vamos com calma…</p>
+<p>Esse <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> é obrigatório para definirmos uma proriedade. Ele é um decorador, que é um conceito um pouco mais avançado em Python, mas não se preocupe com tal conceito por agora.
+Entenda o que <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> faz: ele transforma o método <code class="docutils literal notranslate"><span class="pre">saldo()</span></code> abaixo em uma propriedade <code class="docutils literal notranslate"><span class="pre">saldo</span></code> (mesmo nome do método), que tem o valor do retorno do método (<code class="docutils literal notranslate"><span class="pre">_saldo</span></code>, no caso).</p>
+<p>Uma propriedade funciona exatamente como um atributo, mas com a diferença de ser um atributo somente de leitura. Você não pode modificar o valor de uma propriedade diretamente, apenas lê-lo. Isso é muito útil para proteger atributos privados que você quer que sejam acessados somente como leitura.</p>
+<div class="cell tag_raise-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ContaBancaria</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">saldo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span>
+
+    <span class="k">def</span> <span class="nf">depositar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">+=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para depósito.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">-=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor inválido para saque.&quot;</span><span class="p">)</span>
+
+
+<span class="n">conta</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">()</span>
+<span class="n">conta</span><span class="o">.</span><span class="n">depositar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># Aqui estamos acessando a propriedade saldo,</span>
+<span class="c1"># que retorna o valor do atributo privado _saldo</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conta</span><span class="o">.</span><span class="n">saldo</span><span class="p">)</span>
+
+<span class="c1"># Mas por ser uma propriedade, não podemos modificar seu valor diretamente</span>
+<span class="n">conta</span><span class="o">.</span><span class="n">saldo</span> <span class="o">=</span> <span class="mi">5000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">29</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="nb">print</span><span class="p">(</span><span class="n">conta</span><span class="o">.</span><span class="n">saldo</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Mas por ser uma propriedade, não podemos modificar seu valor diretamente</span>
+<span class="ne">---&gt; </span><span class="mi">29</span> <span class="n">conta</span><span class="o">.</span><span class="n">saldo</span> <span class="o">=</span> <span class="mi">5000</span>
+
+<span class="ne">AttributeError</span>: can&#39;t set attribute
+</pre></div>
+</div>
+</div>
+</div>
+<p>Percebam como conseguimos com o uso do <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> uma forma de garantir acesso de leitura à um determinado atributo privado, sem permitir que ele seja modificado?</p>
+<p>Mas é importante ressaltar a convenção de Python: o atributo original <code class="docutils literal notranslate"><span class="pre">_saldo</span></code> (e não a propriedade <code class="docutils literal notranslate"><span class="pre">saldo</span></code>) é privado e não deve ser acessado diretamente. O acesso deve ser pela propriedade <code class="docutils literal notranslate"><span class="pre">saldo</span></code> e é a forma correta de acessar o saldo, garantindo que ele seja somente de leitura.</p>
+<div class="attention admonition">
+<p class="admonition-title">Atenção (convenção)</p>
+<p>Mesmo com uso do <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> ainda é possível alterar e modificar o atributo privado <code class="docutils literal notranslate"><span class="pre">_saldo</span></code>. O <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> é uma forma de garantir que o acesso à determinado atributo seja somente de leitura, mas não impede que o atributo privado original seja modificado diretamente. Portanto, <strong>siga a convenção de Python e não acesse ou modifique atributos privados diretamente, mesmo que você possa fazer isso!</strong></p>
+</div>
+</section>
+<section id="o-misterio-com-dois-sublinhados">
+<h2>O mistério com dois sublinhados<a class="headerlink" href="#o-misterio-com-dois-sublinhados" title="Link to this heading">#</a></h2>
+<p>Em uma tentativa de evitar o acesso direto aos atributos e métodos privados, existe ainda uma outra convenção, que é o uso de dois sublinhados <code class="docutils literal notranslate"><span class="pre">__</span></code> ao invés de um só <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p>Aqui é preciso entender que o uso de dois sublinhados <code class="docutils literal notranslate"><span class="pre">__</span></code> antes do nome de um atributo ou método não é apenas uma convenção, mas sim uma modificação que o Python faz por debaixo dos panos. Quando você usa dois sublinhados <code class="docutils literal notranslate"><span class="pre">__</span></code> antes do nome de um atributo ou método, o Python modifica o nome do atributo ou método, adicionando o nome da classe na frente. Esta modificação é conhecida como <em>name mangling</em>, que em português significa <em>embaralhamento de nomes</em>.</p>
+<p>Vamos usar o mesmo exemplo da máquina de café, mas agora com dois sublinhados <code class="docutils literal notranslate"><span class="pre">__</span></code> antes dos atributos e métodos privados.</p>
+<div class="cell tag_raise-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__graos</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Quantidade de grãos (privado)</span>
+
+    <span class="k">def</span> <span class="nf">__moer_graos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moendo os grãos...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__graos</span> <span class="o">-=</span> <span class="mi">50</span>
+
+    <span class="k">def</span> <span class="nf">__aquecer_agua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aquecendo a água...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">-=</span> <span class="mi">200</span>
+
+    <span class="k">def</span> <span class="nf">fazer_cafe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método público</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__graos</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__moer_graos</span><span class="p">()</span>  <span class="c1"># Método privados sendo acessados pela própria classe!</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__aquecer_agua</span><span class="p">()</span>  <span class="c1"># Método privados sendo acessados pela própria classe!</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Café pronto!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sem água ou grãos suficientes.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Usuário (externo) da classe</span>
+<span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maquina</span><span class="o">.</span><span class="n">__agua</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># Usuário (externo) da classe</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="nb">print</span><span class="p">(</span><span class="n">maquina</span><span class="o">.</span><span class="n">__agua</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;MaquinaCafe&#39; object has no attribute &#39;__agua&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A única diferença aqui é que estamos usando dois sublinhados <code class="docutils literal notranslate"><span class="pre">__</span></code> ao invés de um sublinhado <code class="docutils literal notranslate"><span class="pre">_</span></code> antes dos atributos e métodos privados. A impressão que temos é que o atributo deixou de existir fora da classe, e o «ser privado» realmente funciona.</p>
+<p>Quando usamos desta forma, o Python manipula os nomes por debaixo dos panos pra mudar os nomes dos atributos e métodos privados, colocando à frente deles o nome da classe. É só uma forma que o Python usa para tentar evitar que você acesse diretamente os atributos e métodos privados.</p>
+<p>Vamos entender como isso funciona no detalhe com um único atributo. Vamos definir a classe com um atributo público primeiro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+
+
+<span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">maquina</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;, &#39;agua&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>No código acima, eu apenas usei a função <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para imprimir todos os métodos e atributos da classe <code class="docutils literal notranslate"><span class="pre">MaquinaCafe</span></code>. Ignore, por enquanto, todos os outros itens da lista acima, e foque apenas no atributo <code class="docutils literal notranslate"><span class="pre">agua</span></code>, o último da lista. Quando criamos um atributo público, ele é adicionado à lista de atributos com o mesmo nome.</p>
+<p>Porém, no código abaixo, percebam que quando o atributo é criado com <code class="docutils literal notranslate"><span class="pre">__</span></code> antes do nome, o Python modifica o nome do atributo, adicionando o nome da classe na frente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+
+
+<span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="c1"># print(maquina.__agua) AttributeError: &#39;MaquinaCafe&#39; object has no attribute &#39;__agua&#39;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">maquina</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;_MaquinaCafe__agua&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>De fato o atributo <code class="docutils literal notranslate"><span class="pre">__agua</span></code> não existe, pois ele não está na lista! O que existe é o atributo <code class="docutils literal notranslate"><span class="pre">_MaquinaCafe__agua</span></code>. É isso mesmo! O Python modificou o nome do atributo, adicionando o nome da classe na frente, para tentar evitar que você acesse diretamente o atributo privado. Maaaaaaasssssssssss, ainda sim, sabendo disso que eu lhe disse, é possível acessar o atributo privado diretamente (Python de vez em quando é engraçado e nos engana!).</p>
+<p>Isso quer dizer então que eu consigo acessar o atributo privado <code class="docutils literal notranslate"><span class="pre">_MaquinaCafe__agua</span></code> diretamente? A resposta é: sim! Experimente você mesmo dar um <code class="docutils literal notranslate"><span class="pre">print(maquina._MaquinaCafe__agua)</span></code> e veja você mesmo que funciona! Mas novamente, pela milhonésima vez (de tanto eu encher o saco acho que você vai lembrar né?), <em><strong>siga a convenção de Python e não acesse ou modifique atributos privados diretamente!</strong></em></p>
+<p>A mesma coisa funciona para métodos privados. Vejam abaixo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MaquinaCafe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Quantidade de água (privado)</span>
+
+    <span class="k">def</span> <span class="nf">__aquecer_agua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Método privado</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aquecendo a água...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__agua</span> <span class="o">-=</span> <span class="mi">200</span>
+
+
+<span class="c1"># Usuário (externo) da classe</span>
+<span class="n">maquina</span> <span class="o">=</span> <span class="n">MaquinaCafe</span><span class="p">()</span>
+<span class="c1"># print(maquina.__aquecer_agua()) AttributeError: &#39;MaquinaCafe&#39; object has no attribute &#39;__aquecer_agua&#39;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">maquina</span><span class="p">))</span>
+
+<span class="c1"># Sabendo que o Python modifica o nome dos atributos e métodos privados,</span>
+<span class="c1"># podemos acessá-los... mas não o faça!</span>
+<span class="n">maquina</span><span class="o">.</span><span class="n">_MaquinaCafe__aquecer_agua</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;_MaquinaCafe__agua&#39;, &#39;_MaquinaCafe__aquecer_agua&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getstate__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;__weakref__&#39;]
+Aquecendo a água...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Neste capítulo vimos o conceito de encapsulamento, que é um dos quatro princípios fundamentais da programação orientada a objetos (POO). O encapsulamento é a ideia de agrupar atributos e métodos que operam nesses dados dentro de objeto, e de restringir o acesso direto a alguns dos componentes do objeto, essencialmente «escondendo» os detalhes internos da implementação.</p>
+<p>Temos 3 tipos de métodos e atributos:</p>
+<ul class="simple">
+<li><p><strong>Normais (públicos):</strong> Sem convenções de nomenclatura especiais, acessíveis de fora da classe sem modificações no nome.</p></li>
+<li><p><strong>Único sublinhado <code class="docutils literal notranslate"><span class="pre">_</span></code>:</strong> Indica uso interno da classe e serve como uma convenção. Acessível de fora da classe sem modificações no nome.</p></li>
+<li><p><strong>Duplo sublinhado <code class="docutils literal notranslate"><span class="pre">__</span></code>:</strong> Introduz o embaralhamento de nome, alterando o nome para incluir o nome da classe. Acessível, mas com um nome modificado. Fornece uma maneira de restringir o acesso acidental, mas ainda é possível acessar os atributos e métodos ao usar o nome modificado.</p></li>
+</ul>
+<p>Na sequencia vamos ver o terceiro princípio da POO, que é a polimorfismo, quando um mesmo método ou função pode funcionar de maneiras diferentes, dependendo do objeto que o utiliza</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./10-orientacao-objetos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-heranca.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Herança</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exercicios.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Lista de exercícios</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-encapsulamento">O que é encapsulamento?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-conceitual">Exemplo conceitual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-privados">Atributos «privados»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-privados">Métodos «privados»</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-publicos">Métodos públicos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso">Casos de uso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceito-de-propriedade">Conceito de propriedade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-misterio-com-dois-sublinhados">O mistério com dois sublinhados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Henrique Branco powered by Jupyter Book
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
