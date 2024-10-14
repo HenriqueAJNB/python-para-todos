@@ -66,6 +66,7 @@ parts:
   - file: 10-orientacao-objetos/01-introducao.ipynb
   - file: 10-orientacao-objetos/02-atributo-classe.ipynb
   - file: 10-orientacao-objetos/03-heranca.ipynb
+  - file: 10-orientacao-objetos/04-encapsulamento.ipynb
 
 - caption: Pratique
   chapters:
