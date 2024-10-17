@@ -9,15 +9,15 @@ assignees: ''
 
 # Onde?
 
-Copie a URL do livro e o trecho com a tradução inadequada.
+Em qual parte você gostaria de adicionar a seção?
 
 # Sugestões
 
-Tem alguma sugestão para melhorar a tradução?
+Tem alguma sugestão de como deveria ser? Ou ao menos referências?
 
 # Contribuição
 
-Você mesmo gostaria de contribuir realizando esta correção?
+Você mesmo gostaria de contribuir escrevendo sobre o tema?
 
 - [ ] sim
 - [ ] não
