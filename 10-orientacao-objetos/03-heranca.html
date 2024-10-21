@@ -474,7 +474,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-heranca">O que é herança?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vantagens-da-heranca">Vantagens da herança</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-a-superclasse">1. Definindo a superclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-uma-subclasse">2. Criando uma subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-o-construtor-da-subclasse">3. Definindo o construtor da subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-metodos-especificos-a-subclasse">4. Adicionando métodos específicos a subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reutilizando-metodos-da-superclasse">5. Reutilizando métodos da superclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-metodos-da-subclasse">6. Usando métodos da subclasse</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-jogo-online">Exemplo: jogo online</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-problema-da-heranca">O problema da herança</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>
@@ -511,12 +519,47 @@ document.write(`
 </section>
 <section id="sintaxe-de-heranca">
 <h2>Sintaxe de herança<a class="headerlink" href="#sintaxe-de-heranca" title="Link to this heading">#</a></h2>
-<p>Para usar herança em Python, basta passar a superclasse entre parênteses na definição da subclasse. Veja o exemplo abaixo uma demonstração simples com a explicação na sequencia:</p>
+<p>Para usar herança em Python, basta passar a superclasse entre parênteses na definição da subclasse. Veja o  passo a passo de como construir uma estrutura simples com classes e subclasses.</p>
+<section id="definindo-a-superclasse">
+<h3>1. Definindo a superclasse<a class="headerlink" href="#definindo-a-superclasse" title="Link to this heading">#</a></h3>
+<p>Primeiro, precisamos criar a superclasse que servirá como base para as subclasses. Vamos definir a classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, que terá atributos e métodos comuns a todos os animais:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
 <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span>  <span class="c1"># 2.1</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span>  <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui, criamos um método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, que recebe o nome do animal como parâmetro e o armazena em um atributo <code class="docutils literal notranslate"><span class="pre">self.nome</span></code>. Isso será comum a todos os animais.</p>
+<p>Agora, adicionamos alguns métodos genéricos que qualquer animal pode ter, como <code class="docutils literal notranslate"><span class="pre">comer</span></code> e <code class="docutils literal notranslate"><span class="pre">dormir</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="criando-uma-subclasse">
+<h3>2. Criando uma subclasse<a class="headerlink" href="#criando-uma-subclasse" title="Link to this heading">#</a></h3>
+<p>Agora que temos nossa superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, vamos criar uma subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, que herda de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Na definição da classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, passamos <code class="docutils literal notranslate"><span class="pre">Animal</span></code> entre parênteses. Isso indica que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é uma subclasse de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Ou seja, <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> herda atributos e métodos de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> sem precisar reescrevê-los.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
 
     <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -525,22 +568,150 @@ document.write(`
     <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
 
+<span class="c1"># Subclasse        </span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui, estamos dizendo que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> herda de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, mas ainda não adicionamos nada específico à subclasse. Vamos expandir essa subclasse.</p>
+</section>
+<section id="definindo-o-construtor-da-subclasse">
+<h3>3. Definindo o construtor da subclasse<a class="headerlink" href="#definindo-o-construtor-da-subclasse" title="Link to this heading">#</a></h3>
+<p>Aqui talvez seja o ponto principal. Na subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, estamos executando o construtor da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code> com a linha <code class="docutils literal notranslate"><span class="pre">super().__init__(nome)</span></code>. Isso é necessário para que a subclasse tenha acesso aos atributos e métodos da superclasse. Percebam que o método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> da superclasse recebe apenas <code class="docutils literal notranslate"><span class="pre">nome</span></code> como parâmetro.</p>
+<p>A subclasse Cachorro precisa ter alguns atributos próprios, como a <code class="docutils literal notranslate"><span class="pre">raça</span></code>. Para isso fazemos uma atribuindo o parâmetro <code class="docutils literal notranslate"><span class="pre">nome</span></code> ao self.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
 
-<span class="c1"># Subclasse</span>
-<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>  <span class="c1"># 1</span>
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subclasse        </span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># 2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># 3</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># Chamando o construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># Novo atributo exclusivo da subclasse Cachorro</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adicionando-metodos-especificos-a-subclasse">
+<h3>4. Adicionando métodos específicos a subclasse<a class="headerlink" href="#adicionando-metodos-especificos-a-subclasse" title="Link to this heading">#</a></h3>
+<p>Agora podemos definir um método que apenas a classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> possui, como <code class="docutils literal notranslate"><span class="pre">latir</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
 
-    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 4</span>
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subclasse        </span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># Chamando o construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># Novo atributo exclusivo da subclasse Cachorro</span>
+    
+    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">raca</span><span class="si">}</span><span class="s2">, está latindo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reutilizando-metodos-da-superclasse">
+<h3>5. Reutilizando métodos da superclasse<a class="headerlink" href="#reutilizando-metodos-da-superclasse" title="Link to this heading">#</a></h3>
+<p>Com a subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> pronta, podemos agora criar uma instância dela e testá-la:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui, criamos um objeto <code class="docutils literal notranslate"><span class="pre">cachorro</span></code> do tipo <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, passando o nome «Rex» e a raça «Labrador».</p>
+<p>Graças à herança, podemos utilizar os métodos comer e dormir definidos na superclasse Animal (<code class="docutils literal notranslate"><span class="pre">comer</span></code> e <code class="docutils literal notranslate"><span class="pre">dormir</span></code>), mesmo que eles não existam diretamente na subclasse Cachorro. Estamos reutilizando o método da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subclasse        </span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># Chamando o construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># Novo atributo exclusivo da subclasse Cachorro</span>
+    
+    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">raca</span><span class="si">}</span><span class="s2">, está latindo!&quot;</span><span class="p">)</span>
 
+<span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>  <span class="c1"># Criando instância da subclasse Cachorro</span>
 
-<span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>  <span class="c1"># 5</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span> <span class="c1"># Reutilizando métodos da superclasse Animal</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span> <span class="c1"># Reutilizando métodos da superclasse Animal</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rex está comendo.
+Rex está dormindo.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="usando-metodos-da-subclasse">
+<h3>6. Usando métodos da subclasse<a class="headerlink" href="#usando-metodos-da-subclasse" title="Link to this heading">#</a></h3>
+<p>E finalmente chamamos o método <code class="docutils literal notranslate"><span class="pre">latir</span></code>, que é exclusivo da subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Superclasse</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span> <span class="c1"># Método construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
 
-<span class="n">cachorro</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span>  <span class="c1"># 6</span>
-<span class="n">cachorro</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span>  <span class="c1"># 6</span>
-<span class="n">cachorro</span><span class="o">.</span><span class="n">latir</span><span class="p">()</span>  <span class="c1"># 7</span>
+    <span class="k">def</span> <span class="nf">comer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está comendo.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dormir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> está dormindo.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subclasse        </span>
+<span class="k">class</span> <span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">raca</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>  <span class="c1"># Chamando o construtor da superclasse Animal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raca</span> <span class="o">=</span> <span class="n">raca</span>  <span class="c1"># Novo atributo exclusivo da subclasse Cachorro</span>
+    
+    <span class="k">def</span> <span class="nf">latir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">, o </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">raca</span><span class="si">}</span><span class="s2">, está latindo!&quot;</span><span class="p">)</span>
+
+<span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Labrador&quot;</span><span class="p">)</span>  <span class="c1"># Criando instância da subclasse Cachorro</span>
+
+<span class="n">cachorro</span><span class="o">.</span><span class="n">comer</span><span class="p">()</span> <span class="c1"># Reutilizando métodos da superclasse Animal</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">dormir</span><span class="p">()</span> <span class="c1"># Reutilizando métodos da superclasse Animal</span>
+<span class="n">cachorro</span><span class="o">.</span><span class="n">latir</span><span class="p">()</span> <span class="c1"># Usando método exclusivo da subclasse Cachorro</span>
 </pre></div>
 </div>
 </div>
@@ -552,16 +723,6 @@ Rex, o Labrador, está latindo!
 </div>
 </div>
 </div>
-<p>Temos algumas novidades no código acima, vamos entender melhor. Acompanhe pelas marcações numéricas no código:</p>
-<ol class="arabic simple">
-<li><p>Na definição da classe <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, passamos <code class="docutils literal notranslate"><span class="pre">Animal</span></code> entre parênteses. Isso indica que <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é uma subclasse de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Ou seja, <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> herda atributos e métodos de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> sem precisar reescrevê-los.</p></li>
-<li><p>Aqui talvez seja o ponto principal. Na subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, estamos executando o construtor da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code> com a linha <code class="docutils literal notranslate"><span class="pre">super().__init__(nome)</span></code>. Isso é necessário para que a subclasse tenha acesso aos atributos e métodos da superclasse. Percebam que o método construtor <code class="docutils literal notranslate"><span class="pre">__init__</span></code> da superclasse (2.1) recebe apenas <code class="docutils literal notranslate"><span class="pre">nome</span></code> como parâmetro.</p></li>
-<li><p>A subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> possui um atributo a mais que a superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>: <code class="docutils literal notranslate"><span class="pre">raca</span></code>.</p></li>
-<li><p>Definição de um método <code class="docutils literal notranslate"><span class="pre">latir</span></code> que só a subclasse possui.</p></li>
-<li><p>Criamos uma instância <code class="docutils literal notranslate"><span class="pre">cachorro</span></code> a partir da subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code></p></li>
-<li><p>A maravilha da herança acontecendo: percebam que o método <code class="docutils literal notranslate"><span class="pre">.comer()</span></code> e <code class="docutils literal notranslate"><span class="pre">.dormir()</span></code> não foi definido na subclasse <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>, mas mesmo assim conseguimos chamá-lo! Estamos reutilizando o método da superclasse <code class="docutils literal notranslate"><span class="pre">Animal</span></code>.</p></li>
-<li><p>E finalmente chamamos o método <code class="docutils literal notranslate"><span class="pre">.latir()</span></code> que só a subclasse possui.</p></li>
-</ol>
 <p>Agora, e se quisermos adicionar outras subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, como <code class="docutils literal notranslate"><span class="pre">Gato</span></code>, <code class="docutils literal notranslate"><span class="pre">Peixe</span></code>, ou outros animais? Basta criar novas subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> e seguir a mesma lógica que fizemos com <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,6 +790,7 @@ Mingau, o gato tigrado, está escalando uma árvore!
 <p>Só podemos usar herança no caso acima pois a relação entre as subclasses e a superclasse faz sentido. Ou seja, <code class="docutils literal notranslate"><span class="pre">Cachorro</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, e <code class="docutils literal notranslate"><span class="pre">Gato</span></code> é um tipo de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. Se tal relação não fizer sentido, talvez o melhor seja não usar herança!</p>
 </div>
 <p>Vamos ver um outro exemplo real para fixar o conceito de herança.</p>
+</section>
 </section>
 <section id="exemplo-jogo-online">
 <h2>Exemplo: jogo online<a class="headerlink" href="#exemplo-jogo-online" title="Link to this heading">#</a></h2>
@@ -793,7 +955,15 @@ Gandalf: Vida = 80; Poder de ataque = 15
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-heranca">O que é herança?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vantagens-da-heranca">Vantagens da herança</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxe-de-heranca">Sintaxe de herança</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-a-superclasse">1. Definindo a superclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-uma-subclasse">2. Criando uma subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-o-construtor-da-subclasse">3. Definindo o construtor da subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adicionando-metodos-especificos-a-subclasse">4. Adicionando métodos específicos a subclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reutilizando-metodos-da-superclasse">5. Reutilizando métodos da superclasse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-metodos-da-subclasse">6. Usando métodos da subclasse</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-jogo-online">Exemplo: jogo online</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-problema-da-heranca">O problema da herança</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a></li>

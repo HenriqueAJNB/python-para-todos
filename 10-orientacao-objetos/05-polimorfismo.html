@@ -675,11 +675,11 @@ Miau!
     <span class="n">taxa</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">*</span> <span class="mf">0.02</span>  <span class="c1"># 2% de juros</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">+</span> <span class="n">taxa</span>
 
-<span class="k">elif</span> <span class="n">forma_pagamentos</span> <span class="o">==</span> <span class="s2">&quot;boleto&quot;</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">forma_pagamento</span> <span class="o">==</span> <span class="s2">&quot;boleto&quot;</span><span class="p">:</span>
     <span class="n">desconto</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">*</span> <span class="mf">0.05</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">-</span> <span class="n">desconto</span>
 
-<span class="k">elif</span> <span class="n">forma_pagamentos</span> <span class="o">==</span> <span class="s2">&quot;pix&quot;</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">forma_pagamento</span> <span class="o">==</span> <span class="s2">&quot;pix&quot;</span><span class="p">:</span>
     <span class="n">desconto</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">*</span> <span class="mf">0.10</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">-</span> <span class="n">desconto</span>
 
@@ -688,14 +688,7 @@ Miau!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">desconto</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">*</span> <span class="mf">0.10</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">total</span> <span class="o">=</span> <span class="n">valor_tota_compra</span> <span class="o">-</span> <span class="n">desconto</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pagamento de R$</span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> processado via </span><span class="si">{</span><span class="n">forma_pagamento</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;total&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pagamento de R$900.00 processado via pix.
 </pre></div>
 </div>
 </div>
